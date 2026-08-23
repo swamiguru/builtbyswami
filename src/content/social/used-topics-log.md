@@ -139,3 +139,7 @@
 2026-08-22 | 2 | Chips / Global tech | Nvidia–Rebellions | Nvidia in early talks to invest in/acquire South Korean AI inference-chip startup Rebellions (Bloomberg report Aug 21; neutral product framing)
 2026-08-22 | 4 | AI Tool Spotlight / Creator economy | YouTube Studio AI instrumental generator | 'Create' button in Replace Song makes 4 royalty-free instrumental tracks to clear Content ID claims (US desktop first) (IG pick)
 2026-08-22 | 5 | Community / Poll | AI-as-a-sticker honest-take poll | Is AI actually improving your daily tech or just marketing? (Threads+X, no card)
+2026-08-23 | 1 | Gaming | GTA 6 gameplay reveal | An Extended Look = first true gameplay Aug 27, Netflix 6h early then Rockstar YT/site, Nov 19 launch on track (leaks being pulled)
+2026-08-23 | 2 | Apps / Privacy | WhatsApp Usernames | Reserve @handle to hide phone number + 4-digit username key gate; Settings>Account>Username (IG pick)
+2026-08-23 | 4 | Comparison / Laptops | MacBook Air M5 vs Copilot+ Snapdragon | 2026 laptop buyer verdict - Apple ecosystem/efficiency vs Windows app-freedom/value
+2026-08-23 | 5 | Phones / Hot take | Apple iPhone 18 event + foldable | Sept 9 tipped, invites ~Aug 26 (RUMOR); v1 foldable iPhone Ultra vs get the 18 Pro; honest wait-dont-panic take

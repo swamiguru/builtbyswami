@@ -47,3 +47,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-21 | Google Pixel | Now Playing — on-device, offline auto song ID on lock screen; enable Now Playing history (Settings > Sound & vibration > Now Playing) for a searchable log of every track it heard
 
 2026-08-22 | macOS | Copy as Pathname — right-click a file in Finder then hold Option ⌥; 'Copy' becomes 'Copy [file] as Pathname' (grabs the full absolute path for Terminal/uploads/tickets)
+2026-08-23 | Windows 11 | Win+Home minimize all other windows (instant focus on one app; Aero Shake title-bar toggle bonus)
