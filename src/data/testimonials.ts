@@ -9,9 +9,9 @@
  * FIDELITY RULES — these are other people's words about Swami, so:
  *   • `full` is the COMPLETE text exactly as the author wrote it. Nothing is
  *     trimmed, reordered, or rephrased. Typos included.
- *   • `quote` is a verbatim extract. Every omission is marked with `…` and
- *     the only permitted insertion is a bracketed word where the original is
- *     ungrammatical — e.g. Katharine's "sensitivity [to] Revenue implications".
+ *   • `quote` is a verbatim extract. Every omission is marked with `…`.
+ *     Katharine's is her complete recommendation, unabridged — including the
+ *     "--" she typed and the missing "to" in "sensitivity Revenue implications".
  *   • No word is ever substituted, and no sentence is ever joined to another
  *     without an ellipsis showing the join.
  *
@@ -51,7 +51,7 @@ export const TESTIMONIALS: Testimonial[] = [
     featured: true,
     forServices: true,
     quote:
-      "Swami was one of the first members of our product team in India… driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT. He proved adept at leading engineers on these global projects that were full of market nuances… This endeared him to the Market Directors who recognized his sensitivity [to] Revenue implications to customer facing work.",
+      "Swami was one of the first members of our product team in India, first working on GQ as a product manager, before moving into a Senior Product Manager role driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT. He proved adept at leading engineers on these global projects that were full of market nuances that he always had the patience and curiosity to dig into. This endeared him to the Market Directors who recognized his sensitivity Revenue implications to customer facing work. Swami was able to hold both -- a critical combination for successful product managers here. He also became a natural leader and mentor to others in the Bangalore office looking to learn our shared stack and capabilities, partner more effectively with design and engineering and also come up with creative solutions to complex problems. I would welcome the opportunity to work with Swami again.",
     full: "Swami was one of the first members of our product team in India, first working on GQ as a product manager, before moving into a Senior Product Manager role driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT. He proved adept at leading engineers on these global projects that were full of market nuances that he always had the patience and curiosity to dig into. This endeared him to the Market Directors who recognized his sensitivity Revenue implications to customer facing work. Swami was able to hold both -- a critical combination for successful product managers here. He also became a natural leader and mentor to others in the Bangalore office looking to learn our shared stack and capabilities, partner more effectively with design and engineering and also come up with creative solutions to complex problems. I would welcome the opportunity to work with Swami again.",
   },
   {

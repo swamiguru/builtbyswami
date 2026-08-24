@@ -94,7 +94,10 @@ export function TestimonialsSection() {
             aria-hidden="true"
             className="w-7 h-7 md:w-8 md:h-8 text-m3-primary/40 mb-4"
           />
-          <blockquote className="display text-lg md:text-2xl lg:text-[28px] font-extrabold tracking-tight text-m3-on-surface leading-[1.3]">
+          {/* Sized down from display-scale: the hero carries Katharine's
+              complete recommendation rather than a pull quote, so it has to
+              stay readable as a paragraph instead of shouting as a statement. */}
+          <blockquote className="display text-base md:text-lg lg:text-xl font-bold tracking-tight text-m3-on-surface leading-relaxed">
             {HERO_TESTIMONIAL.quote}
           </blockquote>
           <figcaption className="mt-6 flex items-center gap-3">
