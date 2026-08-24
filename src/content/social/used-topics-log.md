@@ -143,3 +143,7 @@
 2026-08-23 | 2 | Apps / Privacy | WhatsApp Usernames | Reserve @handle to hide phone number + 4-digit username key gate; Settings>Account>Username (IG pick)
 2026-08-23 | 4 | Comparison / Laptops | MacBook Air M5 vs Copilot+ Snapdragon | 2026 laptop buyer verdict - Apple ecosystem/efficiency vs Windows app-freedom/value
 2026-08-23 | 5 | Phones / Hot take | Apple iPhone 18 event + foldable | Sept 9 tipped, invites ~Aug 26 (RUMOR); v1 foldable iPhone Ultra vs get the 18 Pro; honest wait-dont-panic take
+2026-08-24 | 1 | Security / AI | Grok cryptographic context injection | Adversa AI: booby-trapped page makes Grok decrypt+run hidden instructions, leaks name/location/tier/full chat history; reported to xAI June, still unpatched Aug 19 (neutral, security-focused)
+2026-08-24 | 2 | Gaming | Gamescom Opening Night Live | ONL Aug 25 (~11:30pm IST) free on YouTube, 8 games teased incl Witcher 3 Songs of the Past + FF7 Revelation, ~2h trailers + surprises
+2026-08-24 | 4 | Comparison / Students | Tablet vs Laptop 2026 | Back-to-school buyer verdict — tablet+keyboard (notes/reading) vs laptop (coding/writing/editing) (IG pick)
+2026-08-24 | 5 | AI workflow | Prompt of the day — chief of staff | Paste raw notes -> 3-bullet summary + action items w/ owner+deadline + decisions + 2 follow-ups + flag commitments
