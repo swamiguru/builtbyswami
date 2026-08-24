@@ -21,6 +21,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { TestimonialsSection } from "../components/Testimonials";
 import { usePageSeo } from "../hooks/usePageSeo";
 
 // --- Types ---
@@ -818,6 +819,12 @@ export default function About() {
             </Link>
           </motion.div>
         </section>
+
+        {/* ============ TESTIMONIALS ============ */}
+        {/* Sits after the case study on purpose: the reader meets the numbers
+            first, then hears named people corroborate them. Endorsement before
+            evidence reads as marketing; after it, it reads as proof. */}
+        <TestimonialsSection />
 
         {/* ============ BUILDS POINTER ============ */}
         {/* The grid that used to sit here is now /builds, where it is linkable,

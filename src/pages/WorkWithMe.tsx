@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { TestimonialQuotes } from "../components/Testimonials";
 import { trackCta } from "../lib/analytics";
 import { usePageSeo } from "../hooks/usePageSeo";
 
@@ -244,6 +245,10 @@ export default function WorkWithMe() {
             )}
           </div>
         </section>
+
+        {/* Three references, straight after the case study — proof follows the
+            claim it supports. Deliberately quieter than the /about treatment. */}
+        <TestimonialQuotes />
 
         {/* I also ship */}
         <section className="px-6 md:px-14 py-10 md:py-12">
