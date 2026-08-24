@@ -94,11 +94,25 @@ export function TestimonialsSection() {
             aria-hidden="true"
             className="w-7 h-7 md:w-8 md:h-8 text-m3-primary/40 mb-4"
           />
-          {/* Sized down from display-scale: the hero carries Katharine's
-              complete recommendation rather than a pull quote, so it has to
-              stay readable as a paragraph instead of shouting as a statement. */}
-          <blockquote className="display text-base md:text-lg lg:text-xl font-bold tracking-tight text-m3-on-surface leading-relaxed">
-            {HERO_TESTIMONIAL.quote}
+          {/* The hero carries the complete recommendation, so it can't all sit
+              at display scale. The opening — a verbatim prefix, never a
+              hand-picked sentence — takes the weight; the rest runs at body
+              size beneath it as one continuous quotation. */}
+          <blockquote className="text-m3-on-surface">
+            {HERO_TESTIMONIAL.lead ? (
+              <>
+                <span className="display block text-lg md:text-2xl lg:text-[26px] font-extrabold tracking-tight leading-[1.28]">
+                  {HERO_TESTIMONIAL.lead}
+                </span>
+                <span className="block mt-4 text-sm md:text-base font-medium leading-relaxed text-m3-on-surface-variant">
+                  {HERO_TESTIMONIAL.quote.slice(HERO_TESTIMONIAL.lead.length).trimStart()}
+                </span>
+              </>
+            ) : (
+              <span className="display block text-base md:text-lg lg:text-xl font-bold tracking-tight leading-relaxed">
+                {HERO_TESTIMONIAL.quote}
+              </span>
+            )}
           </blockquote>
           <figcaption className="mt-6 flex items-center gap-3">
             <span
@@ -153,7 +167,18 @@ export function TestimonialQuotes() {
         {SERVICE_TESTIMONIALS.map((t) => (
           <figure key={t.id} className="border-l-2 border-m3-primary pl-5 md:pl-6">
             <blockquote className="text-sm md:text-base leading-relaxed text-m3-on-surface font-medium">
-              “{t.quote}”
+              {t.lead ? (
+                <>
+                  <span className="block font-bold text-base md:text-lg leading-snug">
+                    “{t.lead}
+                  </span>
+                  <span className="block mt-3 text-m3-on-surface-variant">
+                    {t.quote.slice(t.lead.length).trimStart()}”
+                  </span>
+                </>
+              ) : (
+                <>“{t.quote}”</>
+              )}
             </blockquote>
             <figcaption className="mt-3 text-xs font-bold text-m3-on-surface-variant">
               <cite className="not-italic">

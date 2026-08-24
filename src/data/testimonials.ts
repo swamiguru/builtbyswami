@@ -35,6 +35,10 @@ export interface Testimonial {
   relationship: Relationship;
   date: string; // ISO — sort only, never displayed
   quote: string;
+  /** Optional typographic emphasis for the opening of `quote`. MUST be a
+   *  verbatim prefix of `quote` — we emphasise where the author started, we
+   *  never pick a favourite sentence out of the middle. Asserted below. */
+  lead?: string;
   full: string;
   featured?: boolean; // the hero quote on /about
   forServices?: boolean; // also shown on /work-with-me
@@ -50,6 +54,8 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "2026-05-13",
     featured: true,
     forServices: true,
+    lead:
+      "Swami was one of the first members of our product team in India, first working on GQ as a product manager, before moving into a Senior Product Manager role driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT.",
     quote:
       "Swami was one of the first members of our product team in India, first working on GQ as a product manager, before moving into a Senior Product Manager role driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT. He proved adept at leading engineers on these global projects that were full of market nuances that he always had the patience and curiosity to dig into. This endeared him to the Market Directors who recognized his sensitivity Revenue implications to customer facing work. Swami was able to hold both -- a critical combination for successful product managers here. He also became a natural leader and mentor to others in the Bangalore office looking to learn our shared stack and capabilities, partner more effectively with design and engineering and also come up with creative solutions to complex problems. I would welcome the opportunity to work with Swami again.",
     full: "Swami was one of the first members of our product team in India, first working on GQ as a product manager, before moving into a Senior Product Manager role driving market growth through launches in markets like the Middle East for Vogue, GQ, AD and CNT. He proved adept at leading engineers on these global projects that were full of market nuances that he always had the patience and curiosity to dig into. This endeared him to the Market Directors who recognized his sensitivity Revenue implications to customer facing work. Swami was able to hold both -- a critical combination for successful product managers here. He also became a natural leader and mentor to others in the Bangalore office looking to learn our shared stack and capabilities, partner more effectively with design and engineering and also come up with creative solutions to complex problems. I would welcome the opportunity to work with Swami again.",
@@ -157,6 +163,16 @@ export const TESTIMONIALS: Testimonial[] = [
     full: "I had opportunity to work with Swami at Conde Nast. He was resposible for product's global project and I was a counterpart as a Japanese market's product manager.\n\nSwami is a brilliant global communicater. His presence brought us clarity to our business concerns. He never leave concerns behind and proposed us solutions immediately.\n\nIt was my honor to work with Swami, a posive mind set great problem solver.",
   },
 ];
+
+// A `lead` that is not a verbatim prefix would silently misquote the author,
+// so fail loudly in development rather than shipping it.
+for (const t of TESTIMONIALS) {
+  if (t.lead && !t.quote.startsWith(t.lead)) {
+    throw new Error(
+      `Testimonial "${t.id}": lead is not a verbatim prefix of quote.`
+    );
+  }
+}
 
 export const HERO_TESTIMONIAL = TESTIMONIALS.find((t) => t.featured);
 
