@@ -49,3 +49,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-22 | macOS | Copy as Pathname — right-click a file in Finder then hold Option ⌥; 'Copy' becomes 'Copy [file] as Pathname' (grabs the full absolute path for Terminal/uploads/tickets)
 2026-08-23 | Windows 11 | Win+Home minimize all other windows (instant focus on one app; Aero Shake title-bar toggle bonus)
 2026-08-24 | Android | Extra Dim — dim screen below hardware minimum brightness for dark rooms (Settings > Display > Extra dim; add Quick Settings tile + schedule)
+2026-08-25 | iOS | Haptic keyboard feedback (Settings > Sounds & Haptics > Keyboard Feedback > Haptic on) — subtle vibration per keypress, off by default, fewer typos

@@ -147,3 +147,8 @@
 2026-08-24 | 2 | Gaming | Gamescom Opening Night Live | ONL Aug 25 (~11:30pm IST) free on YouTube, 8 games teased incl Witcher 3 Songs of the Past + FF7 Revelation, ~2h trailers + surprises
 2026-08-24 | 4 | Comparison / Students | Tablet vs Laptop 2026 | Back-to-school buyer verdict — tablet+keyboard (notes/reading) vs laptop (coding/writing/editing) (IG pick)
 2026-08-24 | 5 | AI workflow | Prompt of the day — chief of staff | Paste raw notes -> 3-bullet summary + action items w/ owner+deadline + decisions + 2 follow-ups + flag commitments
+
+2026-08-25 | 1 | Creator economy | YouTube view-count change | Public view now counts at first frame (live Aug 24), no min watch-time; money still on engaged views/hours; 2027 YPP bar 8,000 hrs/20M Shorts (IG pick, carousel)
+2026-08-25 | 2 | Global tech / Robotics | XPeng Robotics funding | Robotics unit raises $900M+ at record $6.3B valuation (IDG/Gaorong/Tencent/Alibaba); IRON humanoid 76 DoF, ~2,250 TOPS, mass production end-2026 (neutral product framing)
+2026-08-25 | 4 | AI workflow | Prompt of the day — debug my prompt | Paste weak prompt+output; AI rewrites prompt + names the one thing you got wrong
+2026-08-25 | 5 | Myth-buster / Laptops | Laptop plugged-in battery myth | Busted — modern Mac/Windows cap charge + manage health; heat + hot 100% is the real killer; use adaptive/80% limit
