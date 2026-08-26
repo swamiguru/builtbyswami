@@ -152,3 +152,7 @@
 2026-08-25 | 2 | Global tech / Robotics | XPeng Robotics funding | Robotics unit raises $900M+ at record $6.3B valuation (IDG/Gaorong/Tencent/Alibaba); IRON humanoid 76 DoF, ~2,250 TOPS, mass production end-2026 (neutral product framing)
 2026-08-25 | 4 | AI workflow | Prompt of the day — debug my prompt | Paste weak prompt+output; AI rewrites prompt + names the one thing you got wrong
 2026-08-25 | 5 | Myth-buster / Laptops | Laptop plugged-in battery myth | Busted — modern Mac/Windows cap charge + manage health; heat + hot 100% is the real killer; use adaptive/80% limit
+2026-08-26 | 1 | Global tech / Robotics | World Humanoid Robot Games (Tiangong Ultra) | Tiangong Ultra ran 100m in 8.86s, beat Bolt's 9.58s; caveats: crash-mat stop + small torso fire, controlled track (neutral product framing)
+2026-08-26 | 2 | Phones / India | realme P4s 5G India launch | Launches today Aug 26 12PM IST — 8000mAh/80W, 1.5K 144Hz OLED, Dimensity 7400 Ultra + AI chip, 50MP OIS, IP69/68/66 (OFFICIAL launch day, India)
+2026-08-26 | 4 | Security & Privacy | iPhone Stolen Device Protection | Quick-win: enable to defeat passcode-thief takeover — Face ID no-fallback + 1hr Security Delay away from familiar places (IG pick, carousel)
+2026-08-26 | 5 | Community / Poll (AI business) | Anthropic ~$2T IPO / AI bubble | Real revenue or peak bubble? tied to Anthropic reported largest-ever IPO + ~$65B run-rate (Threads+X, no card)

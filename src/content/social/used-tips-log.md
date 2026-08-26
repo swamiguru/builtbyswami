@@ -50,3 +50,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-23 | Windows 11 | Win+Home minimize all other windows (instant focus on one app; Aero Shake title-bar toggle bonus)
 2026-08-24 | Android | Extra Dim — dim screen below hardware minimum brightness for dark rooms (Settings > Display > Extra dim; add Quick Settings tile + schedule)
 2026-08-25 | iOS | Haptic keyboard feedback (Settings > Sounds & Haptics > Keyboard Feedback > Haptic on) — subtle vibration per keypress, off by default, fewer typos
+
+2026-08-26 | Samsung One UI | Swipe for pop-up view — diagonal swipe inward from a top corner turns any open app into a floating, resizable pop-up window (enable via Settings > Advanced features > Labs / Multi window)
