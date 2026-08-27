@@ -156,3 +156,8 @@
 2026-08-26 | 2 | Phones / India | realme P4s 5G India launch | Launches today Aug 26 12PM IST — 8000mAh/80W, 1.5K 144Hz OLED, Dimensity 7400 Ultra + AI chip, 50MP OIS, IP69/68/66 (OFFICIAL launch day, India)
 2026-08-26 | 4 | Security & Privacy | iPhone Stolen Device Protection | Quick-win: enable to defeat passcode-thief takeover — Face ID no-fallback + 1hr Security Delay away from familiar places (IG pick, carousel)
 2026-08-26 | 5 | Community / Poll (AI business) | Anthropic ~$2T IPO / AI bubble | Real revenue or peak bubble? tied to Anthropic reported largest-ever IPO + ~$65B run-rate (Threads+X, no card)
+
+2026-08-27 | 1 | Gaming | GTA 6 An Extended Look | First real gameplay drops today, Netflix then YouTube, PS5 in-game, Nov 19 launch on track (new hard dev vs Aug 23 preview)
+2026-08-27 | 2 | Apps / Creator economy | Instagram Your Algorithm | Global English rollout lets users see/boost/mute Reels feed topics, expanding to Explore (IG pick, carousel)
+2026-08-27 | 4 | AI Tool Spotlight | Google NotebookLM | Free source-grounded research tool - summary/study guide/mind map/audio overview, fewer hallucinations (carousel)
+2026-08-27 | 5 | AI / Global tech (Hot take) | August open-weight model flood | Qwen/DeepSeek/Nemotron wave = faster/cheaper/more free tools; you need good-enough free, not THE best (neutral, product-focused)

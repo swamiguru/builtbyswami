@@ -52,3 +52,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-25 | iOS | Haptic keyboard feedback (Settings > Sounds & Haptics > Keyboard Feedback > Haptic on) — subtle vibration per keypress, off by default, fewer typos
 
 2026-08-26 | Samsung One UI | Swipe for pop-up view — diagonal swipe inward from a top corner turns any open app into a floating, resizable pop-up window (enable via Settings > Advanced features > Labs / Multi window)
+
+2026-08-27 | iPadOS | Key Flicks - flick DOWN on any on-screen keyboard key to type its secondary number/symbol (Settings > General > Keyboard > Key Flicks; on by default, iPad only)
