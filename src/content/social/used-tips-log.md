@@ -54,3 +54,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-26 | Samsung One UI | Swipe for pop-up view — diagonal swipe inward from a top corner turns any open app into a floating, resizable pop-up window (enable via Settings > Advanced features > Labs / Multi window)
 
 2026-08-27 | iPadOS | Key Flicks - flick DOWN on any on-screen keyboard key to type its secondary number/symbol (Settings > General > Keyboard > Key Flicks; on by default, iPad only)
+
+2026-08-28 | Google Chrome | Tab Search (Cmd/Ctrl+Shift+A) — search across all open + recently closed tabs and jump to any without hunting (desktop, no extension)

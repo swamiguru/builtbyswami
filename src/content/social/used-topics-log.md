@@ -161,3 +161,8 @@
 2026-08-27 | 2 | Apps / Creator economy | Instagram Your Algorithm | Global English rollout lets users see/boost/mute Reels feed topics, expanding to Explore (IG pick, carousel)
 2026-08-27 | 4 | AI Tool Spotlight | Google NotebookLM | Free source-grounded research tool - summary/study guide/mind map/audio overview, fewer hallucinations (carousel)
 2026-08-27 | 5 | AI / Global tech (Hot take) | August open-weight model flood | Qwen/DeepSeek/Nemotron wave = faster/cheaper/more free tools; you need good-enough free, not THE best (neutral, product-focused)
+
+2026-08-28 | 1 | Phones / Big Tech | Apple Sept 9 event OFFICIAL | 'Surprise and Shine' Sept 9 confirmed (invite sent Aug 26); iPhone 18 Pro + first foldable 'iPhone Ultra' + new CEO John Ternus's first keynote (new hard dev vs Aug 23 rumor slot)
+2026-08-28 | 2 | Big Tech / AI business | OpenAI IPO | S-1 expected within weeks, ~$1T valuation talk, targeting Sept 2026 debut, racing Anthropic (distinct subject from Aug 26 Anthropic IPO poll)
+2026-08-28 | 4 | Comparison / Apps (messengers) | WhatsApp vs Signal vs Telegram | Privacy/use-case verdict — reach vs privacy vs communities (IG pick, carousel)
+2026-08-28 | 5 | Myth-buster / Phones (cameras) | Megapixel myth | Busted — more MP != better photos; sensor size, pixel size, processing & lens matter; big MP mostly pixel-binning + marketing
