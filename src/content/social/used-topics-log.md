@@ -166,3 +166,8 @@
 2026-08-28 | 2 | Big Tech / AI business | OpenAI IPO | S-1 expected within weeks, ~$1T valuation talk, targeting Sept 2026 debut, racing Anthropic (distinct subject from Aug 26 Anthropic IPO poll)
 2026-08-28 | 4 | Comparison / Apps (messengers) | WhatsApp vs Signal vs Telegram | Privacy/use-case verdict — reach vs privacy vs communities (IG pick, carousel)
 2026-08-28 | 5 | Myth-buster / Phones (cameras) | Megapixel myth | Busted — more MP != better photos; sensor size, pixel size, processing & lens matter; big MP mostly pixel-binning + marketing
+
+2026-08-29 | 1 | Big Tech / Apps (regulatory) | Meta teen-safety settlement | Up to $16.68B, 29 states; under-18 capped 2hrs/day FB+IG, midnight-6AM block, school-hours notif limit; ~$5B contingent on TikTok/Snap/YouTube adopting similar limits
+2026-08-29 | 2 | Health / Wearables (gadgets) | Abbott Libre Duo FDA authorization | World-first wearable tracking glucose+ketones from one skin sensor, every minute, 10-day wear, flags DKA risk (De Novo, Aug 25)
+2026-08-29 | 4 | AI workflow (Prompt of the day) | AI-as-tutor prompt | Jargon-free explain + 1 analogy + 20/80 + 5-question active-recall quiz + correct mistakes (IG pick, carousel)
+2026-08-29 | 5 | Community / Poll (Privacy/wearables) | AI smart glasses recording poll | Would you wear glasses that record the people around you? cool future vs hard no (Threads+X, no card)
