@@ -171,3 +171,8 @@
 2026-08-29 | 2 | Health / Wearables (gadgets) | Abbott Libre Duo FDA authorization | World-first wearable tracking glucose+ketones from one skin sensor, every minute, 10-day wear, flags DKA risk (De Novo, Aug 25)
 2026-08-29 | 4 | AI workflow (Prompt of the day) | AI-as-tutor prompt | Jargon-free explain + 1 analogy + 20/80 + 5-question active-recall quiz + correct mistakes (IG pick, carousel)
 2026-08-29 | 5 | Community / Poll (Privacy/wearables) | AI smart glasses recording poll | Would you wear glasses that record the people around you? cool future vs hard no (Threads+X, no card)
+
+2026-08-30 | 1 | Big Tech Business / Streaming | Apple TV+ price hike | $12.99->$14.99/mo + $99->$119/yr, 4th hike in 4 years (launched $4.99), Apple One up too (OFFICIAL Aug 28)
+2026-08-30 | 2 | AI / Creator-dev adoption | AI agents mainstream | Temporal 2026 State of Development report: 80.8% use AI agents daily, up from 47.3% a year ago
+2026-08-30 | 4 | Comparison / Smart home | Google Home Speaker vs Amazon Echo vs Apple HomePod mini | 2026 smart-speaker buyer verdict by ecosystem (IG pick, carousel)
+2026-08-30 | 5 | Myth-buster / Privacy | Incognito mode | Busted — Incognito only clears local history/cookies; ISP, WiFi admin, sites + logged-in accounts still see you

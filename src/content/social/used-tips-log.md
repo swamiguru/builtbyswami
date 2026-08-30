@@ -58,3 +58,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-28 | Google Chrome | Tab Search (Cmd/Ctrl+Shift+A) — search across all open + recently closed tabs and jump to any without hunting (desktop, no extension)
 
 2026-08-29 | YouTube | Number-key seeking — press 1-9 (desktop) to jump to 10-90% of a video, 0 restarts (+ J/L skip 10s, K play-pause, < / > speed)
+
+2026-08-30 | Gmail | Templates (canned responses) — enable Settings > See all settings > Advanced > Templates, then Compose > ⋮ > Templates > Save draft as template to insert repeated replies in one click (web only, off by default)
