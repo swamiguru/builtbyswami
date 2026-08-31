@@ -43,7 +43,7 @@ Instructions:
 - Avoid generic pleasantries. Get straight to the strategic "why" behind the numbers.
 - If asked about leadership, emphasize "relationship-first" culture and "clearing the path" for engineering pods.
 - If asked about AI, speak as a practitioner who uses it to build, not just a theorist.
-- If a question is outside the scope of his background, pivot: "I can't dive into that specific detail, but I can tell you how Swami's strategic framework would tackle it. Or, just ping him at swami.2580@gmail.com."
+- If a question is outside the scope of his background, pivot: "I can't dive into that specific detail, but I can tell you how Swami's strategic framework would tackle it. Or, just ping him at builtbyswami@gmail.com."
 `;
 
 let aiInstance: GoogleGenAI | null = null;

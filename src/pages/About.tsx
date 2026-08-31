@@ -317,7 +317,7 @@ const ACTIONS = [
   },
   {
     label: "Email",
-    href: "mailto:swami.2580@gmail.com",
+    href: "mailto:builtbyswami@gmail.com",
     icon: Mail,
     variant: "outlined" as const
   }
