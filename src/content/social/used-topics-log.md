@@ -176,3 +176,7 @@
 2026-08-30 | 2 | AI / Creator-dev adoption | AI agents mainstream | Temporal 2026 State of Development report: 80.8% use AI agents daily, up from 47.3% a year ago
 2026-08-30 | 4 | Comparison / Smart home | Google Home Speaker vs Amazon Echo vs Apple HomePod mini | 2026 smart-speaker buyer verdict by ecosystem (IG pick, carousel)
 2026-08-30 | 5 | Myth-buster / Privacy | Incognito mode | Busted — Incognito only clears local history/cookies; ISP, WiFi admin, sites + logged-in accounts still see you
+2026-08-31 | 1 | Global tech / AI video | Alibaba Wan3.0 | 30-sec 1080p clips with audio + doc-to-video, official Aug 24 (neutral product framing)
+2026-08-31 | 2 | India / Gadget tracker | JioTag 2 | Rs1,249 cross-platform tracker, works with Apple Find My + Google Find Hub, replaceable battery (India launch)
+2026-08-31 | 4 | AI Tool Spotlight | Gemini 3.5 Transcribe | 2.6% WER, 85+ languages, strips filler + auto-format, coming to Chrome/Docs/Gmail/Keep (IG pick, carousel)
+2026-08-31 | 5 | Security & Privacy quick-win | WhatsApp Silence Unknown Callers | one toggle stops scam/spam unknown-number calls ringing (Settings>Privacy>Calls)
