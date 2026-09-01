@@ -26,11 +26,11 @@ interface NavItem {
  * that used to lie).
  */
 const NAV: NavItem[] = [
+  { label: "Consulting", to: "/work-with-me" },
   { label: "The Daily Five", to: "/tech-roundup" },
   { label: "Notes", to: "/notes" },
   { label: "Builds", to: "/builds" },
   { label: "The Work", to: "/about" },
-  { label: "Consulting", to: "/work-with-me" },
 ];
 
 /**
