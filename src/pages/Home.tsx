@@ -200,8 +200,8 @@ export default function Home() {
               build · ship · repeat
             </span>
             <h1 className="display text-[1.9rem] md:text-[3.15rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.05] mb-5">
-              I spent eleven years launching global brands for other people.
-              Now I design, build, and ship my own &mdash; in public.
+              I spent eleven years leading product for global publishing
+              brands. Now I design, build, and ship my own &mdash; in public.
             </h1>
             <p className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl">
               Product consulting for publishers and content-driven teams making
