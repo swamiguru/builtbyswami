@@ -31,7 +31,7 @@ export const PAGE_SEO = {
   home: {
     title: "The Daily Tech Roundup: Tech News + AI Builds | Swami Guru",
     description:
-      "Five tech stories that mattered, every morning, from Swami Guru — who launched Vogue, GQ and Wired into new markets and now builds his own products, in public.",
+      "Five tech stories every morning from Swami Guru — ex-Condé Nast product lead now shipping his own products and taking on launch and migration consulting.",
   },
   about: {
     title: "Swami Guru | Senior Product Leader & AI-Native Product Builder",
@@ -61,7 +61,7 @@ export const PAGE_SEO = {
       "Daily tech & AI roundups from Swami Guru — the biggest stories, honest takes, and practical tips, filtered so you only get what's worth your time.",
   },
   workWithMe: {
-    title: "Work With Me | Swami Guru",
+    title: "Swami Guru | Product Consulting for Publishers & Content Teams",
     description:
       "Product consulting for publishers and content-driven teams: market launches, CMS migrations, AI workflows — without losing traffic or revenue.",
   },

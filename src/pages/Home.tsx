@@ -178,8 +178,8 @@ export default function Home() {
                   headline as well gives the block two competing highlight
                   systems and the filled card wins, so the tint reads as noise. */}
               <h1 className="display text-[1.7rem] md:text-[2.75rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.06] mb-5">
-                I launch brands into new markets. Now I build my own products &mdash; and
-                write the five tech stories worth your morning.
+                I spent eleven years launching brands other people owned. Now I
+                build and ship my own &mdash; in public.
               </h1>
               <p className="text-base md:text-lg text-m3-on-surface font-medium leading-relaxed mb-5 lg:mb-6">
                 The daily five, build notes from what I ship solo, and the launch and
@@ -271,6 +271,12 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Deliberate seam: the hero and the feed below read as the same
+            section without a visible break here (verified — the two share
+            near-identical bold headline treatments). A plain 1px border
+            wasn't enough; this accent bar is. */}
+        <div aria-hidden="true" className="h-1 md:h-1.5 bg-gradient-to-r from-m3-primary via-m3-primary/50 to-transparent" />
+
         {/* 02 — The Daily Five (LEAD) */}
         <section
           id="daily-five"
@@ -279,8 +285,8 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-m3-primary/5 rounded-full -mr-24 -mt-24 blur-3xl pointer-events-none" />
           <div className="relative z-10">
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-6">
-              <div className="flex items-center gap-3">
-                <Sparkles className="w-5 h-5 text-m3-primary" />
+              <div className="inline-flex items-center gap-2.5 bg-m3-primary-container/60 rounded-m3-full pl-3 pr-4 py-2">
+                <Sparkles className="w-4 h-4 text-m3-primary" />
                 <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
                   {roundupKicker}
                 </span>

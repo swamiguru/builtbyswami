@@ -112,6 +112,11 @@ const SHIPPED: [string, string, string][] = [
     "https://adda.builtbyswami.com",
     "Pick a city, get its songs, its sky, its clock.",
   ],
+  [
+    "24-hour task manager sprint",
+    "/notes/24-hour-task-manager-sprint",
+    "Data modelling, state, persistence and UI, from an empty repo to a working Android app. Built solo, one sitting, no second pass.",
+  ],
 ];
 
 function BookButton({ className = "" }: { className?: string }) {
