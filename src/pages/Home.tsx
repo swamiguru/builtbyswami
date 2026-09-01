@@ -94,7 +94,7 @@ function CardArtOverlay() {
 /** Hero credential. Kept as data so the lg card and the small-screen strip
  *  can't drift apart — they're the same three facts twice. */
 const HOUSES = ["Condé Nast", "Newsweek", "Metro World News"];
-const TITLES = ["Vogue", "GQ", "Wired", "Condé Nast Traveller", "Architectural Digest"];
+const TITLES = ["Vogue", "GQ", "Wired", "Condé Nast Traveller", "Architectural Digest", "Vanity Fair", "Glamour", "Allure", "Pitchfork"];
 const METRICS: [string, string][] = [
   ["20", "brand launches"],
   ["5", "continents since 2015"],
