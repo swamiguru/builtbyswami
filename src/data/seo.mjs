@@ -36,7 +36,7 @@ export const PAGE_SEO = {
   about: {
     title: "Swami Guru | Senior Product Leader & AI-Native Product Builder",
     description:
-      "Swami Guru — product leader turned solo builder. Twenty brand launches since 2015, five continents. Previously Condé Nast, Newsweek and Metro World News.",
+      "Swami Guru — product leader turned solo builder, open to consulting and contract engagements. Previously Condé Nast, Newsweek and Metro World News.",
   },
   builds: {
     title: "Builds | Swami Guru",

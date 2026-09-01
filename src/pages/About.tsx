@@ -24,6 +24,10 @@ import SiteFooter from "../components/SiteFooter";
 import { TestimonialsSection } from "../components/Testimonials";
 import { usePageSeo } from "../hooks/usePageSeo";
 
+/** Animated internal link, for the one CTA on this page (closing "Work with
+ *  me") that routes within the app rather than out to mailto/LinkedIn/a PDF. */
+const MotionLink = motion(Link);
+
 // --- Types ---
 
 interface Highlight {
@@ -540,7 +544,9 @@ export default function About() {
                   <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary/60">Currently · since May 2026</span>
                   <span className="text-sm font-bold mb-1">Independent Product Builder</span>
                   <p className="text-[13px] leading-relaxed text-m3-on-secondary-container/70 font-medium">
-                    Building and shipping products solo, AI-native, in public.
+                    Building and shipping products solo, AI-native, in
+                    public &mdash; and open to consulting and contract
+                    engagements.
                   </p>
                 </div>
 
@@ -912,10 +918,47 @@ export default function About() {
                 Let&rsquo;s build something
               </h2>
               <p className="text-sm md:text-base text-m3-on-surface-variant font-medium leading-relaxed">
-                Bengaluru-based, working globally. If you're taking a brand into a new market or replatforming without losing traffic, that's the work I do.
+                Bengaluru-based, working globally. I take on consulting and contract engagements for teams taking a brand into a new market or replatforming without losing traffic.
               </p>
             </div>
-            <ActionRow className="shrink-0 w-full md:w-auto" />
+            {/* Deliberately not the shared ActionRow from the hero above.
+                This section's job is a consulting pitch, not a background
+                summary, so it earns its own primary action ("Work with me",
+                routed internally rather than out to mailto/LinkedIn/a PDF)
+                instead of repeating Download CV/LinkedIn/Email a second
+                time with no clear primary among them. */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0 w-full md:w-auto">
+              <MotionLink
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                to="/work-with-me"
+                className="inline-flex items-center justify-center gap-2 font-display font-bold h-12 rounded-m3-full text-[13px] sm:text-sm tracking-wide transition-all whitespace-nowrap bg-m3-primary text-m3-on-primary shadow-sm hover:m3-elevation-1-shadow active:scale-95 flex-1 sm:flex-none px-4 sm:px-6"
+              >
+                Work with me <ArrowUpRight className="w-4 h-4 shrink-0" />
+              </MotionLink>
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                href="mailto:builtbyswami@gmail.com"
+                aria-label="Email"
+                className="inline-flex items-center justify-center gap-2 font-display font-bold h-12 rounded-m3-full text-[13px] sm:text-sm tracking-wide transition-all whitespace-nowrap border border-m3-outline/30 text-m3-on-surface hover:bg-m3-surface-variant active:scale-95 shrink-0 w-12 sm:w-auto sm:px-6"
+              >
+                <Mail className="w-4 h-4 shrink-0" />
+                <span className="hidden sm:inline">Email</span>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                href="https://www.linkedin.com/in/swaminathanguru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="inline-flex items-center justify-center gap-2 font-display font-bold h-12 rounded-m3-full text-[13px] sm:text-sm tracking-wide transition-all whitespace-nowrap border border-m3-outline/30 text-m3-on-surface hover:bg-m3-surface-variant active:scale-95 shrink-0 w-12 sm:w-auto sm:px-6"
+              >
+                <Linkedin className="w-4 h-4 shrink-0" />
+                <span className="hidden sm:inline">LinkedIn</span>
+              </motion.a>
+            </div>
           </div>
         </section>
 
