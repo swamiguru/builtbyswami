@@ -200,12 +200,12 @@ export default function Home() {
               build · ship · repeat
             </span>
             <h1 className="display text-[1.9rem] md:text-[3.15rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.05] mb-5">
-              I spent eleven years launching brands other people owned. Now I
-              build and ship my own &mdash; in public.
+              I spent eleven years launching global brands for other people.
+              Now I build and ship my own &mdash; in public.
             </h1>
             <p className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl">
-              The daily five, build notes from what I ship solo, and the launch and
-              migration work I take on.
+              The daily five, build notes from what I ship solo, and the product
+              consulting work I take on.
             </p>
 
             <div className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
