@@ -180,3 +180,8 @@
 2026-08-31 | 2 | India / Gadget tracker | JioTag 2 | Rs1,249 cross-platform tracker, works with Apple Find My + Google Find Hub, replaceable battery (India launch)
 2026-08-31 | 4 | AI Tool Spotlight | Gemini 3.5 Transcribe | 2.6% WER, 85+ languages, strips filler + auto-format, coming to Chrome/Docs/Gmail/Keep (IG pick, carousel)
 2026-08-31 | 5 | Security & Privacy quick-win | WhatsApp Silence Unknown Callers | one toggle stops scam/spam unknown-number calls ringing (Settings>Privacy>Calls)
+
+2026-09-01 | 1 | Big Tech / Apple | Apple CEO transition | Tim Cook era ends, John Ternus becomes CEO today Sept 1 (Cook -> Executive Chairman; new hard dev vs Aug 28 Ternus-keynote mention)
+2026-09-01 | 2 | Gadgets / Consumer electronics | IFA 2026 Berlin | Show opens Sept 4-8, press days Sept 2-3; Acer AI PCs + wearables wave (Xiaomi/Withings/RingConn/Ultrahuman) (neutral gadget preview)
+2026-09-01 | 4 | Comparison / Audio | Best earbuds 2026 (AirPods Pro 3 vs Galaxy Buds 4 Pro vs Nothing Ear 3) | ecosystem-based buyer verdict (IG pick, carousel)
+2026-09-01 | 5 | Community / Poll | Post-Tim Cook Apple excited-or-worried | Apple's next 5 years under Ternus (Threads+X, no card, tied to slot 1)

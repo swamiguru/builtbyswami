@@ -61,3 +61,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-08-30 | Gmail | Templates (canned responses) — enable Settings > See all settings > Advanced > Templates, then Compose > ⋮ > Templates > Save draft as template to insert repeated replies in one click (web only, off by default)
 2026-08-31 | Google Maps | Lens in Maps — tap camera icon in search bar, point phone down the street to overlay live labels on the real view (shops/cafes/ATMs, ratings, open/closed)
+
+2026-09-01 | Instagram | Hidden Words — auto-filter spam/scam/abusive comments + DM requests by custom keyword (Settings > How others can interact with you > Hidden Words)
