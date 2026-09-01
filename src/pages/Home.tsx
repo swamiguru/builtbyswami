@@ -298,7 +298,7 @@ export default function Home() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }) => (
-                <div key={name} className="bg-m3-surface rounded-[16px] border border-m3-outline/10 p-5 flex flex-col">
+                <div key={name} className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all">
                   <Icon className="w-5 h-5 text-m3-primary mb-3" strokeWidth={2.25} />
                   <h3 className="font-display font-bold text-sm text-m3-on-surface leading-snug mb-1.5">
                     {name}

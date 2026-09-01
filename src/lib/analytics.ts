@@ -26,6 +26,7 @@ export type TrackedCta =
   | "fork_the_work"
   | "fork_work_with_me"
   | "consulting_book_call"
+  | "consulting_email_me"
   | "home_consulting_see_all"
   | "home_consulting_work_with_me";
 

@@ -11,6 +11,7 @@ import {
   Check,
   Globe,
   Hammer,
+  Mail,
   Server,
   Sparkles,
   Users,
@@ -133,6 +134,18 @@ function BookButton({ className = "" }: { className?: string }) {
   );
 }
 
+function EmailButton({ className = "" }: { className?: string }) {
+  return (
+    <a
+      href="mailto:builtbyswami@gmail.com"
+      onClick={() => trackCta("consulting_email_me", "work_with_me")}
+      className={`inline-flex items-center gap-2 bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-7 py-3.5 rounded-m3-full transition-all hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 ${className}`}
+    >
+      Email me <Mail className="w-4 h-4" />
+    </a>
+  );
+}
+
 export default function WorkWithMe() {
   usePageSeo("workWithMe");
 
@@ -159,8 +172,9 @@ export default function WorkWithMe() {
             New markets, replatforms, AI in the workflow.
           </p>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <BookButton />
+            <EmailButton />
           </div>
 
           <p className="mt-8 pt-8 border-t border-m3-outline/15 text-sm md:text-[15px] font-medium text-m3-on-surface-variant max-w-3xl leading-relaxed">
@@ -394,8 +408,9 @@ export default function WorkWithMe() {
               No pitch. Tell me what you're dealing with and I'll tell you if I
               can help.
             </p>
-            <div className="mt-2">
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
               <BookButton />
+              <EmailButton />
             </div>
           </div>
         </section>
