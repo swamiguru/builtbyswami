@@ -86,10 +86,10 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
 
           <nav className="flex flex-col gap-1.5 md:gap-2">
             <FootHeading>Work</FootHeading>
+            <FootLink to="/work-with-me">Consulting</FootLink>
             <FootLink to="/builds">Builds</FootLink>
             <FootLink to="/about">The Work</FootLink>
             <FootLink to="/case-study/middle-east">Case study</FootLink>
-            <FootLink to="/work-with-me">Consulting</FootLink>
           </nav>
 
           <nav className="flex flex-col gap-1.5 md:gap-2">

@@ -127,7 +127,7 @@ function BookButton({ className = "" }: { className?: string }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackCta("consulting_book_call", "work_with_me")}
-      className={`inline-flex items-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-7 py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
     >
       Book a 30-minute call <ArrowRight className="w-4 h-4" />
     </a>
@@ -139,7 +139,7 @@ function EmailButton({ className = "" }: { className?: string }) {
     <a
       href="mailto:builtbyswami@gmail.com"
       onClick={() => trackCta("consulting_email_me", "work_with_me")}
-      className={`inline-flex items-center gap-2 bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-7 py-3.5 rounded-m3-full transition-all hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 text-[13px] sm:text-base whitespace-nowrap ${className}`}
     >
       Email me <Mail className="w-4 h-4" />
     </a>
@@ -172,9 +172,9 @@ export default function WorkWithMe() {
             New markets, replatforms, AI in the workflow.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <BookButton />
-            <EmailButton />
+          <div className="mt-8 flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
+            <BookButton className="min-[360px]:flex-1 sm:flex-none" />
+            <EmailButton className="min-[360px]:flex-1 sm:flex-none" />
           </div>
 
           <p className="mt-8 pt-8 border-t border-m3-outline/15 text-sm md:text-[15px] font-medium text-m3-on-surface-variant max-w-3xl leading-relaxed">
@@ -408,9 +408,9 @@ export default function WorkWithMe() {
               No pitch. Tell me what you're dealing with and I'll tell you if I
               can help.
             </p>
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
-              <BookButton />
-              <EmailButton />
+            <div className="mt-2 flex flex-wrap min-[360px]:flex-nowrap items-center justify-center gap-2 sm:gap-3">
+              <BookButton className="min-[360px]:flex-1 sm:flex-none" />
+              <EmailButton className="min-[360px]:flex-1 sm:flex-none" />
             </div>
           </div>
         </section>
