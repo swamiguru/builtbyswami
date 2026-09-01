@@ -12,6 +12,8 @@ import {
   Globe,
   Hammer,
   Server,
+  Sparkles,
+  Users,
   X,
 } from "lucide-react";
 import SiteHeader from "../components/SiteHeader";
@@ -43,13 +45,19 @@ const SERVICES: Service[] = [
     icon: Globe,
     name: "Market Launch & Expansion Readiness",
     meta: "2–3 weeks · from ₹2,00,000",
-    body: "A written go-to-market plan for a new region, with the platform, editorial, commercial and regulatory decisions already made — not a list of things to figure out. Audience and revenue modelling, platform readiness, localisation architecture, ad and commerce stack, launch sequencing, and the risks that actually move launch dates.",
+    body: "A written go-to-market plan for a new region, with the platform, content, commercial and regulatory decisions already made — not a list of things to figure out. Audience and revenue modelling, platform readiness, localisation architecture, ad and commerce stack, launch sequencing, and the risks that actually move launch dates.",
   },
   {
     icon: Server,
     name: "Platform & CMS Migration Readiness",
     meta: "2–3 weeks · from ₹2,00,000",
-    body: "The replatform plan that protects your traffic and revenue through the cutover. Content modelling, taxonomy, redirect and SEO strategy, integration surface, ad and commerce continuity, editorial workflow on the far side, and a phased cutover you can defend to your board.",
+    body: "The replatform plan that protects your traffic and revenue through the cutover. Content modelling, taxonomy, redirect and SEO strategy, integration surface, ad and commerce continuity, your team's workflow on the far side, and a phased cutover you can defend to your board.",
+  },
+  {
+    icon: Sparkles,
+    name: "AI Workflow & Product Operations",
+    meta: "2–3 weeks · from ₹2,00,000",
+    body: "For teams whose content or product workflow hasn't caught up with what AI can actually do. I map where the manual work is, build the automation with real guardrails, and hand your team something they'll actually use — not a policy doc, not a workshop. This is the same approach that cut a launch programme's time-to-market by 50% and lifted ad revenue per visit ~11%, with the same five-person team.",
   },
   {
     icon: Hammer,
@@ -66,11 +74,15 @@ const GOOD_FIT: [string, string][] = [
   ],
   [
     "You're replatforming or migrating a CMS and you're afraid of what the cutover costs you.",
-    "Content modelling, redirects, taxonomy, ad and commerce integrations, editorial workflow on the other side. This is the work I've spent six years on across five global brands.",
+    "Content modelling, redirects, taxonomy, ad and commerce integrations, your team's workflow on the other side. This is the work I've spent six years on across five global brands.",
   ],
   [
-    "You have a content or editorial team and you want AI to actually make them faster.",
+    "You have a content, catalog or editorial team and you want AI to actually make them faster.",
     "Not a workshop, not a policy doc — real workflows with real guardrails. I cut a launch programme's time-to-market by 50% doing exactly this.",
+  ],
+  [
+    "You need product leadership for longer than three weeks but don't want to hire full-time yet.",
+    "That's the fractional seat — the same kind of hard calls, just on a longer clock.",
   ],
 ];
 
@@ -134,12 +146,12 @@ export default function WorkWithMe() {
           </div>
 
           <h1 className="display text-3xl md:text-5xl font-extrabold uppercase tracking-tighter text-m3-on-surface max-w-4xl leading-[0.95]">
-            I help publishers and content businesses make the hard platform
-            moves — without losing traffic or revenue
+            I help publishers and content-driven teams make the hard
+            product moves — without losing what's already working
           </h1>
 
           <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
-            New markets, replatforms, AI in the newsroom.
+            New markets, replatforms, AI in the workflow.
           </p>
 
           <div className="mt-8">
@@ -163,7 +175,7 @@ export default function WorkWithMe() {
             What I do
           </h2>
           <p className="text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-8 leading-relaxed">
-            Three ways to start. Each is fixed scope, fixed price, and ends with
+            Four ways to start. Each is fixed scope, fixed price, and ends with
             something you can act on.
           </p>
 
@@ -193,11 +205,56 @@ export default function WorkWithMe() {
             ))}
           </div>
 
-          <p className="mt-6 text-sm font-medium text-m3-on-surface-variant/80 italic max-w-2xl">
-            Longer engagements: I take on one or two fractional product leads at
-            a time, two to three days a week, minimum three months. Ask on the
-            call.
-          </p>
+          <div className="mt-5 bg-m3-surface-variant/60 rounded-[24px] border border-dashed border-m3-outline/20 p-6 md:p-8 flex flex-col gap-3">
+            <div className="flex items-start gap-4">
+              <span className="mt-0.5 w-10 h-10 shrink-0 rounded-m3-full bg-m3-secondary-container text-m3-on-secondary-container flex items-center justify-center">
+                <Users className="w-5 h-5" />
+              </span>
+              <div>
+                <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
+                  Fractional Product Lead
+                </h3>
+                <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant">
+                  2–3 days a week · minimum 3 months · one or two clients at a time
+                </p>
+              </div>
+            </div>
+            <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl">
+              For teams that need product leadership for longer than a sprint but don't need, or can't yet justify, a full-time hire. I ran this exact seat full-time at group scale for three years — here it's the same decisions, part-time. Scope and rate are set on the call, not published; every fractional engagement is different enough that a fixed number would be dishonest.
+            </p>
+          </div>
+        </section>
+
+        {/* The teams every engagement actually runs through */}
+        <section className="px-6 md:px-14 py-10 md:py-12">
+          <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-6">
+            The teams every one of these runs through
+          </h2>
+
+          <div className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-10 flex flex-col gap-4">
+            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium">
+              A market launch or a replatform isn't a product-team problem. It
+              runs through Engineering and Core Platform, CMS and Cloud/CDN,
+              Design, Editorial and Content Strategy, Newsletters, Marketing
+              Technology, Subscriptions, Audience Development, Social and
+              Video, Ad Tech, Data and Analytics (Google Analytics, Tag
+              Manager, consent management), Affiliate Commerce and product
+              listing pages, content recommendation engines, Legal, SEO and
+              Search Console, Commercial and Marketing. Getting a launch or a
+              migration right means getting all of that to agree and stay
+              agreed through cutover — not just shipping the roadmap. That's
+              the actual job, and it's why the plans above cover the ad stack,
+              the legal sign-off and the SEO strategy, not just the product
+              decisions.
+            </p>
+            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface font-bold">
+              I know this because I started on the other side of it. Five
+              years running the service desk at Metro World News, supporting
+              exactly these teams, before I moved into product at the same
+              company. Eleven years in product since — but the first five are
+              why none of this is theoretical.
+            </p>
+          </div>
         </section>
 
         {/* Case study */}

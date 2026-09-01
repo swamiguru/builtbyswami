@@ -160,6 +160,17 @@ export default function Home() {
             {/* min-w-0: without it a nowrap child below expands this track past
                 the viewport and clips the whole page, headline included. */}
             <div className="min-w-0">
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src="/swami-guru.jpg"
+                  alt="Swami Guru"
+                  className="w-11 h-11 rounded-full object-cover border border-m3-outline/15 shrink-0"
+                />
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                  Taking new engagements
+                </span>
+              </div>
               <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
                 build · ship · repeat
               </span>
@@ -219,6 +230,17 @@ export default function Home() {
                 Work with me <ArrowUpRight className="w-4 h-4" />
               </Link>
               </div>
+              <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
+                Currently building{" "}
+                <a
+                  href="https://adda.builtbyswami.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-m3-primary font-bold hover:underline underline-offset-4"
+                >
+                  adda.builtbyswami.com
+                </a>
+              </p>
             </div>
 
             {/* Large screens: the credential card, in the column the headline

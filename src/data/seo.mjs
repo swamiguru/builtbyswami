@@ -63,6 +63,6 @@ export const PAGE_SEO = {
   workWithMe: {
     title: "Work With Me | Swami Guru",
     description:
-      "Product consulting for publishers and content businesses — market launches, CMS migrations and editorial AI workflows, without losing traffic or revenue. 11 years in product across Vogue, GQ, Wired, AD and Condé Nast Traveller.",
+      "Product consulting for publishers and content-driven teams: market launches, CMS migrations, AI workflows — without losing traffic or revenue.",
   },
 };
