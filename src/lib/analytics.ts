@@ -25,7 +25,9 @@ export type TrackedCta =
   | "hero_work_with_me"
   | "fork_the_work"
   | "fork_work_with_me"
-  | "consulting_book_call";
+  | "consulting_book_call"
+  | "home_consulting_see_all"
+  | "home_consulting_work_with_me";
 
 /**
  * Push a CTA click into the dataLayer. Safe before GTM loads — the snippet

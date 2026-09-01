@@ -15,6 +15,8 @@ import {
   Clock,
   Hammer,
   Search,
+  Globe,
+  Server,
 } from "lucide-react";
 import { SOCIALS } from "../data/socials";
 import { getLatestDigest, formatDigestDate, getTopCategories } from "../data/social";
@@ -99,6 +101,38 @@ const METRICS: [string, string][] = [
   ["$20M", "peak year"],
 ];
 
+/** Compressed one-line summaries of the four fixed-scope offers on
+ *  /work-with-me. Kept as data, separate from that page's fuller SERVICES
+ *  array, because the homepage needs a shorter blurb per offer — but the
+ *  name, shape and price must stay identical to avoid the two pages
+ *  disagreeing with each other. */
+const CONSULTING_OFFERS: { icon: typeof Globe; name: string; meta: string; blurb: string }[] = [
+  {
+    icon: Globe,
+    name: "Market Launch & Expansion Readiness",
+    meta: "2–3 weeks · from ₹2,00,000",
+    blurb: "A go-to-market plan for a new region, with the platform, content and commercial decisions already made.",
+  },
+  {
+    icon: Server,
+    name: "Platform & CMS Migration Readiness",
+    meta: "2–3 weeks · from ₹2,00,000",
+    blurb: "The replatform plan that protects your traffic and revenue through the cutover.",
+  },
+  {
+    icon: Sparkles,
+    name: "AI Workflow & Product Operations",
+    meta: "2–3 weeks · from ₹2,00,000",
+    blurb: "Real automation with guardrails, for a content or product workflow that hasn't caught up with AI.",
+  },
+  {
+    icon: Hammer,
+    name: "Build Sprint",
+    meta: "2–3 weeks · from ₹2,50,000",
+    blurb: "A working prototype in your hands, not a slide deck.",
+  },
+];
+
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
   const roundupKicker = useScrambleText("The Daily Five");
@@ -140,133 +174,149 @@ export default function Home() {
             positioning once and then forks: readers go down into the daily,
             everyone else goes sideways into the consulting page. Deliberately
             short — it frames the page, it doesn't compete with it. */}
-        <section className="relative overflow-hidden px-6 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 bg-m3-surface-variant border-b border-m3-outline/10">
+        <section className="relative overflow-hidden px-6 md:px-14 pt-10 md:pt-14 pb-10 md:pb-14 bg-m3-surface-variant border-b border-m3-outline/10">
           <div
             aria-hidden="true"
             className="absolute -top-24 -left-20 w-80 h-80 bg-m3-primary/10 rounded-full blur-3xl pointer-events-none"
           />
-          {/* Two columns above lg. At 1440 the headline only ever used about
-              two-thirds of the width, so the credential goes in the third that
-              was empty and costs no vertical height at all. Below lg it
-              flattens into a ruled strip — a bordered card on a 390px screen is
-              pure tax, and measured 130px worse than the strip.
-
-              The credential sits on secondary-container, not primary. A
-              saturated block here would be the largest, heaviest colour mass in
-              the hero, which would put the résumé above the CTA in the visual
-              hierarchy. Green on this site means clickable; it's spent on the
-              numbers and the buttons, not on company names. */}
-          <div className="relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-start max-w-6xl">
-            {/* min-w-0: without it a nowrap child below expands this track past
-                the viewport and clips the whole page, headline included. */}
-            <div className="min-w-0">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src="/swami-guru.jpg"
-                  alt="Swami Guru"
-                  className="w-11 h-11 rounded-full object-cover border border-m3-outline/15 shrink-0"
-                />
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
-                  Taking new engagements
-                </span>
-              </div>
-              <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
-                build · ship · repeat
+          {/* Single column now. The credential facts (launches, houses,
+              titles) used to live here twice — a desktop sidebar card and a
+              separate mobile strip — just to fill the second grid track.
+              They've moved to their own full-width band below, so the
+              headline gets the whole hero to itself at every width. */}
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/swami-guru.jpg"
+                alt="Swami Guru"
+                className="w-11 h-11 rounded-full object-cover border border-m3-outline/15 shrink-0"
+              />
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                Taking new engagements
               </span>
-              {/* Plain, not tinted. The card is the emphasis now; tinting the
-                  headline as well gives the block two competing highlight
-                  systems and the filled card wins, so the tint reads as noise. */}
-              <h1 className="display text-[1.7rem] md:text-[2.75rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.06] mb-5">
-                I spent eleven years launching brands other people owned. Now I
-                build and ship my own &mdash; in public.
-              </h1>
-              <p className="text-base md:text-lg text-m3-on-surface font-medium leading-relaxed mb-5 lg:mb-6">
-                The daily five, build notes from what I ship solo, and the launch and
-                migration work I take on.
-              </p>
+            </div>
+            <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
+              build · ship · repeat
+            </span>
+            <h1 className="display text-[1.9rem] md:text-[3.15rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.05] mb-5">
+              I spent eleven years launching brands other people owned. Now I
+              build and ship my own &mdash; in public.
+            </h1>
+            <p className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl">
+              The daily five, build notes from what I ship solo, and the launch and
+              migration work I take on.
+            </p>
 
-              {/* Small screens: the same facts, flat. */}
-              {/* All three rows are pinned to one line each. The sizes and
-                  tracking below are the largest that clear 312px — the content
-                  width of a 360px phone — measured, not guessed. Change any of
-                  them and re-check 360 and 390 for overflow. */}
-              <div className="lg:hidden mb-6 border-y border-m3-outline/15 py-3">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-m3-primary mb-1.5 min-[360px]:whitespace-nowrap">
-                  20 launches · 5 continents · $20M peak year
-                </p>
-                <div className="flex flex-wrap min-[360px]:flex-nowrap items-baseline min-[360px]:whitespace-nowrap">
-                  {HOUSES.map((h, i) => (
-                    <span
-                      key={h}
-                      className={`font-display text-[9.5px] font-black uppercase tracking-[0.08em] text-m3-on-surface ${
-                        i < HOUSES.length - 1
-                          ? "after:content-['·'] after:mx-1.5 after:opacity-40"
-                          : ""
-                      }`}
-                    >
-                      {h}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-1 text-[9.5px] text-m3-on-surface-variant font-medium min-[360px]:whitespace-nowrap">
-                  {TITLES.join(" · ")}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
+            <div className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
+            <a
+              href="#daily-five"
+              onClick={() => trackCta("hero_read_daily", "home_hero")}
+              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
+            >
+              Read today&rsquo;s five <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link
+              to="/work-with-me"
+              onClick={() => trackCta("hero_work_with_me", "home_hero")}
+              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
+            >
+              Work with me <ArrowUpRight className="w-4 h-4" />
+            </Link>
+            </div>
+            <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
+              Currently building{" "}
               <a
-                href="#daily-five"
-                onClick={() => trackCta("hero_read_daily", "home_hero")}
-                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
+                href="https://adda.builtbyswami.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-m3-primary font-bold hover:underline underline-offset-4"
               >
-                Read today&rsquo;s five <ArrowRight className="w-4 h-4" />
+                adda.builtbyswami.com
               </a>
+            </p>
+          </div>
+        </section>
+
+        {/* Full-width credential band. Same three facts that used to be
+            split across a desktop-only card and a mobile-only strip — now
+            one component, one source of truth, visible at every width.
+            Inverted (on-surface/surface) on purpose: it needs to read as a
+            distinct "trust bar" register, not a continuation of the hero
+            above or the offers below. */}
+        <section className="bg-m3-on-surface text-m3-surface px-6 md:px-14 py-6 md:py-7 border-b border-m3-outline/10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-5 md:gap-10">
+            <div className="flex flex-wrap gap-x-8 gap-y-3 shrink-0">
+              {METRICS.map(([value, label]) => (
+                <div key={value} className="flex items-baseline gap-2.5">
+                  <span className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-primary-container leading-none">
+                    {value}
+                  </span>
+                  <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-80">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:block w-px h-8 bg-m3-surface/15 shrink-0" />
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] opacity-60 mb-1">
+                Product leadership at
+              </p>
+              <p className="font-display font-bold text-sm md:text-base leading-snug">
+                {HOUSES.join(" · ")}
+              </p>
+              <p className="mt-1 text-[11px] leading-relaxed opacity-70">{TITLES.join(" · ")}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* What I do for clients. Consulting is the priority now, not the
+            newsletter — this used to be a single link at the bottom of the
+            hero copy. Same surface-variant family as the hero (they're one
+            "about the business" zone); the accent bar further down is the
+            actual seam into the reader-facing feed. */}
+        <section className="px-6 md:px-14 py-10 md:py-14 bg-m3-surface-variant border-b border-m3-outline/10">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
+              <div>
+                <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-2">
+                  what I do for clients
+                </span>
+                <h2 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
+                  Product consulting for publishers and content-driven teams
+                </h2>
+              </div>
               <Link
                 to="/work-with-me"
-                onClick={() => trackCta("hero_work_with_me", "home_hero")}
-                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
+                onClick={() => trackCta("home_consulting_see_all", "home_consulting")}
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-m3-primary hover:underline underline-offset-4 shrink-0"
+              >
+                See all engagements <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }) => (
+                <div key={name} className="bg-m3-surface rounded-[16px] border border-m3-outline/10 p-5 flex flex-col">
+                  <Icon className="w-5 h-5 text-m3-primary mb-3" strokeWidth={2.25} />
+                  <h3 className="font-display font-bold text-sm text-m3-on-surface leading-snug mb-1.5">
+                    {name}
+                  </h3>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-2">
+                    {meta}
+                  </p>
+                  <p className="text-[13px] text-m3-on-surface-variant leading-relaxed">{blurb}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex justify-center">
+              <Link
+                to="/work-with-me"
+                onClick={() => trackCta("home_consulting_work_with_me", "home_consulting")}
+                className="inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-sm tracking-wide shadow-xs cursor-pointer"
               >
                 Work with me <ArrowUpRight className="w-4 h-4" />
               </Link>
-              </div>
-              <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
-                Currently building{" "}
-                <a
-                  href="https://adda.builtbyswami.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-m3-primary font-bold hover:underline underline-offset-4"
-                >
-                  adda.builtbyswami.com
-                </a>
-              </p>
-            </div>
-
-            {/* Large screens: the credential card, in the column the headline
-                doesn't reach. */}
-            <div className="hidden lg:block rounded-[20px] bg-m3-secondary-container text-m3-on-secondary-container p-6 mt-9">
-              <div className="flex flex-col gap-3.5 pb-5 mb-5 border-b border-m3-on-secondary-container/15">
-                {METRICS.map(([value, label]) => (
-                  <div key={value} className="flex items-baseline gap-4">
-                    <div className="display text-[2rem] font-extrabold tracking-tight text-m3-primary leading-none w-24 shrink-0">
-                      {value}
-                    </div>
-                    <div className="text-xs font-bold uppercase tracking-wider">{label}</div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.14em] opacity-60 mb-2">
-                Product leadership at
-              </p>
-              <div className="flex flex-col">
-                {HOUSES.map((h) => (
-                  <span key={h} className="font-display font-bold text-base leading-snug">
-                    {h}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-2 text-[11px] leading-relaxed opacity-70">{TITLES.join(" · ")}</p>
             </div>
           </div>
         </section>
