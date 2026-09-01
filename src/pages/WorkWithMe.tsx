@@ -68,6 +68,41 @@ const SERVICES: Service[] = [
   },
 ];
 
+/** The functions a launch or migration actually has to get through — pulled
+ *  out of prose into a scannable grid so the range registers at a glance
+ *  instead of requiring a full read of the paragraph. */
+const TEAM_FUNCTIONS: { name: string; detail?: string }[] = [
+  { name: "Engineering & Core Platform" },
+  { name: "CMS & Cloud/CDN" },
+  { name: "Design" },
+  { name: "Editorial & Content Strategy" },
+  { name: "Newsletters" },
+  { name: "Marketing Technology" },
+  { name: "Subscriptions" },
+  { name: "Audience Development" },
+  { name: "Social & Video" },
+  { name: "Ad Tech" },
+  {
+    name: "Data & Analytics",
+    detail: "Google Analytics, Tag Manager, consent management",
+  },
+  { name: "Affiliate Commerce & Product Listings" },
+  { name: "Content Recommendation Engines" },
+  { name: "Legal" },
+  { name: "SEO & Search Console" },
+  { name: "Commercial & Marketing" },
+];
+
+/** The case study's numbers, pulled into a stat strip so "the work" section
+ *  carries its own visual weight instead of reading as another text block. */
+const CASE_STUDY_STATS: [string, string][] = [
+  ["5", "titles launched"],
+  ["3", "waves, 3 years"],
+  ["$20M+", "Year 1 target, exceeded"],
+  ["12%", "above audience benchmark"],
+  ["½", "the time — wave 3 vs. wave 1"],
+];
+
 const GOOD_FIT: [string, string][] = [
   [
     "You're taking a brand into a new market and the risk is execution, not strategy.",
@@ -146,6 +181,30 @@ function EmailButton({ className = "" }: { className?: string }) {
   );
 }
 
+/** Small caps eyebrow, reused above every section heading so the label
+ *  language stays identical while each band's background color changes. */
+function Eyebrow({
+  children,
+  tone = "muted",
+}: {
+  children: React.ReactNode;
+  tone?: "muted" | "primary" | "inverted";
+}) {
+  const toneClass =
+    tone === "primary"
+      ? "text-m3-primary"
+      : tone === "inverted"
+        ? "text-m3-primary-container"
+        : "text-m3-on-surface-variant/60";
+  return (
+    <span
+      className={`font-display text-xs font-black uppercase tracking-[0.25em] block ${toneClass}`}
+    >
+      {children}
+    </span>
+  );
+}
+
 export default function WorkWithMe() {
   usePageSeo("workWithMe");
 
@@ -155,7 +214,7 @@ export default function WorkWithMe() {
         <SiteHeader />
 
         {/* Hero */}
-        <section className="px-6 md:px-14 pt-12 md:pt-16 pb-8">
+        <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 pt-12 md:pt-16 pb-10 md:pb-12">
           <div className="flex items-center gap-3 mb-4">
             <Briefcase className="w-5 h-5 text-m3-primary" />
             <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
@@ -188,43 +247,54 @@ export default function WorkWithMe() {
           </p>
         </section>
 
-        {/* Services */}
-        <section className="px-6 md:px-14 py-10 md:py-12">
-          <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-3">
-            What I do
-          </h2>
-          <p className="text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-8 leading-relaxed">
-            Four ways to start. Each is fixed scope, fixed price, and ends with
-            something you can act on.
+        {/* What I do — a numbered list rather than a stack of cards, so the
+            four offers read as a menu, not four repeats of the same shape.
+            Fractional Product Lead sits apart below, deliberately styled
+            differently — it isn't fixed-scope like the four above it. */}
+        <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow tone="primary">What I do</Eyebrow>
+          <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-2 leading-relaxed">
+            Four ways to start. Each is fixed scope, fixed price, and ends
+            with something you can act on.
           </p>
 
-          <div className="flex flex-col gap-4 md:gap-5">
-            {SERVICES.map(({ icon: Icon, name, meta, body }) => (
+          <div className="flex flex-col">
+            {SERVICES.map(({ icon: Icon, name, meta, body }, i) => (
               <div
                 key={name}
-                className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8 flex flex-col gap-3 hover:border-m3-primary/30 hover:shadow-xl transition-all"
+                className={`py-7 md:py-9 flex flex-col md:flex-row md:items-start gap-4 md:gap-10 ${
+                  i !== 0 ? "border-t border-m3-outline/10" : ""
+                }`}
               >
-                <div className="flex items-start gap-4">
-                  <span className="mt-0.5 w-10 h-10 shrink-0 rounded-m3-full bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center">
+                <div className="flex items-center gap-4 md:w-56 shrink-0">
+                  <span className="display text-3xl md:text-4xl font-extrabold text-m3-outline/25 tabular-nums leading-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </span>
-                  <div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
                     <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
                       {name}
                     </h3>
-                    <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-m3-primary whitespace-nowrap">
                       {meta}
-                    </p>
+                    </span>
                   </div>
+                  <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-2xl">
+                    {body}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl">
-                  {body}
-                </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 bg-m3-surface-variant/60 rounded-[24px] border border-dashed border-m3-outline/20 p-6 md:p-8 flex flex-col gap-3">
+          <div className="mt-8 bg-m3-surface-variant/60 rounded-[24px] border border-dashed border-m3-outline/25 p-6 md:p-8 flex flex-col gap-3">
+            <span className="font-display text-[11px] font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60">
+              Also available
+            </span>
             <div className="flex items-start gap-4">
               <span className="mt-0.5 w-10 h-10 shrink-0 rounded-m3-full bg-m3-secondary-container text-m3-on-secondary-container flex items-center justify-center">
                 <Users className="w-5 h-5" />
@@ -244,54 +314,79 @@ export default function WorkWithMe() {
           </div>
         </section>
 
-        {/* The teams every engagement actually runs through */}
-        <section className="px-6 md:px-14 py-10 md:py-12">
-          <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-6">
-            The teams every one of these runs through
-          </h2>
+        {/* The teams every engagement actually runs through — a grid instead
+            of a single paragraph, so the range of functions registers at a
+            glance rather than requiring a full read. */}
+        <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow>The teams every one of these runs through</Eyebrow>
+          <p className="mt-3 text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl mb-8">
+            A market launch or a replatform isn't a product-team problem.
+            Getting it right means getting all of the functions below to
+            agree and stay agreed through cutover — not just shipping the
+            roadmap. That's why the plans on this page cover the ad stack,
+            the legal sign-off and the SEO strategy, not just the product
+            decisions.
+          </p>
 
-          <div className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-10 flex flex-col gap-4">
-            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium">
-              A market launch or a replatform isn't a product-team problem. It
-              runs through Engineering and Core Platform, CMS and Cloud/CDN,
-              Design, Editorial and Content Strategy, Newsletters, Marketing
-              Technology, Subscriptions, Audience Development, Social and
-              Video, Ad Tech, Data and Analytics (Google Analytics, Tag
-              Manager, consent management), Affiliate Commerce and product
-              listing pages, content recommendation engines, Legal, SEO and
-              Search Console, Commercial and Marketing. Getting a launch or a
-              migration right means getting all of that to agree and stay
-              agreed through cutover — not just shipping the roadmap. That's
-              the actual job, and it's why the plans above cover the ad stack,
-              the legal sign-off and the SEO strategy, not just the product
-              decisions.
-            </p>
-            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface font-bold">
-              I know this because I started on the other side of it. Five
-              years running the service desk at Metro World News, supporting
-              exactly these teams, before I moved into product at the same
-              company. Eleven years in product since — but the first five are
-              why none of this is theoretical.
-            </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            {TEAM_FUNCTIONS.map(({ name, detail }) => (
+              <div
+                key={name}
+                className="bg-m3-surface rounded-[16px] border border-m3-outline/10 px-4 py-3.5 flex flex-col gap-1"
+              >
+                <div className="flex items-start gap-2">
+                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
+                  <span className="text-sm font-bold text-m3-on-surface leading-snug">
+                    {name}
+                  </span>
+                </div>
+                {detail && (
+                  <span className="pl-3.5 text-[11px] font-medium text-m3-on-surface-variant leading-snug">
+                    {detail}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
+
+          <p className="mt-8 pt-8 border-t border-m3-outline/15 text-sm md:text-[15px] leading-relaxed text-m3-on-surface font-bold max-w-3xl">
+            I know this because I started on the other side of it. Five
+            years running the service desk at Metro World News, supporting
+            exactly these teams, before I moved into product at the same
+            company. Eleven years in product since — but the first five are
+            why none of this is theoretical.
+          </p>
         </section>
 
-        {/* Case study */}
-        <section className="px-6 md:px-14 py-10 md:py-12">
-          <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-6">
-            The work
-          </h2>
+        {/* The work — the flagship case study, set apart with an inverted
+            band and a stat strip so it reads as proof, not another block of
+            text between the offer and the testimonials. */}
+        <section className="bg-m3-on-surface text-m3-surface px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow tone="inverted">The work</Eyebrow>
 
-          <div className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-10 flex flex-col gap-4">
-            <h3 className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-on-surface">
-              Launching global media brands into the Middle East
-            </h3>
-            <p className="text-base md:text-lg font-bold text-m3-primary leading-snug">
-              Five titles, three waves — and the last one shipped in half the
-              time.
-            </p>
+          <h3 className="display mt-3 text-2xl md:text-4xl font-extrabold tracking-tight leading-[1.05] max-w-3xl">
+            Launching global media brands into the Middle East
+          </h3>
+          <p className="mt-3 text-base md:text-lg font-bold text-m3-primary-container leading-snug">
+            Five titles, three waves — and the last one shipped in half the
+            time.
+          </p>
 
-            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium">
+          <div className="mt-8 md:mt-10 flex flex-wrap gap-x-8 gap-y-5 pb-8 md:pb-10 border-b border-m3-surface/15">
+            {CASE_STUDY_STATS.map(([value, label]) => (
+              <div key={label} className="flex flex-col gap-1 min-w-[110px]">
+                <span className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-primary-container leading-none">
+                  {value}
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-75 max-w-[140px] leading-snug">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4 max-w-3xl">
+            <p className="text-sm md:text-[15px] leading-relaxed opacity-85 font-medium">
               I led the product side of Condé Nast's Middle East expansion —
               five flagship titles taken live in the GCC on group infrastructure
               across three waves and three years, with multi-currency
@@ -299,14 +394,14 @@ export default function WorkWithMe() {
               from day one. The programme exceeded its $20M+ Year 1 revenue
               target and beat its audience benchmarks by 12%.
             </p>
-            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium">
+            <p className="text-sm md:text-[15px] leading-relaxed opacity-85 font-medium">
               For the third wave I audited the earlier launches for friction,
               automated the repeatable work with LLM-driven guardrails, and
               rebuilt content placement using audience data from the previous
               launch — cutting time-to-market by 50% and lifting ad revenue per
               visit ~11%, with the same five-person delivery team.
             </p>
-            <p className="text-sm md:text-[15px] leading-relaxed text-m3-on-surface font-bold">
+            <p className="text-sm md:text-[15px] leading-relaxed font-bold">
               Doing it once is a launch. Doing it three times, with the last one
               in half the time, is a playbook.
             </p>
@@ -314,7 +409,7 @@ export default function WorkWithMe() {
             {CASE_STUDY_URL && (
               <Link
                 to={CASE_STUDY_URL}
-                className="mt-1 inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary hover:gap-2 transition-all"
+                className="mt-1 inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
               >
                 Read the full case study <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -322,16 +417,17 @@ export default function WorkWithMe() {
           </div>
         </section>
 
-        {/* Three references, straight after the case study — proof follows the
-            claim it supports. Deliberately quieter than the /about treatment. */}
-        <TestimonialQuotes />
+        {/* Three references, straight after the case study — proof follows
+            the claim it supports. Own band, quieter than the /about
+            treatment, deliberately calm after the dark case-study band. */}
+        <div className="bg-m3-surface border-b border-m3-outline/10">
+          <TestimonialQuotes />
+        </div>
 
         {/* I also ship */}
-        <section className="px-6 md:px-14 py-10 md:py-12">
-          <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-3">
-            I also ship
-          </h2>
-          <p className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-6">
+        <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow>I also ship</Eyebrow>
+          <p className="display mt-3 text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-6">
             Most product people talk about building. I build.
           </p>
 
@@ -356,9 +452,10 @@ export default function WorkWithMe() {
         </section>
 
         {/* Fit */}
-        <section className="px-6 md:px-14 py-10 md:py-12">
-          <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-            <div className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
+        <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow>Is this a fit?</Eyebrow>
+          <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-5">
+            <div className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
               <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary mb-6">
                 <Check className="w-4 h-4" /> Good fit
               </h2>
@@ -377,7 +474,7 @@ export default function WorkWithMe() {
               </div>
             </div>
 
-            <div className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
+            <div className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
               <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-6">
                 <X className="w-4 h-4" /> Not a fit
               </h2>
@@ -399,7 +496,7 @@ export default function WorkWithMe() {
         </section>
 
         {/* CTA */}
-        <section className="px-6 md:px-14 pb-16 pt-6">
+        <section className="bg-m3-surface-variant px-6 md:px-14 pb-16 pt-12 md:pt-16">
           <div className="bg-m3-surface rounded-[28px] border border-m3-outline/5 p-8 md:p-12 text-center flex flex-col items-center gap-4">
             <h2 className="display text-2xl md:text-4xl font-extrabold uppercase tracking-tighter text-m3-on-surface">
               Book a 30-minute call
