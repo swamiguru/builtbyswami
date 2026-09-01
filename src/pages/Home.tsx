@@ -281,9 +281,12 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
               <div>
-                <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-2">
-                  what I do for clients
-                </span>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-mono text-[11px] font-bold text-m3-primary/50">01</span>
+                  <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary">
+                    what I do for clients
+                  </span>
+                </div>
                 <h2 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
                   Product consulting for publishers and content-driven teams
                 </h2>
@@ -297,9 +300,14 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }) => (
-                <div key={name} className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all">
-                  <Icon className="w-5 h-5 text-m3-primary mb-3" strokeWidth={2.25} />
+              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }, i) => (
+                <div key={name} className="relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all">
+                  <span className="absolute top-3 right-4 font-mono text-[26px] font-bold text-m3-outline/10 tabular-nums leading-none select-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="w-10 h-10 rounded-[14px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5" strokeWidth={2.25} />
+                  </span>
                   <h3 className="font-display font-bold text-sm text-m3-on-surface leading-snug mb-1.5">
                     {name}
                   </h3>
@@ -336,11 +344,14 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-m3-primary/5 rounded-full -mr-24 -mt-24 blur-3xl pointer-events-none" />
           <div className="relative z-10">
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-6">
-              <div className="inline-flex items-center gap-2.5 bg-m3-primary-container/60 rounded-m3-full pl-3 pr-4 py-2">
-                <Sparkles className="w-4 h-4 text-m3-primary" />
-                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
-                  {roundupKicker}
-                </span>
+              <div className="flex items-center gap-2.5">
+                <span className="font-mono text-[11px] font-bold text-m3-primary/50">02</span>
+                <div className="inline-flex items-center gap-2.5 bg-m3-primary-container/60 rounded-m3-full pl-3 pr-4 py-2">
+                  <Sparkles className="w-4 h-4 text-m3-primary" />
+                  <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
+                    {roundupKicker}
+                  </span>
+                </div>
               </div>
               <Link
                 to="/tech-roundup"
@@ -559,9 +570,14 @@ export default function Home() {
             <div className="flex flex-col">
               <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-4">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em]">
-                    The Weekly
+                  <span className="w-9 h-9 rounded-[12px] bg-m3-surface/70 flex items-center justify-center shrink-0">
+                    <Clock className="w-4 h-4" />
+                  </span>
+                  <span className="flex items-baseline gap-2">
+                    <span className="font-mono text-[11px] font-bold opacity-40">03</span>
+                    <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em]">
+                      The Weekly
+                    </span>
                   </span>
                 </div>
                 <Link
@@ -656,9 +672,14 @@ export default function Home() {
         <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t border-m3-outline/10">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <BookOpen className="w-5 h-5 text-m3-primary" />
-              <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
-                Notes
+              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
+                <BookOpen className="w-4 h-4" />
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">04</span>
+                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
+                  Notes
+                </span>
               </span>
             </div>
             <Link
@@ -708,9 +729,14 @@ export default function Home() {
         <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t border-m3-outline/10">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <Hammer className="w-5 h-5 text-m3-primary" />
-              <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
-                Builds
+              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
+                <Hammer className="w-4 h-4" />
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">05</span>
+                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
+                  Builds
+                </span>
               </span>
             </div>
             <Link
@@ -791,9 +817,12 @@ export default function Home() {
             it now names both, so the reader picks rather than guessing. */}
         <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-primary text-m3-on-primary">
           <div className="max-w-3xl">
-            <span className="font-display text-[10px] md:text-[12px] uppercase tracking-[0.4em] font-extrabold text-m3-on-primary/60 mb-2 block">
-              The operator behind the builds
-            </span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">06</span>
+              <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/60">
+                The operator behind the builds
+              </span>
+            </div>
             <h2 className="display text-xl md:text-[1.75rem] font-bold tracking-tighter leading-[0.95] mb-5">
               11 years, three global media companies, $20M+ scaled — now an AI product builder shipping solo from Bengaluru.
             </h2>
