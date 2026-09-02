@@ -185,3 +185,7 @@
 2026-09-01 | 2 | Gadgets / Consumer electronics | IFA 2026 Berlin | Show opens Sept 4-8, press days Sept 2-3; Acer AI PCs + wearables wave (Xiaomi/Withings/RingConn/Ultrahuman) (neutral gadget preview)
 2026-09-01 | 4 | Comparison / Audio | Best earbuds 2026 (AirPods Pro 3 vs Galaxy Buds 4 Pro vs Nothing Ear 3) | ecosystem-based buyer verdict (IG pick, carousel)
 2026-09-01 | 5 | Community / Poll | Post-Tim Cook Apple excited-or-worried | Apple's next 5 years under Ternus (Threads+X, no card, tied to slot 1)
+2026-09-02 | 1 | Gaming | PlayStation State of Play Sept 3 | State of Play returns Sept 3 6:30PM IST, FF7 Revelation confirmed + Japan showcase, Intergalactic rumored (new event vs Aug 27 GTA6)
+2026-09-02 | 2 | AI / Regulatory | EU ChatGPT VLOSE designation | EU designates ChatGPT first AI Very Large Online Search Engine under DSA (Aug 31), ~159M EU users, comply Jan 2027 or 6% fine
+2026-09-02 | 4 | Security & Privacy quick-win | Password Checkup breached/reused | Android/Chrome Password Manager Checkup + iPhone Passwords Security Recommendations to find leaked/reused passwords
+2026-09-02 | 5 | AI workflow / Prompt of the day | What am I not asking prompt | Paste plan -> AI lists blind spots + the one question that changes your mind (IG pick, carousel)

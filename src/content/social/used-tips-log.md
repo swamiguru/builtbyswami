@@ -63,3 +63,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-08-31 | Google Maps | Lens in Maps — tap camera icon in search bar, point phone down the street to overlay live labels on the real view (shops/cafes/ATMs, ratings, open/closed)
 
 2026-09-01 | Instagram | Hidden Words — auto-filter spam/scam/abusive comments + DM requests by custom keyword (Settings > How others can interact with you > Hidden Words)
+2026-09-02 | Android | WiFi QR share — Settings > Network & internet > Internet > tap current network > Share generates a scannable QR code to connect guests without typing the password (iPhones scan it too)
