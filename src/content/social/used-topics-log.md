@@ -189,3 +189,7 @@
 2026-09-02 | 2 | AI / Regulatory | EU ChatGPT VLOSE designation | EU designates ChatGPT first AI Very Large Online Search Engine under DSA (Aug 31), ~159M EU users, comply Jan 2027 or 6% fine
 2026-09-02 | 4 | Security & Privacy quick-win | Password Checkup breached/reused | Android/Chrome Password Manager Checkup + iPhone Passwords Security Recommendations to find leaked/reused passwords
 2026-09-02 | 5 | AI workflow / Prompt of the day | What am I not asking prompt | Paste plan -> AI lists blind spots + the one question that changes your mind (IG pick, carousel)
+2026-09-03 | 1 | India / Payments / AI | UPI agentic payments | NPCI Unified Agent Protocol — AI agents auto-pay from UPI under set limits, unveiling at Global Fintech Fest
+2026-09-03 | 2 | Gadgets / Global tech | IFA 2026 Berlin press day | Show live: Xiaomi first-ever IFA (18 Fold + CyberOne), LG ThinQ Claw AI home, Wi-Fi 8, exoskeletons (new hard dev vs 09-01 preview)
+2026-09-03 | 4 | Myth-buster / Phones | Cleaner & RAM-booster apps | Busted — OS manages RAM; killing cached apps = cold reloads, more lag+battery; iOS blocks them (IG pick, carousel)
+2026-09-03 | 5 | Community / Poll | Agentic UPI payments trust | Would you let an AI agent auto-pay your UPI within limits? (Threads+X, no card, tied to slot 1)

@@ -64,3 +64,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-01 | Instagram | Hidden Words — auto-filter spam/scam/abusive comments + DM requests by custom keyword (Settings > How others can interact with you > Hidden Words)
 2026-09-02 | Android | WiFi QR share — Settings > Network & internet > Internet > tap current network > Share generates a scannable QR code to connect guests without typing the password (iPhones scan it too)
+
+2026-09-03 | iOS | Scan Text keyboard — tap any text field then the Scan Text (camera) icon / long-press > Scan Text to insert text from paper/screen via camera, no OCR app
