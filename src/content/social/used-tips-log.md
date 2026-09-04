@@ -66,3 +66,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-02 | Android | WiFi QR share — Settings > Network & internet > Internet > tap current network > Share generates a scannable QR code to connect guests without typing the password (iPhones scan it too)
 
 2026-09-03 | iOS | Scan Text keyboard — tap any text field then the Scan Text (camera) icon / long-press > Scan Text to insert text from paper/screen via camera, no OCR app
+
+2026-09-04 | macOS | Menu bar Command-drag — hold ⌘ and drag any menu bar icon to reorder them, or drag one off the bar to remove it (declutter the top-right in seconds, no app needed)

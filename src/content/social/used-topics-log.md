@@ -193,3 +193,8 @@
 2026-09-03 | 2 | Gadgets / Global tech | IFA 2026 Berlin press day | Show live: Xiaomi first-ever IFA (18 Fold + CyberOne), LG ThinQ Claw AI home, Wi-Fi 8, exoskeletons (new hard dev vs 09-01 preview)
 2026-09-03 | 4 | Myth-buster / Phones | Cleaner & RAM-booster apps | Busted — OS manages RAM; killing cached apps = cold reloads, more lag+battery; iOS blocks them (IG pick, carousel)
 2026-09-03 | 5 | Community / Poll | Agentic UPI payments trust | Would you let an AI agent auto-pay your UPI within limits? (Threads+X, no card, tied to slot 1)
+
+2026-09-04 | 1 | India / Space | ISRO Gaganyaan G1 uncrewed | First uncrewed test flight targeted this calendar year (ISRO chief V. Narayanan, Sept 4); Vyommitra humanoid robot aboard; 3 rehearsals then crew in 2027, ~400km orbit
+2026-09-04 | 2 | Creator economy | YouTube 2026 monetization/algorithm crackdown | Human-centric algo + demonetization risk for faceless auto-channels; view now counts from frame 1 but Engaged Views pay; YPP changes Feb 1 2027 (creator-economy beat)
+2026-09-04 | 4 | Comparison / Phones | iPhone 18 Pro vs 17 Pro | Upgrade-or-skip ahead of Sept 9; leaked A20 Pro 2nm ~18% faster/30% efficient, variable-aperture cam, smaller Dynamic Island (RUMOR) (IG pick, carousel)
+2026-09-04 | 5 | Hot take / Global tech | China humanoid robots | Tiangong Ultra 100m in 8.64s beats Bolt + noodle-cooking/parcel-sorting demos; hype vs real warehouse/factory use (neutral product framing)
