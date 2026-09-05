@@ -198,3 +198,8 @@
 2026-09-04 | 2 | Creator economy | YouTube 2026 monetization/algorithm crackdown | Human-centric algo + demonetization risk for faceless auto-channels; view now counts from frame 1 but Engaged Views pay; YPP changes Feb 1 2027 (creator-economy beat)
 2026-09-04 | 4 | Comparison / Phones | iPhone 18 Pro vs 17 Pro | Upgrade-or-skip ahead of Sept 9; leaked A20 Pro 2nm ~18% faster/30% efficient, variable-aperture cam, smaller Dynamic Island (RUMOR) (IG pick, carousel)
 2026-09-04 | 5 | Hot take / Global tech | China humanoid robots | Tiangong Ultra 100m in 8.64s beats Bolt + noodle-cooking/parcel-sorting demos; hype vs real warehouse/factory use (neutral product framing)
+
+2026-09-05 | 1 | AI models | OpenAI GPT-6 Astra | GPT-6 Astra launches (public Sept 5) - 'computer use', first model at 'critical' cyber threshold, Brockman calls it possible start of AGI
+2026-09-05 | 2 | Phones / Apple | Apple Sept 9 'Surprise and Shine' event | Preview - iPhone 18 Pro/Pro Max (2nm A20), foldable 'iPhone Ultra' $2k+, Watch 12/Ultra 4, AirPods 5, first keynote under CEO Ternus (date+CEO OFFICIAL, rest LEAK) (IG pick, carousel)
+2026-09-05 | 4 | AI Tool Spotlight | Google AI Studio | Free Gemini playground - all models, Imagen/Veo, plain-English app scaffolding, free API key (carousel)
+2026-09-05 | 5 | AI workflow / Prompt of the day | Pre-mortem prompt | 'It's 6 months later and this plan failed' - story of why + top 3 root causes + one safeguard each

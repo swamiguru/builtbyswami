@@ -68,3 +68,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-03 | iOS | Scan Text keyboard — tap any text field then the Scan Text (camera) icon / long-press > Scan Text to insert text from paper/screen via camera, no OCR app
 
 2026-09-04 | macOS | Menu bar Command-drag — hold ⌘ and drag any menu bar icon to reorder them, or drag one off the bar to remove it (declutter the top-right in seconds, no app needed)
+
+2026-09-05 | Windows 11 | Snipping Tool Text Actions - built-in local OCR: Win+Shift+S then Text Actions to copy / copy-as-table / redact text from any screenshot, image or paused video (offline, no app)
