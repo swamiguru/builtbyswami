@@ -203,3 +203,8 @@
 2026-09-05 | 2 | Phones / Apple | Apple Sept 9 'Surprise and Shine' event | Preview - iPhone 18 Pro/Pro Max (2nm A20), foldable 'iPhone Ultra' $2k+, Watch 12/Ultra 4, AirPods 5, first keynote under CEO Ternus (date+CEO OFFICIAL, rest LEAK) (IG pick, carousel)
 2026-09-05 | 4 | AI Tool Spotlight | Google AI Studio | Free Gemini playground - all models, Imagen/Veo, plain-English app scaffolding, free API key (carousel)
 2026-09-05 | 5 | AI workflow / Prompt of the day | Pre-mortem prompt | 'It's 6 months later and this plan failed' - story of why + top 3 root causes + one safeguard each
+
+2026-09-06 | 1 | Autonomous / EV tech | Tesla Cybercab Austin launch + NHTSA probe | Steering-wheel/pedal/mirror-free robotaxi live in Austin Sept 3; feds open Open Audit Query AQ26002 within a day over Tesla's self-certification (new hard dev vs 08-22 Nevada robotaxi approval)
+2026-09-06 | 2 | OS updates / Security | Android 17 rollout | Theft Detection Lock + Remote Lock on by default, one-time precise location, harder PIN guessing (creator/India-relevant anti-theft)
+2026-09-06 | 4 | Comparison / Gaming | PS5 vs Xbox Series X vs Switch 2 | Late-2026 which-console buyer verdict (PS5 ~$650 / Xbox ~$800 / Switch 2 ~$500), power/value/library split
+2026-09-06 | 5 | Myth-buster / Charging | Original-charger-only myth | Busted — phone controls charging; certified 3rd-party USB-C PD is safe, cheap uncertified bricks are the real risk

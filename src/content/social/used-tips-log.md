@@ -70,3 +70,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-04 | macOS | Menu bar Command-drag — hold ⌘ and drag any menu bar icon to reorder them, or drag one off the bar to remove it (declutter the top-right in seconds, no app needed)
 
 2026-09-05 | Windows 11 | Snipping Tool Text Actions - built-in local OCR: Win+Shift+S then Text Actions to copy / copy-as-table / redact text from any screenshot, image or paused video (offline, no app)
+
+2026-09-06 | Google Search | "Web" filter (More > Web) + &udm=14 URL param + -ai query modifier to strip AI Overview and get plain blue links
