@@ -104,31 +104,31 @@ const METRICS: [string, string][] = [
 /** Compressed one-line summaries of the four fixed-scope offers on
  *  /work-with-me. Kept as data, separate from that page's fuller SERVICES
  *  array, because the homepage needs a shorter blurb per offer — but the
- *  name, shape and price must stay identical to avoid the two pages
+ *  name, shape and terms must stay identical to avoid the two pages
  *  disagreeing with each other. */
 const CONSULTING_OFFERS: { icon: typeof Globe; name: string; meta: string; blurb: string }[] = [
   {
     icon: Globe,
     name: "Market Launch & Expansion Readiness",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     blurb: "A go-to-market plan for a new region, with the platform, content and commercial decisions already made.",
   },
   {
     icon: Server,
     name: "Platform & CMS Migration Readiness",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     blurb: "The replatform plan that protects your traffic and revenue through the cutover.",
   },
   {
     icon: Sparkles,
     name: "AI Workflow & Product Operations",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     blurb: "Real automation with guardrails, for a content or product workflow that hasn't caught up with AI.",
   },
   {
     icon: Hammer,
     name: "Build Sprint",
-    meta: "2–3 weeks · from ₹2,50,000",
+    meta: "2–3 weeks · fixed scope",
     blurb: "A working prototype in your hands, not a slide deck.",
   },
 ];

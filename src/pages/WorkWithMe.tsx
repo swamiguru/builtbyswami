@@ -45,25 +45,25 @@ const SERVICES: Service[] = [
   {
     icon: Globe,
     name: "Market Launch & Expansion Readiness",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     body: "A written go-to-market plan for a new region, with the platform, content, commercial and regulatory decisions already made — not a list of things to figure out. Audience and revenue modelling, platform readiness, localisation architecture, ad and commerce stack, launch sequencing, and the risks that actually move launch dates.",
   },
   {
     icon: Server,
     name: "Platform & CMS Migration Readiness",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     body: "The replatform plan that protects your traffic and revenue through the cutover. Content modelling, taxonomy, redirect and SEO strategy, integration surface, ad and commerce continuity, your team's workflow on the far side, and a phased cutover you can defend to your board.",
   },
   {
     icon: Sparkles,
     name: "AI Workflow & Product Operations",
-    meta: "2–3 weeks · from ₹2,00,000",
+    meta: "2–3 weeks · fixed scope",
     body: "For teams whose content or product workflow hasn't caught up with what AI can actually do. I map where the manual work is, build the automation with real guardrails, and hand your team something they'll actually use — not a policy doc, not a workshop. This is the same approach that cut a launch programme's time-to-market by 50% and lifted ad revenue per visit ~11%, with the same five-person team.",
   },
   {
     icon: Hammer,
     name: "Build Sprint",
-    meta: "2–3 weeks · from ₹2,50,000",
+    meta: "2–3 weeks · fixed scope",
     body: "A working prototype in your hands, not a slide deck. For teams who need to see the thing before committing engineering to it. I build and ship my own products — this is that, pointed at your problem.",
   },
 ];
@@ -129,7 +129,7 @@ const NOT_A_FIT: [string, string][] = [
   ],
   [
     "You're shopping for the lowest bid.",
-    "Engagements start at ₹2,00,000. I don't discount to win work — I'd rather point you to someone cheaper than deliver a thin version of this.",
+    "I scope before I quote, and I don't discount to win work — I'd rather point you to someone cheaper than deliver a thin version of this.",
   ],
   [
     "You need an engineer to own your codebase.",
@@ -254,8 +254,9 @@ export default function WorkWithMe() {
         <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow tone="primary">What I do</Eyebrow>
           <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-2 leading-relaxed">
-            Four ways to start. Each is fixed scope, fixed price, and ends
-            with something you can act on.
+            Four ways to start. Each is fixed scope and fixed price, quoted
+            once I understand what you're dealing with, and each ends with
+            something you can act on.
           </p>
 
           <div className="flex flex-col">
