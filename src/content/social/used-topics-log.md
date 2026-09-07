@@ -208,3 +208,8 @@
 2026-09-06 | 2 | OS updates / Security | Android 17 rollout | Theft Detection Lock + Remote Lock on by default, one-time precise location, harder PIN guessing (creator/India-relevant anti-theft)
 2026-09-06 | 4 | Comparison / Gaming | PS5 vs Xbox Series X vs Switch 2 | Late-2026 which-console buyer verdict (PS5 ~$650 / Xbox ~$800 / Switch 2 ~$500), power/value/library split
 2026-09-06 | 5 | Myth-buster / Charging | Original-charger-only myth | Busted — phone controls charging; certified 3rd-party USB-C PD is safe, cheap uncertified bricks are the real risk
+
+2026-09-07 | 1 | Big Tech / AI infra | Nvidia buys Hugging Face | $12.93B, Nvidia biggest deal ever; open AI hub (3M+ models, 18M devs) now owned by GPU maker, vows neutral to AMD/Intel (OFFICIAL, announced Sept 3)
+2026-09-07 | 2 | Smart home / Gadgets (IFA) | Dyson CameraJet toothbrush | $499 toothbrush w/ 100k-pixel macro lens + AI Gap Optical Targeting fires mouthrinse (Dyson Unveiled/IFA 2026, IG pick, carousel)
+2026-09-07 | 4 | Security & Privacy quick-win | Dropbox breach -> enable 2FA/MFA | ~5,000 accounts breached via Lenovo ID SSO email flaw, files downloaded; none had MFA; turn on authenticator 2FA everywhere
+2026-09-07 | 5 | Gaming / Community poll | Marvels Wolverine vs GTA 6 | Wolverine PS5 exclusive Sept 15 (Insomniac, $69.99); which are you hyped for (Threads+X, no card)
