@@ -24,7 +24,7 @@ Work Experience:
    - Impact: $20M+ projected net-new revenue via global brand launches (Vogue, GQ, Wired, CNT).
    - Speed: 50% reduction in TTM using AI workflows.
    - Initiatives: Launched AD Directory ($300k), Abercrombie & Kent partnership ($650k), and Secret Homestays (Airbnb/Booking).
-   - Unified Platform: Migrated 30+ global markets to a shared headless CMS, reducing infrastructure costs by 22%.
+   - Platform: Replatformed GQ's front end across 10 global markets on an upgraded CMS; organic back to prior levels within a week of each cutover.
 
 2. Newsweek (Product Manager, Jan 2018 – Oct 2020):
    - Scale: Managed roadmap for 50M+ monthly users.
@@ -34,6 +34,7 @@ Work Experience:
 3. Stigasoft / Metro International (Product & Project Manager, Dec 2009 – Dec 2017):
    - Strategy: Managed 12 global portals serving 18.4M daily readers.
    - Velocity: Reduced spec-to-delivery time by 25% via 'Global Tech Spec' framework.
+   - Platform: Scoped and shipped a CMS from scratch in three months and migrated www.metro.us onto it.
 
 Interests:
 - Horology: Obsessed with the mechanics of timepieces (a direct parallel to his love for 'product mechanics').
