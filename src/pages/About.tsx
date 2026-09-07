@@ -172,7 +172,7 @@ const EXPERIENCE: ExperienceItem[] = [
     impact: [
       "Owned the product roadmap for GQ's 10 global digital properties.",
       "Drove a 30% audience lift and $500K incremental revenue.",
-      "Migrated GQ to a unified global CMS with zero SEO or ad-revenue loss.",
+      "Replatformed GQ's front end across 10 global markets, with organic traffic back to prior levels within a week of each launch.",
       "Lifted PLP click-through 7% and on-page engagement 6%."
     ],
     highlights: [
@@ -192,12 +192,12 @@ const EXPERIENCE: ExperienceItem[] = [
           "Delivered GQ Men of the Year, GQ Sports and FIFA World Cup 2022 activations — driving a 30% audience lift and $500K incremental revenue."
       },
       {
-        title: "Platform Migration",
+        title: "Front-End Replatform",
         detail:
-          "Led GQ's migration to a unified global CMS across four regional teams with zero SEO degradation and zero ad-revenue disruption."
+          "Led GQ's front-end replatform across 10 global markets on an upgraded CMS. Pre- and post-launch SEO audits on every market; organic dipped slightly at each cutover and recovered within a week."
       }
     ],
-    technologies: ["Roadmap Ownership", "PRDs & User Stories", "Affiliate Commerce", "CMS Migration", "Shoppable Editorial"]
+    technologies: ["Roadmap Ownership", "PRDs & User Stories", "Affiliate Commerce", "Front-End Replatform", "Shoppable Editorial"]
   },
   {
     company: "Newsweek",
@@ -211,7 +211,7 @@ const EXPERIENCE: ExperienceItem[] = [
       "Owned the roadmap for platforms serving 50M+ monthly unique visitors.",
       "Drove a 17% traffic lift through the Newsgeek brand redesign.",
       "Lifted article engagement 14% with a new on-page module.",
-      "Delivered a zero-downtime CMS migration with 100% site authority preserved."
+      "Delivered a full CMS and front-end replatform; organic back to prior levels within a week of cutover."
     ],
     highlights: [
       {
@@ -225,9 +225,9 @@ const EXPERIENCE: ExperienceItem[] = [
           "Owned the roadmap for digital properties reaching 50M+ monthly unique visitors, balancing Editorial, Sales and Engineering priorities in an Agile environment."
       },
       {
-        title: "Zero-Downtime CMS Migration",
+        title: "Full CMS and Front-End Replatform",
         detail:
-          "Directed an enterprise CMS migration with Technical SEO teams, preserving 100% site authority and ad-revenue continuity throughout the transition."
+          "Directed a full CMS and front-end replatform with technical SEO teams, on a property doing 50M+ monthly unique visitors."
       }
     ],
     technologies: ["Enterprise CMS", "Technical SEO", "Ad Tech", "User Research", "Agile / Scrum"]

@@ -29,7 +29,7 @@ Work Experience:
 2. Newsweek (Product Manager, Jan 2018 – Oct 2020):
    - Scale: Managed roadmap for 50M+ monthly users.
    - Strategy: Led 'Newsgeek' rebrand, driving a 17% traffic surge and 25% increase in dwell time.
-   - Integrity: Executed zero-downtime CMS migrations preserving multi-million dollar ad revenue.
+   - Integrity: Led a full CMS and front-end replatform with technical SEO teams; organic recovered to prior levels within a week of cutover.
 
 3. Stigasoft / Metro International (Product & Project Manager, Dec 2009 – Dec 2017):
    - Strategy: Managed 12 global portals serving 18.4M daily readers.
