@@ -774,7 +774,7 @@ export default function About() {
             below — the two shouldn't read as the same category. */}
         <section id="case-study" className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-10 lg:px-12 py-10 md:py-12">
           <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
-            Case Study
+            Case Studies
           </span>
 
           <motion.div whileHover={{ y: -4 }} className="bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-primary/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
@@ -807,6 +807,54 @@ export default function About() {
                   ["12%", "above audience benchmark"],
                   ["50%", "faster time-to-market"],
                   ["~11%", "ad revenue per visit"],
+                ].map(([metric, label]) => (
+                  <div key={label}>
+                    <div className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface">
+                      {metric}
+                    </div>
+                    <div className="mt-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/70 leading-snug">
+                      {label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <span className="mt-7 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                Read the case study <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+          </motion.div>
+
+          <motion.div whileHover={{ y: -4 }} className="mt-5 md:mt-6 bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-primary/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
+            <Link to="/case-study/replatforming" className="group block">
+              <div className="flex items-start justify-between gap-4 mb-5">
+                <div className="w-12 h-12 bg-m3-primary-container text-m3-on-primary-container rounded-[16px] flex items-center justify-center shrink-0 group-hover:bg-m3-primary group-hover:text-m3-on-primary transition-colors">
+                  <Layers className="w-6 h-6" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary bg-m3-primary/5 border border-m3-primary/15 px-3 py-1 rounded-m3-full shrink-0">
+                  2017 &ndash; 2025
+                </span>
+              </div>
+
+              <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface leading-[1.02] flex items-start gap-2">
+                Replatforming without losing traffic or revenue
+                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 mt-1 shrink-0 text-m3-primary opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+              </h2>
+
+              <p className="mt-4 text-base md:text-lg font-bold text-m3-primary leading-snug">
+                Thirteen properties, four brands, eight years. Every one of them dipped, and every one of them came back.
+              </p>
+
+              <p className="mt-4 text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl">
+                Product Lead on replatforms at Metro, Newsweek, GQ and Condé Nast Traveller &mdash; a CMS built from scratch, a full CMS and front-end rebuild at 50M+ monthly uniques, ten GQ markets shipped one at a time, and two regions consolidated into a single Spanish property. What breaks is never the CMS.
+              </p>
+
+              <div className="mt-7 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5">
+                {[
+                  ["13", "properties replatformed"],
+                  ["10", "markets, one at a time"],
+                  ["~1 week", "organic back to prior levels"],
+                  ["50M+", "monthly uniques at Newsweek"],
                 ].map(([metric, label]) => (
                   <div key={label}>
                     <div className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface">
