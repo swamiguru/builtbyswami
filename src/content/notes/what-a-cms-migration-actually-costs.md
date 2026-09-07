@@ -1,6 +1,6 @@
 Every CMS migration I've worked on was sold internally as a platform project. The business case has three lines: license, build, data move. That number is real, and it's the smallest number in the whole exercise.
 
-I've led this work across five global brands over about six years. Vogue, GQ, Wired and Architectural Digest at Condé Nast. Newsweek before that, on properties doing 50 million monthly uniques. At Metro International I scoped and shipped a CMS from scratch in three months. GQ's front-end replatform ran across ten properties, on an upgraded CMS. Condé Nast Traveller's Spain and LATAM sites were consolidated onto one Spanish-language platform serving 56.6 million uniques.
+I've led this work across four brands and thirteen properties over eight years. At Metro International I scoped and shipped a CMS from scratch in three months and migrated metro.us onto it. At Newsweek, a full CMS and front-end replatform on a property doing 50 million monthly uniques. GQ's front-end replatform ran across ten markets, on an upgraded CMS. Condé Nast Traveller's Spain and LATAM sites were consolidated onto one Spanish-language platform serving 56.6 million uniques.
 
 Every one of them dipped slightly at cutover and was back to prior levels inside a week. Ad and consent integrations broke in a handful of markets and took a day or two to close. That's the outcome you're actually buying. It isn't the thing the business case is priced against.
 
