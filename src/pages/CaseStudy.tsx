@@ -4,11 +4,12 @@
  */
 
 import { useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import middleEastLaunches from "../content/case-studies/middle-east-launches.md?raw";
+import replatforming from "../content/case-studies/replatforming.md?raw";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ScrollProgress from "../components/ScrollProgress";
@@ -17,33 +18,73 @@ import TableOfContents, {
   createMarkdownHeadingComponents,
 } from "../components/TableOfContents";
 
-const TITLE = "Launching global media brands into the Middle East";
-const STANDFIRST =
-  "Five titles, three waves — and the last one shipped in half the time.";
-const DESCRIPTION =
-  "How Condé Nast's Middle East expansion shipped across three waves — five flagship titles live in the GCC, the $20M+ Year 1 revenue target exceeded, and a final launch that halved time-to-market.";
+/** One entry per case study. The route is /case-study/:slug, so adding a
+ *  third means adding a content file and an entry here — nothing else.
+ *  Keep the slug stable once published; it is a live URL. */
+interface CaseStudyEntry {
+  title: string;
+  standfirst: string;
+  description: string;
+  readingTime: string;
+  facts: [string, string][];
+  content: string;
+}
 
-const FACTS: [string, string][] = [
-  ["Client", "Condé Nast"],
-  ["Role", "Product Lead"],
-  ["Titles", "CN Traveller, AD, GQ, Vogue, Wired"],
-  ["Waves", "2023 · Jan 2025 · Jan 2026"],
-  ["Team", "4 engineers, 1 design lead, 1 PM"],
-];
+const CASE_STUDIES: Record<string, CaseStudyEntry> = {
+  "middle-east": {
+    title: "Launching global media brands into the Middle East",
+    standfirst:
+      "Five titles, three waves — and the last one shipped in half the time.",
+    description:
+      "How Condé Nast's Middle East expansion shipped across three waves — five flagship titles live in the GCC, the $20M+ Year 1 revenue target exceeded, and a final launch that halved time-to-market.",
+    readingTime: "6 min read",
+    facts: [
+      ["Client", "Condé Nast"],
+      ["Role", "Product Lead"],
+      ["Titles", "CN Traveller, AD, GQ, Vogue, Wired"],
+      ["Waves", "2023 · Jan 2025 · Jan 2026"],
+      ["Team", "4 engineers, 1 design lead, 1 PM"],
+    ],
+    content: middleEastLaunches,
+  },
+  replatforming: {
+    title: "Replatforming without losing traffic or revenue",
+    standfirst:
+      "Thirteen properties, four brands, eight years. Every one of them dipped, and every one of them came back.",
+    description:
+      "What actually happens when a live publisher replatforms: thirteen properties across metro.us, Newsweek, GQ's ten markets and Condé Nast Traveller — the integrations that break quietly, and the four things that decide whether traffic holds.",
+    readingTime: "7 min read",
+    facts: [
+      ["Properties", "13 across 4 brands"],
+      ["Span", "2017 – 2025"],
+      ["Role", "Product Lead"],
+      ["Brands", "Metro, Newsweek, GQ, CN Traveller"],
+      ["Team", "2–4 engineers, 1 design lead, 1 PM"],
+    ],
+    content: replatforming,
+  },
+};
 
 export default function CaseStudy() {
+  const { slug } = useParams<{ slug: string }>();
+  const study = slug ? CASE_STUDIES[slug] : undefined;
+
   const tocItems = useMemo(
-    () => extractTocFromMarkdown(middleEastLaunches),
-    []
+    () => (study ? extractTocFromMarkdown(study.content) : []),
+    [study]
   );
   const markdownComponents = useMemo(() => createMarkdownHeadingComponents(), []);
 
   useEffect(() => {
-    document.title = `${TITLE} | Case Study`;
+    if (!study) return;
+    document.title = `${study.title} | Case Study`;
     document
       .querySelector('meta[name="description"]')
-      ?.setAttribute("content", DESCRIPTION);
-  }, []);
+      ?.setAttribute("content", study.description);
+  }, [study]);
+
+  /* An unknown slug is a dead URL, not a blank page. */
+  if (!study) return <Navigate to="/work-with-me" replace />;
 
   return (
     <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
@@ -61,7 +102,7 @@ export default function CaseStudy() {
             Work with me
           </Link>
           <span className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/60">
-            <Clock className="w-3.5 h-3.5" /> 6 min read
+            <Clock className="w-3.5 h-3.5" /> {study.readingTime}
           </span>
         </div>
 
@@ -72,15 +113,15 @@ export default function CaseStudy() {
             </span>
 
             <h1 className="display mt-4 text-3xl md:text-5xl font-extrabold tracking-tighter text-m3-on-surface leading-[1.02]">
-              {TITLE}
+              {study.title}
             </h1>
 
             <p className="mt-5 text-lg md:text-xl font-bold text-m3-primary leading-snug">
-              {STANDFIRST}
+              {study.standfirst}
             </p>
 
             <dl className="mt-9 mb-10 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 bg-m3-surface rounded-[20px] border border-m3-outline/5 p-6">
-              {FACTS.map(([k, v]) => (
+              {study.facts.map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-[10px] font-black uppercase tracking-[0.2em] text-m3-on-surface-variant/60">
                     {k}
@@ -97,7 +138,7 @@ export default function CaseStudy() {
                 remarkPlugins={[remarkGfm]}
                 components={markdownComponents}
               >
-                {middleEastLaunches}
+                {study.content}
               </ReactMarkdown>
             </div>
           </article>

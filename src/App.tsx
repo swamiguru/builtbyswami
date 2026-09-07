@@ -54,7 +54,7 @@ export default function App() {
         <Route path="/tech-roundup" element={<Tech />} />
         <Route path="/tech-roundup/:date" element={<TechDigest />} />
         <Route path="/work-with-me" element={<WorkWithMe />} />
-        <Route path="/case-study/middle-east" element={<CaseStudy />} />
+        <Route path="/case-study/:slug" element={<CaseStudy />} />
         {/* Common aliases people type or link — all land on the services page */}
         <Route path="/hire" element={<Navigate to="/work-with-me" replace />} />
         <Route path="/consulting" element={<Navigate to="/work-with-me" replace />} />

@@ -79,6 +79,12 @@ const routes = [
     description:
       "How Condé Nast's Middle East expansion shipped across three waves — five flagship titles live in the GCC, the $20M+ Year 1 revenue target exceeded, and a final launch that halved time-to-market.",
   },
+  {
+    path: "case-study/replatforming",
+    title: "Replatforming without losing traffic or revenue | Case Study",
+    description:
+      "What actually happens when a live publisher replatforms: thirteen properties across metro.us, Newsweek, GQ's ten markets and Condé Nast Traveller — the integrations that break quietly, and the four things that decide whether traffic holds.",
+  },
   { path: "about", ...PAGE_SEO.about },
   { path: "notes", ...PAGE_SEO.notes },
   { path: "builds", ...PAGE_SEO.builds },

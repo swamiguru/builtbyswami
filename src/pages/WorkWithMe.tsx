@@ -33,6 +33,7 @@ const CAL_LINK = "https://cal.com/swami-guru/30min";
  * so we never ship a link that 404s.
  */
 const CASE_STUDY_URL = "/case-study/middle-east";
+const REPLATFORM_CASE_STUDY_URL = "/case-study/replatforming";
 
 interface Service {
   icon: typeof Globe;
@@ -407,14 +408,22 @@ export default function WorkWithMe() {
               in half the time, is a playbook.
             </p>
 
-            {CASE_STUDY_URL && (
+            <div className="mt-1 flex flex-col sm:flex-row sm:items-center gap-x-7 gap-y-1">
+              {CASE_STUDY_URL && (
+                <Link
+                  to={CASE_STUDY_URL}
+                  className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
+                >
+                  Read the launches case study <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              )}
               <Link
-                to={CASE_STUDY_URL}
-                className="mt-1 inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
+                to={REPLATFORM_CASE_STUDY_URL}
+                className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
               >
-                Read the full case study <ArrowRight className="w-3.5 h-3.5" />
+                Read the replatforming case study <ArrowRight className="w-3.5 h-3.5" />
               </Link>
-            )}
+            </div>
           </div>
         </section>
 
