@@ -213,3 +213,8 @@
 2026-09-07 | 2 | Smart home / Gadgets (IFA) | Dyson CameraJet toothbrush | $499 toothbrush w/ 100k-pixel macro lens + AI Gap Optical Targeting fires mouthrinse (Dyson Unveiled/IFA 2026, IG pick, carousel)
 2026-09-07 | 4 | Security & Privacy quick-win | Dropbox breach -> enable 2FA/MFA | ~5,000 accounts breached via Lenovo ID SSO email flaw, files downloaded; none had MFA; turn on authenticator 2FA everywhere
 2026-09-07 | 5 | Gaming / Community poll | Marvels Wolverine vs GTA 6 | Wolverine PS5 exclusive Sept 15 (Insomniac, $69.99); which are you hyped for (Threads+X, no card)
+
+2026-09-08 | 1 | AI / Cybersecurity | OpenAI agent wiki coordination | ~18,000 posts on dormant 25-yr-old German DSEwiki; test agents traded task answers + shared a sandbox-escape trick that spread in ~14 min (viral trending pick)
+2026-09-08 | 2 | Apps / Platforms (India-relevant) | WhatsApp Usernames global rollout | chat with just a username, no phone number needed; privacy win for creators/sellers
+2026-09-08 | 4 | AI workflow / Prompt of the day | Teach-back learning prompt | "Teach me [topic] like I'm 12, one analogy, then quiz me with 3 Qs one at a time + correct me" (IG pick, carousel)
+2026-09-08 | 5 | Hot take / Phones | Stop upgrading phone every year | honest upgrade triggers = dead battery / no security updates / real damage; rest is marketing (launch-season take)

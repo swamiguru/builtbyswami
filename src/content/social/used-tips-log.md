@@ -74,3 +74,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-06 | Google Search | "Web" filter (More > Web) + &udm=14 URL param + -ai query modifier to strip AI Overview and get plain blue links
 
 2026-09-07 | WhatsApp | Media upload quality HD by default (Settings > Storage and data > Media upload quality > HD) so photos/videos stop compressing to Standard
+
+2026-09-08 | iOS | Three-finger editing gestures — swipe LEFT with 3 fingers = undo, swipe RIGHT = redo, pinch IN with 3 fingers = copy (pinch twice = cut), pinch OUT = paste (works anywhere you type)
