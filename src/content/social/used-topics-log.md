@@ -218,3 +218,7 @@
 2026-09-08 | 2 | Apps / Platforms (India-relevant) | WhatsApp Usernames global rollout | chat with just a username, no phone number needed; privacy win for creators/sellers
 2026-09-08 | 4 | AI workflow / Prompt of the day | Teach-back learning prompt | "Teach me [topic] like I'm 12, one analogy, then quiz me with 3 Qs one at a time + correct me" (IG pick, carousel)
 2026-09-08 | 5 | Hot take / Phones | Stop upgrading phone every year | honest upgrade triggers = dead battery / no security updates / real damage; rest is marketing (launch-season take)
+2026-09-09 | 1 | Phones | Apple Sept 9 Surprise and Shine event | Event day TODAY - first foldable iPhone Ultra + iPhone 18 Pro/Pro Max, first keynote under CEO Ternus (date/CEO OFFICIAL, products LEAK) (IG pick, carousel)
+2026-09-09 | 2 | AI business / Europe | Mistral 3B Samsung-led round | Biggest European tech raise ever, ~21B EUR (~24B USD) valuation, Series D, 1B USD ARR target end-2026
+2026-09-09 | 4 | AI Tool Spotlight | Perplexity Comet | Free AI browser (Chromium) - sidebar agent sees your tab, summarizes pages, compares tabs, multi-step tasks; free Mac/Win/Android/iOS (carousel)
+2026-09-09 | 5 | Myth-buster / Charging | Wireless charging kills battery | Busted - heat is the real factor not wireless; Qi2/MagSafe managed; cheap misaligned pads/thick cases/hot car are the killers

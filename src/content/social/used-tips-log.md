@@ -76,3 +76,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-07 | WhatsApp | Media upload quality HD by default (Settings > Storage and data > Media upload quality > HD) so photos/videos stop compressing to Standard
 
 2026-09-08 | iOS | Three-finger editing gestures — swipe LEFT with 3 fingers = undo, swipe RIGHT = redo, pinch IN with 3 fingers = copy (pinch twice = cut), pinch OUT = paste (works anywhere you type)
+2026-09-09 | X | Muted Words - Settings>Privacy & safety>Mute and block>Muted words to mute keywords/phrases/hashtags across Home + notifications (24h or forever)
