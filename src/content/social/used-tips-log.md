@@ -77,3 +77,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-08 | iOS | Three-finger editing gestures — swipe LEFT with 3 fingers = undo, swipe RIGHT = redo, pinch IN with 3 fingers = copy (pinch twice = cut), pinch OUT = paste (works anywhere you type)
 2026-09-09 | X | Muted Words - Settings>Privacy & safety>Mute and block>Muted words to mute keywords/phrases/hashtags across Home + notifications (24h or forever)
+
+2026-09-10 | Samsung One UI | Smart Select / AI select (Edge panel) — draw a box around any screen area to record it as a GIF (up to 15s) or extract/copy the text on screen, no extra app

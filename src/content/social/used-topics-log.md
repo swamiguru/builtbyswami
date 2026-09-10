@@ -222,3 +222,7 @@
 2026-09-09 | 2 | AI business / Europe | Mistral 3B Samsung-led round | Biggest European tech raise ever, ~21B EUR (~24B USD) valuation, Series D, 1B USD ARR target end-2026
 2026-09-09 | 4 | AI Tool Spotlight | Perplexity Comet | Free AI browser (Chromium) - sidebar agent sees your tab, summarizes pages, compares tabs, multi-step tasks; free Mac/Win/Android/iOS (carousel)
 2026-09-09 | 5 | Myth-buster / Charging | Wireless charging kills battery | Busted - heat is the real factor not wireless; Qi2/MagSafe managed; cheap misaligned pads/thick cases/hot car are the killers
+2026-09-10 | 1 | Phones | Apple iPhone 18 Pro + foldable iPhone | iPhone Fold ($1,999-$3,199, 7.6" crease-free, preorders Oct) + iPhone 18 Pro (2nm A20, variable-aperture 48MP, Rs1,64,900, sale Sept 18) launched at Sept 9 event (new hard dev vs 09-09 event-day slot)
+2026-09-10 | 2 | AI / Apps | Meta Muse AI agent | Muse launches in WhatsApp/web/iOS/Android — shops, emails, fills forms, negotiates, pays via per-purchase card; US-only, free+$20/$100 (trust-your-wallet angle)
+2026-09-10 | 4 | Phones / Foldables (Comparison) | iPhone Fold vs Galaxy Z Fold 8 Ultra | v1 crease-free + iOS ecosystem vs 4yr-mature S Pen/DeX/telephoto; who-should-pick verdict (carousel)
+2026-09-10 | 5 | AI (Community/Poll) | OpenAI Navier-Stokes claim | ~10,000 agents/88h claimed proof of Millennium Prize problem, attribution disputed — breakthrough or hype poll (Threads+X, no card)
