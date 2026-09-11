@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/tech-roundup",
+      "destination": "https://longpress.news/daily",
+      "permanent": true
+    },
+    {
+      "source": "/tech-roundup/:path*",
+      "destination": "https://longpress.news/daily/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tech",
+      "destination": "https://longpress.news/daily",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
