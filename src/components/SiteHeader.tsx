@@ -19,7 +19,7 @@ interface NavItem {
 }
 
 /**
- * Five items, no more. The YouTube channel deliberately isn't here — a nav
+ * Four items, no more. The YouTube channel deliberately isn't here — a nav
  * item that ejects every visitor off-domain was the site's biggest leak, so
  * the channel lives as a carousel on the homepage and a link in the footer.
  * Labels match their destination exactly ("The Work" → /about is the one
@@ -27,7 +27,6 @@ interface NavItem {
  */
 const NAV: NavItem[] = [
   { label: "Consulting", to: "/work-with-me" },
-  { label: "The Daily Five", to: "/tech-roundup" },
   { label: "Notes", to: "/notes" },
   { label: "Builds", to: "/builds" },
   { label: "The Work", to: "/about" },

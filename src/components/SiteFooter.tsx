@@ -79,7 +79,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
         <div className="grid grid-cols-3 gap-3 sm:gap-8 md:gap-10 pt-1 md:pt-0 border-t border-m3-outline/10 md:border-t-0">
           <nav className="flex flex-col gap-1.5 md:gap-2">
             <FootHeading>Read</FootHeading>
-            <FootLink to="/tech-roundup">The Daily Five</FootLink>
+            <FootExternal href="https://longpress.news">Long Press</FootExternal>
             <FootLink to="/weekly">The Weekly</FootLink>
             <FootLink to="/notes">Notes</FootLink>
           </nav>
