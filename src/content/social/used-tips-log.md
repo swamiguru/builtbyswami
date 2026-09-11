@@ -79,3 +79,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-09 | X | Muted Words - Settings>Privacy & safety>Mute and block>Muted words to mute keywords/phrases/hashtags across Home + notifications (24h or forever)
 
 2026-09-10 | Samsung One UI | Smart Select / AI select (Edge panel) — draw a box around any screen area to record it as a GIF (up to 15s) or extract/copy the text on screen, no extra app
+
+2026-09-11 | Android | Play Store Auto-Archive unused apps (Play Store > profile > Settings > General > Automatically archive apps) — removes rarely-used apps but keeps icon + your data, one tap re-downloads exactly where you left off; frees storage without losing anything

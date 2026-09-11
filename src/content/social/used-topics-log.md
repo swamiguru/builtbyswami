@@ -226,3 +226,8 @@
 2026-09-10 | 2 | AI / Apps | Meta Muse AI agent | Muse launches in WhatsApp/web/iOS/Android — shops, emails, fills forms, negotiates, pays via per-purchase card; US-only, free+$20/$100 (trust-your-wallet angle)
 2026-09-10 | 4 | Phones / Foldables (Comparison) | iPhone Fold vs Galaxy Z Fold 8 Ultra | v1 crease-free + iOS ecosystem vs 4yr-mature S Pen/DeX/telephoto; who-should-pick verdict (carousel)
 2026-09-10 | 5 | AI (Community/Poll) | OpenAI Navier-Stokes claim | ~10,000 agents/88h claimed proof of Millennium Prize problem, attribution disputed — breakthrough or hype poll (Threads+X, no card)
+
+2026-09-11 | 1 | Security | IDScan ID-verification breach | 153M+ US/Canada driver's licenses & IDs (names, numbers, photos) for sale on dark web, FBI probing (IG pick, carousel)
+2026-09-11 | 2 | Gaming | Marvel's Wolverine reviews | 81 OpenCritic / 77 Metacritic — solid but below Insomniac's Spider-Man (88); launches Sept 15 PS5 (new hard dev vs 09-07 Wolverine-vs-GTA6 poll)
+2026-09-11 | 4 | AI workflow / Prompt of the day | Negotiation coach prompt | 3 things to ask for + 2 leverage points + exact opening line (salary/rent/vendor)
+2026-09-11 | 5 | Hot take / Phones | OnePlus 16 leak | 9,000mAh, 165Hz, Snapdragon 8 Elite Gen 6 Pro, 200MP periscope; Oct China launch (RUMOR/LEAK)
