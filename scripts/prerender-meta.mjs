@@ -94,12 +94,6 @@ const routes = [
     title: `${n.title} | Build Notes`,
     description: n.description,
   })),
-  { path: "tech-roundup", ...PAGE_SEO.techRoundup },
-  ...digests.map((d) => ({
-    path: `tech-roundup/${d.date}`,
-    title: `${d.title} | Tech Roundup`,
-    description: d.intro,
-  })),
 ];
 
 const sub = (html, attr, value) =>
@@ -148,11 +142,13 @@ console.log(`prerender-meta: wrote ${count} route shell(s).`);
 }
 
 
-// Regenerate sitemap.xml from this same route list so new tech-roundup dates
-// and notes can never fall out of sync with what's actually published.
-const HUB_PATHS = new Set(["about", "notes", "weekly", "builds", "tech-roundup", "work-with-me"]);
+// Regenerate sitemap.xml from this same route list so notes can never fall
+// out of sync with what's actually published. The daily lives at
+// longpress.news now, so no tech-roundup URL belongs in here — they all 308
+// off-domain and would just burn crawl budget.
+const HUB_PATHS = new Set(["about", "notes", "weekly", "builds", "work-with-me"]);
 const changefreqFor = (path) =>
-  path === "" ? "weekly" : path === "tech-roundup" ? "daily" : HUB_PATHS.has(path) ? "monthly" : "monthly";
+  path === "" ? "weekly" : HUB_PATHS.has(path) ? "monthly" : "monthly";
 const priorityFor = (path) => (path === "" ? "1.0" : HUB_PATHS.has(path) ? "0.8" : "0.6");
 
 const sitemapEntries = [{ path: "" }, ...routes];

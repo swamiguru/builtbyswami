@@ -29,9 +29,9 @@
  */
 export const PAGE_SEO = {
   home: {
-    title: "The Daily Tech Roundup: Tech News + AI Builds | Swami Guru",
+    title: "Product Consulting for Publishers | Swami Guru",
     description:
-      "Product consulting for publishers and content-driven teams, from ex-Condé Nast product lead Swami Guru — plus a daily five-story tech and AI roundup.",
+      "Product consulting for publishers and content-driven teams, from ex-Condé Nast product lead Swami Guru. Plus build notes from what I ship solo.",
   },
   about: {
     title: "Swami Guru | Senior Product Leader & AI-Native Product Builder",
