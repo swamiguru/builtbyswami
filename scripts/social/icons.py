@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Playful brand icons for builtbyswami cards — colour + glow + sparkles (PIL, no assets).
+"""Playful brand icons for Long Press cards — colour + glow + sparkles (PIL, no assets).
 Public API:
   ACCENT: dict of icon-keyword -> RGB accent colour
   pick(name): returns the shape fn or None (kept for back-compat)
@@ -9,21 +9,22 @@ Public API:
 import math
 from PIL import Image, ImageDraw, ImageFilter
 
-CYAN = (34, 211, 238)
-WHITE = (240, 243, 246)
-BG = (18, 20, 24)
-DARK = (10, 12, 15)
-PANELC = (26, 30, 36)
-RING = (44, 52, 62)
+INDIGO = (169, 182, 255)   # #A9B6FF  Long Press on-dark accent
+CYAN = INDIGO              # name kept; the brand through-line is now indigo
+WHITE = (244, 244, 246)
+BG = (23, 23, 28)          # #17171C  matches the card ground
+DARK = (16, 16, 20)
+PANELC = (34, 34, 42)      # #22222A  icon tile
+RING = (58, 58, 70)
 
-# per-story accent colours (icon pops; brand cyan stays the through-line)
+# per-story accent colours (icon pops; the brand indigo stays the through-line)
 ACCENT = {
     "disc": (96, 165, 250), "gaming": (96, 165, 250), "console": (96, 165, 250), "game": (96, 165, 250),
     "chat": (37, 211, 102), "whatsapp": (37, 211, 102), "message": (37, 211, 102),
     "search": (168, 130, 255), "x": (168, 130, 255),
     "chip": (245, 170, 66), "laptop": (245, 170, 66), "cpu": (245, 170, 66), "processor": (245, 170, 66),
     "incognito": (167, 139, 250), "privacy": (167, 139, 250), "security": (167, 139, 250),
-    "phone": (34, 211, 238), "iphone": (34, 211, 238), "android": (52, 211, 153),
+    "phone": INDIGO, "iphone": INDIGO, "android": (52, 211, 153),
     "robot": (94, 234, 212), "ai": (94, 234, 212),
     "tip": (250, 204, 21), "bulb": (250, 204, 21),
     "mail": (234, 120, 60), "email": (234, 120, 60), "gmail": (234, 120, 60),

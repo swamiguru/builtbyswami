@@ -1,29 +1,64 @@
 #!/usr/bin/env python3
-"""builtbyswami brand card generator.
+"""Long Press card generator (longpress.news).
 Usage: python3 make_card.py "<PILLAR>" "<HOOK>" "<SUBTITLE or ''>" <out.png> [hook|ig|news]
 """
-import sys
+import os, sys
 from PIL import Image, ImageDraw, ImageFont
 try:
     import icons as _icons
 except Exception:
     _icons = None
 
-BG = (18, 20, 24)
-PANEL = (24, 27, 32)
-CYAN = (34, 211, 238)
-WHITE = (240, 243, 246)
-MUTED = (150, 158, 168)
-DARK = (10, 12, 15)
+# Long Press palette - the on-dark register of longpress.news
+# (the site's Known Issue block: ink ground, indigo on top)
+INK    = (23, 23, 28)      # #17171C  site --ink, the card ground
+PANEL  = (34, 34, 42)      # #22222A
+INDIGO = (169, 182, 255)   # #A9B6FF  the site's on-dark accent
+PAPER  = (244, 244, 246)   # #F4F4F6
+MUTED  = (154, 154, 168)   # #9A9AA8
+DEEP   = (16, 16, 20)      # text sitting on an indigo fill
 
-FONT_DIR = "/usr/share/fonts/truetype/google-fonts/"
+# back-compat names, kept so icons.py and any caller keep working
+BG, CYAN, WHITE, DARK = INK, INDIGO, PAPER, DEEP
+
+HANDLE = "@longpressnews"
+
+# The site sets Schibsted Grotesk. Drop static TTFs named
+# SchibstedGrotesk-{Regular,Medium,SemiBold,Bold}.ttf into scripts/social/fonts/
+# and every card picks them up. Until then this falls through to Poppins,
+# then DejaVu, so the generator never dies on a missing font.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+FONT_DIRS = (
+    os.path.join(_HERE, "fonts"),
+    "/usr/share/fonts/truetype/google-fonts/",
+    "/usr/local/share/fonts",
+    os.path.expanduser("~/.fonts"),
+)
 DEJAVU = "/usr/share/fonts/truetype/dejavu/"
+FONT_STACK = ("SchibstedGrotesk", "Poppins")
+# Not every family ships every weight (this box has no Poppins-SemiBold), so
+# try near weights inside a family before dropping to the next family --
+# a slightly heavier cut beats a whole different typeface on the same card.
+WEIGHT_FALLBACK = {
+    "Bold": ("Bold", "SemiBold", "ExtraBold"),
+    "SemiBold": ("SemiBold", "Bold", "Medium"),
+    "Medium": ("Medium", "Regular", "SemiBold"),
+    "Regular": ("Regular", "Medium"),
+}
 
 def font(size, weight="Bold"):
+    for family in FONT_STACK:
+        for w in WEIGHT_FALLBACK.get(weight, (weight,)):
+            for d in FONT_DIRS:
+                try:
+                    return ImageFont.truetype(os.path.join(d, f"{family}-{w}.ttf"), size)
+                except Exception:
+                    continue
+    dv = "DejaVuSans.ttf" if weight in ("Regular", "Medium") else "DejaVuSans-Bold.ttf"
     try:
-        return ImageFont.truetype(FONT_DIR + f"Poppins-{weight}.ttf", size)
+        return ImageFont.truetype(DEJAVU + dv, size)
     except Exception:
-        return ImageFont.truetype(DEJAVU + "DejaVuSans-Bold.ttf", size)
+        return ImageFont.load_default()
 
 def wrap(draw, text, fnt, max_w):
     words, lines, cur = text.split(), [], ""
@@ -52,8 +87,9 @@ def pill(draw, x, y, text, fnt):
 def wordmark(draw, W, H):
     fnt = font(38, "SemiBold")
     y = H - 78
-    draw.ellipse((80, y - 6, 80 + 34, y + 28), fill=CYAN)
-    draw.text((128, y + 11), "@builtbyswami", font=fnt, fill=WHITE, anchor="lm")
+    # the held-key mark: a rounded square, not a dot
+    draw.rounded_rectangle((80, y - 6, 80 + 34, y + 28), radius=10, fill=INDIGO)
+    draw.text((128, y + 11), HANDLE, font=fnt, fill=PAPER, anchor="lm")
 
 def draw_icon(img, icon, W, H):
     if not (_icons and icon):

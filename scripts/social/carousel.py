@@ -1,29 +1,66 @@
 #!/usr/bin/env python3
-"""builtbyswami carousel generator (4:5, 1080x1350).
+"""Long Press carousel generator (4:5, 1080x1350).
 Usage: python3 carousel.py spec.json
 spec: {"tag","prefix","slides":[{type:cover|list|take,...}]}
 """
-import sys, json
+import os, sys, json
 from PIL import Image, ImageDraw, ImageFont
 try:
     import icons as _icons
 except Exception:
     _icons = None
 
-BG = (18, 20, 24)
-CYAN = (34, 211, 238)
-WHITE = (240, 243, 246)
-MUTED = (150, 158, 168)
-DARK = (10, 12, 15)
+# Long Press palette - the on-dark register of longpress.news
+# (the site's Known Issue block: ink ground, indigo on top)
+INK    = (23, 23, 28)      # #17171C  site --ink, the card ground
+PANEL  = (34, 34, 42)      # #22222A
+INDIGO = (169, 182, 255)   # #A9B6FF  the site's on-dark accent
+PAPER  = (244, 244, 246)   # #F4F4F6
+MUTED  = (154, 154, 168)   # #9A9AA8
+DEEP   = (16, 16, 20)      # text sitting on an indigo fill
+
+# back-compat names, kept so icons.py and any caller keep working
+BG, CYAN, WHITE, DARK = INK, INDIGO, PAPER, DEEP
+
+HANDLE = "@longpressnews"
 W, H = 1080, 1350
-FONT_DIR = "/usr/share/fonts/truetype/google-fonts/"
+
+# The site sets Schibsted Grotesk. Drop static TTFs named
+# SchibstedGrotesk-{Regular,Medium,SemiBold,Bold}.ttf into scripts/social/fonts/
+# and every card picks them up. Until then this falls through to Poppins,
+# then DejaVu, so the generator never dies on a missing font.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+FONT_DIRS = (
+    os.path.join(_HERE, "fonts"),
+    "/usr/share/fonts/truetype/google-fonts/",
+    "/usr/local/share/fonts",
+    os.path.expanduser("~/.fonts"),
+)
 DEJAVU = "/usr/share/fonts/truetype/dejavu/"
+FONT_STACK = ("SchibstedGrotesk", "Poppins")
+# Not every family ships every weight (this box has no Poppins-SemiBold), so
+# try near weights inside a family before dropping to the next family --
+# a slightly heavier cut beats a whole different typeface on the same card.
+WEIGHT_FALLBACK = {
+    "Bold": ("Bold", "SemiBold", "ExtraBold"),
+    "SemiBold": ("SemiBold", "Bold", "Medium"),
+    "Medium": ("Medium", "Regular", "SemiBold"),
+    "Regular": ("Regular", "Medium"),
+}
 
 def font(size, weight="Bold"):
+    for family in FONT_STACK:
+        for w in WEIGHT_FALLBACK.get(weight, (weight,)):
+            for d in FONT_DIRS:
+                try:
+                    return ImageFont.truetype(os.path.join(d, f"{family}-{w}.ttf"), size)
+                except Exception:
+                    continue
+    dv = "DejaVuSans.ttf" if weight in ("Regular", "Medium") else "DejaVuSans-Bold.ttf"
     try:
-        return ImageFont.truetype(FONT_DIR + f"Poppins-{weight}.ttf", size)
+        return ImageFont.truetype(DEJAVU + dv, size)
     except Exception:
-        return ImageFont.truetype(DEJAVU + "DejaVuSans-Bold.ttf", size)
+        return ImageFont.load_default()
 
 def wrap(draw, text, fnt, max_w):
     words, lines, cur = text.split(), [], ""
@@ -56,8 +93,9 @@ def base(tag, idx, total):
 def wordmark(d):
     fnt = font(34, "SemiBold")
     y = H - 76
-    d.ellipse((80, y - 6, 80 + 30, y + 24), fill=CYAN)
-    d.text((122, y + 9), "@builtbyswami", font=fnt, fill=WHITE, anchor="lm")
+    # the held-key mark: a rounded square, not a dot
+    d.rounded_rectangle((80, y - 6, 80 + 30, y + 24), radius=9, fill=INDIGO)
+    d.text((122, y + 9), HANDLE, font=fnt, fill=PAPER, anchor="lm")
 
 def cover(tag, s, idx, total):
     img, d, m = base(tag, idx, total)
@@ -75,7 +113,11 @@ def cover(tag, s, idx, total):
     if _icons and icon:
         _icons.render(img, icon, W - 250, H - 470, 180)
     sw = font(40, "SemiBold")
-    d.text((m, H - 200), "Swipe →", font=sw, fill=MUTED, anchor="lm")
+    d.text((m, H - 200), "Swipe", font=sw, fill=MUTED, anchor="lm")
+    # arrow is drawn, not typed: not every fallback font carries U+2192
+    ax, ay = m + d.textlength("Swipe", font=sw) + 22, H - 200
+    d.line((ax, ay, ax + 32, ay), fill=MUTED, width=5)
+    d.polygon([(ax + 28, ay - 11), (ax + 46, ay), (ax + 28, ay + 11)], fill=MUTED)
     wordmark(d)
     return img
 
