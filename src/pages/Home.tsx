@@ -15,7 +15,7 @@ import {
   Globe,
   Server,
 } from "lucide-react";
-import { formatDigestDate } from "../data/social";
+import { formatLongDate } from "../lib/formatDate";
 import { useLatestWeekly } from "../hooks/useLatestWeekly";
 import { trackCta } from "../lib/analytics";
 import { getLatestNotes, formatNoteDate } from "../data/notes";
@@ -371,7 +371,7 @@ export default function Home() {
                   <div className="p-4 md:p-5 flex flex-col justify-center gap-1.5 md:gap-2 flex-1 min-w-0">
                     <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant">
                       {latestIssue.issueNumber !== undefined && `Issue #${latestIssue.issueNumber} · `}
-                      {formatDigestDate(latestIssue.publishedDate)}
+                      {formatLongDate(latestIssue.publishedDate)}
                     </span>
                     <h2 className="display text-base md:text-lg font-extrabold tracking-tight leading-snug line-clamp-2">
                       {latestIssue.title}

@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { ArrowUpRight, Clock, Mail } from "lucide-react";
-import { formatDigestDate } from "../data/social";
+import { formatLongDate } from "../lib/formatDate";
 import { WEEKLY_PUBLICATION_URL } from "../data/weekly";
 import { useWeeklyIssues } from "../hooks/useLatestWeekly";
 import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
@@ -46,9 +46,9 @@ export default function Weekly() {
             The week, distilled
           </h1>
           <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
-            I run the daily five all week. This is the best of it in one email,
-            plus what I&rsquo;m building in public. Every issue is free and
-            opens on beehiiv.
+            I publish five tech stories every morning at Long Press. This is
+            the best of the week in one email, plus what I&rsquo;m building in
+            public. Every issue is free and opens on beehiiv.
           </p>
         </section>
 
@@ -77,7 +77,7 @@ export default function Weekly() {
                   <div className="flex-1 min-w-0">
                     <div className="text-[11px] font-bold uppercase tracking-widest text-m3-primary mb-2">
                       {issue.issueNumber !== undefined && `Issue #${issue.issueNumber} · `}
-                      {formatDigestDate(issue.publishedDate)}
+                      {formatLongDate(issue.publishedDate)}
                     </div>
                     <h2 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-primary transition-colors">
                       {issue.title}

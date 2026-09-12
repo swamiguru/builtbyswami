@@ -33,7 +33,7 @@ export const BUILDS: Build[] = [
   {
     name: "builtbyswami.com",
     status: "Live",
-    what: "A daily-publishing tech platform — the site, the daily five, the newsletter and the social cards, built and run from one repo.",
+    what: "A daily-publishing tech platform: the site, the daily brief, the newsletter and the social cards, all run from one repo. The daily outgrew it and now runs as its own title at longpress.news.",
     constraint:
       "Publish every day from day one. The site had to be finished enough to carry a daily habit before it was finished enough to look right.",
     shipped: "Publishing daily since 12 July 2026",

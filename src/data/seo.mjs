@@ -53,13 +53,6 @@ export const PAGE_SEO = {
     description:
       "The Weekly by Swami Guru — every issue of the Builtbyswami Weekly: the best of the daily five, plus what I'm building in public. Free.",
   },
-  techRoundup: {
-    // "The Daily Five" is the brand name in the nav. The title tag keeps the
-    // words people search for, which are not the same thing.
-    title: "Daily Tech & AI Roundup | Swami Guru",
-    description:
-      "Daily tech & AI roundups from Swami Guru — the biggest stories, honest takes, and practical tips, filtered so you only get what's worth your time.",
-  },
   workWithMe: {
     title: "Swami Guru | Product Consulting for Publishers & Content Teams",
     description:

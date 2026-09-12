@@ -14,6 +14,11 @@
       "source": "/tech",
       "destination": "https://longpress.news/daily",
       "permanent": true
+    },
+    {
+      "source": "/tech/:path*",
+      "destination": "https://longpress.news/daily/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [

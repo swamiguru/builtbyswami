@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
@@ -12,15 +12,8 @@ import Notes from "./pages/Notes";
 import Weekly from "./pages/Weekly";
 import Builds from "./pages/Builds";
 import NotePost from "./pages/NotePost";
-import Tech from "./pages/Tech";
-import TechDigest from "./pages/TechDigest";
 import WorkWithMe from "./pages/WorkWithMe";
 import CaseStudy from "./pages/CaseStudy";
-
-function TechRedirect() {
-  const { date } = useParams<{ date: string }>();
-  return <Navigate to={`/tech-roundup/${date}`} replace />;
-}
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -51,17 +44,14 @@ export default function App() {
         <Route path="/weekly" element={<Weekly />} />
         <Route path="/builds" element={<Builds />} />
         <Route path="/notes/:slug" element={<NotePost />} />
-        <Route path="/tech-roundup" element={<Tech />} />
-        <Route path="/tech-roundup/:date" element={<TechDigest />} />
         <Route path="/work-with-me" element={<WorkWithMe />} />
         <Route path="/case-study/:slug" element={<CaseStudy />} />
         {/* Common aliases people type or link — all land on the services page */}
         <Route path="/hire" element={<Navigate to="/work-with-me" replace />} />
         <Route path="/consulting" element={<Navigate to="/work-with-me" replace />} />
         <Route path="/newsletter" element={<Navigate to="/weekly" replace />} />
-        {/* Legacy /tech paths redirect to the new slug */}
-        <Route path="/tech" element={<Navigate to="/tech-roundup" replace />} />
-        <Route path="/tech/:date" element={<TechRedirect />} />
+        {/* /tech and /tech-roundup are gone: vercel.json 308s every one of
+           them to longpress.news before React ever loads. */}
         {/* Requested alias — /portfolio redirects to the re-homed portfolio */}
         <Route path="/portfolio" element={<Navigate to="/about" replace />} />
         {/* Unknown routes fall back to the hub */}

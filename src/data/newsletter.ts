@@ -11,11 +11,11 @@
  */
 
 /** Short title for the offer. */
-export const NEWSLETTER_TITLE = "Every day's five, one weekly digest";
+export const NEWSLETTER_TITLE = "The best of Long Press, once a week";
 
 /** The canonical promise. Do not paraphrase at the call site. */
 export const NEWSLETTER_PROMISE =
-  "Five tech stories every morning, distilled into one weekly email — plus what I'm building in public. Free.";
+  "Five tech stories every morning at Long Press. The best of the week lands here in one email, plus what I'm building in public. Free.";
 
 /**
  * One-line version for the slim strip under the header, where the full
@@ -23,4 +23,4 @@ export const NEWSLETTER_PROMISE =
  */
 export const NEWSLETTER_TAGLINE = "5 stories. 5 minutes. Zero fluff.";
 export const NEWSLETTER_TAGLINE_SUFFIX =
-  " — today's five, distilled into one weekly email.";
+  " — the best of Long Press, in one weekly email.";
