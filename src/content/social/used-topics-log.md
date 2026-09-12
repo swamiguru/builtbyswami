@@ -231,3 +231,7 @@
 2026-09-11 | 2 | Gaming | Marvel's Wolverine reviews | 81 OpenCritic / 77 Metacritic — solid but below Insomniac's Spider-Man (88); launches Sept 15 PS5 (new hard dev vs 09-07 Wolverine-vs-GTA6 poll)
 2026-09-11 | 4 | AI workflow / Prompt of the day | Negotiation coach prompt | 3 things to ask for + 2 leverage points + exact opening line (salary/rent/vendor)
 2026-09-11 | 5 | Hot take / Phones | OnePlus 16 leak | 9,000mAh, 165Hz, Snapdragon 8 Elite Gen 6 Pro, 200MP periscope; Oct China launch (RUMOR/LEAK)
+2026-09-12 | 1 | Security/AI | Anthropic Sept 2026 threat report | AI agents running autonomous cyberattacks/scams/model theft at machine speed; cybersecurity a critical inflection point (trending pick)
+2026-09-12 | 2 | Chips | Snapdragon Summit 2026 / 8 Elite Gen 6 | Sept 22-24 reveal, worlds-first 5GHz mobile CPU on 2nm + Pro variant, powers Galaxy S27/OnePlus 16/iQOO 16 (date OFFICIAL, specs LEAK, launch watch)
+2026-09-12 | 4 | Comparison/Privacy | WhatsApp vs Telegram vs Signal | E2EE + metadata honest verdict; Signal privacy king, Telegram not E2EE by default, WhatsApp Meta metadata (IG pick, carousel)
+2026-09-12 | 5 | Security quick-win | Set a SIM PIN | stops SIM-swap OTP theft if phone/SIM stolen; iOS Cellular>SIM PIN, Android Security>SIM card lock

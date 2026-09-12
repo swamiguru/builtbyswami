@@ -81,3 +81,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-10 | Samsung One UI | Smart Select / AI select (Edge panel) — draw a box around any screen area to record it as a GIF (up to 15s) or extract/copy the text on screen, no extra app
 
 2026-09-11 | Android | Play Store Auto-Archive unused apps (Play Store > profile > Settings > General > Automatically archive apps) — removes rarely-used apps but keeps icon + your data, one tap re-downloads exactly where you left off; frees storage without losing anything
+
+2026-09-12 | Windows 11 | God Mode master-settings folder (rename a new folder to GodMode.{ED7BA470-8E54-465E-825C-99712043E01C} for one list of every Windows setting)
