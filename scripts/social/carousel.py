@@ -3,32 +3,41 @@
 Usage: python3 carousel.py spec.json
 spec: {"tag","prefix","slides":[{type:cover|list|take,...}]}
 """
-import os, sys, json
+import glob, os, sys, json
 from PIL import Image, ImageDraw, ImageFont
 try:
     import icons as _icons
 except Exception:
     _icons = None
 
-# Long Press palette - the on-dark register of longpress.news
-# (the site's Known Issue block: ink ground, indigo on top)
-INK    = (23, 23, 28)      # #17171C  site --ink, the card ground
-PANEL  = (34, 34, 42)      # #22222A
-INDIGO = (169, 182, 255)   # #A9B6FF  the site's on-dark accent
-PAPER  = (244, 244, 246)   # #F4F4F6
-MUTED  = (154, 154, 168)   # #9A9AA8
-DEEP   = (16, 16, 20)      # text sitting on an indigo fill
+# Long Press palette - the newsroom identity, taken from the site's own
+# tokens in longpress.news src/styles/global.css. Cards render on the site's
+# MIDNIGHT ground (--ink), not its cream page ground: a cream card disappears
+# in a feed, and the site's own inverted blocks and share card are midnight.
+MIDNIGHT = (23, 24, 46)     # #17182E  --ink        the card ground
+PANEL    = (34, 35, 60)     # #22233C  one step up  panels and icon tiles
+ORANGE   = (224, 85, 43)    # #E0552B  --accent     fills, rules, large type
+ORANGE_LT= (255, 157, 122)  # #FF9D7A  --accent-light  accent text ON midnight
+PAPER    = (244, 241, 232)  # #F4F1E8  --ground     body text on midnight
+MUTED    = (154, 151, 168)  # #9A97A8  --muted-light
+TEAL     = (62, 124, 116)   # #3E7C74  --accent-2   the second voice
+DEEP     = (23, 24, 46)     # text sitting on an orange fill
+
+# Small orange text on midnight is about 3:1 - under the readable line. Use
+# ORANGE_LT wherever the accent carries words; ORANGE only for fills, rules
+# and display-size type.
 
 # back-compat names, kept so icons.py and any caller keep working
-BG, CYAN, WHITE, DARK = INK, INDIGO, PAPER, DEEP
+BG, CYAN, WHITE, DARK = MIDNIGHT, ORANGE, PAPER, DEEP
 
 HANDLE = "@longpressnews"
+
 W, H = 1080, 1350
 
-# The site sets Schibsted Grotesk. Drop static TTFs named
-# SchibstedGrotesk-{Regular,Medium,SemiBold,Bold}.ttf into scripts/social/fonts/
-# and every card picks them up. Until then this falls through to Poppins,
-# then DejaVu, so the generator never dies on a missing font.
+# The site sets Bricolage Grotesque. Google ships it with an optical-size
+# suffix (BricolageGrotesque_48pt-Bold.ttf), so match by glob rather than an
+# exact filename. Falls through Poppins to DejaVu: this never dies on a
+# missing font, it just stops looking like the masthead.
 _HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIRS = (
     os.path.join(_HERE, "fonts"),
@@ -37,9 +46,9 @@ FONT_DIRS = (
     os.path.expanduser("~/.fonts"),
 )
 DEJAVU = "/usr/share/fonts/truetype/dejavu/"
-FONT_STACK = ("SchibstedGrotesk", "Poppins")
-# Not every family ships every weight (this box has no Poppins-SemiBold), so
-# try near weights inside a family before dropping to the next family --
+FONT_STACK = ("BricolageGrotesque", "Poppins")
+# Not every family ships every weight (some boxes have no Poppins-SemiBold),
+# so try near weights inside a family before dropping to the next family --
 # a slightly heavier cut beats a whole different typeface on the same card.
 WEIGHT_FALLBACK = {
     "Bold": ("Bold", "SemiBold", "ExtraBold"),
@@ -48,19 +57,39 @@ WEIGHT_FALLBACK = {
     "Regular": ("Regular", "Medium"),
 }
 
+def _find_font(family, weight):
+    for d in FONT_DIRS:
+        for pat in (f"{family}-{weight}.ttf", f"{family}*-{weight}.ttf"):
+            hits = sorted(glob.glob(os.path.join(d, pat)))
+            if hits:
+                return hits[0]
+    return None
+
 def font(size, weight="Bold"):
     for family in FONT_STACK:
         for w in WEIGHT_FALLBACK.get(weight, (weight,)):
-            for d in FONT_DIRS:
+            path = _find_font(family, w)
+            if path:
                 try:
-                    return ImageFont.truetype(os.path.join(d, f"{family}-{w}.ttf"), size)
+                    return ImageFont.truetype(path, size)
                 except Exception:
-                    continue
+                    pass
     dv = "DejaVuSans.ttf" if weight in ("Regular", "Medium") else "DejaVuSans-Bold.ttf"
     try:
         return ImageFont.truetype(DEJAVU + dv, size)
     except Exception:
         return ImageFont.load_default()
+
+def mark(draw, x, y, size):
+    """The Long Press mark: a ring with a centred dot, right arc in orange.
+    Press and hold. Same shape as the favicon and the share card."""
+    w = max(3, int(round(size * 0.14)))
+    box = (x, y, x + size, y + size)
+    draw.ellipse(box, outline=PAPER, width=w)
+    draw.arc(box, start=-88, end=62, fill=ORANGE, width=w)
+    r = size * 0.20
+    cx, cy = x + size / 2.0, y + size / 2.0
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=PAPER)
 
 def wrap(draw, text, fnt, max_w):
     words, lines, cur = text.split(), [], ""
@@ -93,25 +122,32 @@ def base(tag, idx, total):
 def wordmark(d):
     fnt = font(34, "SemiBold")
     y = H - 76
-    # the held-key mark: a rounded square, not a dot
-    d.rounded_rectangle((80, y - 6, 80 + 30, y + 24), radius=9, fill=INDIGO)
-    d.text((122, y + 9), HANDLE, font=fnt, fill=PAPER, anchor="lm")
+    mark(d, 80, y - 7, 34)
+    d.text((126, y + 9), HANDLE, font=fnt, fill=PAPER, anchor="lm")
 
 def cover(tag, s, idx, total):
     img, d, m = base(tag, idx, total)
     tf = font(96, "Bold")
     lines = wrap(d, s["title"], tf, W - m*2)
-    y = 430
+    # The 430 start assumed a one or two line title. A third line used to run
+    # straight into the icon tile, so lift the block as it grows.
+    y = max(300, 430 - (len(lines) - 2) * 58)
     for ln in lines:
         d.text((m, y), ln, font=tf, fill=WHITE, anchor="lm"); y += 116
     if s.get("sub"):
         sf = font(44, "Medium")
         y += 24
         for ln in wrap(d, s["sub"], sf, W - m*2):
-            d.text((m, y), ln, font=sf, fill=CYAN, anchor="lm"); y += 58
+            d.text((m, y), ln, font=sf, fill=ORANGE_LT, anchor="lm"); y += 58
     icon = s.get("icon")
     if _icons and icon:
-        _icons.render(img, icon, W - 250, H - 470, 180)
+        # Sit below whatever the text actually used. On a long title there is
+        # less room, so shrink the tile rather than collide with the headline
+        # (the old fixed y) or leave a hole in the middle of the slide.
+        top, floor = int(y) + 40, H - 250
+        r = min(180, (floor - top) // 2)
+        if r >= 90:
+            _icons.render(img, icon, W - 250, top + r, r)
     sw = font(40, "SemiBold")
     d.text((m, H - 200), "Swipe", font=sw, fill=MUTED, anchor="lm")
     # arrow is drawn, not typed: not every fallback font carries U+2192
