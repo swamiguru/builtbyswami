@@ -31,10 +31,16 @@ BG, CYAN, WHITE, DARK = MIDNIGHT, ORANGE, PAPER, DEEP
 
 HANDLE = "@longpressnews"
 
-# The site sets Bricolage Grotesque. Google ships it with an optical-size
-# suffix (BricolageGrotesque_48pt-Bold.ttf), so match by glob rather than an
-# exact filename. Falls through Poppins to DejaVu: this never dies on a
-# missing font, it just stops looking like the masthead.
+# The site's actual display type (src/styles/global.css --display) is
+# Archivo, with Public Sans as body. Earlier revisions of this comment named
+# Bricolage Grotesque / Poppins and the fonts/README named Schibsted Grotesk
+# - none of those match global.css and none of those TTFs were ever present
+# on the Mac this generator runs on (no google-fonts dir, no /usr/share
+# DejaVu either - those are Linux paths). Every card since this script
+# existed silently fell through every family to ImageFont.load_default(),
+# which is why headlines rendered tiny and curly quotes/em dashes rendered
+# as boxes. Match by glob (not an exact filename) in case a future family
+# ships with an optical-size suffix.
 _HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIRS = (
     os.path.join(_HERE, "fonts"),
@@ -43,7 +49,7 @@ FONT_DIRS = (
     os.path.expanduser("~/.fonts"),
 )
 DEJAVU = "/usr/share/fonts/truetype/dejavu/"
-FONT_STACK = ("BricolageGrotesque", "Poppins")
+FONT_STACK = ("Archivo", "PublicSans")
 # Not every family ships every weight (some boxes have no Poppins-SemiBold),
 # so try near weights inside a family before dropping to the next family --
 # a slightly heavier cut beats a whole different typeface on the same card.
