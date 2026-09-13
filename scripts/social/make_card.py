@@ -25,6 +25,25 @@ except Exception:
 _GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
 _GEMINI_TIMEOUT = 25  # seconds -- the daily run is already tight against 10:00 IST
 
+def _load_env_file():
+    """Pick up GEMINI_API_KEY from a .env file, no dotenv dependency needed
+    for one line. Checks the repo root and this script's own directory;
+    real environment variables always win (setdefault), this only fills a
+    gap. Whatever invokes this script (the daily task, a manual run, CI)
+    doesn't need to know or set anything -- it's picked up automatically."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    for path in (os.path.join(here, "..", "..", ".env"), os.path.join(here, ".env")):
+        if not os.path.exists(path):
+            continue
+        for line in open(path):
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+_load_env_file()
+
 def _illustration_path(out):
     """card_3.png -> illustration_3.png, same folder. Falls back to a
     generic name if `out` doesn't match the card_N.png convention (e.g. a
