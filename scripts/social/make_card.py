@@ -71,8 +71,10 @@ card, no panel, no rounded rectangle, no glow, no checkerboard, no
 transparency. The background must be one single flat opaque color from
 edge to edge.
 
-Invent one clear visual metaphor for this tech news story, centered with
-generous padding, rendered only in thin clean line art. Story: {story}
+Invent one clear visual metaphor for this tech news story, drawn BIG and
+bold so it fills at least 85 percent of the frame edge to edge with only
+a thin, even margin -- not a small centered icon floating in a lot of
+empty background. Rendered only in thin clean line art. Story: {story}
 
 Do not depict any real person, real company logo, brand mark, wordmark, or
 any text or letters anywhere in the image -- use abstract or symbolic
@@ -101,10 +103,64 @@ no photorealism, no drop shadow, no extra background shapes of any kind.
                 if inline and inline.get("data"):
                     with open(illus_path, "wb") as f:
                         f.write(base64.b64decode(inline["data"]))
+                    _tighten_illustration(illus_path)
                     return True
     except Exception as e:
         print(f"illustration: skipped ({e})", file=sys.stderr)
     return False
+
+def _tighten_illustration(path, margin_frac=0.12, thresh=28):
+    """Gemini's framing drifts run to run -- 13 Sept shipped illustrations
+    as small as ~48% of the canvas even after asking for "generous padding"
+    (the prompt wording that used to sit above). Rather than trust wording
+    alone, always re-crop to the artwork's own bounding box afterward: find
+    where pixels differ from the sampled background, square up around that
+    box with a small margin, and rescale back to the original canvas size.
+    No numpy on this Mac, so this stays pure Pillow. Never raises -- a
+    detection miss just leaves the original image in place."""
+    try:
+        from PIL import ImageChops
+        im = Image.open(path).convert("RGB")
+        w, h = im.size
+
+        def sample_bg():
+            px = []
+            for x in range(0, w, 8):
+                px.append(im.getpixel((x, 0)))
+                px.append(im.getpixel((x, h - 1)))
+            for y in range(0, h, 8):
+                px.append(im.getpixel((0, y)))
+                px.append(im.getpixel((w - 1, y)))
+            r = sum(p[0] for p in px) / len(px)
+            g = sum(p[1] for p in px) / len(px)
+            b = sum(p[2] for p in px) / len(px)
+            return (round(r), round(g), round(b))
+
+        bg = sample_bg()
+        diff = ImageChops.difference(im, Image.new("RGB", (w, h), bg))
+        bbox = diff.convert("L").point(lambda p: 255 if p > thresh else 0).getbbox()
+        if not bbox:
+            return
+        left, top, right, bottom = bbox
+        bbw, bbh = right - left, bottom - top
+        # Already filling the frame -- leave it alone rather than upscale noise.
+        if bbw >= w * 0.85 and bbh >= h * 0.85:
+            return
+        cx, cy = (left + right) / 2, (top + bottom) / 2
+        half = max(bbw, bbh) * (1 + margin_frac) / 2
+        nl, nt, nr, nb = cx - half, cy - half, cx + half, cy + half
+        pad_l, pad_t = max(0, -nl), max(0, -nt)
+        pad_r, pad_b = max(0, nr - w), max(0, nb - h)
+        work = im
+        if pad_l or pad_t or pad_r or pad_b:
+            canvas = Image.new("RGB", (w + int(round(pad_l + pad_r)), h + int(round(pad_t + pad_b))), bg)
+            canvas.paste(im, (int(round(pad_l)), int(round(pad_t))))
+            work = canvas
+            nl, nr, nt, nb = nl + pad_l, nr + pad_l, nt + pad_t, nb + pad_t
+        crop = work.crop((int(round(nl)), int(round(nt)), int(round(nr)), int(round(nb))))
+        crop.resize((w, h), Image.LANCZOS).save(path)
+    except Exception as e:
+        print(f"illustration: tighten skipped ({e})", file=sys.stderr)
 
 # Long Press palette - the newsroom identity, taken from the site's own
 # tokens in longpress.news src/styles/global.css. Cards render on the site's
