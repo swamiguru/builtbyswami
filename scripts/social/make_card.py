@@ -2,12 +2,90 @@
 """Long Press card generator (longpress.news).
 Usage: python3 make_card.py "<PILLAR>" "<HOOK>" "<SUBTITLE or ''>" <out.png> [hook|ig|news]
 """
-import glob, os, sys
+import base64, glob, json, os, sys, urllib.error, urllib.request
 from PIL import Image, ImageDraw, ImageFont
 try:
     import icons as _icons
 except Exception:
     _icons = None
+
+# --- AI illustration (13 Sept) ------------------------------------------
+# Per-story illustration via Gemini image gen, replacing the small drawn
+# icon with something that actually depicts the story. Two files come out
+# of every card: card_N.png (this card, headline baked in, for social) and
+# illustration_N.png beside it (same picture alone, no headline -- that one
+# is what the LONG PRESS SITE shows, since the site already renders the
+# real headline as text and a second copy baked into the picture is just
+# redundant there). import-roundup.mjs on the longpress side looks for
+# illustration_N.png next to each card_N.png and prefers it; nothing on
+# this side has to know that -- it is purely a naming convention.
+#
+# Never let this block a publish: no key, a network hiccup, or a slow
+# response all just fall through to the old drawn icon (draw_icon below).
+_GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
+_GEMINI_TIMEOUT = 25  # seconds -- the daily run is already tight against 10:00 IST
+
+def _illustration_path(out):
+    """card_3.png -> illustration_3.png, same folder. Falls back to a
+    generic name if `out` doesn't match the card_N.png convention (e.g. a
+    one-off manual call) so this never raises."""
+    d, base = os.path.split(out)
+    if base.startswith("card_") and base.endswith(".png"):
+        return os.path.join(d, "illustration_" + base[len("card_"):])
+    return os.path.join(d, "illustration_" + base)
+
+def generate_illustration(pillar, hook, sub, illus_path):
+    """Write a full-bleed, on-brand, text-free illustration for this story
+    to illus_path. Returns True on success, False on ANY failure (missing
+    key, network error, bad response, timeout) -- callers must treat False
+    as "no illustration available" and fall back, never raise."""
+    if os.path.exists(illus_path):
+        return True  # already made this run/day -- don't re-spend the call
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return False
+    story = f"{pillar}: {hook}" + (f" -- {sub}" if sub else "")
+    prompt = f"""Flat vector editorial illustration, square, filling the
+entire frame edge to edge with a solid flat background color of exactly
+#17182E (a dark midnight navy) -- no vignette, no gradient, no border, no
+card, no panel, no rounded rectangle, no glow, no checkerboard, no
+transparency. The background must be one single flat opaque color from
+edge to edge.
+
+Invent one clear visual metaphor for this tech news story, centered with
+generous padding, rendered only in thin clean line art. Story: {story}
+
+Do not depict any real person, real company logo, brand mark, wordmark, or
+any text or letters anywhere in the image -- use abstract or symbolic
+objects instead of literal logos or trademarks.
+
+Line art and accent colors only, background stays pure #17182E: use warm
+cream #F4F1E8 for the main linework, orange #E0552B as the primary accent,
+and muted teal #3E7C74 as a rare secondary accent. Minimal geometric style,
+no photorealism, no drop shadow, no extra background shapes of any kind.
+"""
+    body = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"responseModalities": ["IMAGE"]},
+    }).encode()
+    url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+           f"{_GEMINI_MODEL}:generateContent?key={api_key}")
+    req = urllib.request.Request(url, data=body,
+                                  headers={"Content-Type": "application/json"},
+                                  method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=_GEMINI_TIMEOUT) as resp:
+            data = json.load(resp)
+        for cand in data.get("candidates", []):
+            for part in cand.get("content", {}).get("parts", []):
+                inline = part.get("inlineData")
+                if inline and inline.get("data"):
+                    with open(illus_path, "wb") as f:
+                        f.write(base64.b64decode(inline["data"]))
+                    return True
+    except Exception as e:
+        print(f"illustration: skipped ({e})", file=sys.stderr)
+    return False
 
 # Long Press palette - the newsroom identity, taken from the site's own
 # tokens in longpress.news src/styles/global.css. Cards render on the site's
@@ -129,6 +207,22 @@ def draw_icon(img, icon, W, H):
         return
     _icons.render(img, icon, W - 250, H - 250, 175)
 
+def draw_illustration(img, illus_path, W, H, text_bottom, margin):
+    """Paste the generated illustration bottom-right, sized to whatever
+    vertical space is actually left below the headline/subtitle -- so a
+    long three-line headline gets a smaller picture instead of colliding
+    with it, and a short one-line headline gets a bigger one."""
+    wordmark_top = H - 78 - 34
+    avail = wordmark_top - text_bottom - 24
+    size = max(0, min(560, avail, W - margin * 2))
+    if size < 220:
+        return False  # too little room left to be worth showing at all
+    illus = Image.open(illus_path).convert("RGB").resize((size, size), Image.LANCZOS)
+    x = W - margin - size
+    y = wordmark_top - size
+    img.paste(illus, (x, y))
+    return True
+
 def make(pillar, hook, sub, out, mode, icon=None):
     if mode == "ig":
         W, H = 1080, 1350
@@ -162,10 +256,15 @@ def make(pillar, hook, sub, out, mode, icon=None):
             y += 20
             d.text((margin, y), ln, font=sf, fill=MUTED, anchor="lm")
             y += 46
-    draw_icon(img, icon, W, H)
+    illus_path = _illustration_path(out)
+    used_illustration = False
+    if generate_illustration(pillar, hook, sub, illus_path):
+        used_illustration = draw_illustration(img, illus_path, W, H, y, margin)
+    if not used_illustration:
+        draw_icon(img, icon, W, H)
     wordmark(ImageDraw.Draw(img), W, H)
     img.convert("RGB").save(out)
-    print("saved", out)
+    print("saved", out, "(illustration)" if used_illustration else "(icon fallback)")
 
 if __name__ == "__main__":
     pillar = sys.argv[1]
