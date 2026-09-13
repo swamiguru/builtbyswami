@@ -235,3 +235,7 @@
 2026-09-12 | 2 | Chips | Snapdragon Summit 2026 / 8 Elite Gen 6 | Sept 22-24 reveal, worlds-first 5GHz mobile CPU on 2nm + Pro variant, powers Galaxy S27/OnePlus 16/iQOO 16 (date OFFICIAL, specs LEAK, launch watch)
 2026-09-12 | 4 | Comparison/Privacy | WhatsApp vs Telegram vs Signal | E2EE + metadata honest verdict; Signal privacy king, Telegram not E2EE by default, WhatsApp Meta metadata (IG pick, carousel)
 2026-09-12 | 5 | Security quick-win | Set a SIM PIN | stops SIM-swap OTP theft if phone/SIM stolen; iOS Cellular>SIM PIN, Android Security>SIM card lock
+2026-09-13 | 1 | Global tech/China/Chips | DeepSeek x Huawei Ascend | 160,000 Ascend 950DT chips for 1GW Ulanqab inference cluster, inference-only (training stays Nvidia), Nvidia locked out of China (neutral product framing)
+2026-09-13 | 2 | Phones | Techtember flagship launch watch | Vivo X500 Pro/Oppo Find X10 Pro/Xiaomi 18/iQOO 16/Huawei Mate 90 Sept flood, Dimensity 9600 Pro + Snapdragon 8 Elite Gen 6 (rumour), wait-2-weeks (launch watch, IG pick, carousel)
+2026-09-13 | 4 | Security & Privacy quick-win | Google Results about you | find/remove phone-email-address from Search + new-result alerts (carousel)
+2026-09-13 | 5 | Hot take / AI | Grok 4.7 delay | Musk 10-day countdown expired again; xAI says RL made model give up early on hard tasks; late-beats-broken opinion (opinion quota)
