@@ -84,3 +84,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-12 | Windows 11 | God Mode master-settings folder (rename a new folder to GodMode.{ED7BA470-8E54-465E-825C-99712043E01C} for one list of every Windows setting)
 2026-09-13 | iPadOS | Scribble — handwrite with Apple Pencil into ANY text field (Safari address bar/search/forms), auto-converts to typed text; scratch out to delete, vertical line to add space (Settings > Apple Pencil > Scribble)
+
+2026-09-14 | macOS | Window tiling — drag window to a screen edge/corner to snap half/quarter, or hover the green button for the Move & Resize menu (Fn+Ctrl+arrows), no third-party app

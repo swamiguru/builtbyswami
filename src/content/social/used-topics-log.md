@@ -239,3 +239,8 @@
 2026-09-13 | 2 | Phones | Techtember flagship launch watch | Vivo X500 Pro/Oppo Find X10 Pro/Xiaomi 18/iQOO 16/Huawei Mate 90 Sept flood, Dimensity 9600 Pro + Snapdragon 8 Elite Gen 6 (rumour), wait-2-weeks (launch watch, IG pick, carousel)
 2026-09-13 | 4 | Security & Privacy quick-win | Google Results about you | find/remove phone-email-address from Search + new-result alerts (carousel)
 2026-09-13 | 5 | Hot take / AI | Grok 4.7 delay | Musk 10-day countdown expired again; xAI says RL made model give up early on hard tasks; late-beats-broken opinion (opinion quota)
+
+2026-09-14 | 1 | Security | Nightmare Eclipse ShieldCrash Windows exploit | SYSTEM access on fully patched Win10/11/Server hours after Sept Patch Tuesday, 3rd Defender-fix bypass, PoC no-write (trending security pick)
+2026-09-14 | 2 | Creator economy | X Original Content Rewards | X retires ad revenue-sharing; pays only original work (writing/self-shot/analysis), reposts demoted, first payout Sept 25, biweekly
+2026-09-14 | 4 | Myth-buster / Chips (opinion) | Clock speed / 5GHz myth | Peak GHz throttles in seconds; architecture/IPC, RAM, storage, software & cooling decide real speed (opinion quota, IG pick, carousel)
+2026-09-14 | 5 | Community / Poll (creator economy) | X original-content-only payouts | Will original-only rewards clean up the feed or just get gamed? (Threads+X, no card, tied to slot 2)
