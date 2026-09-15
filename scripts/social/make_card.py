@@ -23,7 +23,16 @@ except Exception:
 # Never let this block a publish: no key, a network hiccup, or a slow
 # response all just fall through to the old drawn icon (draw_icon below).
 _GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
-_GEMINI_TIMEOUT = 25  # seconds -- the daily run is already tight against 10:00 IST
+# 15 Sept: 25s was too tight -- a plain manual call measured ~20s with a
+# quiet machine, so any extra load (a background macOS/Xcode update was
+# running during the 15 Sept task) or the preview model's normal jitter
+# pushes it over. That silently loses the illustration for the day and
+# the site falls back to showing the headline-baked social card instead --
+# not a crash, just the wrong image, so nothing surfaced it. Widened to 45s
+# and given one retry (see generate_illustration) rather than trusting a
+# single tight attempt.
+_GEMINI_TIMEOUT = 45  # seconds per attempt
+_GEMINI_ATTEMPTS = 2
 
 def _load_env_file():
     """Pick up GEMINI_API_KEY from a .env file, no dotenv dependency needed
@@ -94,19 +103,25 @@ no photorealism, no drop shadow, no extra background shapes of any kind.
     req = urllib.request.Request(url, data=body,
                                   headers={"Content-Type": "application/json"},
                                   method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=_GEMINI_TIMEOUT) as resp:
-            data = json.load(resp)
-        for cand in data.get("candidates", []):
-            for part in cand.get("content", {}).get("parts", []):
-                inline = part.get("inlineData")
-                if inline and inline.get("data"):
-                    with open(illus_path, "wb") as f:
-                        f.write(base64.b64decode(inline["data"]))
-                    _tighten_illustration(illus_path)
-                    return True
-    except Exception as e:
-        print(f"illustration: skipped ({e})", file=sys.stderr)
+    # One retry: a timeout or a hiccup on attempt 1 is common enough for a
+    # preview model that it isn't worth losing the day's illustration over.
+    # Still never raises -- callers must keep treating False as "no
+    # illustration available" and fall back to the drawn icon.
+    for attempt in range(1, _GEMINI_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=_GEMINI_TIMEOUT) as resp:
+                data = json.load(resp)
+            for cand in data.get("candidates", []):
+                for part in cand.get("content", {}).get("parts", []):
+                    inline = part.get("inlineData")
+                    if inline and inline.get("data"):
+                        with open(illus_path, "wb") as f:
+                            f.write(base64.b64decode(inline["data"]))
+                        _tighten_illustration(illus_path)
+                        return True
+            print(f"illustration: attempt {attempt} had no image data", file=sys.stderr)
+        except Exception as e:
+            print(f"illustration: attempt {attempt} failed ({e})", file=sys.stderr)
     return False
 
 def _tighten_illustration(path, margin_frac=0.12, thresh=28):
