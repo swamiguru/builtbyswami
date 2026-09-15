@@ -86,3 +86,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-13 | iPadOS | Scribble — handwrite with Apple Pencil into ANY text field (Safari address bar/search/forms), auto-converts to typed text; scratch out to delete, vertical line to add space (Settings > Apple Pencil > Scribble)
 
 2026-09-14 | macOS | Window tiling — drag window to a screen edge/corner to snap half/quarter, or hover the green button for the Move & Resize menu (Fn+Ctrl+arrows), no third-party app
+2026-09-15 | Instagram | Trial Reels — post a Reel only non-followers see for ~72h to test it before followers do; if it performs, publish to everyone (Pro account + 1k followers, Reel hidden from grid/hashtags/Explore during trial)

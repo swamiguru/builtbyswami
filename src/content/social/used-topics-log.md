@@ -244,3 +244,8 @@
 2026-09-14 | 2 | Creator economy | X Original Content Rewards | X retires ad revenue-sharing; pays only original work (writing/self-shot/analysis), reposts demoted, first payout Sept 25, biweekly
 2026-09-14 | 4 | Myth-buster / Chips (opinion) | Clock speed / 5GHz myth | Peak GHz throttles in seconds; architecture/IPC, RAM, storage, software & cooling decide real speed (opinion quota, IG pick, carousel)
 2026-09-14 | 5 | Community / Poll (creator economy) | X original-content-only payouts | Will original-only rewards clean up the feed or just get gamed? (Threads+X, no card, tied to slot 2)
+
+2026-09-15 | 1 | Phones / OS (Apple) | iOS 27 + new Siri public release | iOS 27 out Sept 14; new Siri AI (on-screen awareness, personal context, multi-step chats, own app, synced history) ships opt-in beta/waitlist, not EU/China yet (new software release vs Sept 9 hardware event) (IG pick, carousel)
+2026-09-15 | 2 | OS updates / Android (Google) | September 2026 Android Feature Drop | Motion Assist (cuts car-sickness), Gemini Find Hub (remembers where you left things), Guided Vision in Gemini Live, Keep + chat themes in Messages; Android 16/17, some to Android 9 (carousel)
+2026-09-15 | 4 | AI workflow / Prompt of the day | Ruthless editor prompt | "Cut this by 40% without losing meaning/voice, then list what you cut and why" — universal writing tightener
+2026-09-15 | 5 | Hot take / Global tech (opinion) | AI wearables / pins / pendants | Humane Pin bricked, Rabbit R1 flopped, Friend became a meme; survivors just transcribe your day; if your phone already does it, skip it (opinion quota)
