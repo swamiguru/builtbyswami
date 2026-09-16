@@ -249,3 +249,7 @@
 2026-09-15 | 2 | OS updates / Android (Google) | September 2026 Android Feature Drop | Motion Assist (cuts car-sickness), Gemini Find Hub (remembers where you left things), Guided Vision in Gemini Live, Keep + chat themes in Messages; Android 16/17, some to Android 9 (carousel)
 2026-09-15 | 4 | AI workflow / Prompt of the day | Ruthless editor prompt | "Cut this by 40% without losing meaning/voice, then list what you cut and why" — universal writing tightener
 2026-09-15 | 5 | Hot take / Global tech (opinion) | AI wearables / pins / pendants | Humane Pin bricked, Rabbit R1 flopped, Friend became a meme; survivors just transcribe your day; if your phone already does it, skip it (opinion quota)
+2026-09-16 | 1 | India tech / Apps | Jio x Canva partnership | Canva Pro/Pro Lite free up to 12 months on eligible recharge, live Sept 16 via MyJio, worth up to Rs4,000 (IG pick, carousel)
+2026-09-16 | 2 | Apps / Services (Apple) | iCloud+ adds Apple TV + Arcade | iCloud+ now bundles Apple TV + Apple Arcade free in 100+ countries incl India, excl US/UK/EU/Canada/Australia (announced Sept 15)
+2026-09-16 | 4 | Comparison / Cloud subscriptions | iCloud+ vs Google One | entertainment bundle vs Gemini AI bundle; who-should-pick verdict (carousel)
+2026-09-16 | 5 | Myth-buster / Cameras (opinion) | 200MP camera myth | more megapixels != better photos; sensor size, pixel-binning, processing decide it; Techtember 200-250MP flood (opinion quota)
