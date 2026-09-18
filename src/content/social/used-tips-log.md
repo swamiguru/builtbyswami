@@ -89,3 +89,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-15 | Instagram | Trial Reels — post a Reel only non-followers see for ~72h to test it before followers do; if it performs, publish to everyone (Pro account + 1k followers, Reel hidden from grid/hashtags/Explore during trial)
 
 2026-09-16 | iOS Safari | Distraction Control — hide static page clutter (cookie/newsletter banners, sidebars, sticky headers) via aA menu > Hide Distracting Items; eye-slash icon > Show Hidden Items to restore
+2026-09-18 | Android | One-handed mode — swipe DOWN on the bottom edge (Settings > System > Gestures > One-handed mode) to pull the top of a big screen into thumb reach; tap to restore

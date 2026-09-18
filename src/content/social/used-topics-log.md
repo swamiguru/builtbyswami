@@ -253,3 +253,7 @@
 2026-09-16 | 2 | Apps / Services (Apple) | iCloud+ adds Apple TV + Arcade | iCloud+ now bundles Apple TV + Apple Arcade free in 100+ countries incl India, excl US/UK/EU/Canada/Australia (announced Sept 15)
 2026-09-16 | 4 | Comparison / Cloud subscriptions | iCloud+ vs Google One | entertainment bundle vs Gemini AI bundle; who-should-pick verdict (carousel)
 2026-09-16 | 5 | Myth-buster / Cameras (opinion) | 200MP camera myth | more megapixels != better photos; sensor size, pixel-binning, processing decide it; Techtember 200-250MP flood (opinion quota)
+2026-09-18 | 1 | Laptops/PCs & AI hardware | Nvidia RTX Spark local-AI PCs | 1-petaflop local AI + up to 128GB unified memory, Grace CPU+RTX Blackwell, Dell/HP/Asus/Lenovo/MSI/Surface, Oct availability, built w/ Microsoft for Windows AI agents + PAIR router (OFFICIAL, IFA 2026)
+2026-09-18 | 2 | India tech / Semiconductors | SEMICON India 2026 | PM Modi inaugurated Sept 17 at Yashobhoomi Delhi (runs Sept 17-19), theme 'Silicon to Systems', India domestic chip-ecosystem push (India beat, timely)
+2026-09-18 | 4 | Myth-buster / Privacy (opinion) | Incognito mode isn't anonymous | only stops local history/cookies; ISP, office/college Wi-Fi, sites you visit & any login still see you; VPN for network privacy (opinion quota, carousel)
+2026-09-18 | 5 | Hot take / Gaming (opinion) | EA Sports FC 27 annual purchase | early access today Sept 18, full launch Sept 25 incl Switch 2; annual roster/kit/menu refresh at full price, wait for sale unless you skipped years (opinion)
