@@ -90,3 +90,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-16 | iOS Safari | Distraction Control — hide static page clutter (cookie/newsletter banners, sidebars, sticky headers) via aA menu > Hide Distracting Items; eye-slash icon > Show Hidden Items to restore
 2026-09-18 | Android | One-handed mode — swipe DOWN on the bottom edge (Settings > System > Gestures > One-handed mode) to pull the top of a big screen into thumb reach; tap to restore
+
+2026-09-19 | Gmail | Free up Google storage — search larger:10M older_than:2y (or has:attachment larger:25M), then "Select all conversations that match" and Delete, instead of paying for a storage plan (web)
