@@ -41,7 +41,8 @@ def _load_env_file():
     gap. Whatever invokes this script (the daily task, a manual run, CI)
     doesn't need to know or set anything -- it's picked up automatically."""
     here = os.path.dirname(os.path.abspath(__file__))
-    for path in (os.path.join(here, "..", "..", ".env"), os.path.join(here, ".env")):
+    for path in (os.path.join(here, "..", "..", ".env"), os.path.join(here, ".env"),
+                 "/Users/masterswami/Documents/GitHub/Builtbyswami/.env"):
         if not os.path.exists(path):
             continue
         for line in open(path):
@@ -212,6 +213,11 @@ HANDLE = "@longpressnews"
 _HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIRS = (
     os.path.join(_HERE, "fonts"),
+    # The daily task copies this script into a temp outputs folder and runs
+    # it there, so _HERE/fonts is empty and text silently fell back to a
+    # tiny bitmap font. Absolute repo path keeps the brand fonts loading no
+    # matter which folder the script runs from.
+    "/Users/masterswami/Documents/GitHub/Builtbyswami/scripts/social/fonts",
     "/usr/share/fonts/truetype/google-fonts/",
     "/usr/local/share/fonts",
     os.path.expanduser("~/.fonts"),
@@ -249,7 +255,18 @@ def font(size, weight="Bold"):
     try:
         return ImageFont.truetype(DEJAVU + dv, size)
     except Exception:
-        return ImageFont.load_default()
+        pass
+    # macOS has none of the Linux font paths above; try a real system font
+    # at the requested size before the last-resort bitmap default (which
+    # renders microscopically and ignores `size`).
+    for macf in ("/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+                 "/System/Library/Fonts/Supplemental/Arial.ttf",
+                 "/System/Library/Fonts/Helvetica.ttc"):
+        try:
+            return ImageFont.truetype(macf, size)
+        except Exception:
+            pass
+    return ImageFont.load_default()
 
 def mark(draw, x, y, size):
     """The Long Press mark: a ring with a centred dot, right arc in orange.
@@ -313,6 +330,33 @@ def draw_illustration(img, illus_path, W, H, text_bottom, margin):
     img.paste(illus, (x, y))
     return True
 
+_SITE_REPO = "/Users/masterswami/Documents/GitHub/Builtbyswami"
+
+def _publish_site_illustration(out, illus_path):
+    """The daily task writes social cards to a temp outputs folder as
+    card_<N>_hook_<DATE>.png and separately copies card_<N>.png into the
+    repo's public/social/<DATE>/ for the Long Press site, which prefers a
+    text-free illustration_<N>.png next to it. That copy step only moves the
+    card, not the illustration, so the site kept falling back to the
+    headline-baked card. Mirror the illustration into the same repo folder
+    here; STEP 7d's `git add public/social` then commits it. Best-effort:
+    never raise, skip quietly if anything is off (e.g. a one-off manual run
+    whose filename doesn't match the card_<N>_hook_<DATE> convention)."""
+    import re as _re, shutil as _shutil
+    try:
+        m = _re.match(r"card_(\d+)_hook_(\d{4}-\d{2}-\d{2})\.png$",
+                      os.path.basename(out))
+        if not m or not os.path.exists(illus_path):
+            return
+        n, date = m.group(1), m.group(2)
+        if not os.path.isdir(os.path.join(_SITE_REPO, "public", "social")):
+            return
+        dest_dir = os.path.join(_SITE_REPO, "public", "social", date)
+        os.makedirs(dest_dir, exist_ok=True)
+        _shutil.copyfile(illus_path, os.path.join(dest_dir, "illustration_%s.png" % n))
+    except Exception:
+        pass
+
 def make(pillar, hook, sub, out, mode, icon=None):
     if mode == "ig":
         W, H = 1080, 1350
@@ -350,6 +394,8 @@ def make(pillar, hook, sub, out, mode, icon=None):
     used_illustration = False
     if generate_illustration(pillar, hook, sub, illus_path):
         used_illustration = draw_illustration(img, illus_path, W, H, y, margin)
+        if used_illustration:
+            _publish_site_illustration(out, illus_path)
     if not used_illustration:
         draw_icon(img, icon, W, H)
     wordmark(ImageDraw.Draw(img), W, H)

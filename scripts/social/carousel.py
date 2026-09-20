@@ -47,6 +47,11 @@ W, H = 1080, 1350
 _HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIRS = (
     os.path.join(_HERE, "fonts"),
+    # The daily task copies this script into a temp outputs folder and runs
+    # it there, so _HERE/fonts is empty and text silently fell back to a
+    # tiny bitmap font. Absolute repo path keeps the brand fonts loading no
+    # matter which folder the script runs from.
+    "/Users/masterswami/Documents/GitHub/Builtbyswami/scripts/social/fonts",
     "/usr/share/fonts/truetype/google-fonts/",
     "/usr/local/share/fonts",
     os.path.expanduser("~/.fonts"),
@@ -84,7 +89,18 @@ def font(size, weight="Bold"):
     try:
         return ImageFont.truetype(DEJAVU + dv, size)
     except Exception:
-        return ImageFont.load_default()
+        pass
+    # macOS has none of the Linux font paths above; try a real system font
+    # at the requested size before the last-resort bitmap default (which
+    # renders microscopically and ignores `size`).
+    for macf in ("/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+                 "/System/Library/Fonts/Supplemental/Arial.ttf",
+                 "/System/Library/Fonts/Helvetica.ttc"):
+        try:
+            return ImageFont.truetype(macf, size)
+        except Exception:
+            pass
+    return ImageFont.load_default()
 
 def mark(draw, x, y, size):
     """The Long Press mark: a ring with a centred dot, right arc in orange.
