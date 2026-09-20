@@ -32,7 +32,7 @@ _GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
 # and given one retry (see generate_illustration) rather than trusting a
 # single tight attempt.
 _GEMINI_TIMEOUT = 45  # seconds per attempt
-_GEMINI_ATTEMPTS = 2
+_GEMINI_ATTEMPTS = 3
 
 def _load_env_file():
     """Pick up GEMINI_API_KEY from a .env file, no dotenv dependency needed
@@ -63,6 +63,43 @@ def _illustration_path(out):
         return os.path.join(d, "illustration_" + base[len("card_"):])
     return os.path.join(d, "illustration_" + base)
 
+# Verge/WIRED-style playful palette: one bold saturated field per card, a
+# high-contrast accent, black + off-white linework. Rotated per story so the
+# daily five feel varied; picked deterministically from the story text so a
+# retry keeps the same colour. Brand orange/teal ride along as anchors.
+_PALETTE = [
+    ("#C6F135", "#7C3AED"),  # lime + violet
+    ("#8B5CF6", "#FFE14C"),  # electric violet + acid yellow
+    ("#29D3E6", "#FF5C39"),  # cyan + hot coral
+    ("#FF5C39", "#17182E"),  # hot coral + midnight
+    ("#F5E14C", "#111111"),  # acid yellow + black
+    ("#E0552B", "#17182E"),  # brand orange + midnight
+    ("#1FA89A", "#FFE14C"),  # brand teal + yellow
+    ("#FF7AB6", "#111111"),  # hot pink + black
+]
+
+def _pick_palette(seed):
+    import hashlib
+    h = int(hashlib.md5(seed.encode()).hexdigest(), 16)
+    return _PALETTE[h % len(_PALETTE)]
+
+def _has_text(path):
+    """True if the illustration contains real lettering. Gemini sometimes
+    ignores "no text" and bakes in gibberish words; catch it with tesseract
+    (CLI) so the caller can retry. Best-effort: if OCR is unavailable or
+    errors, return False -- never block a publish."""
+    import subprocess, re
+    for binp in ("/opt/homebrew/bin/tesseract", "tesseract"):
+        try:
+            out = subprocess.run([binp, path, "stdout", "--psm", "11"],
+                                 capture_output=True, text=True, timeout=20)
+            return bool(re.search(r"[A-Za-z]{3,}", out.stdout or ""))
+        except FileNotFoundError:
+            continue
+        except Exception:
+            return False
+    return False
+
 def generate_illustration(pillar, hook, sub, illus_path):
     """Write a full-bleed, on-brand, text-free illustration for this story
     to illus_path. Returns True on success, False on ANY failure (missing
@@ -74,26 +111,31 @@ def generate_illustration(pillar, hook, sub, illus_path):
     if not api_key:
         return False
     story = f"{pillar}: {hook}" + (f" -- {sub}" if sub else "")
-    prompt = f"""Flat vector editorial illustration, square, filling the
-entire frame edge to edge with a solid flat background color of exactly
-#17182E (a dark midnight navy) -- no vignette, no gradient, no border, no
-card, no panel, no rounded rectangle, no glow, no checkerboard, no
-transparency. The background must be one single flat opaque color from
+    bg, accent = _pick_palette(pillar + "|" + hook)
+    prompt = f"""Bold, playful editorial tech illustration in the style of
+The Verge and WIRED magazine spot art. Square, full-bleed, filling the
+entire frame edge to edge.
+
+Background: ONE single flat, saturated, opaque color -- {bg} -- absolutely
+no gradient, vignette, border, panel or rounded card. One flat colour,
 edge to edge.
 
-Invent one clear visual metaphor for this tech news story, drawn BIG and
-bold so it fills at least 85 percent of the frame edge to edge with only
-a thin, even margin -- not a small centered icon floating in a lot of
-empty background. Rendered only in thin clean line art. Story: {story}
+Subject: invent ONE witty, clear visual metaphor for this tech story,
+drawn BIG and bold as a flat vector filling about 75 percent of the frame:
+{story}. Thick confident black outlines, bold flat fills using {accent}
+and off-white #F7F5EE, very high contrast, minimal geometric shapes, a
+little personality and humour -- like a magazine spot illustration.
 
-Do not depict any real person, real company logo, brand mark, wordmark, or
-any text or letters anywhere in the image -- use abstract or symbolic
-objects instead of literal logos or trademarks.
+Signature motif: a scattered black-and-white checkerboard / pixel-dither
+block pattern creeping in from one or two corners, plus a few tiny
+geometric confetti shapes (dots, plus signs, small triangles) around the
+subject.
 
-Line art and accent colors only, background stays pure #17182E: use warm
-cream #F4F1E8 for the main linework, orange #E0552B as the primary accent,
-and muted teal #3E7C74 as a rare secondary accent. Minimal geometric style,
-no photorealism, no drop shadow, no extra background shapes of any kind.
+ABSOLUTELY NO text of any kind anywhere: no words, no letters, no numbers,
+no captions, no labels, no gibberish lettering, no signage, no lettered
+keyboard keys. Do not write anything. Also no real people, no real company
+logos, no brand marks or wordmarks -- use abstract or symbolic objects
+instead. Flat vector only -- no photorealism, no drop shadows, no 3D.
 """
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
@@ -112,15 +154,28 @@ no photorealism, no drop shadow, no extra background shapes of any kind.
         try:
             with urllib.request.urlopen(req, timeout=_GEMINI_TIMEOUT) as resp:
                 data = json.load(resp)
+            img_bytes = None
             for cand in data.get("candidates", []):
                 for part in cand.get("content", {}).get("parts", []):
                     inline = part.get("inlineData")
                     if inline and inline.get("data"):
-                        with open(illus_path, "wb") as f:
-                            f.write(base64.b64decode(inline["data"]))
-                        _tighten_illustration(illus_path)
-                        return True
-            print(f"illustration: attempt {attempt} had no image data", file=sys.stderr)
+                        img_bytes = base64.b64decode(inline["data"])
+                        break
+                if img_bytes:
+                    break
+            if not img_bytes:
+                print(f"illustration: attempt {attempt} had no image data", file=sys.stderr)
+                continue
+            with open(illus_path, "wb") as f:
+                f.write(img_bytes)
+            _tighten_illustration(illus_path)
+            # Gemini occasionally bakes in stray/gibberish text despite the
+            # prompt. If so, retry (unless this was the last attempt -- a
+            # slightly-lettered illustration still beats none).
+            if _has_text(illus_path) and attempt < _GEMINI_ATTEMPTS:
+                print(f"illustration: attempt {attempt} showed stray text, retrying", file=sys.stderr)
+                continue
+            return True
         except Exception as e:
             print(f"illustration: attempt {attempt} failed ({e})", file=sys.stderr)
     return False
