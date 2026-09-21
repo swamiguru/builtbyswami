@@ -267,3 +267,7 @@
 2026-09-20 | 2 | Creator economy | YouTube 2026 monetization overhaul | YPP splits into 2 tiers (perks unlock earlier, ads still behind 1k subs), Shorts 10M-qualified-views/90-day rule to keep payouts, 55/45 long-form/Shorts split, format-aware discovery, AI/template ad crackdown (IG pick, carousel)
 2026-09-20 | 4 | Myth-buster / Phones (opinion) | Overnight charging myth | phone stops pulling power at 100%, Optimized Charging holds at 80%, heat & 0% deep-drains are the real killers (opinion quota, carousel)
 2026-09-20 | 5 | Hot take / Gadgets (opinion) | Dyson $499 CameraJet AI toothbrush | 100k-pixel camera 28 img/sec + ML plaque jet, own toothpaste/rinse; AI-in-everything hype-vs-value honest take (opinion)
+2026-09-21 | 1 | Apps / Platforms | WhatsApp third-party AI agents | testing on Android: dedicated 'Agents' section, each bot its own separate chat, 5-agent cap; convenience-vs-privacy honest take (India-relevant platform beat)
+2026-09-21 | 2 | Creator economy | Instagram Bonuses for photos + carousels | pays eligible creators for static + carousel posts (not just Reels); invite-only rollout (IG pick, carousel)
+2026-09-21 | 4 | AI workflow / Prompt of the day | Pre-mortem / devil's-advocate decision prompt | 'argue the case AGAINST it, 3 ways it fails, 1 thing I'm missing, be blunt' (carousel)
+2026-09-21 | 5 | Hot take / Robotics (opinion) | Home/humanoid robot demos vs reality | viral demos are six-figure/single-task/tethered/rehearsed; robovac does more daily; future real but not shipping (opinion quota, neutral product framing)

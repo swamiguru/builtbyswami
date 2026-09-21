@@ -93,3 +93,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-19 | Gmail | Free up Google storage — search larger:10M older_than:2y (or has:attachment larger:25M), then "Select all conversations that match" and Delete, instead of paying for a storage plan (web)
 2026-09-20 | Google Chrome | Omnibox @ shortcuts - type @tabs / @bookmarks / @history then Space in the address bar to search open tabs, bookmarks or history without leaving the keyboard; or type a site's name + Tab to search inside that site directly
+2026-09-21 | Google Photos | Locked Folder — passcode/biometric vault; hides pics-videos from grid/Memories/search/shared albums/other apps; now cloud-backs-up + syncs across devices (Photos > Collections > Locked Folder)
