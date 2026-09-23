@@ -96,3 +96,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-21 | Google Photos | Locked Folder — passcode/biometric vault; hides pics-videos from grid/Memories/search/shared albums/other apps; now cloud-backs-up + syncs across devices (Photos > Collections > Locked Folder)
 
 2026-09-22 | macOS | Command+backtick (`) cycles between windows of the SAME app (Shift to reverse); Cmd+Tab only switches apps
+2026-09-23 | WhatsApp | Search a chat by date — tap Search in a chat, then the calendar icon, to jump straight to messages from a specific day (iOS + Android)
