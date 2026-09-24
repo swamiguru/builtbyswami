@@ -279,3 +279,7 @@
 2026-09-23 | 2 | India / Payments | Apple Pay India | Apple Pay coming to India ~October (Axis/HDFC/ICICI); rides card+UPI rails, convenience not a UPI-killer
 2026-09-23 | 4 | Security & Privacy quick-win | Android Accessibility audit | Settings>Accessibility; banking trojans abuse it to read screen/grab OTP/tap; remove unknown apps (not opinion)
 2026-09-23 | 5 | Hot take / AI (opinion) | OpenAI GPT-6 Sol & Luna price cut | Permanent 50% API cut + 3-tier family = frontier AI becoming a commodity; buy cheapest that clears your bar (opinion quota)
+2026-09-24 | 1 | AI models | Anthropic Claude Opus 5.5 | Cheaper flagship (~40% less on typical workloads) + 5-hour usage caps scrapped; utility-not-power take (launched Sept 22, product-launch angle distinct from 09-23 GPT-6 price hot take)
+2026-09-24 | 2 | Space / India | ESA x ISRO deal | ESA to fly European astronauts to Indias Bharatiya Antariksh Station + backs first uncrewed Gaganyaan test this quarter (signed Paris Sept, India-resonant variety pick)
+2026-09-24 | 4 | Comparison / Phones | eSIM vs physical SIM | who-should-pick verdict; travel/dual-SIM/theft vs swap-phones/backup (IG pick, carousel; different subject from 09-22 password mgr / 09-16 cloud)
+2026-09-24 | 5 | Myth-buster / Phones (opinion) | More RAM = faster phone myth | past enough RAM barely moves speed; chipset+UFS+software decide; 8GB plenty/12GB comfy/16GB marketing (opinion quota)
