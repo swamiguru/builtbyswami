@@ -98,3 +98,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-22 | macOS | Command+backtick (`) cycles between windows of the SAME app (Shift to reverse); Cmd+Tab only switches apps2026-09-23 | iOS | Spacebar trackpad — press-and-hold the keyboard spacebar to turn it into a cursor trackpad for precise editing
 
 2026-09-24 | YouTube | Stable Volume — in-player gear (settings) > Additional settings > Stable Volume ON; auto-levels loud/quiet parts within a video and normalizes volume across videos so you stop grabbing the volume rocker
+
+2026-09-25 | Android | Live Caption — press a volume button then tap the Live Caption icon under the slider to auto-caption ANY on-device audio/video (YouTube, WhatsApp voice notes, podcasts, calls); on-device + offline (enable in Settings > Accessibility > Live Caption)

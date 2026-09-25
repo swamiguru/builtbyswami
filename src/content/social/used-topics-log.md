@@ -283,3 +283,8 @@
 2026-09-24 | 2 | Space / India | ESA x ISRO deal | ESA to fly European astronauts to Indias Bharatiya Antariksh Station + backs first uncrewed Gaganyaan test this quarter (signed Paris Sept, India-resonant variety pick)
 2026-09-24 | 4 | Comparison / Phones | eSIM vs physical SIM | who-should-pick verdict; travel/dual-SIM/theft vs swap-phones/backup (IG pick, carousel; different subject from 09-22 password mgr / 09-16 cloud)
 2026-09-24 | 5 | Myth-buster / Phones (opinion) | More RAM = faster phone myth | past enough RAM barely moves speed; chipset+UFS+software decide; 8GB plenty/12GB comfy/16GB marketing (opinion quota)
+
+2026-09-25 | 1 | Wearables / AI hardware | Meta Ray-Ban Gen 3 smart glasses | $449, up to 9-hr battery, 6-mic array, new Zena cat-eye + camera-free audio model; daily-wearable-now honest take (IG pick, carousel, launched Sept 23)
+2026-09-25 | 2 | Global tech / China / AI business | DeepSeek $1B ARR + $7.5B raise | ~$1B annualized revenue run rate, reportedly raising $7.5B at $74B valuation; neutral low-cost/open-weight monetization take (new funding dev, distinct from 09-19 China revenue-gap angle)
+2026-09-25 | 4 | AI workflow / Prompt of the day | Universal summarize+action prompt | 1-line TL;DR + 5 points + 3 action items + 1 gap, under 150 words; works in ChatGPT/Gemini/Claude (carousel)
+2026-09-25 | 5 | Hot take / AI (opinion) | AI phone hype vs use (OpenAI-Apple) | OpenAI court filing: Apple Intelligence ChatGPT integration dramatically underperformed; hype>habit, dont upgrade for AI you wont use (opinion quota)
