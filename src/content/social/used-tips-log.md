@@ -100,3 +100,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-24 | YouTube | Stable Volume — in-player gear (settings) > Additional settings > Stable Volume ON; auto-levels loud/quiet parts within a video and normalizes volume across videos so you stop grabbing the volume rocker
 
 2026-09-25 | Android | Live Caption — press a volume button then tap the Live Caption icon under the slider to auto-caption ANY on-device audio/video (YouTube, WhatsApp voice notes, podcasts, calls); on-device + offline (enable in Settings > Accessibility > Live Caption)
+
+2026-09-26 | Google Maps | Save parking — tap the blue location dot > Save parking to pin where you parked; add notes (B2, pillar 14), photos and a meter timer (Android + iPhone)

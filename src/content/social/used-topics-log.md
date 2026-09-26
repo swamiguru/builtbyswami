@@ -288,3 +288,8 @@
 2026-09-25 | 2 | Global tech / China / AI business | DeepSeek $1B ARR + $7.5B raise | ~$1B annualized revenue run rate, reportedly raising $7.5B at $74B valuation; neutral low-cost/open-weight monetization take (new funding dev, distinct from 09-19 China revenue-gap angle)
 2026-09-25 | 4 | AI workflow / Prompt of the day | Universal summarize+action prompt | 1-line TL;DR + 5 points + 3 action items + 1 gap, under 150 words; works in ChatGPT/Gemini/Claude (carousel)
 2026-09-25 | 5 | Hot take / AI (opinion) | AI phone hype vs use (OpenAI-Apple) | OpenAI court filing: Apple Intelligence ChatGPT integration dramatically underperformed; hype>habit, dont upgrade for AI you wont use (opinion quota)
+
+2026-09-26 | 1 | AI / Apps (trending) | Meta Muse personal AI agent | launched Sept 8, No. 1 US App Store Sept 18 + Play Sept 19, ~3M+ downloads, email/avatar video/Mac computer use, US+Canada only; ad-company-reading-your-inbox trust take
+2026-09-26 | 2 | Global tech / China / EVs | Geely 2.2MW 4.5-min charging | ~70% in ~4.5 min, 10-97% under 9 min, unveiled Ningbo Sept 23, ~50% more power than BYD 1.5MW; neutral, India charger reality
+2026-09-26 | 4 | Comparison / Wearables (India) | Fitbit Air vs budget smart band | Rs 13,999 Flipkart listing, October India launch confirmed, screenless 12g + Gemini coaching vs Rs 3-5k band with screen; who-should-pick verdict (carousel)
+2026-09-26 | 5 | Myth-buster / Privacy (opinion) | Phone listening for ads myth | Northeastern 17k+ Android apps no secret audio; mic indicator + battery; location/searches/contacts do the targeting; fix ad settings (IG pick, carousel, opinion quota)
