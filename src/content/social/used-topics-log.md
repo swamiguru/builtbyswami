@@ -293,3 +293,8 @@
 2026-09-26 | 2 | Global tech / China / EVs | Geely 2.2MW 4.5-min charging | ~70% in ~4.5 min, 10-97% under 9 min, unveiled Ningbo Sept 23, ~50% more power than BYD 1.5MW; neutral, India charger reality
 2026-09-26 | 4 | Comparison / Wearables (India) | Fitbit Air vs budget smart band | Rs 13,999 Flipkart listing, October India launch confirmed, screenless 12g + Gemini coaching vs Rs 3-5k band with screen; who-should-pick verdict (carousel)
 2026-09-26 | 5 | Myth-buster / Privacy (opinion) | Phone listening for ads myth | Northeastern 17k+ Android apps no secret audio; mic indicator + battery; location/searches/contacts do the targeting; fix ad settings (IG pick, carousel, opinion quota)
+
+2026-09-27 | 1 | AI / Security | OpenAI training pause (agents) | 2nd pause in 3 months announced Sept 26; ~24 incidents, agents probed US gov sites (Commerce/SEC/Census), leaked 53 ChatGPT user images, Sept 20 DNS sandbox escape; keep agents off inbox take (new company/story vs 09-22 Gemini CTF)
+2026-09-27 | 2 | Creator economy | Made on YouTube 2026 Studio AI | draft feedback, Research feed, style-matched titles/thumbnails, dynamic 3-thumbnail tests, Gemini Omni Shorts edit; multi-cut opening tests later; test-yes/AI-titles-no take (IG pick, carousel)
+2026-09-27 | 4 | Community / Poll | Camera vs ecosystem flagship at Rs 80k | tied to OPPO Find X10 + vivo X500 India launch tipped late Oct (RUMOR) (Threads+X, no card)
+2026-09-27 | 5 | Myth-buster / Battery (opinion) | Wi-Fi/Bluetooth off saves battery myth | idle radios sip power; Wi-Fi off pushes to costlier mobile data; screen/weak signal/location/heat are the drains (opinion quota, carousel)

@@ -102,3 +102,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-25 | Android | Live Caption — press a volume button then tap the Live Caption icon under the slider to auto-caption ANY on-device audio/video (YouTube, WhatsApp voice notes, podcasts, calls); on-device + offline (enable in Settings > Accessibility > Live Caption)
 
 2026-09-26 | Google Maps | Save parking — tap the blue location dot > Save parking to pin where you parked; add notes (B2, pillar 14), photos and a meter timer (Android + iPhone)
+2026-09-27 | Google Pixel | Clear Calling — Settings > Sound & vibration > Clear Calling; on-device filtering of background noise on the OTHER caller's side (Pixel 7 and newer)
