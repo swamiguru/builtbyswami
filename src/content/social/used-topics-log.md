@@ -298,3 +298,8 @@
 2026-09-27 | 2 | Creator economy | Made on YouTube 2026 Studio AI | draft feedback, Research feed, style-matched titles/thumbnails, dynamic 3-thumbnail tests, Gemini Omni Shorts edit; multi-cut opening tests later; test-yes/AI-titles-no take (IG pick, carousel)
 2026-09-27 | 4 | Community / Poll | Camera vs ecosystem flagship at Rs 80k | tied to OPPO Find X10 + vivo X500 India launch tipped late Oct (RUMOR) (Threads+X, no card)
 2026-09-27 | 5 | Myth-buster / Battery (opinion) | Wi-Fi/Bluetooth off saves battery myth | idle radios sip power; Wi-Fi off pushes to costlier mobile data; screen/weak signal/location/heat are the drains (opinion quota, carousel)
+
+2026-09-28 | 1 | India / Big Tech / AI shopping | Google x Flipkart Buy button in Gemini + AI Mode | limited India test (phones/electronics/accessories), wider rollout reportedly Oct before festive sales; Amazon listed without button = deal not neutral search
+2026-09-28 | 2 | Space tech | Google Project Suncatcher first launch | MVP sat w/ 4 TPUs on SpaceX Transporter-18 Oct 1, built with Planet, 1kW solar, 2-sat constellation by 2027; science-project-for-now take
+2026-09-28 | 4 | Security & Privacy quick-win (India) | DoppelCart fake shops before festive sales | Nebty: 119k domains (.shop) cloning 44,182 brands, steals card+OTP; use official apps, UPI/virtual card; sales from ~Oct 8 (IG pick, carousel)
+2026-09-28 | 5 | Myth-buster / Phones (opinion) | Updates slow your phone myth | Sept Android patch 180 flaws incl CVE-2026-28662 zero-click Wi-Fi RCE; slowness = battery/storage; no-more-patches = upgrade trigger (opinion quota, carousel)

@@ -103,3 +103,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-09-26 | Google Maps | Save parking — tap the blue location dot > Save parking to pin where you parked; add notes (B2, pillar 14), photos and a meter timer (Android + iPhone)
 2026-09-27 | Google Pixel | Clear Calling — Settings > Sound & vibration > Clear Calling; on-device filtering of background noise on the OTHER caller's side (Pixel 7 and newer)
+
+2026-09-28 | Instagram | Reset suggested content — Profile > menu > Content preferences > Reset suggested content; clears recommendation history behind Explore/Reels/feed, keeps follows, lets you add hidden words
