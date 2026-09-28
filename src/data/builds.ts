@@ -31,6 +31,16 @@ export interface Build {
 
 export const BUILDS: Build[] = [
   {
+    name: "Long Press",
+    status: "Live",
+    what: "A daily tech publication I write, build and ship solo — sourcing, writing, design and the ship pipeline, no editorial team. Five stories every morning at 10:00 IST, each broken into the problem, what changed, the catch, and what it means for you, plus a daily opinion column called Known Issue.",
+    constraint:
+      "Give a publisher and title structure real infrastructure instead of a landing page. BuiltBySwami is the publisher, Long Press the title: its own domain, its own masthead, its own analytics.",
+    shipped: "76 issues, daily since 12 July 2026",
+    stack: "Astro, Vercel. Own domain, own GA4 property.",
+    url: "https://longpress.news",
+  },
+  {
     name: "builtbyswami.com",
     status: "Live",
     what: "A daily-publishing tech platform: the site, the daily brief, the newsletter and the social cards, all run from one repo. The daily outgrew it and now runs as its own title at longpress.news.",

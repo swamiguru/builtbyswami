@@ -28,9 +28,7 @@ export type TrackedCta =
   | "consulting_book_call"
   | "consulting_email_me"
   | "home_consulting_see_all"
-  | "home_consulting_work_with_me"
-  | "longpress_read_today"
-  | "longpress_browse_archive";
+  | "home_consulting_work_with_me";
 
 /**
  * Push a CTA click into the dataLayer. Safe before GTM loads — the snippet

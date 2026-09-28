@@ -24,7 +24,6 @@ import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import NewsletterSignup from "../components/NewsletterSignup";
-import TodayOnLongPress from "../components/TodayOnLongPress";
 import { usePageSeo } from "../hooks/usePageSeo";
 
 /** Vignette + grain + cursor-spotlight + sparkles stack shared by the
@@ -205,12 +204,12 @@ export default function Home() {
             <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
               Currently building{" "}
               <a
-                href="https://adda.builtbyswami.com"
+                href="https://longpress.news"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-m3-primary font-bold hover:underline underline-offset-4"
               >
-                adda.builtbyswami.com
+                longpress.news
               </a>
             </p>
           </div>
@@ -249,14 +248,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Today on Long Press. Sits directly under the hero because the
-            hero's primary CTA ("Read today's five") already points at
-            longpress.news — this gives a visitor something to see before
-            they click through instead of a bare button. Reads the same
-            daily JSON the Long Press importer consumes; see
-            src/data/longpress.ts. */}
-        <TodayOnLongPress />
-
         {/* What I do for clients. Consulting is the priority now, not the
             newsletter — this used to be a single link at the bottom of the
             hero copy. Same surface-variant family as the hero (they're one
@@ -267,7 +258,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-mono text-[11px] font-bold text-m3-primary/50">02</span>
+                  <span className="font-mono text-[11px] font-bold text-m3-primary/50">01</span>
                   <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary">
                     what I do for clients
                   </span>
@@ -334,7 +325,7 @@ export default function Home() {
                     <Clock className="w-4 h-4" />
                   </span>
                   <span className="flex items-baseline gap-2">
-                    <span className="font-mono text-[11px] font-bold opacity-40">03</span>
+                    <span className="font-mono text-[11px] font-bold opacity-40">02</span>
                     <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em]">
                       The Weekly
                     </span>
@@ -436,7 +427,7 @@ export default function Home() {
                 <BookOpen className="w-4 h-4" />
               </span>
               <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">04</span>
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">03</span>
                 <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
                   Notes
                 </span>
@@ -493,7 +484,7 @@ export default function Home() {
                 <Hammer className="w-4 h-4" />
               </span>
               <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">05</span>
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">04</span>
                 <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
                   Builds
                 </span>
@@ -578,7 +569,7 @@ export default function Home() {
         <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-primary text-m3-on-primary">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-2">
-              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">06</span>
+              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">05</span>
               <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/60">
                 The operator behind the builds
               </span>

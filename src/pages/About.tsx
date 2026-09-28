@@ -69,7 +69,7 @@ const EXPERIENCE: ExperienceItem[] = [
     impact: [
       "Shipped three live products solo — BuiltBySwami.com, Free Word Tool and Adda.",
       "Took a full task-management engine from empty repo to working app in 24 hours.",
-      "Built and instrumented a daily-publishing content platform end to end.",
+      "Built and instrumented a daily-publishing content platform end to end — now running as its own title, Long Press, at longpress.news.",
       "Audited a major global media brand across Editorial, Audience, Commerce and SEO."
     ],
     highlights: [
@@ -92,6 +92,11 @@ const EXPERIENCE: ExperienceItem[] = [
         title: "Portfolio Audit",
         detail:
           "Conducted a self-initiated portfolio audit across Editorial, Audience, Commerce and SEO for a major global media brand."
+      },
+      {
+        title: "Long Press",
+        detail:
+          "A publisher and title structure, not just a landing page: BuiltBySwami is the publisher, Long Press the daily title, at longpress.news. Five stories every morning, a daily opinion column called Known Issue, 76 issues in — sourcing, writing, design and the ship pipeline all solo."
       }
     ],
     technologies: ["React", "TypeScript", "AI-Native Delivery", "GA4 / GTM", "Technical SEO", "Content Strategy"]
