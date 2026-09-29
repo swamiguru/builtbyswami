@@ -303,3 +303,8 @@
 2026-09-28 | 2 | Space tech | Google Project Suncatcher first launch | MVP sat w/ 4 TPUs on SpaceX Transporter-18 Oct 1, built with Planet, 1kW solar, 2-sat constellation by 2027; science-project-for-now take
 2026-09-28 | 4 | Security & Privacy quick-win (India) | DoppelCart fake shops before festive sales | Nebty: 119k domains (.shop) cloning 44,182 brands, steals card+OTP; use official apps, UPI/virtual card; sales from ~Oct 8 (IG pick, carousel)
 2026-09-28 | 5 | Myth-buster / Phones (opinion) | Updates slow your phone myth | Sept Android patch 180 flaws incl CVE-2026-28662 zero-click Wi-Fi RCE; slowness = battery/storage; no-more-patches = upgrade trigger (opinion quota, carousel)
+
+2026-09-29 | 1 | AI business | Anthropic IPO prospectus (Reuters) | $4.6B 2025 rev (~12x), $42B net loss mostly ~$34B non-cash convertible charge, $8.06B op loss, $518B compute commitments, 2 customers ~25% rev (new hard dev vs 09-24 Opus 5.5 / 08-26 IPO poll; trending)
+2026-09-29 | 2 | India / Telecom / Regulatory | TRAI voice+SMS-only plan mandate | 13th Amendment Sept 21: voice/SMS twin for every bundled plan <=30 days, same validity + discount, one same-date monthly renewal plan, 30 days after Gazette; 28-day not banned
+2026-09-29 | 4 | Hot take / Phones (opinion) | OnePlus 16 185Hz | official Oct 12 China launch, 8 Elite Extreme Gen 6, 185Hz/185fps in 4 Chinese games; refresh-rate race = spec flex, judge sustained perf (opinion quota; new dev vs 09-11 leak)
+2026-09-29 | 5 | Comparison / Payments (India) | UPI Lite vs regular UPI | Rs 5,000 wallet / Rs 1,000 per txn / no PIN vs PIN + high limits; Lite for small spends w/ low balance (IG pick, carousel)
