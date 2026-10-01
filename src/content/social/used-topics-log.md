@@ -309,7 +309,7 @@
 2026-09-29 | 4 | Hot take / Phones (opinion) | OnePlus 16 185Hz | official Oct 12 China launch, 8 Elite Extreme Gen 6, 185Hz/185fps in 4 Chinese games; refresh-rate race = spec flex, judge sustained perf (opinion quota; new dev vs 09-11 leak)
 2026-09-29 | 5 | Comparison / Payments (India) | UPI Lite vs regular UPI | Rs 5,000 wallet / Rs 1,000 per txn / no PIN vs PIN + high limits; Lite for small spends w/ low balance (IG pick, carousel)
 
-2026-10-01 | 1 | India / Payments | Apple Pay India launch | went live Sept 30: Axis Bank Visa/Mastercard credit cards only, no UPI, no RuPay, HDFC/ICICI in talks; nice extra not a UPI rival (new hard dev vs 09-23 'coming' preview; IG pick, carousel)
-2026-10-01 | 2 | AI models | Gemini 4 Argon | #1 Arena Text but gated to Fairwind cyber defenders; $2/$10 intro, 1M output tokens, ~62k tokens/task vs 27k GPT-6 Astra; ties Astra, trails Opus 5.5 on AA index
-2026-10-01 | 4 | Hot take / AI agents (opinion) | Meta Muse 'Allow Always' Marketplace incident | Muse accepted lowball on Matt Robb's keyboard + shared home address; never give agents Allow Always (trending; new incident vs 09-26 launch angle; opinion quota)
-2026-10-01 | 5 | Community / Poll | 10,000mAh Vivo S2 FE vs slim + power bank | S2 FE India Oct 6 official, 10,000mAh/225g RUMOR (Threads+X, no card)
+2026-10-01 | 1 | AI models | Gemini 4 Argon launch | Sept 30; leads 13/18 disclosed benchmarks, 1M-token output, $2/$10 intro API; limited to Fairwind cyber defenders, then paid API + AI Ultra, free app no date (carousel)
+2026-10-01 | 2 | India / Apps / Payments | WhatsApp bill payments | 22,722 billers / 30 categories on Bharat Connect via Rs icon, UPI/card, rolling out to all; convenience for parents vs Meta seeing your bills
+2026-10-01 | 4 | Security & Privacy quick-win (India) | Sanchar Saathi SIM check | Know Mobile Connections in Your Name, OTP, Not my number / Not required (IG pick, carousel)
+2026-10-01 | 5 | Hot take / Robotics (opinion) | Anthropic Robot Exposure Index | 74% physical tasks technically feasible, 0.3% cost-competitive, ~40 yrs to 10% at 3%/yr; price per hour not backflips (opinion quota; new data vs 09-21 demos take)

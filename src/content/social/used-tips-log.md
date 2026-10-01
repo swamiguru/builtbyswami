@@ -107,4 +107,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-28 | Instagram | Reset suggested content — Profile > menu > Content preferences > Reset suggested content; clears recommendation history behind Explore/Reels/feed, keeps follows, lets you add hidden words
 
 2026-09-29 | iOS | Vehicle Motion Cues — Settings > Accessibility > Motion > Show Vehicle Motion Cues (Automatic); edge dots move with the car to ease motion sickness while reading in a vehicle (iOS 18+)
-2026-10-01 | WhatsApp | Silence unknown callers — Settings > Privacy > Calls > Silence unknown callers; non-contacts stop ringing but still appear in Calls tab + notifications (Android + iPhone)
+
+2026-10-01 | Google Drive | Built-in document scanner — Drive app > + > Scan; auto edge-detect/crop, multi-page PDF saved to Drive, text inside searchable later; Android: long-press Drive icon for Scan shortcut
