@@ -308,3 +308,8 @@
 2026-09-29 | 2 | India / Telecom / Regulatory | TRAI voice+SMS-only plan mandate | 13th Amendment Sept 21: voice/SMS twin for every bundled plan <=30 days, same validity + discount, one same-date monthly renewal plan, 30 days after Gazette; 28-day not banned
 2026-09-29 | 4 | Hot take / Phones (opinion) | OnePlus 16 185Hz | official Oct 12 China launch, 8 Elite Extreme Gen 6, 185Hz/185fps in 4 Chinese games; refresh-rate race = spec flex, judge sustained perf (opinion quota; new dev vs 09-11 leak)
 2026-09-29 | 5 | Comparison / Payments (India) | UPI Lite vs regular UPI | Rs 5,000 wallet / Rs 1,000 per txn / no PIN vs PIN + high limits; Lite for small spends w/ low balance (IG pick, carousel)
+
+2026-10-01 | 1 | India / Payments | Apple Pay India launch | went live Sept 30: Axis Bank Visa/Mastercard credit cards only, no UPI, no RuPay, HDFC/ICICI in talks; nice extra not a UPI rival (new hard dev vs 09-23 'coming' preview; IG pick, carousel)
+2026-10-01 | 2 | AI models | Gemini 4 Argon | #1 Arena Text but gated to Fairwind cyber defenders; $2/$10 intro, 1M output tokens, ~62k tokens/task vs 27k GPT-6 Astra; ties Astra, trails Opus 5.5 on AA index
+2026-10-01 | 4 | Hot take / AI agents (opinion) | Meta Muse 'Allow Always' Marketplace incident | Muse accepted lowball on Matt Robb's keyboard + shared home address; never give agents Allow Always (trending; new incident vs 09-26 launch angle; opinion quota)
+2026-10-01 | 5 | Community / Poll | 10,000mAh Vivo S2 FE vs slim + power bank | S2 FE India Oct 6 official, 10,000mAh/225g RUMOR (Threads+X, no card)
