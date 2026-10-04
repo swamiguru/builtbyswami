@@ -313,3 +313,8 @@
 2026-10-01 | 2 | India / Apps / Payments | WhatsApp bill payments | 22,722 billers / 30 categories on Bharat Connect via Rs icon, UPI/card, rolling out to all; convenience for parents vs Meta seeing your bills
 2026-10-01 | 4 | Security & Privacy quick-win (India) | Sanchar Saathi SIM check | Know Mobile Connections in Your Name, OTP, Not my number / Not required (IG pick, carousel)
 2026-10-01 | 5 | Hot take / Robotics (opinion) | Anthropic Robot Exposure Index | 74% physical tasks technically feasible, 0.3% cost-competitive, ~40 yrs to 10% at 3%/yr; price per hour not backflips (opinion quota; new data vs 09-21 demos take)
+
+2026-10-04 | 1 | Security / OS (Apple macOS) | Apple macOS Full Disk Access tightening | Oct 2 Apple Developer News: very explicit user action to grant FDA, AI agent risks cited, no date/version; audit your FDA list
+2026-10-04 | 2 | India / Big Tech business / Telecom | Jio Platforms IPO | SEBI observation Aug 28, 100% fresh up to 27cr shares, reported ~Rs 37,700cr, Rs 27,500cr debt, Oct 21 REPORTED; watch tariffs not listing
+2026-10-04 | 4 | Hot take / Smart home (opinion) | Apple home hub (RUMOR) | Gurman: Oct 13, ~$350 (~Rs 30k), 6-inch screen on arm, no battery; only worth it if new Siri works (carousel, opinion quota)
+2026-10-04 | 5 | Myth-buster / Shopping (India, opinion) | Festive sale lowest-price myth | Amazon GIF + Flipkart BBD Oct 8; bank-card headline price (SBI 10%), inflated MRP, deals return at Diwali; check price history (IG pick, carousel, opinion quota)

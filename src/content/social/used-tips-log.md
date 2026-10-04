@@ -109,3 +109,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-09-29 | iOS | Vehicle Motion Cues — Settings > Accessibility > Motion > Show Vehicle Motion Cues (Automatic); edge dots move with the car to ease motion sickness while reading in a vehicle (iOS 18+)
 
 2026-10-01 | Google Drive | Built-in document scanner — Drive app > + > Scan; auto edge-detect/crop, multi-page PDF saved to Drive, text inside searchable later; Android: long-press Drive icon for Scan shortcut
+2026-10-04 | WhatsApp | Silence unknown callers — Settings > Privacy > Calls > Silence unknown callers; numbers not in contacts stop ringing but still appear in Calls tab + notifications (scam-call season before Oct 8 sales); pair with Privacy checkup
