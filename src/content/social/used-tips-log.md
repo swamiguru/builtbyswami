@@ -110,3 +110,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-10-01 | Google Drive | Built-in document scanner — Drive app > + > Scan; auto edge-detect/crop, multi-page PDF saved to Drive, text inside searchable later; Android: long-press Drive icon for Scan shortcut
 2026-10-04 | WhatsApp | Silence unknown callers — Settings > Privacy > Calls > Silence unknown callers; numbers not in contacts stop ringing but still appear in Calls tab + notifications (scam-call season before Oct 8 sales); pair with Privacy checkup
+
+2026-10-05 | Google Photos | Free up space on this device — Photos > profile picture > Free up space on this device; deletes only local copies already backed up (items <30 days may stay, 30-day trash), reclaims GB without deleting apps

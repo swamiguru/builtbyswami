@@ -318,3 +318,8 @@
 2026-10-04 | 2 | India / Big Tech business / Telecom | Jio Platforms IPO | SEBI observation Aug 28, 100% fresh up to 27cr shares, reported ~Rs 37,700cr, Rs 27,500cr debt, Oct 21 REPORTED; watch tariffs not listing
 2026-10-04 | 4 | Hot take / Smart home (opinion) | Apple home hub (RUMOR) | Gurman: Oct 13, ~$350 (~Rs 30k), 6-inch screen on arm, no battery; only worth it if new Siri works (carousel, opinion quota)
 2026-10-04 | 5 | Myth-buster / Shopping (India, opinion) | Festive sale lowest-price myth | Amazon GIF + Flipkart BBD Oct 8; bank-card headline price (SBI 10%), inflated MRP, deals return at Diwali; check price history (IG pick, carousel, opinion quota)
+
+2026-10-05 | 1 | India / Payments | Apple Pay India LIVE | launched Sept 30 w/ Axis Bank Visa+Mastercard only, no RuPay/UPI, HDFC/ICICI in talks, ~0.2% Apple fee, terminal-by-terminal acceptance; curiosity-not-UPI-killer take (new hard dev vs 09-23 preview)
+2026-10-05 | 2 | Apps & platforms | Reddit RSS + public Data API shutdown | new requests stop Oct 31, RSS ends Nov 13, unregistered Jan 12 2027, rest Mar 2027; Devvit TypeScript-only, $1k/app bounty; AI-licensing take
+2026-10-05 | 4 | Hot take / Security (opinion) | Google OSS bug bounty paused over AI submissions | paused Oct 1, update Q1 2027, mostly invalid automated reports; security-not-spam take (opinion quota)
+2026-10-05 | 5 | AI workflow / Prompt of the day | Subscription-audit prompt | 3 months statements (masked) -> recurring charges w/ yearly Rs total, duplicates, converted trials, rank 3 to cancel (IG pick, carousel)
