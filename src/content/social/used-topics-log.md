@@ -323,3 +323,8 @@
 2026-10-05 | 2 | Apps & platforms | Reddit RSS + public Data API shutdown | new requests stop Oct 31, RSS ends Nov 13, unregistered Jan 12 2027, rest Mar 2027; Devvit TypeScript-only, $1k/app bounty; AI-licensing take
 2026-10-05 | 4 | Hot take / Security (opinion) | Google OSS bug bounty paused over AI submissions | paused Oct 1, update Q1 2027, mostly invalid automated reports; security-not-spam take (opinion quota)
 2026-10-05 | 5 | AI workflow / Prompt of the day | Subscription-audit prompt | 3 months statements (masked) -> recurring charges w/ yearly Rs total, duplicates, converted trials, rank 3 to cancel (IG pick, carousel)
+
+2026-10-06 | 1 | AI / Ads | ChatGPT visual ads in image generation | free tier only, banner under progress bar, US test later Oct, Plus/Pro ad-free, AppsFlyer/Kochava/Triple Whale conversion tracking = sales funnel take (new format vs 08-21 EU ads)
+2026-10-06 | 2 | India / Chips | BigEndian Project VeerAI AI vision SoC | TDB Rs 130cr of Rs 260cr, Bengaluru, CCTV first then defence/auto/medical, TRL-5 to TRL-9, no ship date
+2026-10-06 | 4 | Hot take / Wearables & Privacy (opinion) | Norway AI smart-glasses ban proposal | temporary ban in changing rooms/clinics/schools/concerts/parks/malls, not total, no date; Hans Anders paused Ray-Ban Meta; LED isn't consent take (IG pick, carousel, opinion quota)
+2026-10-06 | 5 | Community / Poll (Phones, India) | Vivo V80 India launch | Oct 6 12 PM official, 7,200mAh/50MP tele/144Hz, leaked Rs 63k-80k RUMOR; mid-ranger vs last-year flagship poll
