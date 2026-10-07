@@ -328,3 +328,8 @@
 2026-10-06 | 2 | India / Chips | BigEndian Project VeerAI AI vision SoC | TDB Rs 130cr of Rs 260cr, Bengaluru, CCTV first then defence/auto/medical, TRL-5 to TRL-9, no ship date
 2026-10-06 | 4 | Hot take / Wearables & Privacy (opinion) | Norway AI smart-glasses ban proposal | temporary ban in changing rooms/clinics/schools/concerts/parks/malls, not total, no date; Hans Anders paused Ray-Ban Meta; LED isn't consent take (IG pick, carousel, opinion quota)
 2026-10-06 | 5 | Community / Poll (Phones, India) | Vivo V80 India launch | Oct 6 12 PM official, 7,200mAh/50MP tele/144Hz, leaked Rs 63k-80k RUMOR; mid-ranger vs last-year flagship poll
+
+2026-10-07 | 1 | Global tech / China / AI business | DeepSeek $12-15B round + V4.1 Flash | Bloomberg Oct 6: 80-100B yuan vs 50B target, Tencent+CATL, 160k Huawei accelerators, IPO prep; V4.1 Flash open-weight $0.30/$1.20, self-reported 74.2% DeepSWE vs Opus 5 74.0% (new dev vs 09-25 $7.5B)
+2026-10-07 | 2 | India / Telecom | India Mobile Congress 2026 opens | Oct 7-10 Yashobhoomi, Scale Without Boundaries, 6G symposium; watch satcom + 5G monetisation (tariffs); free visitor passes
+2026-10-07 | 4 | Hot take / Laptops & PCs (opinion) | Microsoft local-AI PC event Oct 7 | Nadella+Huang, Surface Laptop Ultra RTX Spark no price, Engadget est $3,999+; $4k to skip a $20 sub take (opinion quota; new event vs 09-18 RTX Spark)
+2026-10-07 | 5 | Myth-buster / Phones & Battery (opinion) | Dark mode saves battery myth | Purdue 2021 OLED: 39-47% display power at 100% brightness, 3-9% at 30-50%, ~0 on LCD (IG pick, carousel, opinion quota)
