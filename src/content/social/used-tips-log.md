@@ -116,3 +116,5 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-10-06 | X | Grok training opt-out - Settings and privacy > Privacy and safety > Grok & Third-party Collaborators > untick data sharing; stops future public posts + Grok chats training Grok (app + web; standalone Grok app has its own Improve the model toggle)
 
 2026-10-07 | macOS | Fine volume/brightness steps - hold Option+Shift while pressing volume or brightness keys for quarter steps (16 levels become 64); fixes too-loud vs silent at night
+
+2026-10-08 | Google Search | Date operators - add after:YYYY-MM-DD / before:YYYY-MM-DD (or after:2025) to a query to only get pages from that range; kills stale listicles for price/phone searches

@@ -333,3 +333,8 @@
 2026-10-07 | 2 | India / Telecom | India Mobile Congress 2026 opens | Oct 7-10 Yashobhoomi, Scale Without Boundaries, 6G symposium; watch satcom + 5G monetisation (tariffs); free visitor passes
 2026-10-07 | 4 | Hot take / Laptops & PCs (opinion) | Microsoft local-AI PC event Oct 7 | Nadella+Huang, Surface Laptop Ultra RTX Spark no price, Engadget est $3,999+; $4k to skip a $20 sub take (opinion quota; new event vs 09-18 RTX Spark)
 2026-10-07 | 5 | Myth-buster / Phones & Battery (opinion) | Dark mode saves battery myth | Purdue 2021 OLED: 39-47% display power at 100% brightness, 3-9% at 30-50%, ~0 on LCD (IG pick, carousel, opinion quota)
+
+2026-10-08 | 1 | AI models / ChatGPT | GPT-6 + Intelligent UI rollout | Oct 7 paid (Sol), Oct 8 Free+Go (Luna), charts/calculators/buttons in Chat tab only, OpenAI-reported 44% faster search start; check-the-maths take (carousel, trending; new story vs 10-06 ChatGPT ads)
+2026-10-08 | 2 | Big tech business / Chips (India prices) | Samsung Q3 record ~107.4T won (~$80B) profit | prelim Oct 8, ~9x YoY, rev ~195T won +127%, HBM shift, RAM 2.5-3x, IDC laptop prices rising to late 2027; don't-wait take (IG pick, carousel)
+2026-10-08 | 4 | Hot take / India AI voice (opinion) | ElevenLabs India #2 market | Oct 6 Bengaluru summit, 100M agent convos >70% Indic, 25k devs/mo, 14 langs -> 22 planned, CARS24 400 agents; disclose-AI + human-handoff take (opinion quota)
+2026-10-08 | 5 | Comparison / Phones (India) | OPPO F35 vs F35 Pro | Rs 38,999 vs Rs 45,999, same 8,000mAh/80W/IP69, Pro adds 7360 Max/OIS/ultrawide/1.5K, sale Oct 11; pay-7k-or-skip verdict (carousel)
