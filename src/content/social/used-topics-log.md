@@ -338,3 +338,8 @@
 2026-10-08 | 2 | Big tech business / Chips (India prices) | Samsung Q3 record ~107.4T won (~$80B) profit | prelim Oct 8, ~9x YoY, rev ~195T won +127%, HBM shift, RAM 2.5-3x, IDC laptop prices rising to late 2027; don't-wait take (IG pick, carousel)
 2026-10-08 | 4 | Hot take / India AI voice (opinion) | ElevenLabs India #2 market | Oct 6 Bengaluru summit, 100M agent convos >70% Indic, 25k devs/mo, 14 langs -> 22 planned, CARS24 400 agents; disclose-AI + human-handoff take (opinion quota)
 2026-10-08 | 5 | Comparison / Phones (India) | OPPO F35 vs F35 Pro | Rs 38,999 vs Rs 45,999, same 8,000mAh/80W/IP69, Pro adds 7360 Max/OIS/ultrawide/1.5K, sale Oct 11; pay-7k-or-skip verdict (carousel)
+
+2026-10-09 | 1 | AI research / OpenAI | OpenAI 372 math results + Unique Games race | openai/math GitHub, ~1 prompt each, ~3h Pro compute, Lean for many, Minzer MIT 95-page 4-to-1 paper after rumours (Quanta), Braverman math-by-press-release; unreviewed take (trending; different thread vs 10-08 GPT-6)
+2026-10-09 | 2 | India / Telecom | Airtel free intl roaming + Rs 50 postpaid hike | 1 trip/SIM/yr 5GB+60min+25SMS 5 days, plans Rs 499-1,799 eff Oct 8; price-hike-with-a-nice-name take
+2026-10-09 | 4 | Hot take / Social platforms (opinion) | TikTok placebo Algo Refresh (NY AG unsealed) | 2023 tests fake reset button, TikTok says routine testing; reset buttons are trust-me buttons incl Instagram (opinion quota)
+2026-10-09 | 5 | Security & Privacy quick-win | 16 fake Firefox wallet extensions (Socket) | Rabby/OKX clones steal seed phrases, all removed Oct 5; prune chrome://extensions / about:addons
