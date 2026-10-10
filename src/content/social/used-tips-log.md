@@ -119,3 +119,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 
 2026-10-08 | Google Search | Date operators - add after:YYYY-MM-DD / before:YYYY-MM-DD (or after:2025) to a query to only get pages from that range; kills stale listicles for price/phone searches
 2026-10-09 | Google Chrome (Android) | Listen to this page - Chrome Android three-dot menu > Listen to this page; reads articles aloud with screen locked, speed + voice options, standard playback in Hindi/Tamil/Telugu/Marathi/Bengali/Malayalam (needs Make searches and browsing better on)
+2026-10-10 | iOS | Stolen Device Protection set to Always - Settings > Face ID & Passcode > Stolen Device Protection > Require Security Delay: Always; Apple Account password change needs Face ID + 1h delay + Face ID even at home, covers passcode change/sign-out (iOS 17.3+)

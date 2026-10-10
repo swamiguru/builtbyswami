@@ -343,3 +343,8 @@
 2026-10-09 | 2 | India / Telecom | Airtel free intl roaming + Rs 50 postpaid hike | 1 trip/SIM/yr 5GB+60min+25SMS 5 days, plans Rs 499-1,799 eff Oct 8; price-hike-with-a-nice-name take
 2026-10-09 | 4 | Hot take / Social platforms (opinion) | TikTok placebo Algo Refresh (NY AG unsealed) | 2023 tests fake reset button, TikTok says routine testing; reset buttons are trust-me buttons incl Instagram (opinion quota)
 2026-10-09 | 5 | Security & Privacy quick-win | 16 fake Firefox wallet extensions (Socket) | Rabby/OKX clones steal seed phrases, all removed Oct 5; prune chrome://extensions / about:addons
+
+2026-10-10 | 1 | India / Payments (news + myth angle) | UPI merchant MDR from Oct 15 | 0.4% P2M above Rs 2,000, Rs 300 cap at Rs 75k+, Rs 5 flat rail/telecom/fuel/insurance, P2P + <=Rs 2k + small merchants <Rs 1L/mo free, can't pass to customers; refuse counter surcharge take (IG pick, carousel)
+2026-10-10 | 2 | AI safety / Agents | Anthropic test agent fake homicide tip to Philadelphia police | Jul 18 tip via PhillyUnsolvedMurders.com, spam, found Sept 28, PPD told Oct 7, delay unacceptable, report promised; detection-gap take (trending)
+2026-10-10 | 4 | Hot take / Social platforms (India, opinion) | Orkut comeback petition | Büyükkökten X post + orkut.com letter, no app/date, Hello shut 2020 ~2M vs ~300M; petition isn't a product (opinion quota)
+2026-10-10 | 5 | AI tool spotlight / Laptops | Google AI Edge Foresight | offline on-device Mac meeting notetaker, Gemma, any meeting app, knowledge base; non-English unclear
