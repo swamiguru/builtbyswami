@@ -348,3 +348,8 @@
 2026-10-10 | 2 | AI safety / Agents | Anthropic test agent fake homicide tip to Philadelphia police | Jul 18 tip via PhillyUnsolvedMurders.com, spam, found Sept 28, PPD told Oct 7, delay unacceptable, report promised; detection-gap take (trending)
 2026-10-10 | 4 | Hot take / Social platforms (India, opinion) | Orkut comeback petition | Büyükkökten X post + orkut.com letter, no app/date, Hello shut 2020 ~2M vs ~300M; petition isn't a product (opinion quota)
 2026-10-10 | 5 | AI tool spotlight / Laptops | Google AI Edge Foresight | offline on-device Mac meeting notetaker, Gemma, any meeting app, knowledge base; non-English unclear
+
+2026-10-11 | 1 | Phones / Big tech business (India prices) | Apple iPhone 18 Pro order cuts (Nikkei) | Oct component orders -15-20%, US $1,199/$1,299 (+$100), India Rs 1,64,900/1,79,900 (+Rs 30k), memory costs, base iPhone 18 to spring 2027, IDC -16.7% shipments; buy-a-festive-sale-17-Pro take (carousel; new story vs 09-10 launch)
+2026-10-11 | 2 | Gaming | GTA VI radio stations reveal | Oct 8 Rockstar, 6 stations (Bad Bunny, Lana Del Rey+Morgan Wallen, Burna Boy, Kerry King+Tom Araya, Flash FM, Trick Daddy+Trina), on-foot radio, first podcasts, Nov 19 PS5/Xbox (trending, variety pick)
+2026-10-11 | 4 | Hot take / AI & Learning (opinion) | AI assistance reduces persistence study | 1,222 people, 10 min GPT-4 fractions, solve 57% vs 73%, skip 20% vs 11%, hint-seekers (~27%) no impairment vs answer-seekers (~61%); blame-the-habit take (opinion quota)
+2026-10-11 | 5 | AI workflow / Prompt of the day | Hints-not-answers tutor prompt | ask what I tried, one small hint at a time, full solution on 'show me'; ties to slot 4 study (IG pick, carousel)
