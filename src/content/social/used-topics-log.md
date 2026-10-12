@@ -353,3 +353,13 @@
 2026-10-11 | 2 | Gaming | GTA VI radio stations reveal | Oct 8 Rockstar, 6 stations (Bad Bunny, Lana Del Rey+Morgan Wallen, Burna Boy, Kerry King+Tom Araya, Flash FM, Trick Daddy+Trina), on-foot radio, first podcasts, Nov 19 PS5/Xbox (trending, variety pick)
 2026-10-11 | 4 | Hot take / AI & Learning (opinion) | AI assistance reduces persistence study | 1,222 people, 10 min GPT-4 fractions, solve 57% vs 73%, skip 20% vs 11%, hint-seekers (~27%) no impairment vs answer-seekers (~61%); blame-the-habit take (opinion quota)
 2026-10-11 | 5 | AI workflow / Prompt of the day | Hints-not-answers tutor prompt | ask what I tried, one small hint at a time, full solution on 'show me'; ties to slot 4 study (IG pick, carousel)
+
+2026-10-12 | 1 | Smart home / Apple launch | Apple Welcome Home Oct 13 + HomeView | OFFICIAL Oct 13 9am ET private NY experience no livestream; RUMOR HomeView A18 two versions no App Store mid-Nov, Apple TV/HomePod mini Oct 30; Siri-test-with-a-screen take (carousel, trending; new dev vs 10-04 rumor hot take)
+2026-10-12 | 2 | India / IT jobs | TCS Q2 FY27 results | Oct 8, +4,258 to 598,056, 3rd qtr of adds, $7.64B +2.4% YoY USD (2.8% CC), Rs 73,188cr +11.2%, AI $3.1B run rate, TCV $9.6B; growth-not-AI is the worry take
+2026-10-12 | 4 | India / Security & Privacy quick-win | Rewari Police APK scam warning | Oct 11, fake bank/courier/electricity APKs on WhatsApp/Telegram/SMS read OTPs; Install unknown apps off, no AnyDesk, 1930 (IG pick, carousel)
+2026-10-12 | 5 | Hot take / AI safety (opinion) | Nadella AI emergency brake X post | Oct 10, assume model compromised, separate model from harness, tamper-proof logs, human pause; right-but-late take (opinion quota)
+2026-10-12 | T | India / Big tech business | Jio IPO price band REPORTED | Rs 1,065-1,119, bids Oct 21-23, list Oct 28, up to Rs 10.3T (Bloomberg; new dev vs 10-04)
+2026-10-12 | T | India / IT jobs | HCLTech Q2 Oct 12, Infosys Oct 23 | results dates
+2026-10-12 | T | AI business | Nvidia talks to buy/invest Reflection AI | FT, possible acquihire
+2026-10-12 | T | Cybersecurity | Japan cyber state of emergency | FT, 20+ major companies attacked
+2026-10-12 | T | AI / Media | Publishers using AI without author consent | Wired, HarperCollins/S&S/Hachette staff
