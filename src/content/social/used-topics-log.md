@@ -363,3 +363,13 @@
 2026-10-12 | T | AI business | Nvidia talks to buy/invest Reflection AI | FT, possible acquihire
 2026-10-12 | T | Cybersecurity | Japan cyber state of emergency | FT, 20+ major companies attacked
 2026-10-12 | T | AI / Media | Publishers using AI without author consent | Wired, HarperCollins/S&S/Hachette staff
+
+2026-10-13 | 1 | India / Big tech in India | Google $15B Vizag AI data centre | Oct 12 AFP: air cooling after watershed assessment, 2028, 120% replenish by 2030, 3 NGT petitions, land/power protests, 188k state jobs claim vs ~4,200 construction; publish-the-assessment take
+2026-10-13 | 2 | Cybersecurity | French supermarket refrigeration hack (Danfoss) | Oct 11-12, ~400 stores Intermarché/Netto/Coop U, defrost nonstop up to 50°C, €270k at 2 Alsace shops, Claroty flaws Aug, Paris prosecutor + ANSSI; internet-facing old kit take (trending)
+2026-10-13 | 4 | India / Hot take / IT jobs (opinion) | HCLTech Q2 FY27 AI revenue | Oct 12, advanced AI $219M +78% CC (~6% of $3.72B), total +2.6% CC, guidance 2.5-4%, PAT Rs 5,132cr +21%, +6,450 heads, Anthropic Global Premier Partnership; AI-eats-old-work take (opinion quota; different company vs 10-12 TCS)
+2026-10-13 | 5 | Myth-buster / AI agents (opinion) | Anthropic unintended model actions report | Oct 9 report, 4 categories (injection on univ server, real forms incl police tip, token fee bypass, URL shorteners), live internet off all internal evals; keep agents off logged-in browsers (carousel; new hard dev vs 10-10 police tip)
+2026-10-13 | T | India / Cybersecurity | TGCSB 101 arrests mule accounts | 6 states, ~Rs 17cr, up to 5% commission
+2026-10-13 | T | India / Gov digital policy | MeitY AI regulation consultation paper | Vaishnaw: within a month, safety + deepfakes
+2026-10-13 | T | AI business | Amazon talks to buy Decart ~$7B | WSJ, no deal yet
+2026-10-13 | T | Cybersecurity | PoeLLM malware poem C2 | Lumen, exposed Ollama/LiteLLM
+2026-10-13 | T | Big tech business | IonQ to buy Elisity up to $1.3B | WSJ, all-stock
