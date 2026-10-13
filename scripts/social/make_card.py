@@ -63,19 +63,20 @@ def _illustration_path(out):
         return os.path.join(d, "illustration_" + base[len("card_"):])
     return os.path.join(d, "illustration_" + base)
 
-# Verge/WIRED-style playful palette: one bold saturated field per card, a
-# high-contrast accent, black + off-white linework. Rotated per story so the
-# daily five feel varied; picked deterministically from the story text so a
-# retry keeps the same colour. Brand orange/teal ride along as anchors.
+# Verge/WIRED-style palette, toned down 13 Oct 2026: one flat colour field per
+# card, a contrast accent, dark linework. Each pair is halfway between the old
+# neon set and a muted set, so the daily five still feel varied but not loud.
+# Rotated per story and picked deterministically from the story text so a
+# retry keeps the same colour.
 _PALETTE = [
-    ("#C6F135", "#7C3AED"),  # lime + violet
-    ("#8B5CF6", "#FFE14C"),  # electric violet + acid yellow
-    ("#29D3E6", "#FF5C39"),  # cyan + hot coral
-    ("#FF5C39", "#17182E"),  # hot coral + midnight
-    ("#F5E14C", "#111111"),  # acid yellow + black
-    ("#E0552B", "#17182E"),  # brand orange + midnight
-    ("#1FA89A", "#FFE14C"),  # brand teal + yellow
-    ("#FF7AB6", "#111111"),  # hot pink + black
+    ("#C2E05F", "#6B42BB"),  # lime + violet
+    ("#9374E4", "#F5DB64"),  # electric violet + yellow
+    ("#52CCDC", "#EE6849"),  # cyan + coral
+    ("#EF694A", "#1B1D37"),  # coral + midnight
+    ("#F0DD67", "#181A28"),  # yellow + midnight
+    ("#DC6F47", "#1B1D37"),  # brand orange + midnight
+    ("#3DA89C", "#F5DB64"),  # brand teal + yellow
+    ("#F28EBB", "#181A28"),  # pink + midnight
 ]
 
 def _pick_palette(seed):
@@ -112,24 +113,27 @@ def generate_illustration(pillar, hook, sub, illus_path):
         return False
     story = f"{pillar}: {hook}" + (f" -- {sub}" if sub else "")
     bg, accent = _pick_palette(pillar + "|" + hook)
-    prompt = f"""Bold, playful editorial tech illustration in the style of
-The Verge and WIRED magazine spot art. Square, full-bleed, filling the
-entire frame edge to edge.
+    prompt = f"""Bold, friendly editorial tech illustration in the style of
+The Verge and WIRED magazine spot art, a little more restrained than usual.
+Square, full-bleed, filling the entire frame edge to edge.
 
-Background: ONE single flat, saturated, opaque color -- {bg} -- absolutely
+Background: ONE single flat, matte, opaque color -- {bg} -- absolutely
 no gradient, vignette, border, panel or rounded card. One flat colour,
-edge to edge.
+edge to edge. Colours should feel rich but not neon and not glowing.
 
 Subject: invent ONE witty, clear visual metaphor for this tech story,
-drawn BIG and bold as a flat vector filling about 75 percent of the frame:
-{story}. Thick confident black outlines, bold flat fills using {accent}
-and off-white #F7F5EE, very high contrast, minimal geometric shapes, a
-little personality and humour -- like a magazine spot illustration.
+drawn as a flat vector filling about 65 percent of the frame: {story}.
+Steady composition: one clear subject, upright or gently angled, nothing
+exploding or crashing. Confident dark outlines, flat fills using {accent}
+and warm off-white #F4F1E6, good contrast, minimal geometric shapes, a
+little personality and humour.
 
-Signature motif: a scattered black-and-white checkerboard / pixel-dither
-block pattern creeping in from one or two corners, plus a few tiny
-geometric confetti shapes (dots, plus signs, small triangles) around the
-subject.
+Signature motif, kept compact: a small black-and-off-white checkerboard /
+pixel-dither block pattern in ONE corner only (about a seventh of the frame
+width), plus two or three tiny dots or plus signs. Nothing else scattered.
+
+Do NOT draw: lightning bolts, starbursts, explosion shapes, motion lines,
+speed lines, sparks, angry or shouting faces, or dramatic diagonals.
 
 ABSOLUTELY NO text of any kind anywhere: no words, no letters, no numbers,
 no captions, no labels, no gibberish lettering, no signage, no lettered
