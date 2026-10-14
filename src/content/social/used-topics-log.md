@@ -373,3 +373,13 @@
 2026-10-13 | T | AI business | Amazon talks to buy Decart ~$7B | WSJ, no deal yet
 2026-10-13 | T | Cybersecurity | PoeLLM malware poem C2 | Lumen, exposed Ollama/LiteLLM
 2026-10-13 | T | Big tech business | IonQ to buy Elisity up to $1.3B | WSJ, all-stock
+
+2026-10-14 | 1 | Smart home / Apple launch | Apple HomeView launched | Oct 13 $299 7-inch ships Nov 13 US, HomePod mini 2 $149 (+$50) Oct 30, Apple TV 4K $299 (+$100) Nov 13, no India price/date, Siri AI beta on Apple TV in India in English; Siri-is-the-product take (IG pick, carousel, trending; new hard dev vs 10-12 preview)
+2026-10-14 | 2 | India / Payments | NPCI defers UPI MDR till post-Diwali | Oct 13 steering committee, was Oct 15, 0.4% P2M >Rs 2,000 cap Rs 300, new date TBA, not Jan 1 2027; delay-not-U-turn take (new hard dev vs 10-10)
+2026-10-14 | 4 | India / Hot take / Quick commerce (opinion) | FSSAI expiry/batch disclosure for quick commerce | Oct 13 Inc42, mfg+expiry+batch on listings, cloud kitchen disclosure, dark store checks, prosecutions 5-6x; make-it-mandatory take (opinion quota)
+2026-10-14 | 5 | Hot take / AI privacy (opinion) | Character.AI Chapter 11, Disney $20M bid | announced Oct 12, non-exclusive IP licence, assets/liabilities $50-100M, app stays up, user chats unaddressed; companion bots get sold take (opinion quota)
+2026-10-14 | T | India / IT jobs | Wipro Q2 FY27 results Oct 15 | guidance $2.574-2.627B, shares -38% 2026
+2026-10-14 | T | India / Chips & data centres | Adani-Jabil AI hardware JV MoU | non-binding 50:50, racks/servers/cooling
+2026-10-14 | T | India / Startups | RDI Fund first cohort 19 managers | Rs 7,131 cr deeptech, Blume, Speciale
+2026-10-14 | T | Wearables | Google Fitbit Edge | $179.99, replaceable battery, Oct 27
+2026-10-14 | T | AI models | Meta Muse Wonder models | agentic, no benchmark scores
