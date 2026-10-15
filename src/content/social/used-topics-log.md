@@ -383,3 +383,13 @@
 2026-10-14 | T | India / Startups | RDI Fund first cohort 19 managers | Rs 7,131 cr deeptech, Blume, Speciale
 2026-10-14 | T | Wearables | Google Fitbit Edge | $179.99, replaceable battery, Oct 27
 2026-10-14 | T | AI models | Meta Muse Wonder models | agentic, no benchmark scores
+
+2026-10-15 | 1 | AI models / Gemini | Gemini 4 Argon broad availability | Oct 13 API global + AI Pro/Ultra in Gemini app/AI Mode, free tier unmentioned, $2/$10 intro doubling to $4/$20 Nov 30; paid-first take (new hard dev vs 10-01 limited launch)
+2026-10-15 | 2 | India / Big tech in India | Apple HomeView India price | Rs 39,900 both models, pre-orders Oct 13, sale Nov 13, mounts from Rs 6,900, EU excluded, Siri AI English in India; corrects 10-14 no-India line (new hard dev vs 10-14)
+2026-10-15 | 4 | India / Myth-buster / Cybersecurity (opinion) | Digital arrest scams | Hyderabad Police Oct 14 advisory, Rs 2.20cr Nampally loss, Pune Rs 68 lakh with Data Protection Board impersonation, Delhi 11 arrests Cambodia ring; no-such-thing-as-digital-arrest (IG pick, carousel, opinion quota)
+2026-10-15 | 5 | Hot take / Cybersecurity & AI (opinion) | XBOW AI-built Chrome exploit chain | GPT-5.6 Sol, Aug 2-7, ~$40k compute, $250k Google bounty, V8 Maglev + WebP + Crashpad, all fixed, brokers up to $1.5M; patch-speed take (opinion quota, trending)
+2026-10-15 | T | India / Gov digital policy | MeitY misleading-content labelling advisory | Oct 8, immediate effect, covers text (MediaNama)
+2026-10-15 | T | India / Cybersecurity | Mumbai Rs 900cr mule network Banker Panel | 22 arrests, Goa villas
+2026-10-15 | T | Cybersecurity | Microsoft record 1,413 patches | exploited MotW bypass
+2026-10-15 | T | AI business / Security | OpenAI engineer charged over hidden recorder | DOJ, found Sept 30
+2026-10-15 | T | Chips | ASML record Q3 | EUR 11.7B sales, 113 systems
