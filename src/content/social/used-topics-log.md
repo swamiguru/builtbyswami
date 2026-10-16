@@ -393,3 +393,13 @@
 2026-10-15 | T | Cybersecurity | Microsoft record 1,413 patches | exploited MotW bypass
 2026-10-15 | T | AI business / Security | OpenAI engineer charged over hidden recorder | DOJ, found Sept 30
 2026-10-15 | T | Chips | ASML record Q3 | EUR 11.7B sales, 113 systems
+
+2026-10-16 | 1 | India / Big tech business | Jio Platforms IPO RHP filed | Oct 14 RHP, Rs 30,213cr fresh issue, band Rs 1,065-1,119, bids Oct 21-23, list Oct 28, up to Rs 27,500cr to repay RJIL debt, lot 12 (Rs 13,428), Meta 9.98% Google 7.73% not selling; debt-paydown take (new hard dev vs 10-12 Tap)
+2026-10-16 | 2 | AI models / Open weights | Meta Muse Spark Open | Oct 15, 816B/42B active, 1M ctx, Muse Model License, 2x M5 Ultra Mac Studio ~1TB, no benchmark numbers; open-weights-not-open-source take (different model vs 10-14 Muse Wonder Tap)
+2026-10-16 | 4 | India / AI workflow prompt / Scams | Pune Rs 1.57cr Narayana Murthy fake ad scam | reported Oct 14, 83-year-old, 49 transactions; red-flag prompt for ChatGPT/Gemini/Claude
+2026-10-16 | 5 | Hot take / Creator economy (opinion) | Meta Oct 30 commercial terms crawl business-linked sites | Nieman Lab, train on content, test credentials, no opt-out except quitting business use, robots.txt claim; toll-booth take (opinion quota)
+2026-10-16 | T | India / IT jobs | Wipro Q2 FY27 results | PAT Rs 3,201cr -1.4%, Q3 guide -1.5% to +0.5% CC, large deals -58.6% (new dev vs 10-14 Tap preview)
+2026-10-16 | T | India / Cybersecurity | CERT-In critical advisory fintech API attacks | Oct 9, stolen partner-bank API creds, mule accounts (MediaNama)
+2026-10-16 | T | Laptops / Apple launch | Apple Oct 28 LA launch experience REPORTED | touchscreen MacBook Pro, M6 iMac, OLED iPad mini RUMOR
+2026-10-16 | T | Regulatory / AI | FTC CIDs to OpenAI and Anthropic | Axios, 50-page demands, execs may testify
+2026-10-16 | T | Big tech business / Security | Proofpoint to buy Varonis $6.3B | $49.75/share, H1 2027 close
