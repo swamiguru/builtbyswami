@@ -403,3 +403,13 @@
 2026-10-16 | T | Laptops / Apple launch | Apple Oct 28 LA launch experience REPORTED | touchscreen MacBook Pro, M6 iMac, OLED iPad mini RUMOR
 2026-10-16 | T | Regulatory / AI | FTC CIDs to OpenAI and Anthropic | Axios, 50-page demands, execs may testify
 2026-10-16 | T | Big tech business / Security | Proofpoint to buy Varonis $6.3B | $49.75/share, H1 2027 close
+
+2026-10-17 | 1 | India / Telecom / Regulatory | DoT CNAP caller name display Nov 1 | KYC name on every incoming call, free, telemarketers GST/trademark name, International tag, CLIR stays hidden; four-years-late-but-right take
+2026-10-17 | 2 | Cybersecurity / AI business | Bank of America 1,000 contractors patch Mythos-found flaws | Q2, internal + vendor code, Moynihan to CNBC Oct 14, cost lumped with AML; finding-cheap-fixing-isn't take
+2026-10-17 | 4 | India / Myth-buster / Cybersecurity (opinion) | Indore designer 2,805 malicious APKs Rs 150cr | Mumbai Crime Branch Property Cell, Pankaj Gupta, Oct 15; known-contact-APK myth (IG pick, carousel, opinion quota)
+2026-10-17 | 5 | Hot take / AI business / Privacy (opinion) | ChatGPT ad targeting by email/phone/ad ID | 404 Media Oct 15 test campaigns, 25k min list (Gizmodo), prompts too; same-old-ad-playbook take (opinion quota; new story vs 10-06 ChatGPT ads)
+2026-10-17 | T | India / Payments | NPCI UPI MDR delayed to after Diwali | was Oct 15, P2M above Rs 2,000, P2P free, 96% unaffected
+2026-10-17 | T | India / Defence tech | DRDO QKD live-network test Chandipur | Oct 14, weapons-test telemetry
+2026-10-17 | T | Regulatory / AI | Eight US states sue OpenAI | child safety, Arkansas wants testing halted
+2026-10-17 | T | AI models | Microsoft MAI-Base-2 | 2.8T/80B active, 16k GB200 38 days, partners via Foundry
+2026-10-17 | T | Regulatory / AI | OpenAI and Meta deepfake evidence warning to US judiciary | no universal detector (Reuters)
