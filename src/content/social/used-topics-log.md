@@ -413,3 +413,13 @@
 2026-10-17 | T | Regulatory / AI | Eight US states sue OpenAI | child safety, Arkansas wants testing halted
 2026-10-17 | T | AI models | Microsoft MAI-Base-2 | 2.8T/80B active, 16k GB200 38 days, partners via Foundry
 2026-10-17 | T | Regulatory / AI | OpenAI and Meta deepfake evidence warning to US judiciary | no universal detector (Reuters)
+
+2026-10-18 | 1 | Search / Creator economy | Google AI Overviews + AI Mode links moved higher | Oct 15 blog (Hema Budaraju), inline links higher, official-sites section test, carousels more languages + Preferred Sources, creator profile links test, no click data; right-but-late, show-us-traffic take
+2026-10-18 | 2 | India / Regulation / Big tech in India | NCPCR summons Google over AI kiss & hug apps | MediaNama Oct 15, AI Kiss & Hug Video Maker rated 3+ 5,000+ downloads (Unikwork Systems Surat), meeting later Oct, non-binding guidelines by Dec; enforcement-gap take
+2026-10-18 | 4 | India / Hot take / Telecom (opinion) | TRAI voice+SMS-only plans effective ~Oct 21 | 13th Amendment, appropriate reduction no price floor, no operator prices yet, 28-day twin rule; don't-expect-cheap take (opinion quota; new dev = effective date vs 09-29 mandate)
+2026-10-18 | 5 | Apps / Messaging | WhatsApp guest calling for non-users | Oct 15, call link from Calls tab, computer browser join, waiting room, 32 people, E2EE, guests can't see numbers/message, calendar plugins later this year (IG pick, carousel)
+2026-10-18 | T | India / AI infra | MeitY 10,000 GPU tender IndiaAI Mission | via CDAC, demand-led
+2026-10-18 | T | India / Regulatory | Delhi court Amazon intermediary Kindle case | Vasundhara Prakash, 72-hour takedown
+2026-10-18 | T | India / Big tech in India | Google.org $15M to The/Nudge for MSMEs | Oct 15, AI teacher training Bihar/MP/Sikkim
+2026-10-18 | T | AI models / Global tech | DeepSeek V4.1-Flash-1017 + search API | Oct 17, self-reported 77.0 DeepSWE, $0.75/1k calls from Oct 31 (new checkpoint vs 10-07)
+2026-10-18 | T | OS updates | Windows 11 24H2 Home/Pro final update | October Patch Tuesday last
