@@ -423,3 +423,13 @@
 2026-10-18 | T | India / Big tech in India | Google.org $15M to The/Nudge for MSMEs | Oct 15, AI teacher training Bihar/MP/Sikkim
 2026-10-18 | T | AI models / Global tech | DeepSeek V4.1-Flash-1017 + search API | Oct 17, self-reported 77.0 DeepSWE, $0.75/1k calls from Oct 31 (new checkpoint vs 10-07)
 2026-10-18 | T | OS updates | Windows 11 24H2 Home/Pro final update | October Patch Tuesday last
+
+2026-10-19 | 1 | Robotics / AI business | OpenAI confirms humanoid robot | Altman "We will" on Sources podcast (Engadget Oct 17), 27 robotics roles, 2027 demo, no design/price/date; brain-over-body is the honest and unsolved part (trending)
+2026-10-19 | 2 | India / Telecom / Satcom | No satellite internet launched in India yet | Inc42 Oct 18: Starlink/Jio Satellite/OneWeb all GMPCS-licensed, security assessments pending, spectrum after, no dates; Rs 8,600 Starlink price was test data (Dec 2025); stop-budgeting-for-a-dish take
+2026-10-19 | 4 | India / Myth-buster / Payments (opinion) | UPI PIN fraud not automatically customer's loss | Punjab State Consumer Commission upheld Rs 72,495 refund + Rs 5k + Rs 5k (reported Oct 17), PIN alone not negligence, RBI 2017 zero-liability 3 working days, burden on bank, 10-day shadow credit (IG pick, carousel, opinion quota)
+2026-10-19 | 5 | Hot take / AI & jobs (opinion) | Anthropic employment report junior hiring | Oct 16, junior technical hires 27% to 9%, junior share 21% to 14%, agent hours 6:1 by Aug, descriptive not causal; Infosys 20k freshers contrast; judgment-not-syntax take (opinion quota)
+2026-10-19 | T | India / Cybersecurity | Nagpur accountant Rs 1.30cr fake boss WhatsApp | Kesar India, owner's photo on new number, RTGS (The Live Nagpur Oct 18)
+2026-10-19 | T | India / Startups / Regulatory | Pune Police book Rapido bike taxis | Vishrantwadi FIR ~Oct 16, collector suspension order, no aggregator licence (Inc42)
+2026-10-19 | T | India / Phones launch | OPPO Find X10 series India Oct 22 REPORTED | leaked Rs 1,79,999 / 2,39,999 RUMOR
+2026-10-19 | T | AI agents / Finance | Schwab and JPMorgan block outside AI agents | Wurster Bloomberg TV Oct 16, tens a week incl Meta Muse, read-only MCP
+2026-10-19 | T | Creator economy / AI | Meta drops AI scraping language from commercial terms | Verge Oct 17, retreat after backlash (new dev vs 10-16 post)
