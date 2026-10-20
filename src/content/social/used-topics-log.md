@@ -433,3 +433,12 @@
 2026-10-19 | T | India / Phones launch | OPPO Find X10 series India Oct 22 REPORTED | leaked Rs 1,79,999 / 2,39,999 RUMOR
 2026-10-19 | T | AI agents / Finance | Schwab and JPMorgan block outside AI agents | Wurster Bloomberg TV Oct 16, tens a week incl Meta Muse, read-only MCP
 2026-10-19 | T | Creator economy / AI | Meta drops AI scraping language from commercial terms | Verge Oct 17, retreat after backlash (new dev vs 10-16 post)
+2026-10-20 | 1 | India / Telecom / Regulatory | Airtel TRAI voice+SMS-only plans priced | Oct 19, Rs 185/28d, Rs 203/30d, Rs 206 calendar month, unlimited calls + 300 SMS no data, Jio Rs 448/84d + Rs 1,748/336d, Vi Rs 470/1,849, no TRAI-Mandated Packs tab yet, deadline Oct 21; Rs 7-a-day-isn't-cheap take (new hard dev = first prices vs 10-18)
+2026-10-20 | 2 | Cybersecurity / AI agents | One hacker used Cairn AI agents to breach 100+ sites | Reuters Oct 19, 1,200+ targeted, ~$5,000 model usage ~$50/intrusion, Deere/SharkNinja/Cummins-linked sites, no confirmed data theft; hacking-needs-a-credit-card take (trending)
+2026-10-20 | 4 | India / Myth-buster / Cybersecurity (opinion) | I4C NCTAU deepfake PM/FM welfare-scheme ads | Oct 19, Facebook/Instagram ads, fees then scratch-card UPI PIN, +92 calls flagged, 1930; minister-on-video-isn't-proof myth (IG pick, carousel, opinion quota; different scam vs 10-15 digital arrest, 10-17 APK)
+2026-10-20 | 5 | Hot take / Laptops / Apple launch (opinion) | Apple pro and tell Oct 28 + touchscreen OLED MacBook Pro RUMOR | Joswiak post Oct 19 OFFICIAL, LA media experience Oct 28 10am PT reported, M6 iMac + OLED iPad mini rumoured, Gurman Nov 6; touch-needs-touch-sized-macOS take (new hard dev = official tease vs 10-16 Tap)
+2026-10-20 | T | India / Big tech business | Jio Platforms IPO anchor book 30x | Rs 2.5 lakh cr bids for Rs 8,110 cr, opens Oct 21 (new dev vs 10-16)
+2026-10-20 | T | India / Cybersecurity | Hyderabad Police fake WhatsApp debit alert reply-NO scam | don't reply, 1930
+2026-10-20 | T | India / Startups | Even Healthcare $50M Series B Khosla | five new Bengaluru hospitals
+2026-10-20 | T | Regulatory / Global tech | US DHS orders DeepSeek removal from civilian federal IT | 2018 FASCSA, bans procurement (new dev vs 10-18 Tap)
+2026-10-20 | T | Chips | Tenstorrent $1.5B at $6.2B | RISC-V, Jim Keller
