@@ -442,3 +442,12 @@
 2026-10-20 | T | India / Startups | Even Healthcare $50M Series B Khosla | five new Bengaluru hospitals
 2026-10-20 | T | Regulatory / Global tech | US DHS orders DeepSeek removal from civilian federal IT | 2018 FASCSA, bans procurement (new dev vs 10-18 Tap)
 2026-10-20 | T | Chips | Tenstorrent $1.5B at $6.2B | RISC-V, Jim Keller
+2026-10-21 | 1 | India / Big tech in India / Business | Apple India FY26 results | Inc42 Oct 20, net profit Rs 5,311cr +66%, op revenue ~Rs 1.04 lakh cr +31.4%, expenses +28%, licence fee Rs 4,258cr to Rs 10,374cr, exports > Rs 2 lakh cr; not-discounting-its-way-in take (different thread vs 10-20 Apple launch post)
+2026-10-21 | 2 | India / Regulation / Social platforms | MeitY advisory to Meta on recommendation systems | dated Oct 10 (Pioneer Oct 18, Hans India Oct 19), single or limited set of narratives, context on event visuals, escalate, report back, IT Rules 2021, Delhi protests context, no Meta response; publish-what-changed take (different thread vs 10-16/10-19 Meta terms)
+2026-10-21 | 4 | India / AI workflow / Cybersecurity | Scam-check prompt for fake bill-payment messages | Indore trader Rs 1.45 lakh electricity-bill WhatsApp link, NCRP complaint, full refund within 24h (The420 Oct 20); prompt verbatim, strip numbers, 1930 (IG pick, carousel)
+2026-10-21 | 5 | Hot take / AI & IT services (opinion) | OpenAI COBOL/Fortran low-resource languages post | Oct 19, GPT-6.1 Sol 86.6% low effort vs 5.4% GPT-5.6 Sol, 97.9% high, 39% cheaper, GPT-6 Astra 87.4% MultiLangBench, COBOL 72.1%; reprice-or-lose-the-deal take for Indian IT (opinion quota; new story vs 10-19 OpenAI robot)
+2026-10-21 | T | India / Startups / Quick commerce | Flipkart Eat-in by Minutes food delivery end-Oct REPORTED | ~10% commission vs 20-25%, ONDC, Ekart riders (Inc42 via TechCrunch)
+2026-10-21 | T | India / Telecom / Satcom | Centre mulls hardware security layer for satcom | untrusted transport carriers, specs not final (new dev vs 10-19 post)
+2026-10-21 | T | India / Regulatory / Ecommerce | CCPA explosives listings 3,940 delisted | IndiaMART 3,092, Rs 30 lakh fines Dial4Trade + ExportersIndia, Justdial hearing Oct 23
+2026-10-21 | T | Cloud / Outage | Google Cloud europe-west2-b power event | Oct 20 06:08 UTC, Lloyds/HSBC/Revolut, mostly back 14:03 (The Register)
+2026-10-21 | T | AI models | Inception Mercury 3 diffusion LLM | ~1,000 tok/s, $0.10/M input launch price, vendor claims (The Deep View)
