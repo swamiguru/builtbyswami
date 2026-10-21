@@ -22,7 +22,9 @@ except Exception:
 #
 # Never let this block a publish: no key, a network hiccup, or a slow
 # response all just fall through to the old drawn icon (draw_icon below).
-_GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
+# 21 Oct 2026: moved off Nano Banana Pro ($0.134 per 1K image) to Nano Banana 2.1
+# ($0.0336 per 1K image). Rollback: set LP_GEMINI_MODEL=gemini-3-pro-image-preview.
+_GEMINI_MODEL = os.environ.get("LP_GEMINI_MODEL", "gemini-nano-banana-2.1")
 # 15 Sept: 25s was too tight -- a plain manual call measured ~20s with a
 # quiet machine, so any extra load (a background macOS/Xcode update was
 # running during the 15 Sept task) or the preview model's normal jitter
@@ -32,7 +34,28 @@ _GEMINI_MODEL = "gemini-3-pro-image-preview"  # "Nano Banana Pro"
 # and given one retry (see generate_illustration) rather than trusting a
 # single tight attempt.
 _GEMINI_TIMEOUT = 45  # seconds per attempt
-_GEMINI_ATTEMPTS = 3
+_GEMINI_ATTEMPTS = 2  # was 3: each extra attempt is a full paid image
+# Hard cap on paid calls per calendar day (IST), counted across every run and
+# manual test. 5 slots + 3 retries. Raise with LP_GEMINI_DAILY_CALLS=N for a
+# one-off regeneration. When spent, callers fall back to the drawn icon.
+_GEMINI_DAILY_BUDGET = int(os.environ.get("LP_GEMINI_DAILY_CALLS", "8"))
+
+def _budget_take():
+    """Count one paid call against today's budget. False = budget spent.
+    Bookkeeping errors never block a publish (returns True)."""
+    import datetime
+    try:
+        d = os.path.join(os.path.expanduser("~"), ".lp_gemini_budget")
+        os.makedirs(d, exist_ok=True)
+        p = os.path.join(d, datetime.date.today().isoformat() + ".txt")
+        n = int(open(p).read().strip() or 0) if os.path.exists(p) else 0
+        if n >= _GEMINI_DAILY_BUDGET:
+            return False
+        with open(p, "w") as f:
+            f.write(str(n + 1))
+    except Exception:
+        return True
+    return True
 
 def _load_env_file():
     """Pick up GEMINI_API_KEY from a .env file, no dotenv dependency needed
@@ -113,37 +136,37 @@ def generate_illustration(pillar, hook, sub, illus_path):
         return False
     story = f"{pillar}: {hook}" + (f" -- {sub}" if sub else "")
     bg, accent = _pick_palette(pillar + "|" + hook)
-    prompt = f"""Bold, friendly editorial tech illustration in the style of
-The Verge and WIRED magazine spot art, a little more restrained than usual.
-Square, full-bleed, filling the entire frame edge to edge.
+    prompt = f"""Simple, friendly flat editorial tech illustration, square,
+full-bleed, filling the entire frame edge to edge.
 
-Background: ONE single flat, matte, opaque color -- {bg} -- absolutely
-no gradient, vignette, border, panel or rounded card. One flat colour,
-edge to edge. Colours should feel rich but not neon and not glowing.
+Background: ONE flat, matte, opaque colour, {bg}, edge to edge. No gradient,
+vignette, border, panel or rounded card. Colours rich but not neon.
 
-Subject: invent ONE witty, clear visual metaphor for this tech story,
-drawn as a flat vector filling about 65 percent of the frame: {story}.
-Steady composition: one clear subject, upright or gently angled, nothing
-exploding or crashing. Confident dark outlines, flat fills using {accent}
-and warm off-white #F4F1E6, good contrast, minimal geometric shapes, a
-little personality and humour.
+Subject: ONE clear, witty visual metaphor for this tech story, drawn as a
+simple flat vector filling about 65 percent of the frame: {story}.
+Build it from 3 to 5 large geometric shapes with dark outlines and flat fills
+in {accent} and warm off-white #F4F1E6. No small detail. Prefer everyday
+objects (a key, lock, scale, plug, clock, box, bridge, ladder, leaf, door)
+over devices.
 
-Signature motif, kept compact: a small black-and-off-white checkerboard /
-pixel-dither block pattern in ONE corner only (about a seventh of the frame
-width), plus two or three tiny dots or plus signs. Nothing else scattered.
+Never draw screens, phones or laptops showing an interface, keyboards,
+dashboards, charts, documents, signs, packaging, logos or any object that
+normally carries writing.
 
-Do NOT draw: lightning bolts, starbursts, explosion shapes, motion lines,
-speed lines, sparks, angry or shouting faces, or dramatic diagonals.
+Signature motif: one small black-and-off-white checkerboard block in ONE
+corner only (about a seventh of the frame width) and two tiny dots or plus
+signs. Nothing else scattered.
 
-ABSOLUTELY NO text of any kind anywhere: no words, no letters, no numbers,
-no captions, no labels, no gibberish lettering, no signage, no lettered
-keyboard keys. Do not write anything. Also no real people, no real company
-logos, no brand marks or wordmarks -- use abstract or symbolic objects
-instead. Flat vector only -- no photorealism, no drop shadows, no 3D.
+Do NOT draw: lightning bolts, starbursts, explosions, motion lines, sparks,
+angry or shouting faces, dramatic diagonals, real people or real brand marks.
+
+No text of any kind: no words, letters, numbers, captions, labels or lettered
+keys. Flat vector only: no photorealism, no shadows, no 3D.
 """
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"responseModalities": ["IMAGE"]},
+        "generationConfig": {"responseModalities": ["IMAGE"],
+                             "imageConfig": {"aspectRatio": "1:1", "imageSize": "1K"}},
     }).encode()
     url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
            f"{_GEMINI_MODEL}:generateContent?key={api_key}")
@@ -155,9 +178,14 @@ instead. Flat vector only -- no photorealism, no drop shadows, no 3D.
     # Still never raises -- callers must keep treating False as "no
     # illustration available" and fall back to the drawn icon.
     for attempt in range(1, _GEMINI_ATTEMPTS + 1):
+        if not _budget_take():
+            print(f"illustration: daily budget of {_GEMINI_DAILY_BUDGET} calls spent, using icon", file=sys.stderr)
+            return False
         try:
             with urllib.request.urlopen(req, timeout=_GEMINI_TIMEOUT) as resp:
                 data = json.load(resp)
+            _u = data.get("usageMetadata", {})
+            print(f"illustration: attempt {attempt} model={_GEMINI_MODEL} out_tokens={_u.get('candidatesTokenCount')} total={_u.get('totalTokenCount')}", file=sys.stderr)
             img_bytes = None
             for cand in data.get("candidates", []):
                 for part in cand.get("content", {}).get("parts", []):
@@ -182,6 +210,9 @@ instead. Flat vector only -- no photorealism, no drop shadows, no 3D.
             return True
         except Exception as e:
             print(f"illustration: attempt {attempt} failed ({e})", file=sys.stderr)
+            # 429 means cap or rate limit: more attempts only add load and cost.
+            if "429" in str(e):
+                return False
     return False
 
 def _tighten_illustration(path, margin_frac=0.12, thresh=28):
