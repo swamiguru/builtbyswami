@@ -333,7 +333,7 @@ export default function Home() {
                           <p className="mt-4 text-[13px] text-m3-on-surface-variant leading-relaxed">
                             <strong className="text-m3-on-surface font-bold">You get:</strong>{" "}
                             {gets.map((g, gi) => (
-                              <span key={g} className="whitespace-nowrap">
+                              <span key={g} className="sm:whitespace-nowrap">
                                 {g}
                                 {gi < gets.length - 1 && " · "}
                               </span>

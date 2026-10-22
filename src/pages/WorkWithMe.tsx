@@ -445,11 +445,11 @@ export default function WorkWithMe() {
                     open={i === 0}
                     className="group mt-4 bg-m3-surface-variant/60 rounded-[20px] border border-m3-outline/10"
                   >
-                    <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                    <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-m3-primary flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
                       <span>Inside this offer</span>
                       <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
                     </summary>
-                    <div className="px-5 pb-6 pt-1 flex flex-col gap-6">
+                    <div className="px-5 pb-6 pt-3 flex flex-col gap-6">
                       <div>
                         <h4 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface">
                           Start here if
