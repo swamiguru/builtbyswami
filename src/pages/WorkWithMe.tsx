@@ -142,6 +142,10 @@ const CASE_STUDY_STATS: [string, string][] = [
 
 const GOOD_FIT: [string, string][] = [
   [
+    "Your search traffic has slipped, or you don't trust your analytics, and you don't know where to look first.",
+    "The audit tells you what's broken and what to fix first in a week or two. It's also the shortest way to find out whether you need one of the bigger engagements below.",
+  ],
+  [
     "You're taking a brand into a new market and the risk is execution, not strategy.",
     "The decision is made; what you need is the platform, the ad stack, the SEO and the local team all working on day one. Five titles, three waves, three years — the last one shipped in half the time of the first.",
   ],
@@ -299,9 +303,10 @@ export default function WorkWithMe() {
         </section>
 
         {/* What I do — a numbered list rather than a stack of cards, so the
-            four offers read as a menu, not four repeats of the same shape.
-            Fractional Product Lead sits apart below, deliberately styled
-            differently — it isn't fixed-scope like the four above it. */}
+            five offers read as a menu, not five repeats of the same shape.
+            The audit leads ("start here") and has its own panel under the
+            list. Fractional Product Lead sits apart below, deliberately
+            styled differently — it isn't fixed-scope like the five above it. */}
         <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow tone="primary">What I do</Eyebrow>
           <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-2 leading-relaxed">
@@ -389,8 +394,9 @@ export default function WorkWithMe() {
               </p>
               <p>
                 <strong className="text-m3-on-surface font-bold">What it doesn't include.</strong>{" "}
-                Ongoing monitoring, or the fixes themselves. Those sit with the other offers
-                above.
+                Ongoing monitoring, or doing the fixes for you. I hand your team the plan. If
+                it points to a launch, a migration or a workflow problem, the offers above are
+                the next step.
               </p>
               <p>
                 <strong className="text-m3-on-surface font-bold">Where I've done it.</strong>{" "}
@@ -438,12 +444,12 @@ export default function WorkWithMe() {
         <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow>The teams every one of these runs through</Eyebrow>
           <p className="mt-3 text-sm md:text-[15px] leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl mb-8">
-            A market launch or a replatform isn't a product-team problem.
-            Getting it right means getting all of the functions below to
-            agree and stay agreed through cutover — not just shipping the
-            roadmap. That's why the plans on this page cover the ad stack,
-            the legal sign-off and the SEO strategy, not just the product
-            decisions.
+            A site audit, a market launch or a replatform isn't a
+            product-team problem. Getting it right means getting all of the
+            functions below to agree and stay agreed, through the fixes or
+            through cutover — not just shipping the roadmap. That's why the
+            plans and findings on this page cover the ad stack, the legal
+            sign-off and the SEO strategy, not just the product decisions.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">

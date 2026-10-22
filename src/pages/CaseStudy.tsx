@@ -155,8 +155,8 @@ export default function CaseStudy() {
             </h2>
             <p className="text-sm md:text-base font-medium text-m3-on-surface-variant leading-relaxed max-w-xl">
               I run this as a fixed-scope engagement for publishers and content
-              businesses — market launches, replatforms, and editorial AI
-              workflows.
+              businesses — site audits, market launches, replatforms, and
+              editorial AI workflows.
             </p>
             <Link
               to="/work-with-me"

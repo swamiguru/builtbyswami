@@ -29,9 +29,9 @@
  */
 export const PAGE_SEO = {
   home: {
-    title: "Product Consulting for Publishers | Swami Guru",
+    title: "Product Consulting & Site Audits for Publishers | Swami Guru",
     description:
-      "Product consulting for publishers and content-driven teams, from ex-Condé Nast product lead Swami Guru. Plus build notes from what I ship solo.",
+      "Product consulting and site audits for publishers and content-driven teams, from ex-Condé Nast product lead Swami Guru. Plus build notes from what I ship solo.",
   },
   about: {
     title: "Swami Guru | Senior Product Leader & AI-Native Product Builder",

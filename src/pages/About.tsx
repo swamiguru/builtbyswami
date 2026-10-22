@@ -971,7 +971,7 @@ export default function About() {
                 Let&rsquo;s build something
               </h2>
               <p className="text-sm md:text-base text-m3-on-surface-variant font-medium leading-relaxed">
-                Bengaluru-based, working globally. I take on consulting and contract engagements for teams taking a brand into a new market or replatforming without losing traffic.
+                Bengaluru-based, working globally. I take on consulting and contract engagements for publishers: site audits, taking a brand into a new market, or replatforming without losing traffic.
               </p>
             </div>
             {/* Deliberately not the shared ActionRow from the hero above.
