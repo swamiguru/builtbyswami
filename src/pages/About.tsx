@@ -96,7 +96,7 @@ const EXPERIENCE: ExperienceItem[] = [
       {
         title: "Long Press",
         detail:
-          "A publisher and title structure, not just a landing page: BuiltBySwami is the publisher, Long Press the daily title, at longpress.news. Three editorial pillars (the Daily Five, Known Issue and Fine Print), 76 issues in — sourcing, editing, design and the ship pipeline all solo."
+          `A publisher and title structure, not just a landing page: BuiltBySwami is the publisher, Long Press the daily title, at longpress.news. Three editorial pillars (the Daily Five, Known Issue and Fine Print), ${__LP_ISSUES__} issues in — sourcing, editing, design and the ship pipeline all solo.`
       }
     ],
     technologies: ["React", "TypeScript", "AI-Native Delivery", "GA4 / GTM", "Technical SEO", "Content Strategy"]
