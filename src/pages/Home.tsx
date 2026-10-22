@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   ArrowRight,
-  Mail,
   BookOpen,
   Sparkles,
   Clock,
@@ -16,15 +15,11 @@ import {
   Server,
   ScanSearch,
 } from "lucide-react";
-import { formatLongDate } from "../lib/formatDate";
-import { useLatestWeekly } from "../hooks/useLatestWeekly";
 import { trackCta } from "../lib/analytics";
 import { getLatestNotes, formatNoteDate } from "../data/notes";
 import { BUILDS } from "../data/builds";
-import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import NewsletterSignup from "../components/NewsletterSignup";
 import { usePageSeo } from "../hooks/usePageSeo";
 
 /** Vignette + grain + cursor-spotlight + sparkles stack shared by the
@@ -147,7 +142,6 @@ const CONSULTING_OFFERS: {
 ];
 
 export default function Home() {
-  const latestIssue = useLatestWeekly();
   // Six is the ceiling; the section header links to /builds for the rest.
   const homeBuilds = BUILDS.slice(0, 6);
 
@@ -358,177 +352,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 02b + 03 — The Weekly and the email capture, one block.
-            These were two full-bleed sections stacked on top of each other:
-            the latest issue on surface, then the signup on secondary-container.
-            On mobile that was ~900px of scroll for one idea — "here is the
-            weekly, subscribe to it". They now share a single tinted block that
-            reads as one unit and sits clearly apart from Notes below, which
-            keeps surface-variant. On lg the issue and the form sit side by
-            side; below that they stack, and the issue card stays horizontal
-            rather than putting a 16:9 image above the text. */}
-        <section className="bg-m3-secondary-container text-m3-on-secondary-container px-6 md:px-14 py-9 md:py-12 border-t border-m3-outline/10">
-          <div className="grid xl:grid-cols-[1.35fr_1fr] gap-8 xl:gap-12 items-start">
-            {/* The Weekly */}
-            <div className="flex flex-col">
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-[12px] bg-m3-surface/70 flex items-center justify-center shrink-0">
-                    <Clock className="w-4 h-4" />
-                  </span>
-                  <span className="flex items-baseline gap-2">
-                    <span className="font-mono text-[11px] font-bold opacity-40">02</span>
-                    <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em]">
-                      The Weekly
-                    </span>
-                  </span>
-                </div>
-                <Link
-                  to="/weekly"
-                  className="text-[11px] font-bold uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity flex items-center gap-1"
-                >
-                  All issues <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-
-              {latestIssue ? (
-                <a
-                  href={latestIssue.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex sm:h-[192px] xl:h-[176px] bg-m3-surface text-m3-on-surface rounded-[24px] overflow-hidden hover:shadow-xl transition-all"
-                >
-                  {/* The crop is governed by how close this box's aspect is to
-                      the source. beehiiv art is ~1.79:1; the old box was
-                      200x251 (0.80), so object-cover kept 45% of the image
-                      width at 1440 and 37% at 1024 — a centre band with the
-                      subject sliced off both edges, which is what "broken crop"
-                      looked like. Widening to 42% and clamping the text keeps
-                      the box near landscape, so most of the frame survives.
-                      A full 16:9 banner crops nothing but costs ~280px of
-                      height here, which is the space this block was rebuilt to
-                      save. Still hidden below sm. `max-sm:hidden`, not
-                      `hidden sm:block` — see the teaser below for why. */}
-                  {latestIssue.thumbnail && (
-                    <img
-                      src={latestIssue.thumbnail}
-                      alt=""
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                      className="max-sm:hidden w-[48%] max-w-[300px] shrink-0 self-stretch h-full object-cover object-center"
-                    />
-                  )}
-                  <div className="p-4 md:p-5 flex flex-col justify-center gap-1.5 md:gap-2 flex-1 min-w-0">
-                    <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant">
-                      {latestIssue.issueNumber !== undefined && `Issue #${latestIssue.issueNumber} · `}
-                      {formatLongDate(latestIssue.publishedDate)}
-                    </span>
-                    <h2 className="display text-base md:text-lg font-extrabold tracking-tight leading-snug line-clamp-2">
-                      {latestIssue.title}
-                    </h2>
-                    {/* `max-sm:hidden`, never `hidden sm:block`: line-clamp
-                        works by setting display:-webkit-box, so a `sm:block`
-                        overrides it and the teaser renders in full. That's how
-                        an eight-line paragraph shipped past a `line-clamp-2`. */}
-                    <p className="max-sm:hidden xl:hidden text-[13px] font-medium text-m3-on-surface-variant leading-snug line-clamp-2">
-                      {latestIssue.teaser}
-                    </p>
-                    <span className="mt-1 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-2 transition-all">
-                      {latestIssue.issueNumber === undefined
-                        ? "Read the issue"
-                        : `Read issue #${latestIssue.issueNumber}`}{" "}
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </a>
-              ) : (
-                <div className="bg-m3-surface text-m3-on-surface rounded-[24px] p-6 md:p-8">
-                  <p className="font-display font-bold mb-1">First weekly issue coming soon</p>
-                  <p className="text-sm text-m3-on-surface-variant font-medium">
-                    Once the first Builtbyswami Weekly issue is live, the week's biggest stories will round up right here.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Email capture. Keeps the #build-notes id — the footer's
-                Subscribe link points at it. */}
-            <div
-              id="build-notes"
-              className="flex flex-col xl:border-l xl:border-m3-on-secondary-container/15 xl:pl-12 xl:pt-9"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <Mail className="w-5 h-5" />
-                <h2 className="display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-tight">
-                  {NEWSLETTER_TITLE}
-                </h2>
-              </div>
-              <p className="text-sm font-medium opacity-80 mb-5">{NEWSLETTER_PROMISE}</p>
-              <NewsletterSignup />
-            </div>
-          </div>
-        </section>
-
-        {/* 06 — Notes */}
-        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t border-m3-outline/10">
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
-            <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
-                <BookOpen className="w-4 h-4" />
-              </span>
-              <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">03</span>
-                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
-                  Notes
-                </span>
-              </span>
-            </div>
-            <Link
-              to="/notes"
-              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-primary transition-colors flex items-center gap-1"
-            >
-              All notes <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <div className="flex flex-col gap-4">
-            {getLatestNotes(3).map((note) => (
-              <Link
-                key={note.slug}
-                to={`/notes/${note.slug}`}
-                className="group bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-primary/30 hover:shadow-xl transition-all"
-              >
-                <div className="w-12 h-12 rounded-[16px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-[11px] font-bold uppercase tracking-widest text-m3-primary mb-2">
-                    {note.tag} · {note.readMinutes} min read · {formatNoteDate(note.date)}
-                  </div>
-                  <h3 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-primary transition-colors">
-                    {note.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-xl line-clamp-2">
-                    {note.description}
-                  </p>
-                </div>
-                <span className="m3-button-tonal text-sm tracking-wide whitespace-nowrap flex items-center gap-2 shrink-0">
-                  Read <ArrowUpRight className="w-4 h-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
-
         {/* 08 — Builds.
-            Sits immediately before the closing fork on purpose: that section's
-            eyebrow reads "the operator behind the builds", so the builds should
-            be the thing directly above it. It also puts the strongest proof of
-            work last, leading straight into the ask.
-
-            Order here matches the nav — Notes, Builds — so the page
-            and the header tell the same story. */}
+            Follows the offers on purpose: a prospective client reads what I
+            do, then sees what I actually build. Notes come next, then the
+            closing fork ("the operator behind the builds"). The newsletter
+            block that used to sit here was removed while the list is
+            dormant; see git history to restore it. */}
         <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t border-m3-outline/10">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
@@ -536,7 +365,7 @@ export default function Home() {
                 <Hammer className="w-4 h-4" />
               </span>
               <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">04</span>
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">02</span>
                 <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
                   Builds
                 </span>
@@ -614,6 +443,56 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 06 — Notes */}
+        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t border-m3-outline/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
+            <div className="flex items-center gap-3">
+              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
+                <BookOpen className="w-4 h-4" />
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">03</span>
+                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
+                  Notes
+                </span>
+              </span>
+            </div>
+            <Link
+              to="/notes"
+              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-primary transition-colors flex items-center gap-1"
+            >
+              All notes <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="flex flex-col gap-4">
+            {getLatestNotes(3).map((note) => (
+              <Link
+                key={note.slug}
+                to={`/notes/${note.slug}`}
+                className="group bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-primary/30 hover:shadow-xl transition-all"
+              >
+                <div className="w-12 h-12 rounded-[16px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-m3-primary mb-2">
+                    {note.tag} · {note.readMinutes} min read · {formatNoteDate(note.date)}
+                  </div>
+                  <h3 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-primary transition-colors">
+                    {note.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-xl line-clamp-2">
+                    {note.description}
+                  </p>
+                </div>
+                <span className="m3-button-tonal text-sm tracking-wide whitespace-nowrap flex items-center gap-2 shrink-0">
+                  Read <ArrowUpRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* 09 — Second fork.
             Anyone who scrolled a whole publication homepage is interested in
             who wrote it. This used to offer one vague exit ("The full story");
@@ -621,7 +500,7 @@ export default function Home() {
         <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-primary text-m3-on-primary">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-2">
-              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">05</span>
+              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">04</span>
               <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/60">
                 The operator behind the builds
               </span>

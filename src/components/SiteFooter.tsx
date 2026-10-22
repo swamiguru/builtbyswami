@@ -68,7 +68,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
             {NEWSLETTER_PROMISE}
           </p>
           <Link
-            to="/#build-notes"
+            to="/weekly#build-notes"
             className="mt-3 inline-flex items-center gap-1.5 bg-m3-primary text-m3-on-primary font-display font-bold px-4 py-2 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer"
           >
             Subscribe <ArrowUpRight className="w-3.5 h-3.5" />
