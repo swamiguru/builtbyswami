@@ -110,7 +110,7 @@ const CONSULTING_OFFERS: {
   /** Featured (audit) card only: the areas it covers and what comes back,
    *  shown in a second column so the wide card isn't one short line. */
   covers?: string[];
-  gets?: string;
+  gets?: string[];
 }[] = [
   {
     icon: ScanSearch,
@@ -118,7 +118,7 @@ const CONSULTING_OFFERS: {
     meta: "1–2 weeks · fixed scope",
     blurb: "A written audit of how your site is actually found, measured and structured, not a crawler export. You get a ranked list of what to fix first, who owns it and how much effort each fix takes, so your team can start on Monday.",
     covers: ["Search & indexing", "Search Console", "GA4 & tagging", "Site structure"],
-    gets: "Ranked findings · 90-day fix plan · 45-minute readout",
+    gets: ["Ranked findings", "90-day fix plan", "45-minute readout"],
   },
   {
     icon: Globe,
@@ -331,7 +331,13 @@ export default function Home() {
                         </div>
                         {gets && (
                           <p className="mt-4 text-[13px] text-m3-on-surface-variant leading-relaxed">
-                            <strong className="text-m3-on-surface font-bold">You get:</strong> {gets}
+                            <strong className="text-m3-on-surface font-bold">You get:</strong>{" "}
+                            {gets.map((g, gi) => (
+                              <span key={g} className="whitespace-nowrap">
+                                {g}
+                                {gi < gets.length - 1 && " · "}
+                              </span>
+                            ))}
                           </p>
                         )}
                       </div>
