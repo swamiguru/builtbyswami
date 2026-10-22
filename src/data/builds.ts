@@ -33,7 +33,7 @@ export const BUILDS: Build[] = [
   {
     name: "Long Press",
     status: "Live",
-    what: "A daily tech publication I write, build and ship solo — sourcing, writing, design and the ship pipeline, no editorial team. Five stories every morning, each broken into the problem, what changed, the catch, and what it means for you, plus a daily opinion column called Known Issue.",
+    what: "A daily tech publication I write, build and ship solo — sourcing, writing, design and the ship pipeline, no editorial team. Three editorial pillars: the Daily Five, five stories every morning, each broken into the problem, what changed, the catch, and what it means for you; Known Issue, an opinion column on the things that have been broken long enough to count as a decision; and Fine Print, a weekly Saturday explainer on Indian rules, prices and service changes, worked through in rupees.",
     constraint:
       "Give a publisher and title structure real infrastructure instead of a landing page. BuiltBySwami is the publisher, Long Press the title: its own domain, its own masthead, its own analytics.",
     shipped: "76 issues, daily since 12 July 2026",
