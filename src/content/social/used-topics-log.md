@@ -451,3 +451,12 @@
 2026-10-21 | T | India / Regulatory / Ecommerce | CCPA explosives listings 3,940 delisted | IndiaMART 3,092, Rs 30 lakh fines Dial4Trade + ExportersIndia, Justdial hearing Oct 23
 2026-10-21 | T | Cloud / Outage | Google Cloud europe-west2-b power event | Oct 20 06:08 UTC, Lloyds/HSBC/Revolut, mostly back 14:03 (The Register)
 2026-10-21 | T | AI models | Inception Mercury 3 diffusion LLM | ~1,000 tok/s, $0.10/M input launch price, vendor claims (The Deep View)
+2026-10-22 | 1 | India / Cybersecurity / Big tech | eMudhra weak CA keys, 8 intermediates blocked | keys like 4, 56, 115 from Apr 30 2025 ceremony faulty script, Wayne report Oct 17, Chrome/Firefox same day, Apple Oct 19, Microsoft Oct 20, Mozilla distrusts root, ~30,000 customer certs to replace, shares -20% lower circuit, curl/Python/Node/Go/Java accept forged cert; revocation-long-tail take (trending)
+2026-10-22 | 2 | AI agents | Anthropic Claude Duet research preview | messages you first, morning brief, inbox/calendar, own cloud computer, asks before send/pay, 6,000+ connectors, US Pro/Max waitlist, background checks use plan limits; urgency-judgement take
+2026-10-22 | 4 | India / Myth-buster / Cybersecurity (opinion) | SBI suspected customer data leak | alerts Oct 16 (threat intel, Defence Cyber Agency, CERT-In), disclosure Oct 21, ~375k dark web records, 3,897 with PII incl DOB/address/CIF, unconfirmed; knowing-your-details-isn't-proof myth (IG pick, carousel, opinion quota)
+2026-10-22 | 5 | India / Community poll / Phones launch | OPPO Find X10 India launch Oct 22 OFFICIAL | leaked Rs 1,29,999 base, Pro Max Rs 1,59,999 or 1,89,999 RUMOR, Find X9 was Rs 74,999; would-you-pay poll (new dev = launch day vs 10-19 Tap)
+2026-10-22 | T | India / Big tech business | Jio Platforms IPO day 1 3.15x | QIB 9.42x, retail 0.72x, closes Oct 23 (new dev vs 10-20 Tap)
+2026-10-22 | T | India / Startups / Quick commerce | Eternal Q2 FY27 profit Rs 125cr +92% | revenue Rs 24,138cr +78%, Blinkit 2,751 stores, 3,500+ by Mar 2027
+2026-10-22 | T | Cybersecurity / AI | PHP2Shell two PHP RCE UAFs | Wiz with Gemini 4 Argon + GPT-5.6 Sol, back to PHP 5.4, patched Oct 21
+2026-10-22 | T | Dev tools / Cybersecurity | GitLab CVE-2026-110264 CVSS 10 | Onigmo regex overflow, self-managed since 7.0, no workaround, not exploited
+2026-10-22 | T | Dev tools / Supply chain | LiteLLM 1.107.0 PyPI stealer + backdoor | runs on any Python start, clean 1.106.2 (SafeDep)
