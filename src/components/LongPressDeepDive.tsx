@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
-import { Check, Radio, Repeat2, Search } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Check, ChevronDown, Radio, Repeat2, Search } from "lucide-react";
 import type { DeepDive } from "../data/builds";
 
 const DAY_MS = 86_400_000;
@@ -19,6 +19,22 @@ function useOutput() {
   return { issues, stories: issues * 5, span, pct };
 }
 
+/** True from the md breakpoint up. Lets us render one layout, not two. */
+function useIsDesktop() {
+  const q = "(min-width: 768px)";
+  const [yes, setYes] = useState(
+    typeof window !== "undefined" && window.matchMedia(q).matches
+  );
+  useEffect(() => {
+    const m = window.matchMedia(q);
+    const on = () => setYes(m.matches);
+    on();
+    m.addEventListener("change", on);
+    return () => m.removeEventListener("change", on);
+  }, []);
+  return yes;
+}
+
 /**
  * Long Press, opened up. A dark "result" band first (what it has produced),
  * then the seven disciplines as a tabbed explorer instead of a wall of text:
@@ -27,6 +43,8 @@ function useOutput() {
  */
 export default function LongPressDeepDive({ data }: { data: DeepDive }) {
   const [active, setActive] = useState(0);
+  const [openRow, setOpenRow] = useState<number | null>(0);
+  const desktop = useIsDesktop();
   const out = useOutput();
 
   const metrics: { value: string; label: string }[] = [
@@ -100,62 +118,106 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
         <span className="font-display text-[10px] font-black uppercase tracking-[0.25em] text-m3-primary">
           Seven ways to look at it
         </span>
-        <div className="mt-4 grid md:grid-cols-[200px_1fr] gap-5 md:gap-8">
-          <div
-            role="tablist"
-            aria-label="Long Press, by discipline"
-            className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible -mx-5 px-5 md:mx-0 md:px-0 pb-1 md:pb-0"
-          >
-            {data.lenses.map((l, i) => (
-              <button
-                key={l.label}
-                type="button"
-                role="tab"
-                id={`lp-tab-${i}`}
-                aria-selected={active === i}
-                aria-controls={`lp-panel-${i}`}
-                onClick={() => setActive(i)}
-                className={`shrink-0 text-left whitespace-nowrap font-display font-bold text-sm px-4 py-2.5 rounded-m3-full md:rounded-[14px] transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-primary ${
-                  active === i
-                    ? "bg-m3-primary text-m3-on-primary"
-                    : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-primary"
-                }`}
-              >
-                <span className="mono text-[10px] opacity-60 mr-2">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {l.label}
-              </button>
-            ))}
+        {desktop ? (
+          <div className="mt-4 grid grid-cols-[200px_1fr] gap-8">
+            <div role="tablist" aria-label="Long Press, by discipline" className="flex flex-col gap-2">
+              {data.lenses.map((l, i) => (
+                <button
+                  key={l.label}
+                  type="button"
+                  role="tab"
+                  id={`lp-tab-${i}`}
+                  aria-selected={active === i}
+                  aria-controls={`lp-panel-${i}`}
+                  onClick={() => setActive(i)}
+                  className={`text-left font-display font-bold text-sm px-4 py-2.5 rounded-[14px] transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-primary ${
+                    active === i
+                      ? "bg-m3-primary text-m3-on-primary"
+                      : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-primary"
+                  }`}
+                >
+                  <span className="mono text-[10px] opacity-60 mr-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {l.label}
+                </button>
+              ))}
+            </div>
+            <div>
+              {data.lenses.map((l, i) => (
+                <div
+                  key={l.label}
+                  role="tabpanel"
+                  id={`lp-panel-${i}`}
+                  aria-labelledby={`lp-tab-${i}`}
+                  hidden={active !== i}
+                >
+                  <h4 className="display text-2xl font-extrabold tracking-tight text-m3-on-surface">
+                    {l.headline}
+                  </h4>
+                  <ul className="mt-4 flex flex-col gap-3 max-w-2xl">
+                    {l.points.map((pt) => (
+                      <li
+                        key={pt}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
+                      >
+                        <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-primary" />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div>
-            {data.lenses.map((l, i) => (
-              <div
-                key={l.label}
-                role="tabpanel"
-                id={`lp-panel-${i}`}
-                aria-labelledby={`lp-tab-${i}`}
-                hidden={active !== i}
-              >
-                <h4 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
-                  {l.headline}
-                </h4>
-                <ul className="mt-4 flex flex-col gap-3 max-w-2xl">
-                  {l.points.map((pt) => (
-                    <li
-                      key={pt}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
-                    >
-                      <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-primary" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        ) : (
+          /* Phone: a plain stacked list. Tap a row to open it; no sideways
+             scrolling, and the headline is visible only for the open row. */
+          <div className="mt-3 flex flex-col">
+            {data.lenses.map((l, i) => {
+              const open = openRow === i;
+              return (
+                <div key={l.label} className="border-t border-m3-outline/15 last:border-b">
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    aria-controls={`lp-row-${i}`}
+                    onClick={() => setOpenRow(open ? null : i)}
+                    className="w-full flex items-center justify-between gap-3 py-4 text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-primary rounded-md"
+                  >
+                    <span className="flex items-baseline gap-3">
+                      <span className="mono text-[11px] text-m3-on-surface-variant/50">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="display text-base font-extrabold tracking-tight text-m3-on-surface">
+                        {l.label}
+                      </span>
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 shrink-0 text-m3-primary transition-transform ${open ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <div id={`lp-row-${i}`} hidden={!open} className="pb-5">
+                    <p className="text-sm font-bold text-m3-primary leading-snug mb-3">
+                      {l.headline}
+                    </p>
+                    <ul className="flex flex-col gap-3">
+                      {l.points.map((pt) => (
+                        <li
+                          key={pt}
+                          className="flex items-start gap-3 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
+                        >
+                          <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-primary" />
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
