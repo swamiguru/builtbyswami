@@ -107,6 +107,7 @@ const AUDIT_SCOPE: [string, string][] = [
 ];
 
 interface Detail {
+  takeaways: string[];
   start: string[];
   cover: [string, string][];
   get: string;
@@ -118,6 +119,7 @@ interface Detail {
 /** Collapsible panel content per offer, keyed by Service.name. */
 const DETAILS: Record<string, Detail> = {
   "Publisher Site Health Audit": {
+    takeaways: ["Ranked findings", "90-day fix plan", "45-minute readout"],
     start: AUDIT_TRIGGERS,
     cover: AUDIT_SCOPE,
     get: "A ranked findings list with severity, owner and effort. A 90-day fix plan. A 45-minute readout with your team.",
@@ -126,6 +128,7 @@ const DETAILS: Record<string, Detail> = {
       "I audit my own sites the same way. On builtbyswami.com and Long Press I found a sitemap that returned a web page instead of XML, so search engines couldn't use it; a category rule that filed 39 commentary pieces under News, so my own reports described a different publication from the one I was running; and a Tag Manager container that never listened for the events my site was sending, so none of my button clicks reached Google Analytics. All three are fixed. I also moved a 60-issue archive to a new domain behind permanent redirects.",
   },
   "Market Launch & Expansion Readiness": {
+    takeaways: ["Go-to-market plan", "Go/No-Go framework", "Ranked launch risks"],
     start: [
       "You've approved a new region, but the business case rests on interest rather than numbers.",
       "Your global platform has never been tested for this region's currencies, languages or ad tech.",
@@ -145,6 +148,7 @@ const DETAILS: Record<string, Detail> = {
     proofLink: { label: "Read the launches case study.", to: CASE_STUDY_URL },
   },
   "Platform & CMS Migration Readiness": {
+    takeaways: ["Replatform plan", "Redirect and SEO strategy", "Phased cutover plan"],
     start: [
       "A replatform is planned or approved and you're afraid of what the cutover costs you.",
       "Traffic dipped after your last migration and nobody can say why.",
@@ -164,6 +168,7 @@ const DETAILS: Record<string, Detail> = {
     proofLink: { label: "Read the replatforming case study.", to: REPLATFORM_CASE_STUDY_URL },
   },
   "AI Workflow & Product Operations": {
+    takeaways: ["Mapped workflow", "Working automation", "Team handover"],
     start: [
       "Your team does repeatable work by hand: metadata, social copy, translation passes, configuration.",
       "You've run AI pilots that produced a policy document or a workshop, and no change in how the work gets done.",
@@ -181,6 +186,7 @@ const DETAILS: Record<string, Detail> = {
       "The same approach cut a launch programme's time-to-market by 50% and lifted ad revenue per visit by about 11%, with the same five-person team.",
   },
   "Build Sprint": {
+    takeaways: ["Working prototype", "Short written brief", "Engineer handover note"],
     start: [
       "You have an idea that has lived in slide decks for months.",
       "You need to see it working before you commit engineering to it.",
@@ -418,13 +424,33 @@ export default function WorkWithMe() {
                   i !== 0 ? "border-t border-m3-outline/10" : ""
                 }`}
               >
-                <div className="flex items-center gap-4 md:w-56 shrink-0">
-                  <span className="display text-3xl md:text-4xl font-extrabold text-m3-outline/25 tabular-nums leading-none">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
-                  </span>
+                <div className="md:w-56 shrink-0 flex flex-col gap-5">
+                  <div className="flex items-center gap-4">
+                    <span className="display text-3xl md:text-4xl font-extrabold text-m3-outline/25 tabular-nums leading-none">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
+                    </span>
+                  </div>
+                  {/* Desktop only: fills the gutter under the number with the
+                      three things you walk away with. */}
+                  <div className="hidden md:block">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-m3-on-surface-variant/60">
+                      You walk away with
+                    </span>
+                    <ul className="mt-2 flex flex-col gap-1.5">
+                      {DETAILS[name].takeaways.map((t) => (
+                        <li
+                          key={t}
+                          className="flex items-start gap-2 text-[13px] leading-snug font-semibold text-m3-on-surface"
+                        >
+                          <Check className="w-3.5 h-3.5 mt-[2px] shrink-0 text-m3-primary" />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
