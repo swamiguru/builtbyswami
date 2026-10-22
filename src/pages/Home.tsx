@@ -102,12 +102,23 @@ const METRICS: [string, string][] = [
  *  name, shape and terms must stay identical to avoid the two pages
  *  disagreeing with each other. The first entry is the audit, the
  *  "start here" offer, and renders as a full-width row above the other four. */
-const CONSULTING_OFFERS: { icon: typeof Globe; name: string; meta: string; blurb: string }[] = [
+const CONSULTING_OFFERS: {
+  icon: typeof Globe;
+  name: string;
+  meta: string;
+  blurb: string;
+  /** Featured (audit) card only: the areas it covers and what comes back,
+   *  shown in a second column so the wide card isn't one short line. */
+  covers?: string[];
+  gets?: string;
+}[] = [
   {
     icon: ScanSearch,
     name: "Publisher Site Health Audit",
     meta: "1–2 weeks · fixed scope",
-    blurb: "SEO, Search Console, GA4 and site structure, audited together. A ranked fix list your team can start on Monday.",
+    blurb: "A written audit of how your site is actually found, measured and structured, not a crawler export. You get a ranked list of what to fix first, who owns it and how much effort each fix takes, so your team can start on Monday.",
+    covers: ["Search & indexing", "Search Console", "GA4 & tagging", "Site structure"],
+    gets: "Ranked findings · 90-day fix plan · 45-minute readout",
   },
   {
     icon: Globe,
@@ -284,22 +295,48 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }, i) => (
+              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb, covers, gets }, i) => (
                 <div key={name} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all ${i === 0 ? "sm:col-span-2 lg:col-span-4" : ""}`}>
                   <span className="absolute top-3 right-4 font-mono text-[26px] font-bold text-m3-outline/10 tabular-nums leading-none select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="w-10 h-10 rounded-[14px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5" strokeWidth={2.25} />
-                  </span>
-                  <h3 className="font-display font-bold text-sm text-m3-on-surface leading-snug mb-1.5">
-                    {name}
-                  </h3>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-2">
-                    {meta}
-                    {i === 0 && <span className="text-m3-primary"> · start here</span>}
-                  </p>
-                  <p className="text-[13px] text-m3-on-surface-variant leading-relaxed">{blurb}</p>
+                  <div className={covers ? "lg:grid lg:grid-cols-[1.4fr_1fr] lg:gap-10 lg:items-center" : "flex flex-col"}>
+                    <div className="flex flex-col">
+                      <span className="w-10 h-10 rounded-[14px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5" strokeWidth={2.25} />
+                      </span>
+                      <h3 className={`font-display font-bold text-m3-on-surface leading-snug mb-1.5 ${covers ? "text-base md:text-lg" : "text-sm"}`}>
+                        {name}
+                      </h3>
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-2">
+                        {meta}
+                        {i === 0 && <span className="text-m3-primary"> · start here</span>}
+                      </p>
+                      <p className={`text-m3-on-surface-variant leading-relaxed ${covers ? "text-sm max-w-2xl" : "text-[13px]"}`}>{blurb}</p>
+                    </div>
+                    {covers && (
+                      <div className="mt-5 lg:mt-0 lg:pl-10 lg:border-l border-m3-outline/10">
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-3">
+                          What it covers
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {covers.map((c) => (
+                            <span
+                              key={c}
+                              className="text-[13px] font-bold text-m3-on-primary-container bg-m3-primary-container rounded-m3-full px-3 py-1.5"
+                            >
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                        {gets && (
+                          <p className="mt-4 text-[13px] text-m3-on-surface-variant leading-relaxed">
+                            <strong className="text-m3-on-surface font-bold">You get:</strong> {gets}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
