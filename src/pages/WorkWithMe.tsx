@@ -280,6 +280,11 @@ const NOT_A_FIT: [string, string][] = [
 
 const SHIPPED: [string, string, string][] = [
   [
+    "longpress.news",
+    "https://longpress.news",
+    "A daily tech publication I edit, build and ship solo: five stories every morning, an opinion column and a weekly explainer in rupees. Its own domain, masthead and analytics.",
+  ],
+  [
     "freewordtool.com",
     "https://freewordtool.com",
     "A text analysis tool: readability scoring, reading and speaking time, platform character limits. Runs entirely in your browser.",
