@@ -48,7 +48,7 @@ const SERVICES: Service[] = [
     icon: ScanSearch,
     name: "Publisher Site Health Audit",
     meta: "1–2 weeks · fixed scope · start here",
-    body: "A written audit of how your site is actually found, measured and structured, not a crawler export. Search and indexing, Google Search Console, GA4 and tag setup, site architecture and navigation, and the technical issues quietly costing you traffic. You get a ranked list of what to fix first, who owns it and what it is worth, so your team can start on Monday.",
+    body: "A written audit of how your site is actually found, measured and structured, not a crawler export. Search and indexing, Google Search Console, GA4 and tag setup, site architecture and navigation, and the technical issues quietly costing you traffic. You get a ranked list of what to fix first, who owns it and how much effort each fix takes, so your team can start on Monday.",
   },
   {
     icon: Globe,
@@ -388,17 +388,19 @@ export default function WorkWithMe() {
                 45-minute readout with your team.
               </p>
               <p>
-                <strong className="text-m3-on-surface font-bold">What it isn't.</strong>{" "}
-                Ongoing monitoring, or the fixes themselves. If you want those, they're the
-                other four.
+                <strong className="text-m3-on-surface font-bold">What it doesn't include.</strong>{" "}
+                Ongoing monitoring, or the fixes themselves. Those sit with the other offers
+                above.
               </p>
               <p>
-                <strong className="text-m3-on-surface font-bold">Why I'd run it.</strong>{" "}
-                I run this on my own publications first. On builtbyswami.com and Long Press I
-                found a sitemap that returned HTML instead of XML, a category rule that hid 39
-                posts inside the wrong bucket, and a Tag Manager container that was never
-                listening for the events the site was sending. I fixed all three, and moved a
-                60-issue archive across domains with 301s and cross-domain measurement intact.
+                <strong className="text-m3-on-surface font-bold">Where I've done it.</strong>{" "}
+                I audit my own sites the same way. On builtbyswami.com and Long Press I found
+                a sitemap that returned a web page instead of XML, so search engines couldn't
+                use it; a category rule that filed 39 commentary pieces under News, so my own
+                reports described a different publication from the one I was running; and a
+                Tag Manager container that never listened for the events my site was sending,
+                so none of my button clicks reached Google Analytics. All three are fixed. I
+                also moved a 60-issue archive to a new domain behind permanent redirects.
               </p>
             </div>
 
