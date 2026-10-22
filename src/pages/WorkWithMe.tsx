@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Briefcase,
   Check,
+  ChevronDown,
   Globe,
   Hammer,
   Mail,
@@ -104,6 +105,99 @@ const AUDIT_SCOPE: [string, string][] = [
     "Navigation, naming, taxonomy and internal linking, and where good content is buried.",
   ],
 ];
+
+interface Detail {
+  start: string[];
+  cover: [string, string][];
+  get: string;
+  not: string;
+  proof: string;
+  proofLink?: { label: string; to: string };
+}
+
+/** Collapsible panel content per offer, keyed by Service.name. */
+const DETAILS: Record<string, Detail> = {
+  "Publisher Site Health Audit": {
+    start: AUDIT_TRIGGERS,
+    cover: AUDIT_SCOPE,
+    get: "A ranked findings list with severity, owner and effort. A 90-day fix plan. A 45-minute readout with your team.",
+    not: "Ongoing monitoring, or doing the fixes for you. I hand your team the plan. If it points to a launch, a migration or a workflow problem, the offers below are the next step.",
+    proof:
+      "I audit my own sites the same way. On builtbyswami.com and Long Press I found a sitemap that returned a web page instead of XML, so search engines couldn't use it; a category rule that filed 39 commentary pieces under News, so my own reports described a different publication from the one I was running; and a Tag Manager container that never listened for the events my site was sending, so none of my button clicks reached Google Analytics. All three are fixed. I also moved a 60-issue archive to a new domain behind permanent redirects.",
+  },
+  "Market Launch & Expansion Readiness": {
+    start: [
+      "You've approved a new region, but the business case rests on interest rather than numbers.",
+      "Your global platform has never been tested for this region's currencies, languages or ad tech.",
+      "A licence or privacy requirement could move your launch date, and nobody has mapped it.",
+      "Your central and local teams don't share a playbook.",
+    ],
+    cover: [
+      ["Business case", "Audience sizing and a five-year model with localised monetisation, capex, opex and a breakeven date."],
+      ["Platform readiness", "CMS integration, localised rendering, multi-currency payments, ad-tech delivery and automated SEO indexing."],
+      ["Operational enablement", "Playbooks, governance, taxonomy mapping, aligned workflows and unified analytics between central and local teams."],
+      ["Regulatory timing", "Licensing and data-privacy requirements mapped early, with schedule buffer built into the plan."],
+    ],
+    get: "A written go-to-market plan with the platform, content, commercial and regulatory decisions already made. Launch sequencing. A Go/No-Go framework across technical, editorial, legal and commercial readiness. The risks that actually move launch dates, ranked.",
+    not: "Running the launch itself. If you want me in the seat through go-live, that is the fractional engagement below.",
+    proof:
+      "Five titles, three waves, three years. Exceeded the $20M+ Year 1 target, and the third wave shipped in half the time.",
+    proofLink: { label: "Read the launches case study.", to: CASE_STUDY_URL },
+  },
+  "Platform & CMS Migration Readiness": {
+    start: [
+      "A replatform is planned or approved and you're afraid of what the cutover costs you.",
+      "Traffic dipped after your last migration and nobody can say why.",
+      "Nobody owns the redirect map.",
+      "Around fifteen integrations fire on every page view and none of them has a named owner.",
+    ],
+    cover: [
+      ["Content model and taxonomy", "What moves, what changes shape, and what quietly ranks by accident."],
+      ["Redirects and SEO", "An editorial owner for the redirect map, plus pre- and post-launch audits sized to your markets."],
+      ["Integration surface", "Ads, consent, affiliate, newsletters, subscription state, recommendations, tag manager and Search Console, each with a named owner and an after-launch check."],
+      ["Newsroom and cutover", "Training, documentation and parallel running for your editors, and a phased cutover that starts with your smallest property, with a rollback plan."],
+    ],
+    get: "The replatform plan, and a document that names every team touching the property, what each does before and after cutover, and who is accountable by name. A redirect and SEO strategy. A phased cutover you can defend to your board.",
+    not: "Doing the migration or building the platform.",
+    proof:
+      "Thirteen properties across four brands in eight years. Organic dipped slightly at cutover and recovered in about a week, and no rollback was ever used.",
+    proofLink: { label: "Read the replatforming case study.", to: REPLATFORM_CASE_STUDY_URL },
+  },
+  "AI Workflow & Product Operations": {
+    start: [
+      "Your team does repeatable work by hand: metadata, social copy, translation passes, configuration.",
+      "You've run AI pilots that produced a policy document or a workshop, and no change in how the work gets done.",
+      "You want automation, but you don't trust it without checks.",
+    ],
+    cover: [
+      ["Workflow map", "Where the manual work is, and which of it is repeatable and expensive."],
+      ["Automation with guardrails", "The automation built into your team's workflow, with automated checks replacing manual oversight."],
+      ["Measurement", "Time-to-market and quality measured before and after, so the gain is a number."],
+      ["Handover", "Something your team will actually use. Not a policy document, not a workshop."],
+    ],
+    get: "A mapped workflow with the repeatable work ranked, working automation for the highest-value steps with guardrails, and a handover your team can run without me.",
+    not: "A policy document, a workshop, or ongoing tooling support.",
+    proof:
+      "The same approach cut a launch programme's time-to-market by 50% and lifted ad revenue per visit by about 11%, with the same five-person team.",
+  },
+  "Build Sprint": {
+    start: [
+      "You have an idea that has lived in slide decks for months.",
+      "You need to see it working before you commit engineering to it.",
+      "You want to test a workflow or a tool with real users, fast.",
+    ],
+    cover: [
+      ["One problem", "Chosen with you, and written down as a constraint before anything is built."],
+      ["A working prototype", "Something you can click and put in front of people, not a mockup."],
+      ["A stack that fits", "Chosen to match what your team can take over."],
+    ],
+    get: "A working prototype you can open and use, a short written brief covering what it is, the constraint and what broke, and a handover note for your engineers.",
+    not: "Production engineering, or owning your codebase. I'm a product lead, not your engineering hire.",
+    proof:
+      "I build and ship my own products: Long Press has run daily since 12 July, and Free Word Tool shipped in a one-day sprint.",
+    proofLink: { label: "See Builds.", to: "/builds" },
+  },
+};
 
 /** The functions a launch or migration actually has to get through — pulled
  *  out of prose into a scannable grid so the range registers at a glance
@@ -344,75 +438,85 @@ export default function WorkWithMe() {
                   <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-2xl">
                     {body}
                   </p>
+
+                  {/* Native <details>: crawlable, no JS. The audit starts
+                      open because it is the front door. */}
+                  <details
+                    open={i === 0}
+                    className="group mt-4 bg-m3-surface-variant/60 rounded-[20px] border border-m3-outline/10"
+                  >
+                    <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                      <span>Inside this offer</span>
+                      <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <div className="px-5 pb-6 pt-1 flex flex-col gap-6">
+                      <div>
+                        <h4 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface">
+                          Start here if
+                        </h4>
+                        <ul className="mt-3 flex flex-col gap-2 max-w-3xl">
+                          {DETAILS[name].start.map((t) => (
+                            <li
+                              key={t}
+                              className="flex items-start gap-2 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
+                            >
+                              <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
+                              {t}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+                        {DETAILS[name].cover.map(([label, detail]) => (
+                          <div
+                            key={label}
+                            className="bg-m3-surface rounded-[16px] border border-m3-outline/10 px-4 py-3.5"
+                          >
+                            <span className="text-sm font-bold text-m3-on-surface">{label}</span>
+                            <p className="mt-1 text-[13px] leading-snug text-m3-on-surface-variant font-medium">
+                              {detail}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col gap-3 max-w-3xl text-sm leading-relaxed text-m3-on-surface-variant font-medium">
+                        <p>
+                          <strong className="text-m3-on-surface font-bold">What you get.</strong>{" "}
+                          {DETAILS[name].get}
+                        </p>
+                        <p>
+                          <strong className="text-m3-on-surface font-bold">What it doesn't include.</strong>{" "}
+                          {DETAILS[name].not}
+                        </p>
+                        <p>
+                          <strong className="text-m3-on-surface font-bold">Where I've done it.</strong>{" "}
+                          {DETAILS[name].proof}
+                          {DETAILS[name].proofLink && (
+                            <>
+                              {" "}
+                              <Link
+                                to={DETAILS[name].proofLink!.to}
+                                className="font-bold text-m3-primary hover:underline"
+                              >
+                                {DETAILS[name].proofLink!.label}
+                              </Link>
+                            </>
+                          )}
+                        </p>
+                      </div>
+
+                      {i === 0 && (
+                        <div>
+                          <AuditButton />
+                        </div>
+                      )}
+                    </div>
+                  </details>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* The audit, unpacked: who it's for, what it covers, what comes
-              back. Sits directly under the list it belongs to. */}
-          <div className="mt-8 bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/10 p-6 md:p-8 flex flex-col gap-6">
-            <div>
-              <span className="font-display text-[11px] font-black uppercase tracking-[0.25em] text-m3-primary">
-                Inside the audit
-              </span>
-              <h3 className="display mt-2 text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
-                Start here if
-              </h3>
-              <ul className="mt-3 flex flex-col gap-2 max-w-3xl">
-                {AUDIT_TRIGGERS.map((t) => (
-                  <li
-                    key={t}
-                    className="flex items-start gap-2 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
-                  >
-                    <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
-              {AUDIT_SCOPE.map(([label, detail]) => (
-                <div
-                  key={label}
-                  className="bg-m3-surface rounded-[16px] border border-m3-outline/10 px-4 py-3.5"
-                >
-                  <span className="text-sm font-bold text-m3-on-surface">{label}</span>
-                  <p className="mt-1 text-[13px] leading-snug text-m3-on-surface-variant font-medium">
-                    {detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-3 max-w-3xl text-sm leading-relaxed text-m3-on-surface-variant font-medium">
-              <p>
-                <strong className="text-m3-on-surface font-bold">What you get.</strong>{" "}
-                A ranked findings list with severity, owner and effort. A 90-day fix plan. A
-                45-minute readout with your team.
-              </p>
-              <p>
-                <strong className="text-m3-on-surface font-bold">What it doesn't include.</strong>{" "}
-                Ongoing monitoring, or doing the fixes for you. I hand your team the plan. If
-                it points to a launch, a migration or a workflow problem, the offers above are
-                the next step.
-              </p>
-              <p>
-                <strong className="text-m3-on-surface font-bold">Where I've done it.</strong>{" "}
-                I audit my own sites the same way. On builtbyswami.com and Long Press I found
-                a sitemap that returned a web page instead of XML, so search engines couldn't
-                use it; a category rule that filed 39 commentary pieces under News, so my own
-                reports described a different publication from the one I was running; and a
-                Tag Manager container that never listened for the events my site was sending,
-                so none of my button clicks reached Google Analytics. All three are fixed. I
-                also moved a 60-issue archive to a new domain behind permanent redirects.
-              </p>
-            </div>
-
-            <div>
-              <AuditButton />
-            </div>
           </div>
 
           <div className="mt-8 bg-m3-surface-variant/60 rounded-[24px] border border-dashed border-m3-outline/25 p-6 md:p-8 flex flex-col gap-3">
