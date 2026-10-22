@@ -23,12 +23,12 @@ interface NavItem {
  * item that ejects every visitor off-domain was the site's biggest leak, so
  * the channel lives as a carousel on the homepage and a link in the footer.
  * Labels match their destination exactly ("The Work" → /about is the one
- * that used to lie).
+ * that used to lie). Order mirrors the homepage: offers, builds, notes, about.
  */
 const NAV: NavItem[] = [
   { label: "Consulting", to: "/work-with-me" },
-  { label: "Notes", to: "/notes" },
   { label: "Builds", to: "/builds" },
+  { label: "Notes", to: "/notes" },
   { label: "The Work", to: "/about" },
 ];
 
