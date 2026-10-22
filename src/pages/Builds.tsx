@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Hammer } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, Hammer } from "lucide-react";
 import { BUILDS } from "../data/builds";
 import { NOTES_SORTED } from "../data/notes";
 import SiteHeader from "../components/SiteHeader";
@@ -98,6 +98,30 @@ export default function Builds() {
                       </dd>
                     </div>
                   </dl>
+
+                  {build.perspectives && (
+                    <details
+                      open
+                      className="group mb-6 bg-m3-surface-variant/60 rounded-[20px] border border-m3-outline/10"
+                    >
+                      <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-m3-primary flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                        <span>Seven ways to look at it</span>
+                        <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <dl className="px-5 pb-6 pt-3 grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        {build.perspectives.map((p) => (
+                          <div key={p.label}>
+                            <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-primary mb-1.5">
+                              {p.label}
+                            </dt>
+                            <dd className="text-sm leading-relaxed text-m3-on-surface-variant font-medium">
+                              {p.text}
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </details>
+                  )}
 
                   <div className="flex flex-wrap items-center gap-3">
                     {build.url && (

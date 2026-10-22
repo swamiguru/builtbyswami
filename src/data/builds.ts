@@ -27,6 +27,8 @@ export interface Build {
   url?: string;
   /** Matching build note on this site. */
   noteSlug?: string;
+  /** Optional deeper read: the same build seen through several disciplines. */
+  perspectives?: { label: string; text: string }[];
 }
 
 export const BUILDS: Build[] = [
@@ -39,6 +41,36 @@ export const BUILDS: Build[] = [
     shipped: "76 issues, daily since 12 July 2026",
     stack: "Astro, Vercel. Own domain, own GA4 property.",
     url: "https://longpress.news",
+    perspectives: [
+      {
+        label: "Editorial",
+        text: "Three pillars with fixed formats. The Daily Five is the morning brief: five stories, each taken apart as the problem, what changed, the catch and what it means for you. Five is a cap, not a target, so choosing what to leave out is part of the job. Known Issue is the opinion column on problems that have been broken long enough to count as a decision, and it ends in a verdict: buy, skip or wait. Fine Print is a weekly Saturday explainer on Indian rules, prices and service changes, read from the source document, worked through in rupees and dated with a last-checked line. Errors are corrected on the page with a note of what changed and when. Paid items, if any, are labelled, and the opinion is not part of the deal.",
+      },
+      {
+        label: "Audience",
+        text: "Readers in India who want the tech news that actually touches them, in five minutes rather than a feed. That is why Fine Print is written in rupees and about banks, telecoms, regulators and apps, and why the brief mixes India and global stories. It is written from Bengaluru, for people who would rather be told what a change means than be shown the announcement.",
+      },
+      {
+        label: "Technical",
+        text: "A static Astro site on Vercel, in its own repo. Every issue is a content file checked against a schema, and the schema keeps the four-part story structure so it renders as labelled blocks instead of one body of text. A routing guard runs at build time and blocks the deploy on a bad or colliding URL slug, because a broken URL is not a style nit. It also ships an RSS feed and a public search index.",
+      },
+      {
+        label: "Design",
+        text: "Its own light editorial identity, separate from builtbyswami.com: a masthead, a restrained theme and the line \"Press and hold, the tech signal.\" The four labelled blocks make every story scannable, and fixed-height slots are reserved so the page never jumps as it loads.",
+      },
+      {
+        label: "SEO and Google Search",
+        text: "One page per day, not one per story: about 350 URLs a year rather than thousands of thin pages that decay within hours. Time-bound briefs live under /daily; standalone pieces get permanent root-level slugs with no date or category in them, so recategorising never costs a redirect. Full text lives in exactly one place, so the brief and an evergreen page never compete for the same query, and the brief links to the evergreen pages every morning. The old daily on builtbyswami.com is redirected permanently to the new home.",
+      },
+      {
+        label: "Tracking and measurement",
+        text: "Its own GA4 property and its own Tag Manager container, so Long Press is measured as a title in its own right rather than as a section of another site. The tooling is the same set I audit for clients: Search Console, GA4 and tag setup.",
+      },
+      {
+        label: "Social platforms",
+        text: "Each morning the five stories become image cards for X and Threads, with carousels for the stories that suit them, and one pick a day goes to Instagram. There is also a WhatsApp channel carrying the Daily Five. Posts are scheduled in advance for set slots in Indian time, so the publication keeps its cadence whether or not I am at a desk.",
+      },
+    ],
   },
   {
     name: "builtbyswami.com",
