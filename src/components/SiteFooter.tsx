@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { SOCIALS } from "../data/socials";
-import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
 
 const YOUTUBE = "https://www.youtube.com/@builtbyswami";
 
@@ -62,17 +61,19 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
       <div className="px-5 sm:px-8 md:px-12 pt-6 md:pt-8 pb-5 md:pb-6 flex flex-col md:flex-row md:items-start gap-6 md:gap-10 justify-between">
         <div className="max-w-sm">
           <p className="font-display text-sm sm:text-base font-bold leading-snug text-m3-on-surface">
-            {NEWSLETTER_TITLE}
+            Long Press, a daily tech publication
           </p>
           <p className="mt-1 md:mt-1.5 text-xs sm:text-sm leading-relaxed text-m3-on-surface-variant font-medium">
-            {NEWSLETTER_PROMISE}
+            Three pillars: the Daily Five every morning, Known Issue and a weekly Fine Print. Written, designed and shipped solo.
           </p>
-          <Link
-            to="/weekly#build-notes"
+          <a
+            href="https://longpress.news"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-3 inline-flex items-center gap-1.5 bg-m3-primary text-m3-on-primary font-display font-bold px-4 py-2 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer"
           >
-            Subscribe <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
+            Read Long Press <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         {/* Three columns that mirror the nav — laid out horizontally even on mobile to prevent excessive scrolling */}
@@ -80,7 +81,6 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
           <nav className="flex flex-col gap-1.5 md:gap-2">
             <FootHeading>Read</FootHeading>
             <FootExternal href="https://longpress.news">Long Press</FootExternal>
-            <FootLink to="/weekly">The Weekly</FootLink>
             <FootLink to="/notes">Notes</FootLink>
           </nav>
 

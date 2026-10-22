@@ -3,14 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import BrandLogo from "./BrandLogo";
-import NewsletterSignup from "./NewsletterSignup";
-
-import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
 
 interface NavItem {
   label: string;
@@ -45,34 +42,9 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
-  const [subscribeOpen, setSubscribeOpen] = useState(false);
-  const subscribeRef = useRef<HTMLDivElement>(null);
-
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const shouldReduceMotion = useReducedMotion();
-
-  // Handle outside click for subscribe popover
-  useEffect(() => {
-    if (!subscribeOpen) return;
-    const onPointerDown = (e: PointerEvent) => {
-      if (
-        subscribeRef.current &&
-        !subscribeRef.current.contains(e.target as Node)
-      ) {
-        setSubscribeOpen(false);
-      }
-    };
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSubscribeOpen(false);
-    };
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [subscribeOpen]);
 
   // Scroll direction detection
   useEffect(() => {
@@ -91,8 +63,8 @@ export default function SiteHeader() {
 
       setScrolled(true);
 
-      // Keep header visible if mobile menu or subscribe popover is open
-      if (open || subscribeOpen) {
+      // Keep header visible if the mobile menu is open
+      if (open) {
         setVisible(true);
         lastScrollY = Math.max(0, currentScrollY);
         return;
@@ -114,7 +86,7 @@ export default function SiteHeader() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [open, subscribeOpen]);
+  }, [open]);
 
   const renderItem = (item: NavItem, className: string) =>
     item.external ? (
@@ -176,28 +148,6 @@ export default function SiteHeader() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2 md:gap-3 font-display font-bold text-sm">
             {NAV.map((item) => renderItem(item, desktopLink))}
-            <div className="relative" ref={subscribeRef}>
-              <button
-                type="button"
-                onClick={() => setSubscribeOpen((o) => !o)}
-                aria-expanded={subscribeOpen}
-                aria-haspopup="true"
-                className="px-5 py-2.5 bg-m3-primary text-m3-on-primary rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs cursor-pointer"
-              >
-                Subscribe
-              </button>
-              {subscribeOpen && (
-                <div className="absolute right-0 top-[calc(100%+10px)] w-[320px] max-w-[calc(100vw-3rem)] bg-m3-surface border border-m3-outline/10 rounded-[20px] shadow-xl p-5 z-40">
-                  <p className="font-display font-bold text-sm text-m3-on-surface mb-1">
-                    {NEWSLETTER_TITLE}
-                  </p>
-                  <p className="text-xs text-m3-on-surface-variant font-medium mb-4">
-                    {NEWSLETTER_PROMISE}
-                  </p>
-                  <NewsletterSignup stacked />
-                </div>
-              )}
-            </div>
           </nav>
 
           {/* Mobile toggle */}
@@ -216,17 +166,6 @@ export default function SiteHeader() {
         {open && (
           <nav className="md:hidden border-t border-m3-outline/10 bg-m3-surface px-4 py-4 flex flex-col gap-1 font-display font-bold text-base">
             {NAV.map((item) => renderItem(item, mobileLink))}
-            <div className="mt-3 pt-4 border-t border-m3-outline/10">
-              <p className="px-4 font-display font-bold text-sm text-m3-on-surface mb-1">
-                {NEWSLETTER_TITLE}
-              </p>
-              <p className="px-4 text-xs text-m3-on-surface-variant font-medium mb-4">
-                {NEWSLETTER_PROMISE}
-              </p>
-              <div className="px-4">
-                <NewsletterSignup stacked />
-              </div>
-            </div>
           </nav>
         )}
       </motion.header>
