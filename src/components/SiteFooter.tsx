@@ -67,12 +67,12 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
           <p className="mt-1 md:mt-1.5 text-xs sm:text-sm leading-relaxed text-m3-on-surface-variant font-medium">
             {NEWSLETTER_PROMISE}
           </p>
-          <a
-            href="#build-notes"
+          <Link
+            to="/#build-notes"
             className="mt-3 inline-flex items-center gap-1.5 bg-m3-primary text-m3-on-primary font-display font-bold px-4 py-2 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer"
           >
             Subscribe <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Three columns that mirror the nav — laid out horizontally even on mobile to prevent excessive scrolling */}

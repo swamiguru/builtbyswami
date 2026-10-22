@@ -15,7 +15,7 @@ export const NEWSLETTER_TITLE = "The best of Long Press, once a week";
 
 /** The canonical promise. Do not paraphrase at the call site. */
 export const NEWSLETTER_PROMISE =
-  "Five tech stories every morning at Long Press. The best of the week lands here in one email, plus what I'm building in public. Free.";
+  "Long Press in three parts: the Daily Five every morning, Known Issue and a weekly Fine Print. The best of the week lands here in one email, plus what I'm building in public. Free.";
 
 /**
  * One-line version for the slim strip under the header, where the full
