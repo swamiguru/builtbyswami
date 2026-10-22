@@ -35,7 +35,7 @@ export const BUILDS: Build[] = [
   {
     name: "Long Press",
     status: "Live",
-    what: "A daily tech publication I write, build and ship solo — sourcing, writing, design and the ship pipeline, no editorial team. Three editorial pillars: the Daily Five, five stories every morning, each broken into the problem, what changed, the catch, and what it means for you; Known Issue, an opinion column on the things that have been broken long enough to count as a decision; and Fine Print, a weekly Saturday explainer on Indian rules, prices and service changes, worked through in rupees.",
+    what: "A daily tech publication I edit, build and ship solo — sourcing, editing, design and the ship pipeline, no editorial team. Three editorial pillars: the Daily Five, five stories every morning, each broken into the problem, what changed, the catch, and what it means for you; Known Issue, an opinion column on the things that have been broken long enough to count as a decision; and Fine Print, a weekly Saturday explainer on Indian rules, prices and service changes, worked through in rupees.",
     constraint:
       "Give a publisher and title structure real infrastructure instead of a landing page. BuiltBySwami is the publisher, Long Press the title: its own domain, its own masthead, its own analytics.",
     shipped: "76 issues, daily since 12 July 2026",
@@ -44,7 +44,7 @@ export const BUILDS: Build[] = [
     perspectives: [
       {
         label: "Editorial",
-        text: "Three pillars with fixed formats. The Daily Five is the morning brief: five stories, each taken apart as the problem, what changed, the catch and what it means for you. Five is a cap, not a target, so choosing what to leave out is part of the job. Known Issue is the opinion column on problems that have been broken long enough to count as a decision, and it ends in a verdict: buy, skip or wait. Fine Print is a weekly Saturday explainer on Indian rules, prices and service changes, read from the source document, worked through in rupees and dated with a last-checked line. Errors are corrected on the page with a note of what changed and when. Paid items, if any, are labelled, and the opinion is not part of the deal.",
+        text: "Three pillars with fixed formats. The Daily Five is the morning brief: five stories, each taken apart as the problem, what changed, the catch and what it means for you. Five is a cap, not a target, so choosing what to leave out is part of the job. Known Issue is the opinion column on problems that have been broken long enough to count as a decision, and it ends in a verdict: buy, skip or wait. Fine Print is a weekly Saturday explainer on Indian rules, prices and service changes, read from the source document, worked through in rupees and dated with a last-checked line. I use Claude and Gemini across research and drafting; I choose what runs, edit every piece and am accountable for what is published. Errors are corrected on the page with a note of what changed and when. Paid items, if any, are labelled, and the opinion is not part of the deal.",
       },
       {
         label: "Audience",
