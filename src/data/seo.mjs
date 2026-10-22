@@ -54,8 +54,8 @@ export const PAGE_SEO = {
       "The Weekly by Swami Guru — every issue of the Builtbyswami Weekly: the best of the daily five, plus what I'm building in public. Free.",
   },
   workWithMe: {
-    title: "Swami Guru | Product Consulting for Publishers & Content Teams",
+    title: "Swami Guru | Publisher Site Audits & Product Consulting",
     description:
-      "Product consulting for publishers and content-driven teams: market launches, CMS migrations, AI workflows — without losing traffic or revenue.",
+      "Product consulting for publishers: site health audits, market launches, CMS migrations and AI workflows, without losing traffic or revenue.",
   },
 };

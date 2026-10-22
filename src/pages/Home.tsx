@@ -14,6 +14,7 @@ import {
   Hammer,
   Globe,
   Server,
+  ScanSearch,
 } from "lucide-react";
 import { formatLongDate } from "../lib/formatDate";
 import { useLatestWeekly } from "../hooks/useLatestWeekly";
@@ -95,12 +96,19 @@ const METRICS: [string, string][] = [
   ["$20M", "peak year"],
 ];
 
-/** Compressed one-line summaries of the four fixed-scope offers on
+/** Compressed one-line summaries of the five fixed-scope offers on
  *  /work-with-me. Kept as data, separate from that page's fuller SERVICES
  *  array, because the homepage needs a shorter blurb per offer — but the
  *  name, shape and terms must stay identical to avoid the two pages
- *  disagreeing with each other. */
+ *  disagreeing with each other. The first entry is the audit, the
+ *  "start here" offer, and renders as a full-width row above the other four. */
 const CONSULTING_OFFERS: { icon: typeof Globe; name: string; meta: string; blurb: string }[] = [
+  {
+    icon: ScanSearch,
+    name: "Publisher Site Health Audit",
+    meta: "1–2 weeks · fixed scope",
+    blurb: "SEO, Search Console, GA4 and site structure, audited together. A ranked fix list your team can start on Monday.",
+  },
   {
     icon: Globe,
     name: "Market Launch & Expansion Readiness",
@@ -178,8 +186,8 @@ export default function Home() {
             </h1>
             <p className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl">
               Product consulting for publishers and content-driven teams making
-              the hard moves &mdash; new markets, replatforms, AI in the workflow.
-              Plus build notes from what I ship solo, and the daily tech news
+              the hard moves &mdash; site audits, new markets, replatforms, AI in
+              the workflow. Plus build notes from what I ship solo, and the daily tech news
               over at Long Press.
             </p>
 
@@ -277,7 +285,7 @@ export default function Home() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb }, i) => (
-                <div key={name} className="relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all">
+                <div key={name} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all ${i === 0 ? "sm:col-span-2 lg:col-span-4" : ""}`}>
                   <span className="absolute top-3 right-4 font-mono text-[26px] font-bold text-m3-outline/10 tabular-nums leading-none select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -289,6 +297,7 @@ export default function Home() {
                   </h3>
                   <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-2">
                     {meta}
+                    {i === 0 && <span className="text-m3-primary"> · start here</span>}
                   </p>
                   <p className="text-[13px] text-m3-on-surface-variant leading-relaxed">{blurb}</p>
                 </div>

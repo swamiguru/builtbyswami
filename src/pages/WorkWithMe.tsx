@@ -12,6 +12,7 @@ import {
   Globe,
   Hammer,
   Mail,
+  ScanSearch,
   Server,
   Sparkles,
   Users,
@@ -44,6 +45,12 @@ interface Service {
 
 const SERVICES: Service[] = [
   {
+    icon: ScanSearch,
+    name: "Publisher Site Health Audit",
+    meta: "1–2 weeks · fixed scope · start here",
+    body: "A written audit of how your site is actually found, measured and structured, not a crawler export. Search and indexing, Google Search Console, GA4 and tag setup, site architecture and navigation, and the technical issues quietly costing you traffic. You get a ranked list of what to fix first, who owns it and what it is worth, so your team can start on Monday.",
+  },
+  {
     icon: Globe,
     name: "Market Launch & Expansion Readiness",
     meta: "2–3 weeks · fixed scope",
@@ -67,6 +74,35 @@ const SERVICES: Service[] = [
     meta: "2–3 weeks · fixed scope",
     body: "A working prototype in your hands, not a slide deck. For teams who need to see the thing before committing engineering to it. I build and ship my own products — this is that, pointed at your problem.",
   },
+];
+
+/** What sits inside the audit card. Shown as its own panel under the offers
+ *  list so the card itself stays the same length as its neighbours. Proof is
+ *  drawn only from the author's own sites. */
+const AUDIT_TRIGGERS: string[] = [
+  "Search traffic dropped and nobody can say why.",
+  "You replatformed and never checked what broke.",
+  "Your analytics, your ad server and your editors each report a different number.",
+  "You're planning a migration or a launch and want a baseline first.",
+];
+
+const AUDIT_SCOPE: [string, string][] = [
+  [
+    "Search and indexing",
+    "Crawl and index coverage, sitemaps, canonicals, redirects, structured data, page speed.",
+  ],
+  [
+    "Google Search Console",
+    "Which sections and query types earn clicks, what isn't being indexed, and why.",
+  ],
+  [
+    "Analytics",
+    "GA4 and Tag Manager setup, event and conversion tracking, consent, cross-domain measurement, and whether the numbers can be trusted.",
+  ],
+  [
+    "Site structure",
+    "Navigation, naming, taxonomy and internal linking, and where good content is buried.",
+  ],
 ];
 
 /** The functions a launch or migration actually has to get through — pulled
@@ -170,6 +206,20 @@ function BookButton({ className = "" }: { className?: string }) {
   );
 }
 
+function AuditButton({ className = "" }: { className?: string }) {
+  return (
+    <a
+      href={CAL_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackCta("consulting_book_audit", "work_with_me_audit")}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
+    >
+      Book a 30-min call about the audit <ArrowRight className="w-4 h-4" />
+    </a>
+  );
+}
+
 function EmailButton({ className = "" }: { className?: string }) {
   return (
     <a
@@ -229,7 +279,7 @@ export default function WorkWithMe() {
           </h1>
 
           <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
-            New markets, replatforms, AI in the workflow.
+            Site audits, new markets, replatforms, AI in the workflow.
           </p>
 
           <div className="mt-8 flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
@@ -255,9 +305,10 @@ export default function WorkWithMe() {
         <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow tone="primary">What I do</Eyebrow>
           <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl mb-2 leading-relaxed">
-            Four ways to start. Each is fixed scope and fixed price, quoted
+            Five ways to start. Each is fixed scope and fixed price, quoted
             once I understand what you're dealing with, and each ends with
-            something you can act on.
+            something you can act on. If you're not sure where to begin,
+            begin with the audit.
           </p>
 
           <div className="flex flex-col">
@@ -291,6 +342,69 @@ export default function WorkWithMe() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* The audit, unpacked: who it's for, what it covers, what comes
+              back. Sits directly under the list it belongs to. */}
+          <div className="mt-8 bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/10 p-6 md:p-8 flex flex-col gap-6">
+            <div>
+              <span className="font-display text-[11px] font-black uppercase tracking-[0.25em] text-m3-primary">
+                Inside the audit
+              </span>
+              <h3 className="display mt-2 text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
+                Start here if
+              </h3>
+              <ul className="mt-3 flex flex-col gap-2 max-w-3xl">
+                {AUDIT_TRIGGERS.map((t) => (
+                  <li
+                    key={t}
+                    className="flex items-start gap-2 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
+                  >
+                    <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+              {AUDIT_SCOPE.map(([label, detail]) => (
+                <div
+                  key={label}
+                  className="bg-m3-surface rounded-[16px] border border-m3-outline/10 px-4 py-3.5"
+                >
+                  <span className="text-sm font-bold text-m3-on-surface">{label}</span>
+                  <p className="mt-1 text-[13px] leading-snug text-m3-on-surface-variant font-medium">
+                    {detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-3 max-w-3xl text-sm leading-relaxed text-m3-on-surface-variant font-medium">
+              <p>
+                <strong className="text-m3-on-surface font-bold">What you get.</strong>{" "}
+                A ranked findings list with severity, owner and effort. A 90-day fix plan. A
+                45-minute readout with your team.
+              </p>
+              <p>
+                <strong className="text-m3-on-surface font-bold">What it isn't.</strong>{" "}
+                Ongoing monitoring, or the fixes themselves. If you want those, they're the
+                other four.
+              </p>
+              <p>
+                <strong className="text-m3-on-surface font-bold">Why I'd run it.</strong>{" "}
+                I run this on my own publications first. On builtbyswami.com and Long Press I
+                found a sitemap that returned HTML instead of XML, a category rule that hid 39
+                posts inside the wrong bucket, and a Tag Manager container that was never
+                listening for the events the site was sending. I fixed all three, and moved a
+                60-issue archive across domains with 301s and cross-domain measurement intact.
+              </p>
+            </div>
+
+            <div>
+              <AuditButton />
+            </div>
           </div>
 
           <div className="mt-8 bg-m3-surface-variant/60 rounded-[24px] border border-dashed border-m3-outline/25 p-6 md:p-8 flex flex-col gap-3">
