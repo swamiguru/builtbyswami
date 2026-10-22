@@ -4,18 +4,18 @@
  */
 
 import { useEffect } from "react";
-import { ArrowUpRight, Clock, Mail } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { formatLongDate } from "../lib/formatDate";
 import { WEEKLY_PUBLICATION_URL } from "../data/weekly";
 import { useWeeklyIssues } from "../hooks/useLatestWeekly";
-import { NEWSLETTER_TITLE, NEWSLETTER_PROMISE } from "../data/newsletter";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import NewsletterSignup from "../components/NewsletterSignup";
 import { usePageSeo } from "../hooks/usePageSeo";
 
 /**
- * The Weekly archive.
+ * The Weekly archive. The newsletter is paused, so there is no signup here;
+ * restore the NewsletterSignup section from git history if the list restarts.
+ *
  *
  * Every issue lives on beehiiv, so this is an index rather than a reader —
  * each card leaves the site. That's deliberate: mirroring the content here
@@ -46,9 +46,8 @@ export default function Weekly() {
             The week, distilled
           </h1>
           <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
-            I publish five tech stories every morning at Long Press. This is
-            the best of the week in one email, plus what I&rsquo;m building in
-            public. Every issue is free and opens on beehiiv.
+            The Weekly is on pause while I focus on Long Press and client
+            work. Every issue I published is below, free to read on beehiiv.
           </p>
         </section>
 
@@ -123,24 +122,6 @@ export default function Weekly() {
               </p>
             </div>
           )}
-        </section>
-
-        <section
-          id="build-notes"
-          className="bg-m3-secondary-container text-m3-on-secondary-container px-6 md:px-14 py-10 md:py-14"
-        >
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-3">
-              <Mail className="w-5 h-5 text-m3-primary" />
-              <h2 className="display text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
-                {NEWSLETTER_TITLE}
-              </h2>
-            </div>
-            <p className="text-sm md:text-base font-medium opacity-80 mb-6 max-w-xl">
-              {NEWSLETTER_PROMISE}
-            </p>
-            <NewsletterSignup />
-          </div>
         </section>
 
         <SiteFooter />

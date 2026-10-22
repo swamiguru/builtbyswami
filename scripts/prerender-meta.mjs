@@ -88,6 +88,7 @@ const routes = [
   { path: "about", ...PAGE_SEO.about },
   { path: "notes", ...PAGE_SEO.notes },
   { path: "builds", ...PAGE_SEO.builds },
+  { path: "weekly", ...PAGE_SEO.weekly },
   ...NOTES.map((n) => ({
     path: `notes/${n.slug}`,
     title: `${n.title} | Build Notes`,

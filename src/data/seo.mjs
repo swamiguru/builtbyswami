@@ -51,7 +51,7 @@ export const PAGE_SEO = {
   weekly: {
     title: "The Weekly | Swami Guru",
     description:
-      "The Weekly by Swami Guru — every issue of the Builtbyswami Weekly: the best of the daily five, plus what I'm building in public. Free.",
+      "The Weekly archive — every issue of the Builtbyswami Weekly by Swami Guru: the best of the week from Long Press, plus what I was building in public. Free to read.",
   },
   workWithMe: {
     title: "Swami Guru | Publisher Site Audits & Product Consulting",

@@ -1,7 +1,5 @@
 {
   "redirects": [
-    { "source": "/weekly", "destination": "/", "permanent": false },
-    { "source": "/newsletter", "destination": "/", "permanent": false },
     {
       "source": "/tech-roundup",
       "destination": "https://longpress.news/daily",

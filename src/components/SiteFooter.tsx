@@ -82,6 +82,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
             <FootHeading>Read</FootHeading>
             <FootExternal href="https://longpress.news">Long Press</FootExternal>
             <FootLink to="/notes">Notes</FootLink>
+            <FootLink to="/weekly">Weekly archive</FootLink>
           </nav>
 
           <nav className="flex flex-col gap-1.5 md:gap-2">
