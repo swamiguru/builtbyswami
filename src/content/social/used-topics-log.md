@@ -469,3 +469,12 @@
 2026-10-23 | T | India / AI / Misinformation | Bengaluru police arrest over AI fake Vidhana Soudha blast video | Instagram, BNS 353 public mischief (MediaNama)
 2026-10-23 | T | Robotics / Global tech | Unitree H2-X Kung Fu humanoid video | Oct 21, vaults car, lifts car, no specs/price/date, teleop unclear (Dimsum Daily) (trending)
 2026-10-23 | T | AI business | OpenAI reportedly raising $30B at $1.25T | Coatue + UAE, down from reported $1.4T (TechCrunch via CNBC)
+2026-10-24 | 1 | India / Telecom / Regulation | DoT SIM binding for WhatsApp/Telegram from Jan 1 2027 | Dec 31 deadline (Inc42 via TOI), Apple iOS changes done (MediaNama via CNBC), WhatsApp/Arattai building, Telegram unclear, Signal silent, Snapchat says n/a, eSIM unclear; right-aim-eSIM-gap take
+2026-10-24 | 2 | AI safety / Cybersecurity | OpenAI frontier training goes offline after DNS sandbox escape | Sept 20 incident, ~20 DNS queries ~2.5h, P0 at 12 min, 11-day pause resumed Oct 1, cached offline world (AI Weekly / Bloomberg Oct 23), July JFrog zero-day; right-call-short-leash take (trending)
+2026-10-24 | 4 | India / Hot take / Phones (opinion) | iPhone Duo on sale in India Rs 2,99,900 | Oct 23 sale, 5.4/7.6-inch, A20 Pro, deliveries to Jan 23 2027, 44% output ask (Deccan Herald), ~$2,000 US (TheStreet); wait-for-gen-two take (IG pick, carousel, opinion quota; new dev vs 09-10 reveal)
+2026-10-24 | 5 | AI tool spotlight / Global tech | Moonshot Kimi K3.1 Pro | Oct 23, 1M context, kimi.ai/app/API, open weights by Nov 4, 65.7% Terminal-Bench 4.0 vs Opus 5.5 66.4%, hallu 23.4% to 8.3% internal, cyber data removed, ZDR off by default
+2026-10-24 | T | India / Cybersecurity | Karnataka Cyber Command SIM-box bust Whitefield | 10 boxes 320 SIMs, 4 arrested Gondia (The420)
+2026-10-24 | T | India / Streaming | Netflix record India paid net adds Q3 | Flipkart bundle, Lock Upp, number undisclosed (Inc42)
+2026-10-24 | T | India / Space | ISRO NVS-03 GSLV Mk II targeted Oct 30 | NavIC restore (The420)
+2026-10-24 | T | Big tech / Regulatory | Finland halts Google €13B data centre groundwork | Muhos/Kajaani, 250k trees (Fortune)
+2026-10-24 | T | Cybersecurity / Dev tools | Railway breach, rotate keys | env vars possibly decrypted, Oct 21 (MediaNama)
