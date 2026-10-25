@@ -478,3 +478,12 @@
 2026-10-24 | T | India / Space | ISRO NVS-03 GSLV Mk II targeted Oct 30 | NavIC restore (The420)
 2026-10-24 | T | Big tech / Regulatory | Finland halts Google €13B data centre groundwork | Muhos/Kajaani, 250k trees (Fortune)
 2026-10-24 | T | Cybersecurity / Dev tools | Railway breach, rotate keys | env vars possibly decrypted, Oct 21 (MediaNama)
+2026-10-25 | 1 | India / Cybersecurity / Banking | Central Bank of India Rs 13.97cr from RBI settlement account | 187 transfers Oct 15-17 (6/88/93) to 36 banks, suspected SFMS/IFTAS breach, none in bank's own systems, no direct customer debits, Mumbai Nodal Cyber Police FIR, RBI/IFTAS/NCIIPC/CERT-In alerted (The Wire, The420 Oct 24); RBI-should-say-what-broke take
+2026-10-25 | 2 | India / Privacy / Government apps | MoRTH orders CERT-In audit of VAHAN, SARATHI, e-Challan, PUCC | Telegram owner data Rs 5 per plate, 25,314 private firms with credentials, 1.708 cr searches in 33 months (RTI), Vehicle Information App + VehicleSetu flagged, app-store takedown ask (The420 Oct 24); access-policy-is-the-leak take
+2026-10-25 | 4 | Hot take / Cloud & AI (opinion) | AWS 2027 capacity largely sold out | Jassy a16z podcast Oct 23, good chunk of 2028 sold, shortage not ending 2027, ~$220B 2026 capex, on-demand + Bedrock reserved (24/7 Wall St., The Information); plan-for-scarcity-not-price-war take
+2026-10-25 | 5 | India / Hot take / Payments (opinion) | PhonePe + Google Pay 77.8% UPI share Sept 2026 | PhonePe 45.57% 10.91bn, GPay 32.23% 7.71bn, Paytm 8.1%, Navi 1.14bn, 81.9% a year ago, 30% cap deadline Dec 31 2026 rolling 3-month (MediaNama Oct 24); enforce-or-drop-the-cap take
+2026-10-25 | T | India / Big tech business | Jio Platforms IPO closes 22.19x | QIB 70.55x, retail 2.72x, Rs 30,213cr fresh issue (new dev vs 10-22 Tap)
+2026-10-25 | T | India / Startups / Markets | Swiggy -24.5% in week, new-age stocks lose $11B | Instamart losses, 54.7% below Rs 390 IPO (Inc42 Oct 25)
+2026-10-25 | T | India / Cybersecurity / Jobs | Mumbai chefs fake hotel jobs forced into Laos scam compound | Rs 5.55 lakh to recruiter, Sahar FIR (The420 Oct 24)
+2026-10-25 | T | Dev tools / AI agents | Cursor Computer Use for desktop apps | macOS permissions, iOS Simulator testing
+2026-10-25 | T | Global tech / AI security | UK £600M+ AI security package | £165M biosecurity, £120M AI Security Institute (The420 Oct 24)
