@@ -487,3 +487,12 @@
 2026-10-25 | T | India / Cybersecurity / Jobs | Mumbai chefs fake hotel jobs forced into Laos scam compound | Rs 5.55 lakh to recruiter, Sahar FIR (The420 Oct 24)
 2026-10-25 | T | Dev tools / AI agents | Cursor Computer Use for desktop apps | macOS permissions, iOS Simulator testing
 2026-10-25 | T | Global tech / AI security | UK £600M+ AI security package | £165M biosecurity, £120M AI Security Institute (The420 Oct 24)
+2026-10-26 | 1 | Business / AI economics | Apollo Slok: zero AI payoff outside tech | S&P 493 flat revenue per worker + margins, "great calculator", judgment take; software-bill-not-productivity-plan take (trending, Techmeme lead)
+2026-10-26 | 2 | India / IT jobs | Top five IT firms +16,055 in H1 FY27 | vs 3,097 yr ago, TCS +13,537, Infosys +3,948 (Q2 +4,480 to 332,542, 20k freshers), HCL +3,158, TechM +1,240, Wipro -5,828, freshers 60-65%, AI/cloud +16% vs IT hiring -3% (Angel One Oct 24); different-job-description take (carousel)
+2026-10-26 | 4 | India / Myth-buster / Cybersecurity (opinion) | Goa police ask banks to hold seniors' big transfers + Delhi CSB Bank mule accounts | ~Rs 100cr Goa 2026, IGP Chaurasia (Daijiworld Oct 25), 6 held incl manager, 37 accounts, 99 complaints, Rs 7.36cr (Delhi News Live); bank-isn't-your-scam-filter myth (IG pick, carousel, opinion quota)
+2026-10-26 | 5 | Hot take / AI policy (opinion) | Sweden Government Offices block ChatGPT + Claude, Copilot only | from Oct 26, Copilot passed review, Tax Agency already blocked (Daily Northern, Yahoo); paperwork-beats-benchmarks take (opinion quota)
+2026-10-26 | T | India / Payments / Startups | super.money FY26 Rs 341cr marketing vs Rs 292cr revenue | loss +78% to Rs 263.8cr (MediaNama)
+2026-10-26 | T | India / E-commerce | Myntra FY26 Rs 582cr loss | (Inc42)
+2026-10-26 | T | India / Cybersecurity | Surat police 338 complaints Rs 410cr network | USDT, Dubai/China (The420)
+2026-10-26 | T | Apps / Social platforms | Instagram Apple TV app | Reels, long videos, live, tvOS 26+ (MacRumors)
+2026-10-26 | T | AI / Legal | Elvis rights holders sue Anthropic | 274 songs (LA Times)
