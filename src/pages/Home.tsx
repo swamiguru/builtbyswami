@@ -189,7 +189,7 @@ export default function Home() {
               every named title, regular on the connective text — which
               reads clearly even at a small size, so the font can shrink on
               mobile without the credential list turning to mush. */}
-          <div className="relative z-10 grid md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_360px] gap-4 sm:gap-6 md:gap-12 lg:gap-16 md:items-center">
+          <div className="relative z-10 grid md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-4 sm:gap-6 md:gap-12 lg:gap-16 md:items-center">
             <div className="order-2 md:order-1 min-w-0 max-w-3xl">
               <div className="flex items-center gap-3 mb-3">
                 <img
@@ -209,22 +209,12 @@ export default function Home() {
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="serif text-xl sm:text-2xl md:text-[3.1rem] font-normal tracking-tight text-m3-on-surface leading-[1.2] md:leading-[1.1] mb-3 md:mb-5"
+                className="serif text-xl sm:text-2xl md:text-[2.5rem] lg:text-[2.75rem] font-normal tracking-tight text-m3-on-surface leading-[1.2] md:leading-[1.15] mb-3 md:mb-5"
               >
-                Eleven years leading product for{" "}
+                Eleven years leading product at{" "}
                 <strong className="font-bold">Cond&eacute; Nast</strong>
-                {" "}&mdash;{" "}
-                <strong className="font-bold">Vogue</strong>,{" "}
-                <strong className="font-bold">GQ</strong>,{" "}
-                <strong className="font-bold">Wired</strong>,{" "}
-                <strong className="font-bold">Cond&eacute; Nast Traveller</strong>,{" "}
-                <strong className="font-bold">Architectural Digest</strong>
-                {" "}&mdash; plus{" "}
-                <strong className="font-bold">Newsweek</strong> and{" "}
-                <strong className="font-bold">Metro World News</strong>, and
-                now in talks with{" "}
-                <strong className="font-bold">The New Times</strong>. I
-                design, build, and ship my own &mdash; in public.
+                {" "}&mdash; Vogue, GQ, Wired. Now I design, build, and ship
+                my own &mdash; in public.
               </motion.h1>
               <motion.p
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
@@ -246,6 +236,9 @@ export default function Home() {
                 </a>
                 .
               </motion.p>
+              <p className="text-xs text-m3-on-surface-variant/70 italic mb-4 md:mb-6">
+                Also now in early talks with The New Times.
+              </p>
 
               <motion.div
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
@@ -279,7 +272,7 @@ export default function Home() {
             >
               <TiltCard
                 max={4}
-                className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface"
+                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface"
               >
                 <img
                   src="/swami-guru-desk.webp"
