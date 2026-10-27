@@ -128,17 +128,6 @@ export const BUILDS: Build[] = [
     },
   },
   {
-    name: "builtbyswami.com",
-    status: "Live",
-    what: "A daily-publishing tech platform: the site, the daily brief, the newsletter and the social cards, all run from one repo. The daily outgrew it and now runs as its own title at longpress.news.",
-    constraint:
-      "Publish every day from day one. The site had to be finished enough to carry a daily habit before it was finished enough to look right.",
-    shipped: "Publishing daily since 12 July 2026",
-    stack: "React, TypeScript, Vite, Tailwind, Vercel. GA4 and GTM.",
-    url: "https://www.builtbyswami.com",
-    noteSlug: "why-i-built-builtbyswami-from-scratch",
-  },
-  {
     name: "Free Word Tool",
     status: "Live",
     what: "A writing utility: readability scoring, reading and speaking time, platform character limits. Runs entirely in your browser, nothing leaves the page.",

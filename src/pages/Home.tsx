@@ -4,6 +4,7 @@
  */
 
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -20,7 +21,19 @@ import { getLatestNotes, formatNoteDate } from "../data/notes";
 import { BUILDS } from "../data/builds";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import Reveal from "../components/Reveal";
+import CountUp from "../components/CountUp";
+import TiltCard from "../components/TiltCard";
 import { usePageSeo } from "../hooks/usePageSeo";
+
+/** Screenshot for the Builds teaser, keyed by exact build name. Only the
+ *  three with a usable phone-frame shot on hand get one — the rest keep the
+ *  plain card rather than show a placeholder. */
+const BUILD_SHOT: Record<string, string> = {
+  "Long Press": "/builds/longpress.webp",
+  "Free Word Tool": "/builds/freewordtool.webp",
+  "अड्डा — Adda": "/builds/adda.webp",
+};
 
 /** Vignette + grain + cursor-spotlight + sparkles stack shared by the
  * standard "Today's Five" rail cards and the featured hero card, so the two
@@ -85,10 +98,10 @@ function CardArtOverlay() {
  *  can't drift apart — they're the same three facts twice. */
 const HOUSES = ["Condé Nast", "Newsweek", "Metro World News"];
 const TITLES = ["Vogue", "GQ", "Wired", "Condé Nast Traveller", "Architectural Digest", "Vanity Fair", "Glamour", "Allure", "Pitchfork"];
-const METRICS: [string, string][] = [
-  ["20", "brand launches"],
-  ["5", "continents since 2015"],
-  ["$20M", "peak year"],
+const METRICS: { to: number; prefix?: string; suffix?: string; label: string }[] = [
+  { to: 20, label: "brand launches" },
+  { to: 5, label: "continents since 2015" },
+  { to: 20, prefix: "$", suffix: "M", label: "peak year" },
 ];
 
 /** Compressed one-line summaries of the five fixed-scope offers on
@@ -144,6 +157,7 @@ const CONSULTING_OFFERS: {
 export default function Home() {
   // Six is the ceiling; the section header links to /builds for the rest.
   const homeBuilds = BUILDS.slice(0, 6);
+  const shouldReduceMotion = useReducedMotion();
 
   usePageSeo("home");
 
@@ -185,18 +199,32 @@ export default function Home() {
             <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
               build · ship · repeat
             </span>
-            <h1 className="display text-[1.9rem] md:text-[3.15rem] font-extrabold tracking-tighter text-m3-on-surface leading-[1.05] mb-5">
+            <motion.h1
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="serif text-[2rem] md:text-[3.4rem] font-medium tracking-tight text-m3-on-surface leading-[1.08] mb-5"
+            >
               I spent eleven years leading product for global publishing
               brands. Now I design, build, and ship my own &mdash; in public.
-            </h1>
-            <p className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl">
+            </motion.h1>
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl"
+            >
               Product consulting for publishers and content-driven teams making
               the hard moves &mdash; site audits, new markets, replatforms, AI in
               the workflow. Plus build notes from what I ship solo, and the daily tech news
               over at Long Press.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
             <a
               href="https://longpress.news"
               target="_blank"
@@ -213,7 +241,7 @@ export default function Home() {
             >
               Work with me <ArrowUpRight className="w-4 h-4" />
             </Link>
-            </div>
+            </motion.div>
             <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
               Currently building{" "}
               <a
@@ -237,13 +265,16 @@ export default function Home() {
         <section className="bg-m3-on-surface text-m3-surface px-6 md:px-14 py-6 md:py-7 border-b border-m3-outline/10">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-5 md:gap-10">
             <div className="flex flex-wrap gap-x-8 gap-y-3 shrink-0">
-              {METRICS.map(([value, label]) => (
-                <div key={value} className="flex items-baseline gap-2.5">
-                  <span className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-primary-container leading-none">
-                    {value}
-                  </span>
+              {METRICS.map((m) => (
+                <div key={m.label} className="flex items-baseline gap-2.5">
+                  <CountUp
+                    to={m.to}
+                    prefix={m.prefix}
+                    suffix={m.suffix}
+                    className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-primary-container leading-none tabular-nums"
+                  />
                   <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-80">
-                    {label}
+                    {m.label}
                   </span>
                 </div>
               ))}
@@ -290,7 +321,8 @@ export default function Home() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb, covers, gets }, i) => (
-                <div key={name} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col hover:border-m3-primary/30 hover:shadow-xl transition-all ${i === 0 ? "sm:col-span-2 lg:col-span-4" : ""}`}>
+              <Reveal key={name} index={i} className={i === 0 ? "sm:col-span-2 lg:col-span-4" : ""}>
+                <TiltCard max={3} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col h-full hover:border-m3-primary/30 hover:shadow-xl transition-all`}>
                   <span className="absolute top-3 right-4 font-mono text-[26px] font-bold text-m3-outline/10 tabular-nums leading-none select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -337,7 +369,8 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                </div>
+                </TiltCard>
+              </Reveal>
               ))}
             </div>
             <div className="mt-8 flex justify-center">
@@ -388,41 +421,55 @@ export default function Home() {
               homeBuilds.length === 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"
             }`}
           >
-            {homeBuilds.map((build) => {
+            {homeBuilds.map((build, bi) => {
               // Not everything shipped has somewhere to go — the task engine was
               // never published. Those cards point at the write-up instead of a
               // dead "Open it", which is why they can be shown at all.
+              const shot = BUILD_SHOT[build.name];
               const cardClass =
-                "group bg-m3-surface-variant/40 rounded-[24px] border border-m3-outline/5 p-6 flex flex-col gap-3 hover:bg-m3-surface hover:border-m3-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all";
+                "group bg-m3-surface-variant/40 rounded-[24px] border border-m3-outline/5 overflow-hidden flex flex-col hover:bg-m3-surface hover:border-m3-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all h-full";
 
               const inner = (
                 <>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary">
-                    {build.status}
-                  </span>
-                  <span className="display text-lg font-extrabold tracking-tight text-m3-on-surface">
-                    {build.name}
-                  </span>
-                  <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium line-clamp-3">
-                    {build.what}
-                  </span>
-                  <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-1.5 transition-all">
-                    {build.url ? (
-                      <>
-                        Open it <ArrowUpRight className="w-3.5 h-3.5" />
-                      </>
-                    ) : (
-                      <>
-                        How it was built <ArrowRight className="w-3.5 h-3.5" />
-                      </>
-                    )}
-                  </span>
+                  {shot && (
+                    <div className="relative aspect-[16/10] overflow-hidden bg-m3-on-surface shrink-0">
+                      <img
+                        src={shot}
+                        alt={`${build.name} screenshot`}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-m3-on-surface/50 via-transparent to-transparent" />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col gap-3 flex-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary">
+                      {build.status}
+                    </span>
+                    <span className="display text-lg font-extrabold tracking-tight text-m3-on-surface">
+                      {build.name}
+                    </span>
+                    <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium line-clamp-3">
+                      {build.what}
+                    </span>
+                    <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-1.5 transition-all">
+                      {build.url ? (
+                        <>
+                          Open it <ArrowUpRight className="w-3.5 h-3.5" />
+                        </>
+                      ) : (
+                        <>
+                          How it was built <ArrowRight className="w-3.5 h-3.5" />
+                        </>
+                      )}
+                    </span>
+                  </div>
                 </>
               );
 
               return build.url ? (
+                <Reveal key={build.name} index={bi}>
                 <a
-                  key={build.name}
                   href={build.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -430,14 +477,16 @@ export default function Home() {
                 >
                   {inner}
                 </a>
+                </Reveal>
               ) : (
+                <Reveal key={build.name} index={bi}>
                 <Link
-                  key={build.name}
                   to={build.noteSlug ? `/notes/${build.noteSlug}` : "/builds"}
                   className={cardClass}
                 >
                   {inner}
                 </Link>
+                </Reveal>
               );
             })}
           </div>

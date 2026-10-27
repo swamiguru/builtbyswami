@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
+import { motion, AnimatePresence, useScroll, useSpring, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   ArrowUp,
@@ -22,7 +22,35 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { TestimonialsSection } from "../components/Testimonials";
+import Reveal from "../components/Reveal";
+import CountUp from "../components/CountUp";
 import { usePageSeo } from "../hooks/usePageSeo";
+
+/** Parses a clean numeric stat string ("$20M+", "30%+", "~11%", "100%") into
+ *  CountUp's prefix/to/suffix shape. Returns null for anything with a space
+ *  or other non-numeric tail ("~1 week") — those render as static text
+ *  rather than force an animation onto a value that isn't really a count. */
+function parseMetric(raw: string): { prefix: string; to: number; suffix: string } | null {
+  const m = raw.match(/^(\$|~)?(\d+(?:\.\d+)?)([%+]|[A-Z]\+?)?$/);
+  if (!m) return null;
+  const [, prefix = "", num, suffix = ""] = m;
+  const to = parseFloat(num);
+  if (to < 2) return null; // 0→1 reads as a glitch, not a count
+  return { prefix, to, suffix };
+}
+
+function StatValue({ value, className }: { value: string; className?: string }) {
+  const parsed = parseMetric(value);
+  if (!parsed) return <span className={className}>{value}</span>;
+  return (
+    <CountUp
+      to={parsed.to}
+      prefix={parsed.prefix}
+      suffix={parsed.suffix}
+      className={`${className ?? ""} tabular-nums`}
+    />
+  );
+}
 
 /** Animated internal link, for the one CTA on this page (closing "Work with
  *  me") that routes within the app rather than out to mailto/LinkedIn/a PDF. */
@@ -43,6 +71,10 @@ interface ExperienceItem {
   website: string;
   context?: string;
   current?: boolean;
+  /** One-sentence "Bottom line →" verdict for this era — the single result a
+   *  skimming reader should walk away with, set in the display serif above
+   *  the detail cards. */
+  bottomLine: string;
   /** Older roles render their detail as a compact list rather than a card
    *  grid — depth should decay with recency the way a good CV tapers. */
   condensed?: boolean;
@@ -66,6 +98,7 @@ const EXPERIENCE: ExperienceItem[] = [
     website: "https://www.builtbyswami.com",
     context: "Solo, AI-native product building — strategy through shipped code",
     current: true,
+    bottomLine: "Three products shipped solo, a daily publication running on its own domain, and the discipline to cut scope mid-build.",
     impact: [
       "Shipped three live products solo — BuiltBySwami.com, Free Word Tool and Adda.",
       "Took a full task-management engine from empty repo to working app in 24 hours.",
@@ -108,6 +141,7 @@ const EXPERIENCE: ExperienceItem[] = [
     period: "May 2022 – Apr 2026",
     website: "https://www.condenast.com",
     context: "Vogue · GQ · Wired · Condé Nast Traveller · Architectural Digest — US, EMEA, LATAM, APAC, Middle East",
+    bottomLine: "$20M+ in net-new revenue across five brand launches, a two-person team I hired and led, and 50% faster time-to-market with AI in the workflow.",
     portfolio: {
       label: "Portfolio 2024–26 · 14 projects, 10+ markets, 6 new revenue lines",
       themes: [
@@ -174,6 +208,7 @@ const EXPERIENCE: ExperienceItem[] = [
     period: "Oct 2020 – Apr 2022",
     website: "https://www.gq.com",
     context: "Promoted to Senior Product Manager, May 2022",
+    bottomLine: "Owned the roadmap for 10 global GQ properties and replatformed all of them without losing the audience.",
     impact: [
       "Owned the product roadmap for GQ's 10 global digital properties.",
       "Drove a 30% audience lift and $500K incremental revenue.",
@@ -212,6 +247,7 @@ const EXPERIENCE: ExperienceItem[] = [
     condensed: true,
     website: "https://www.newsweek.com",
     context: "Digital properties reaching 50M+ monthly unique visitors",
+    bottomLine: "A full CMS and front-end replatform at 50M+ monthly uniques, with organic traffic back within a week.",
     impact: [
       "Owned the roadmap for platforms serving 50M+ monthly unique visitors.",
       "Drove a 17% traffic lift through the Newsgeek brand redesign.",
@@ -441,6 +477,7 @@ export default function About() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const skillsSectionRef = useRef<HTMLDivElement>(null);
   const workSectionRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const { scrollYProgress: workScrollProgressRaw } = useScroll({
     target: workSectionRef,
@@ -452,6 +489,34 @@ export default function About() {
     damping: 30,
     restDelta: 0.001
   });
+
+  // Scroll-spy for the era rail: tracks which EXPERIENCE card currently sits
+  // in the upper band of the viewport, the way Clint Balcom's sticky-rail CV
+  // does. Era cards register themselves into eraRefs by index on mount; the
+  // observer's rootMargin biases toward the top third so the active marker
+  // changes right as a new era's header crosses into reading position,
+  // rather than only once the card is fully visible.
+  const eraRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeEra, setActiveEra] = useState(0);
+
+  useEffect(() => {
+    const nodes = eraRefs.current.filter((n): n is HTMLDivElement => !!n);
+    if (nodes.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length === 0) return;
+        const topMost = visible.reduce((a, b) => (a.boundingClientRect.top < b.boundingClientRect.top ? a : b));
+        const idx = Number((topMost.target as HTMLElement).dataset.eraIndex);
+        if (!Number.isNaN(idx)) setActiveEra(idx);
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+
+    nodes.forEach((n) => observer.observe(n));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -581,8 +646,8 @@ export default function About() {
                 <span className="font-display text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em] md:tracking-[0.3em] text-m3-primary mb-4 md:mb-6 block">
                   <span className="hidden md:inline">Senior Product Leader · </span>AI-Native Product
                 </span>
-                <span className="display font-medium text-2xl md:text-[2.75rem] block mb-6 leading-[1.15] tracking-tight text-m3-on-surface">
-                  I turn complex platforms into <span className="text-m3-primary font-bold px-2 bg-m3-primary-container/30 rounded-lg">growth engines</span> — lifting engagement, accelerating revenue, and shipping at half the time-to-market.
+                <span className="serif font-medium text-[1.65rem] md:text-[2.9rem] block mb-6 leading-[1.15] tracking-tight text-m3-on-surface">
+                  I turn complex platforms into <span className="text-m3-primary italic px-1 bg-m3-primary-container/30 rounded-lg">growth engines</span> — lifting engagement, accelerating revenue, and shipping at half the time-to-market.
                 </span>
                 <p className="text-sm font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
                   Across Vogue, GQ, Wired, Condé Nast Traveller, Architectural Digest and Newsweek — including new brand launches in the Middle East and Germany.
@@ -621,7 +686,7 @@ export default function About() {
                   key={i}
                   className={`px-4 py-6 flex flex-col items-center justify-center text-center ${stat.container} border-m3-outline/5 border-t lg:border-t-0 ${i % 2 === 0 ? "border-r" : ""} ${i < 3 ? "lg:border-r" : "lg:border-r-0"}`}
                 >
-                  <span className={`display text-3xl md:text-4xl font-extrabold tracking-tighter ${stat.text}`}>{stat.val}</span>
+                  <StatValue value={stat.val} className={`display text-3xl md:text-4xl font-extrabold tracking-tighter ${stat.text}`} />
                   <span className={`font-display text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-60 mt-1.5 ${stat.text}`}>{stat.label}</span>
                 </div>
               ))}
@@ -630,7 +695,13 @@ export default function About() {
         </div>
 
         {/* ============ EXPERIENCE ============ */}
-        <section id="work" ref={workSectionRef} className="border-b border-m3-outline/10 flex flex-col shrink-0 bg-m3-surface overflow-hidden relative">
+        {/* overflow-hidden deliberately dropped from this section: it was
+            clipping nothing visible but, as an overflow-hidden ancestor that
+            isn't itself the scrolling container, it silently breaks
+            position:sticky for both the progress bar and the era rail below
+            — the sticky element falls back to its static flow position
+            instead of pinning to the viewport. */}
+        <section id="work" ref={workSectionRef} className="border-b border-m3-outline/10 flex flex-col shrink-0 bg-m3-surface relative">
           <div className="sticky top-0 left-0 right-0 h-1 z-40 pointer-events-none">
             <motion.div
               style={{ scaleX: workScrollProgress, transformOrigin: "0%" }}
@@ -641,20 +712,64 @@ export default function About() {
             <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
               Experience
             </span>
-            <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface">
+            <h2 className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface">
               Professional trajectory
             </h2>
           </div>
 
-          <div className="flex-1 space-y-8 md:space-y-10 p-5 md:p-10 lg:p-12 pt-8 md:pt-8">
+          <div className="flex-1 lg:grid lg:grid-cols-[180px_1fr] lg:gap-6 xl:gap-10 p-5 md:p-10 lg:p-12 pt-8 md:pt-8">
+            {/* Era rail — sticky nav, scroll-spy driven. Hidden below lg: four
+                full headers already give a mobile reader the same orientation
+                a rail would, and a second nav column has no room there. */}
+            <nav aria-label="Career eras" className="hidden lg:block">
+              <div className="sticky top-28 flex flex-col gap-1">
+                {EXPERIENCE.map((exp, i) => {
+                  const isActive = i === activeEra;
+                  const year = exp.period.match(/\d{4}/)?.[0] ?? exp.period;
+                  return (
+                    <a
+                      key={exp.company + exp.period}
+                      href={`#era-${i}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        eraRefs.current[i]?.scrollIntoView({
+                          behavior: shouldReduceMotion ? "auto" : "smooth",
+                          block: "start",
+                        });
+                      }}
+                      className={`group relative pl-5 py-2.5 border-l-2 transition-colors ${
+                        isActive ? "border-m3-primary" : "border-m3-outline/15 hover:border-m3-outline/40"
+                      }`}
+                    >
+                      <span
+                        className={`absolute left-[-5px] top-3.5 w-2 h-2 rounded-full transition-colors ${
+                          isActive ? "bg-m3-primary" : "bg-m3-outline/30 group-hover:bg-m3-outline/60"
+                        }`}
+                      />
+                      <span className={`block font-mono text-[11px] font-bold tracking-wide ${isActive ? "text-m3-primary" : "text-m3-on-surface-variant/60"}`}>
+                        {year}
+                      </span>
+                      <span className={`block font-display text-[13px] font-bold leading-snug mt-0.5 ${isActive ? "text-m3-on-surface" : "text-m3-on-surface-variant"}`}>
+                        {exp.company}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </nav>
+
+            <div className="space-y-8 md:space-y-10 min-w-0">
             {EXPERIENCE.map((exp, i) => (
               <motion.div
                 key={i}
+                id={`era-${i}`}
+                data-era-index={i}
+                ref={(el) => { eraRefs.current[i] = el; }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5 }}
-                className={`rounded-[28px] md:rounded-[36px] p-6 md:p-10 border transition-all ${
+                className={`scroll-mt-28 rounded-[28px] md:rounded-[36px] p-6 md:p-10 border transition-all ${
                   exp.current
                     ? "bg-m3-primary-container/25 border-m3-primary/25 shadow-md"
                     : "bg-m3-surface-variant/40 border-m3-outline/5 hover:bg-m3-surface hover:shadow-xl"
@@ -704,6 +819,18 @@ export default function About() {
                     </span>
                   </div>
                 </div>
+
+                {/* Bottom line — the one-sentence verdict a skimming reader
+                    should leave with, set apart from the detail cards below
+                    in the display serif. */}
+                <p className="mb-6 flex gap-3 items-baseline">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-m3-primary/50 shrink-0">
+                    Bottom line&nbsp;→
+                  </span>
+                  <span className="serif text-lg md:text-xl font-medium leading-snug text-m3-on-surface">
+                    {exp.bottomLine}
+                  </span>
+                </p>
 
                 {/* Impact — 4 across at desktop so it reads as one band */}
                 <div className="bg-m3-surface rounded-[20px] p-5 md:p-6 border border-m3-outline/10 shadow-sm mb-6">
@@ -771,6 +898,7 @@ export default function About() {
                 </div>
               </motion.div>
             ))}
+            </div>
           </div>
         </section>
 
@@ -814,9 +942,7 @@ export default function About() {
                   ["~11%", "ad revenue per visit"],
                 ].map(([metric, label]) => (
                   <div key={label}>
-                    <div className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface">
-                      {metric}
-                    </div>
+                    <StatValue value={metric} className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface" />
                     <div className="mt-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/70 leading-snug">
                       {label}
                     </div>
@@ -862,9 +988,7 @@ export default function About() {
                   ["50M+", "monthly uniques at Newsweek"],
                 ].map(([metric, label]) => (
                   <div key={label}>
-                    <div className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface">
-                      {metric}
-                    </div>
+                    <StatValue value={metric} className="display text-2xl md:text-3xl font-extrabold tracking-tighter text-m3-on-surface" />
                     <div className="mt-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/70 leading-snug">
                       {label}
                     </div>
@@ -946,7 +1070,7 @@ export default function About() {
             <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-primary/60 block mb-4">
               Point of View
             </span>
-            <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter leading-[1.05] mb-5">
+            <h2 className="serif text-3xl md:text-5xl font-medium leading-[1.05] mb-5">
               The barrier between idea and execution has collapsed
             </h2>
             <p className="text-base md:text-lg font-medium leading-relaxed opacity-90 mb-8 max-w-2xl">
