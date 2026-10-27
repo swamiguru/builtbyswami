@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  /* Editorial display serif — masthead-weight headlines and era markers on
+     the proof-led sections (homepage hero, About timeline). Fraunces has a
+     wide optical-size axis, so one family covers both a 3rem hero line and
+     a small italic eyebrow without feeling like two different fonts. Used
+     sparingly: body copy and UI chrome stay on Outfit/Inter. */
+  --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
   
   /* Material 3 Tonal Palette - Expressive Green/Teal */
   --color-m3-primary: #006D3B;
@@ -72,6 +78,29 @@
 
 @utility display { @apply font-display; }
 @utility mono { @apply font-mono; }
+@utility serif { @apply font-serif; }
+
+/* TiltCard perspective container + grain texture for section bands behind
+   serif pull-quotes. Kept minimal — the tilt itself is a JS transform, this
+   just sets up the 3D context so it doesn't flatten the rotation. */
+@utility tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@utility bg-grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+  }
+}
 
 /* M3 Elevation (Tonal) */
 @utility m3-elevation-1 {
