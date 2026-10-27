@@ -229,10 +229,12 @@ export default function Home() {
                 transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="text-sm sm:text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-4 md:mb-7 max-w-2xl"
               >
-                Product consulting for publishers &mdash; site audits for SEO,
-                audience engagement, revenue opportunities; launching brands
-                into new markets; CMS migrations; AI workflows. Plus the
-                daily tech news over at{" "}
+                Product consulting for publishers &mdash; site audits, unlock
+                revenue opportunities, boost audience engagement, launch
+                brands into new markets, CMS migrations, AI workflows for
+                newsrooms.
+                <br className="hidden sm:block" /> Plus the daily tech news
+                over at{" "}
                 <a
                   href="https://longpress.news"
                   target="_blank"
