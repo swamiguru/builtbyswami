@@ -158,6 +158,32 @@ const CONSULTING_OFFERS: {
   },
 ];
 
+/** Rotating accent per consulting-offer card (and reused by a couple of
+ *  other numbered sections) so the grid doesn't read as one monochrome
+ *  sage block — cycles through the three M3 tonal families that were
+ *  already defined but barely used anywhere outside the primary green. */
+const OFFER_ACCENTS = ["primary", "tertiary", "secondary", "primary", "tertiary"] as const;
+const ACCENT_STYLES: Record<(typeof OFFER_ACCENTS)[number], { tile: string; ghost: string; cardBorderHover: string; badge: string }> = {
+  primary: {
+    tile: "bg-m3-primary text-m3-on-primary",
+    ghost: "text-m3-primary/20",
+    cardBorderHover: "hover:border-m3-primary/50",
+    badge: "bg-m3-primary text-m3-on-primary",
+  },
+  tertiary: {
+    tile: "bg-m3-tertiary text-m3-on-tertiary",
+    ghost: "text-m3-tertiary/25",
+    cardBorderHover: "hover:border-m3-tertiary/50",
+    badge: "bg-m3-tertiary text-m3-on-tertiary",
+  },
+  secondary: {
+    tile: "bg-m3-secondary text-m3-on-secondary",
+    ghost: "text-m3-secondary/30",
+    cardBorderHover: "hover:border-m3-secondary/50",
+    badge: "bg-m3-secondary text-m3-on-secondary",
+  },
+};
+
 export default function Home() {
   // Six is the ceiling; the section header links to /builds for the rest.
   const homeBuilds = BUILDS.slice(0, 6);
@@ -387,7 +413,7 @@ export default function Home() {
                     to={m.to}
                     prefix={m.prefix}
                     suffix={m.suffix}
-                    className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-primary-container leading-none tabular-nums"
+                    className="display text-2xl md:text-4xl font-black tracking-tighter text-m3-primary-container leading-none tabular-nums"
                   />
                   <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-80">
                     {m.label}
@@ -417,13 +443,15 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-mono text-[11px] font-bold text-m3-primary/50">01</span>
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-primary text-m3-on-primary font-mono text-[11px] font-bold shrink-0">
+                    01
+                  </span>
                   <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary">
                     what I do for clients
                   </span>
                 </div>
-                <h2 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
+                <h2 className="display text-2xl md:text-4xl font-black tracking-tighter text-m3-on-surface leading-[1.05]">
                   Product consulting for publishers and content-driven teams
                 </h2>
               </div>
@@ -436,16 +464,19 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb, covers, gets }, i) => (
+              {CONSULTING_OFFERS.map(({ icon: Icon, name, meta, blurb, covers, gets }, i) => {
+                const accent = OFFER_ACCENTS[i % OFFER_ACCENTS.length];
+                const a = ACCENT_STYLES[accent];
+                return (
               <Reveal key={name} index={i} className={i === 0 ? "sm:col-span-2 lg:col-span-4" : ""}>
-                <TiltCard max={3} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border border-m3-outline/5 p-5 flex flex-col h-full hover:border-m3-primary/30 hover:shadow-xl transition-all`}>
-                  <span className="absolute top-3 right-4 font-mono text-[26px] font-bold text-m3-outline/10 tabular-nums leading-none select-none">
+                <TiltCard max={3} className={`relative overflow-hidden bg-m3-surface rounded-[24px] border-2 border-m3-outline/10 p-5 flex flex-col h-full hover:shadow-xl transition-all ${a.cardBorderHover}`}>
+                  <span className={`absolute top-3 right-4 font-mono text-[32px] font-black tabular-nums leading-none select-none ${a.ghost}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className={covers ? "lg:grid lg:grid-cols-[1.4fr_1fr] lg:gap-10 lg:items-center" : "flex flex-col"}>
                     <div className="flex flex-col">
-                      <span className="w-10 h-10 rounded-[14px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center mb-3">
-                        <Icon className="w-5 h-5" strokeWidth={2.25} />
+                      <span className={`w-12 h-12 rounded-[16px] border-2 border-m3-outline/10 flex items-center justify-center mb-3 ${a.tile}`}>
+                        <Icon className="w-[22px] h-[22px]" strokeWidth={2.25} />
                       </span>
                       <h3 className={`font-display font-bold text-m3-on-surface leading-snug mb-1.5 ${covers ? "text-base md:text-lg" : "text-sm"}`}>
                         {name}
@@ -487,7 +518,8 @@ export default function Home() {
                   </div>
                 </TiltCard>
               </Reveal>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-8 flex justify-center">
               <Link
@@ -507,15 +539,17 @@ export default function Home() {
             closing fork ("the operator behind the builds"). The newsletter
             block that used to sit here was removed while the list is
             dormant; see git history to restore it. */}
-        <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t border-m3-outline/10">
+        <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t-4 border-m3-tertiary">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
-                <Hammer className="w-4 h-4" />
+              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-tertiary text-m3-on-tertiary flex items-center justify-center shrink-0">
+                <Hammer className="w-[18px] h-[18px]" />
               </span>
-              <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">02</span>
-                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
+              <span className="flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-tertiary text-m3-on-tertiary font-mono text-[11px] font-bold shrink-0">
+                  02
+                </span>
+                <span className="font-display text-sm md:text-base font-black uppercase tracking-[0.3em] text-m3-on-surface">
                   Builds
                 </span>
               </span>
@@ -543,7 +577,7 @@ export default function Home() {
               // dead "Open it", which is why they can be shown at all.
               const shot = BUILD_SHOT[build.name];
               const cardClass =
-                "group bg-m3-surface-variant/40 rounded-[24px] border border-m3-outline/5 overflow-hidden flex flex-col hover:bg-m3-surface hover:border-m3-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all h-full";
+                "group bg-m3-surface-variant/40 rounded-[24px] border-2 border-m3-outline/10 overflow-hidden flex flex-col hover:bg-m3-surface hover:border-m3-tertiary/50 hover:shadow-xl hover:-translate-y-1 transition-all h-full";
 
               const inner = (
                 <>
@@ -559,7 +593,7 @@ export default function Home() {
                     </div>
                   )}
                   <div className="p-3.5 sm:p-5 md:p-6 flex flex-col gap-2 md:gap-3 flex-1">
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-m3-primary">
+                    <span className="self-start inline-flex items-center gap-1 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-m3-on-tertiary bg-m3-tertiary rounded-full px-2 py-0.5">
                       {build.status}
                     </span>
                     <span className="display text-sm md:text-lg font-extrabold tracking-tight text-m3-on-surface">
@@ -609,15 +643,17 @@ export default function Home() {
         </section>
 
         {/* 06 — Notes */}
-        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t border-m3-outline/10">
+        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t-4 border-m3-secondary">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-[12px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
-                <BookOpen className="w-4 h-4" />
+              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-secondary text-m3-on-secondary flex items-center justify-center shrink-0">
+                <BookOpen className="w-[18px] h-[18px]" />
               </span>
-              <span className="flex items-baseline gap-2">
-                <span className="font-mono text-[11px] font-bold text-m3-on-surface-variant/40">03</span>
-                <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
+              <span className="flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-secondary text-m3-on-secondary font-mono text-[11px] font-bold shrink-0">
+                  03
+                </span>
+                <span className="font-display text-sm md:text-base font-black uppercase tracking-[0.3em] text-m3-on-surface">
                   Notes
                 </span>
               </span>
@@ -634,9 +670,9 @@ export default function Home() {
               <Link
                 key={note.slug}
                 to={`/notes/${note.slug}`}
-                className="group bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-primary/30 hover:shadow-xl transition-all"
+                className="group bg-m3-surface rounded-[28px] border-2 border-m3-outline/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-secondary/50 hover:shadow-xl transition-all"
               >
-                <div className="w-12 h-12 rounded-[16px] bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[16px] border-2 border-m3-outline/10 bg-m3-secondary text-m3-on-secondary flex items-center justify-center shrink-0">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -664,13 +700,15 @@ export default function Home() {
             it now names both, so the reader picks rather than guessing. */}
         <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-primary text-m3-on-primary">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-mono text-[11px] font-bold text-m3-on-primary/35">04</span>
-              <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/60">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-on-primary text-m3-primary font-mono text-[11px] font-bold shrink-0">
+                04
+              </span>
+              <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/70">
                 The operator behind the builds
               </span>
             </div>
-            <h2 className="display text-xl md:text-[1.75rem] font-bold tracking-tighter leading-[0.95] mb-5">
+            <h2 className="display text-2xl md:text-[2.1rem] font-black tracking-tighter leading-[0.95] mb-5">
               11 years, three global media companies, $20M+ scaled — now an AI product builder shipping solo from Bengaluru.
             </h2>
             <div className="flex flex-wrap items-center gap-3">
