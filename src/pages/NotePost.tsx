@@ -5,6 +5,7 @@
 
 import { useEffect, useMemo } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Clock } from "lucide-react";
@@ -12,6 +13,7 @@ import { NOTES_SORTED, getNote, formatNoteDate } from "../data/notes";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ScrollProgress from "../components/ScrollProgress";
+import Reveal from "../components/Reveal";
 import TableOfContents, {
   extractTocFromMarkdown,
   createMarkdownHeadingComponents,
@@ -42,6 +44,7 @@ export default function NotePost() {
     [note]
   );
   const markdownComponents = useMemo(() => createMarkdownHeadingComponents(), []);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (note) {
@@ -119,9 +122,14 @@ export default function NotePost() {
               <span>{formatNoteDate(note.date)}</span>
               <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {note.readMinutes} min read</span>
             </div>
-            <h1 className="display text-3xl md:text-5xl font-extrabold tracking-tighter text-m3-on-surface leading-[1.02] mb-6">
+            <motion.h1
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface leading-[1.08] mb-6"
+            >
               {note.title}
-            </h1>
+            </motion.h1>
             {(note.ctaUrl || note.videoUrl) && (
               <div className="flex flex-wrap items-center gap-3 mb-10">
                 {note.ctaUrl && (
@@ -166,32 +174,36 @@ export default function NotePost() {
             className="max-w-[820px] mx-auto px-6 md:px-14 pb-10 grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             {older ? (
-              <Link
-                to={`/notes/${older.slug}`}
-                className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2"
-              >
-                <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5">
-                  <ArrowLeft className="w-3.5 h-3.5" /> Previous · {formatNoteDate(older.date)}
-                </span>
-                <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
-                  {older.title}
-                </span>
-              </Link>
+              <Reveal index={0}>
+                <Link
+                  to={`/notes/${older.slug}`}
+                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2"
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5">
+                    <ArrowLeft className="w-3.5 h-3.5" /> Previous · {formatNoteDate(older.date)}
+                  </span>
+                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
+                    {older.title}
+                  </span>
+                </Link>
+              </Reveal>
             ) : (
               <div />
             )}
             {newer ? (
-              <Link
-                to={`/notes/${newer.slug}`}
-                className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2 md:items-end md:text-right"
-              >
-                <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5 md:flex-row-reverse">
-                  Next · {formatNoteDate(newer.date)} <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-                <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
-                  {newer.title}
-                </span>
-              </Link>
+              <Reveal index={1}>
+                <Link
+                  to={`/notes/${newer.slug}`}
+                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2 md:items-end md:text-right"
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5 md:flex-row-reverse">
+                    Next · {formatNoteDate(newer.date)} <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
+                    {newer.title}
+                  </span>
+                </Link>
+              </Reveal>
             ) : (
               <div />
             )}
