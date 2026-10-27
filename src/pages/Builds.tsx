@@ -15,13 +15,23 @@ import SiteFooter from "../components/SiteFooter";
 import Reveal from "../components/Reveal";
 import { usePageSeo } from "../hooks/usePageSeo";
 
-/** Screenshot per build, keyed by exact name — same assets and the same
- *  three builds that get one on the Home teaser, so a build's visual
- *  identity doesn't change between the two places it's shown. */
-const BUILD_SHOT: Record<string, string> = {
-  "Long Press": "/builds/longpress.webp",
-  "Free Word Tool": "/builds/freewordtool.webp",
-  "अड्डा — Adda": "/builds/adda.webp",
+/** Screenshots per build, keyed by exact name. The first shot in each list
+ *  is the same asset used on the Home teaser, so a build's primary image
+ *  doesn't change between the two places it's shown — the rest are extra
+ *  screens that only show up here, where there's room for more than one. */
+const BUILD_SHOTS: Record<string, string[]> = {
+  "Long Press": [
+    "/builds/longpress.webp",
+    "/builds/longpress-2.webp",
+    "/builds/longpress-3.webp",
+    "/builds/longpress-4.webp",
+  ],
+  "Free Word Tool": [
+    "/builds/freewordtool.webp",
+    "/builds/freewordtool-2.webp",
+    "/builds/freewordtool-3.webp",
+  ],
+  "अड्डा — Adda": ["/builds/adda.webp", "/builds/adda-2.webp"],
 };
 
 /**
@@ -77,20 +87,27 @@ export default function Builds() {
           <div className="flex flex-col gap-4 md:gap-5">
             {BUILDS.map((build, i) => {
               const note = noteFor(build.noteSlug);
-              const shot = BUILD_SHOT[build.name];
+              const shots = BUILD_SHOTS[build.name];
               return (
                 <Reveal key={build.name} index={i}>
                 <article
                   className="bg-m3-surface rounded-[28px] border border-m3-outline/5 overflow-hidden"
                 >
-                  {shot && (
-                    <div className="h-56 md:h-64 overflow-hidden bg-m3-surface-variant flex items-center justify-center">
-                      <img
-                        src={shot}
-                        alt=""
-                        loading="lazy"
-                        className="h-full w-auto object-contain py-5"
-                      />
+                  {shots && (
+                    <div className="flex gap-3 overflow-x-auto px-6 md:px-8 pt-6 md:pt-8 pb-2 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      {shots.map((shot, si) => (
+                        <div
+                          key={shot}
+                          className="shrink-0 w-[150px] md:w-[180px] h-64 md:h-80 overflow-hidden rounded-[18px] bg-m3-surface-variant snap-start"
+                        >
+                          <img
+                            src={shot}
+                            alt=""
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                      ))}
                     </div>
                   )}
                   <div className="p-6 md:p-8">
