@@ -158,22 +158,14 @@ const CONSULTING_OFFERS: {
   },
 ];
 
-/** Accent per consulting-offer card. First pass rotated three colors across
- *  all five cards (green/orange/teal) — too busy, read as decorative
- *  color-coding rather than a deliberate choice. Pulled back to a
- *  monochrome base (black tile, black ghost number, black border on
- *  hover) with color spent on exactly one card: the first, "start here"
- *  audit — so green reads as "this is the one," not as a repeating
- *  pattern. Closer to the aidils.com reference: mostly black/white, one
- *  color used on purpose. */
-const OFFER_ACCENTS = ["primary", "mono", "mono", "mono", "mono"] as const;
+/** Accent per consulting-offer card. Went through a 3-color rotation, then
+ *  a "one green card, rest monochrome" pass — both still had color. Full
+ *  black/white now: every card uses the same ink tile and border, and the
+ *  first ("start here") card is distinguished by layout (full-width span,
+ *  the extra tag row) rather than hue, matching a print-editorial system
+ *  where hierarchy comes from scale and weight, not color-coding. */
+const OFFER_ACCENTS = ["mono", "mono", "mono", "mono", "mono"] as const;
 const ACCENT_STYLES: Record<(typeof OFFER_ACCENTS)[number], { tile: string; ghost: string; cardBorderHover: string; badge: string }> = {
-  primary: {
-    tile: "bg-m3-primary text-m3-on-primary",
-    ghost: "text-m3-primary/20",
-    cardBorderHover: "hover:border-m3-primary/50",
-    badge: "bg-m3-primary text-m3-on-primary",
-  },
   mono: {
     tile: "bg-m3-on-surface text-m3-surface",
     ghost: "text-m3-on-surface/12",
@@ -190,7 +182,7 @@ export default function Home() {
   usePageSeo("home");
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
         {/* 01 — Nav */}
@@ -220,7 +212,7 @@ export default function Home() {
           />
           <motion.div
             aria-hidden="true"
-            className="hidden md:block absolute -bottom-20 -right-10 w-72 h-72 bg-m3-tertiary/10 rounded-full blur-3xl pointer-events-none"
+            className="hidden md:block absolute -bottom-20 -right-10 w-72 h-72 bg-m3-on-surface/5 rounded-full blur-3xl pointer-events-none"
             animate={shouldReduceMotion ? undefined : { x: [0, -24, 0], y: [0, 18, 0] }}
             transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -239,21 +231,21 @@ export default function Home() {
                 <img
                   src="/swami-guru-desk.webp"
                   alt="Swami Guru"
-                  className="md:hidden w-11 h-11 rounded-2xl object-cover border border-m3-outline/15 shrink-0 bg-m3-on-surface"
+                  className="md:hidden w-11 h-11 rounded-2xl object-cover grayscale contrast-110 border border-m3-outline/15 shrink-0 bg-m3-on-surface"
                 />
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
                   <span className="relative flex w-1.5 h-1.5">
-                    <span className="absolute inset-0 rounded-full bg-m3-primary animate-ping motion-reduce:hidden opacity-75" />
-                    <span className="relative w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                    <span className="absolute inset-0 rounded-full bg-m3-on-surface animate-ping motion-reduce:hidden opacity-75" />
+                    <span className="relative w-1.5 h-1.5 rounded-full bg-m3-on-surface" />
                   </span>
                   Taking new engagements
                 </span>
               </div>
               <div className="inline-flex items-center gap-2 bg-m3-on-surface rounded-lg pl-2.5 pr-3 py-1.5 mb-3 shadow-sm">
                 <span className="flex gap-1" aria-hidden="true">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f57]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#28c840]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-m3-surface/90" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-m3-surface/60" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-m3-surface/30" />
                 </span>
                 <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-surface flex items-center">
                   build &rarr; ship &rarr; repeat
@@ -364,7 +356,7 @@ export default function Home() {
 
               <TiltCard
                 max={4}
-                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface animate-[pulse-glow_4s_ease-in-out_infinite] motion-reduce:animate-none"
+                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface"
               >
                 <img
                   src="/swami-guru-desk.webp"
@@ -372,11 +364,7 @@ export default function Home() {
                   loading="eager"
                   className="w-full h-full object-cover grayscale contrast-110"
                 />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-m3-primary mix-blend-color opacity-25 pointer-events-none"
-                />
-                {/* Editor/terminal window chrome — traffic-light dots +
+                                {/* Editor/terminal window chrome — traffic-light dots +
                     a mono "file name" label, so the frame itself reads as
                     a piece of software, not just a photo in a rounded
                     box. Purely decorative. */}
@@ -384,9 +372,9 @@ export default function Home() {
                   aria-hidden="true"
                   className="absolute top-0 inset-x-0 flex items-center gap-2 px-4 py-2.5 bg-black/30 backdrop-blur-sm pointer-events-none"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
-                  <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
-                  <span className="w-2 h-2 rounded-full bg-[#28c840]" />
+                  <span className="w-2 h-2 rounded-full bg-white/90" />
+                  <span className="w-2 h-2 rounded-full bg-white/60" />
+                  <span className="w-2 h-2 rounded-full bg-white/30" />
                   <span className="font-mono text-[10px] text-white/70 ml-1.5 tracking-wide">
                     swami.webp &mdash; online
                   </span>
@@ -481,7 +469,7 @@ export default function Home() {
                       </h3>
                       <p className="text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant mb-2">
                         {meta}
-                        {i === 0 && <span className="text-m3-primary"> · start here</span>}
+                        {i === 0 && <span className="text-m3-on-surface-variant"> · start here</span>}
                       </p>
                       <p className={`text-m3-on-surface-variant leading-relaxed ${covers ? "text-sm max-w-2xl" : "text-[13px]"}`}>{blurb}</p>
                     </div>
@@ -494,7 +482,7 @@ export default function Home() {
                           {covers.map((c) => (
                             <span
                               key={c}
-                              className="text-[13px] font-bold text-m3-on-primary-container bg-m3-primary-container rounded-m3-full px-3 py-1.5"
+                              className="text-[13px] font-bold text-m3-on-surface bg-m3-surface-variant rounded-m3-full px-3 py-1.5"
                             >
                               {c}
                             </span>
@@ -591,7 +579,7 @@ export default function Home() {
                     </div>
                   )}
                   <div className="p-3.5 sm:p-5 md:p-6 flex flex-col gap-2 md:gap-3 flex-1">
-                    <span className="self-start inline-flex items-center gap-1 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-m3-on-tertiary bg-m3-tertiary rounded-full px-2 py-0.5">
+                    <span className="self-start inline-flex items-center gap-1 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-m3-surface bg-m3-on-surface rounded-full px-2 py-0.5">
                       {build.status}
                     </span>
                     <span className="display text-sm md:text-lg font-extrabold tracking-tight text-m3-on-surface">

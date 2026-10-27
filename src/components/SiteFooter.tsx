@@ -106,7 +106,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
       <div className="px-5 sm:px-8 md:px-12 py-3 md:py-3.5 border-t border-m3-outline/10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-between">
         <div className="flex items-center gap-3 sm:gap-4 text-center sm:text-left">
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-m3-primary animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-m3-on-surface animate-pulse" />
             <span className="font-display text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-m3-on-surface">
               Live — shipping daily
             </span>

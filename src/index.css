@@ -12,30 +12,31 @@
      sparingly: body copy and UI chrome stay on Outfit/Inter. */
   --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
   
-  /* Material 3 Tonal Palette - Green / Teal / Burnt Orange.
-     Secondary and tertiary used to be near-desaturated variants of the
-     primary green (a muted gray-green and a dark teal-blue) — technically
-     a three-color system, but they read as one color at a glance. Pushed
-     both toward genuinely distinct, saturated hues (a real teal, a real
-     burnt orange — the latter a deliberate nod to longpress.news' own
-     orange) so the badges/borders/tiles built on them actually land as
-     "bold and colorful" rather than three shades of sage. Containers and
-     "on-" pairings kept dark enough for white text at AA. */
-  --color-m3-primary: #006D3B;
-  --color-m3-on-primary: #FFFFFF;
-  --color-m3-primary-container: #95F7B2;
-  --color-m3-on-primary-container: #00210E;
+  /* Full monochrome. The site ran a green/teal/orange M3 tonal palette,
+     then pulled color back to one accent card, then to a handful of small
+     marks (logo, status dots, one card) — and the brand hue kept creeping
+     back in. These tokens now carry no hue at all: primary/secondary/
+     tertiary and their containers all resolve to the same black/white/
+     gray values as the base surface tokens below, so any class built on
+     them (bg-m3-primary, text-m3-secondary, etc.) renders as ink, not
+     color, even if a future edit reaches for one out of habit. Error
+     stays a true red — that's a functional UI convention, not a brand
+     accent, and shouldn't read as "just another gray state". */
+  --color-m3-primary: #19191A;
+  --color-m3-on-primary: #FDFDFC;
+  --color-m3-primary-container: #E7E7E5;
+  --color-m3-on-primary-container: #19191A;
 
-  --color-m3-secondary: #0A6F86;
-  --color-m3-on-secondary: #FFFFFF;
-  --color-m3-secondary-container: #BCEAF5;
-  --color-m3-on-secondary-container: #001F26;
+  --color-m3-secondary: #19191A;
+  --color-m3-on-secondary: #FDFDFC;
+  --color-m3-secondary-container: #E7E7E5;
+  --color-m3-on-secondary-container: #19191A;
 
-  --color-m3-tertiary: #A23D0A;
-  --color-m3-on-tertiary: #FFFFFF;
-  --color-m3-tertiary-container: #FFDBC7;
-  --color-m3-on-tertiary-container: #351000;
-  
+  --color-m3-tertiary: #19191A;
+  --color-m3-on-tertiary: #FDFDFC;
+  --color-m3-tertiary-container: #E7E7E5;
+  --color-m3-on-tertiary-container: #19191A;
+
   --color-m3-error: #BA1A1A;
   --color-m3-on-error: #FFFFFF;
   --color-m3-error-container: #FFDAD6;
@@ -62,11 +63,6 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 109, 59, 0.2)); }
-    50% { filter: drop-shadow(0 0 20px rgba(0, 109, 59, 0.4)); }
   }
 
   @keyframes sparkle-twinkle {
@@ -218,7 +214,7 @@
 }
 .prose-notes tbody td {
   padding: 0.85rem 1rem 0.85rem 0;
-  border-bottom: 1px solid rgba(113, 121, 113, 0.22);
+  border-bottom: 1px solid rgba(120, 120, 124, 0.22);
   vertical-align: top;
   font-weight: 450;
 }

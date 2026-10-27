@@ -567,7 +567,7 @@ export default function About() {
                   width={400}
                   height={400}
                   loading="eager"
-                  className="w-[72px] h-[72px] rounded-full object-cover shadow-sm ring-2 ring-m3-on-surface/25 shrink-0"
+                  className="w-[72px] h-[72px] rounded-full object-cover grayscale shadow-sm ring-2 ring-m3-on-surface/25 shrink-0"
                 />
                 <div className="min-w-0">
                   <h1 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface leading-none">
