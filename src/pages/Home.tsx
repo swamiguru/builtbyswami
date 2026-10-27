@@ -158,11 +158,15 @@ const CONSULTING_OFFERS: {
   },
 ];
 
-/** Rotating accent per consulting-offer card (and reused by a couple of
- *  other numbered sections) so the grid doesn't read as one monochrome
- *  sage block — cycles through the three M3 tonal families that were
- *  already defined but barely used anywhere outside the primary green. */
-const OFFER_ACCENTS = ["primary", "tertiary", "secondary", "primary", "tertiary"] as const;
+/** Accent per consulting-offer card. First pass rotated three colors across
+ *  all five cards (green/orange/teal) — too busy, read as decorative
+ *  color-coding rather than a deliberate choice. Pulled back to a
+ *  monochrome base (black tile, black ghost number, black border on
+ *  hover) with color spent on exactly one card: the first, "start here"
+ *  audit — so green reads as "this is the one," not as a repeating
+ *  pattern. Closer to the aidils.com reference: mostly black/white, one
+ *  color used on purpose. */
+const OFFER_ACCENTS = ["primary", "mono", "mono", "mono", "mono"] as const;
 const ACCENT_STYLES: Record<(typeof OFFER_ACCENTS)[number], { tile: string; ghost: string; cardBorderHover: string; badge: string }> = {
   primary: {
     tile: "bg-m3-primary text-m3-on-primary",
@@ -170,17 +174,11 @@ const ACCENT_STYLES: Record<(typeof OFFER_ACCENTS)[number], { tile: string; ghos
     cardBorderHover: "hover:border-m3-primary/50",
     badge: "bg-m3-primary text-m3-on-primary",
   },
-  tertiary: {
-    tile: "bg-m3-tertiary text-m3-on-tertiary",
-    ghost: "text-m3-tertiary/25",
-    cardBorderHover: "hover:border-m3-tertiary/50",
-    badge: "bg-m3-tertiary text-m3-on-tertiary",
-  },
-  secondary: {
-    tile: "bg-m3-secondary text-m3-on-secondary",
-    ghost: "text-m3-secondary/30",
-    cardBorderHover: "hover:border-m3-secondary/50",
-    badge: "bg-m3-secondary text-m3-on-secondary",
+  mono: {
+    tile: "bg-m3-on-surface text-m3-surface",
+    ghost: "text-m3-on-surface/12",
+    cardBorderHover: "hover:border-m3-on-surface/60",
+    badge: "bg-m3-on-surface text-m3-surface",
   },
 };
 
@@ -539,14 +537,14 @@ export default function Home() {
             closing fork ("the operator behind the builds"). The newsletter
             block that used to sit here was removed while the list is
             dormant; see git history to restore it. */}
-        <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t-4 border-m3-tertiary">
+        <section className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface border-t-4 border-m3-on-surface">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-tertiary text-m3-on-tertiary flex items-center justify-center shrink-0">
+              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-on-surface text-m3-surface flex items-center justify-center shrink-0">
                 <Hammer className="w-[18px] h-[18px]" />
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-tertiary text-m3-on-tertiary font-mono text-[11px] font-bold shrink-0">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-on-surface text-m3-surface font-mono text-[11px] font-bold shrink-0">
                   02
                 </span>
                 <span className="font-display text-sm md:text-base font-black uppercase tracking-[0.3em] text-m3-on-surface">
@@ -577,7 +575,7 @@ export default function Home() {
               // dead "Open it", which is why they can be shown at all.
               const shot = BUILD_SHOT[build.name];
               const cardClass =
-                "group bg-m3-surface-variant/40 rounded-[24px] border-2 border-m3-outline/10 overflow-hidden flex flex-col hover:bg-m3-surface hover:border-m3-tertiary/50 hover:shadow-xl hover:-translate-y-1 transition-all h-full";
+                "group bg-m3-surface-variant/40 rounded-[24px] border-2 border-m3-outline/10 overflow-hidden flex flex-col hover:bg-m3-surface hover:border-m3-on-surface/50 hover:shadow-xl hover:-translate-y-1 transition-all h-full";
 
               const inner = (
                 <>
@@ -643,14 +641,14 @@ export default function Home() {
         </section>
 
         {/* 06 — Notes */}
-        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t-4 border-m3-secondary">
+        <section id="notes" className="px-6 md:px-14 py-12 md:py-16 bg-m3-surface-variant border-t-4 border-m3-on-surface">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-8">
             <div className="flex items-center gap-3">
-              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-secondary text-m3-on-secondary flex items-center justify-center shrink-0">
+              <span className="w-10 h-10 rounded-[14px] border-2 border-m3-outline/10 bg-m3-on-surface text-m3-surface flex items-center justify-center shrink-0">
                 <BookOpen className="w-[18px] h-[18px]" />
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-secondary text-m3-on-secondary font-mono text-[11px] font-bold shrink-0">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-on-surface text-m3-surface font-mono text-[11px] font-bold shrink-0">
                   03
                 </span>
                 <span className="font-display text-sm md:text-base font-black uppercase tracking-[0.3em] text-m3-on-surface">
@@ -670,9 +668,9 @@ export default function Home() {
               <Link
                 key={note.slug}
                 to={`/notes/${note.slug}`}
-                className="group bg-m3-surface rounded-[28px] border-2 border-m3-outline/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-secondary/50 hover:shadow-xl transition-all"
+                className="group bg-m3-surface rounded-[28px] border-2 border-m3-outline/10 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-6 hover:border-m3-on-surface/50 hover:shadow-xl transition-all"
               >
-                <div className="w-12 h-12 rounded-[16px] border-2 border-m3-outline/10 bg-m3-secondary text-m3-on-secondary flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-[16px] border-2 border-m3-outline/10 bg-m3-on-surface text-m3-surface flex items-center justify-center shrink-0">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
