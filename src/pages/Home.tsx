@@ -225,14 +225,20 @@ export default function Home() {
                   Taking new engagements
                 </span>
               </div>
-              <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-primary flex items-center gap-0.5 mb-3">
-                <Terminal className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 opacity-80" aria-hidden="true" />
-                build &rarr; ship &rarr; repeat
-                <span
-                  aria-hidden="true"
-                  className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-primary ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
-                />
-              </span>
+              <div className="inline-flex items-center gap-2 bg-m3-on-surface rounded-lg pl-2.5 pr-3 py-1.5 mb-3 shadow-sm">
+                <span className="flex gap-1" aria-hidden="true">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f57]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#28c840]" />
+                </span>
+                <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-primary-container flex items-center">
+                  build &rarr; ship &rarr; repeat
+                  <span
+                    aria-hidden="true"
+                    className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-primary-container ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
+                  />
+                </span>
+              </div>
               <motion.h1
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
