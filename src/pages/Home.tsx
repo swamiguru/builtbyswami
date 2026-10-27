@@ -181,7 +181,24 @@ export default function Home() {
         <section className="relative overflow-hidden px-6 md:px-14 pt-6 sm:pt-8 md:pt-14 pb-8 md:pb-14 bg-m3-surface-variant border-b border-m3-outline/10">
           <div
             aria-hidden="true"
+            className="absolute inset-0 opacity-[0.35] pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(var(--color-m3-outline) 1px, transparent 1px)",
+              backgroundSize: "22px 22px",
+              maskImage: "radial-gradient(60% 55% at 30% 20%, black, transparent)",
+              WebkitMaskImage: "radial-gradient(60% 55% at 30% 20%, black, transparent)",
+            }}
+          />
+          <div
+            aria-hidden="true"
             className="absolute -top-24 -left-20 w-80 h-80 bg-m3-primary/10 rounded-full blur-3xl pointer-events-none"
+          />
+          <motion.div
+            aria-hidden="true"
+            className="hidden md:block absolute -bottom-20 -right-10 w-72 h-72 bg-m3-tertiary/10 rounded-full blur-3xl pointer-events-none"
+            animate={shouldReduceMotion ? undefined : { x: [0, -24, 0], y: [0, 18, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
           />
           {/* Two-column at md+: copy on the left, a large framed portrait on
               the right — order-first/order-last flips that to photo-above-copy
@@ -201,7 +218,10 @@ export default function Home() {
                   className="md:hidden w-11 h-11 rounded-2xl object-cover border border-m3-outline/15 shrink-0 bg-m3-on-surface"
                 />
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                  <span className="relative flex w-1.5 h-1.5">
+                    <span className="absolute inset-0 rounded-full bg-m3-primary animate-ping motion-reduce:hidden opacity-75" />
+                    <span className="relative w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                  </span>
                   Taking new engagements
                 </span>
               </div>
@@ -326,6 +346,21 @@ export default function Home() {
                   aria-hidden="true"
                   className="absolute inset-0 bg-m3-primary mix-blend-color opacity-25 pointer-events-none"
                 />
+                {/* Editor/terminal window chrome — traffic-light dots +
+                    a mono "file name" label, so the frame itself reads as
+                    a piece of software, not just a photo in a rounded
+                    box. Purely decorative. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute top-0 inset-x-0 flex items-center gap-2 px-4 py-2.5 bg-black/30 backdrop-blur-sm pointer-events-none"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
+                  <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
+                  <span className="w-2 h-2 rounded-full bg-[#28c840]" />
+                  <span className="font-mono text-[10px] text-white/70 ml-1.5 tracking-wide">
+                    swami.webp &mdash; online
+                  </span>
+                </div>
               </TiltCard>
             </motion.div>
           </div>
