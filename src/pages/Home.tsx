@@ -15,6 +15,9 @@ import {
   Globe,
   Server,
   ScanSearch,
+  Code2,
+  Terminal,
+  Cpu,
 } from "lucide-react";
 import { trackCta } from "../lib/analytics";
 import { getLatestNotes, formatNoteDate } from "../data/notes";
@@ -202,8 +205,13 @@ export default function Home() {
                   Taking new engagements
                 </span>
               </div>
-              <span className="font-display text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-3">
-                build · ship · repeat
+              <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-primary flex items-center gap-0.5 mb-3">
+                <Terminal className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 opacity-80" aria-hidden="true" />
+                build &rarr; ship &rarr; repeat
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-primary ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
+                />
               </span>
               <motion.h1
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
@@ -267,11 +275,44 @@ export default function Home() {
               initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="hidden md:block order-2 w-full"
+              className="hidden md:block relative order-2 w-full"
             >
+              {/* Floating tech-stack chips. Gentle independent float per
+                  chip (different duration/delay) so they don't move in
+                  lockstep — reads as ambient, not a marquee. Purely
+                  decorative, so aria-hidden; disabled under
+                  prefers-reduced-motion like the rest of the hero. */}
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute -top-4 -right-5 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, -7, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Code2 className="w-3.5 h-3.5 text-m3-primary" />
+                TypeScript
+              </motion.div>
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute top-1/3 -left-6 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+              >
+                <Cpu className="w-3.5 h-3.5 text-m3-primary" />
+                AI-native
+              </motion.div>
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute -bottom-4 right-6 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+              >
+                <Terminal className="w-3.5 h-3.5 text-m3-primary" />
+                Shipped in public
+              </motion.div>
+
               <TiltCard
                 max={4}
-                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface"
+                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface animate-[pulse-glow_4s_ease-in-out_infinite] motion-reduce:animate-none"
               >
                 <img
                   src="/swami-guru-desk.webp"
