@@ -5,11 +5,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Clock, BookOpen, Search, X, Tag } from "lucide-react";
 import { NOTES_SORTED, formatNoteDate, getAllNoteTags, type Note } from "../data/notes";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ScrollProgress from "../components/ScrollProgress";
+import Reveal from "../components/Reveal";
 import { usePageSeo } from "../hooks/usePageSeo";
 
 const formatMonth = (key: string): string =>
@@ -91,6 +93,7 @@ export default function Notes() {
   }, [filteredNotes]);
 
   usePageSeo("notes");
+  const shouldReduceMotion = useReducedMotion();
 
   const isFiltered = Boolean(query.trim() || activeTag);
 
@@ -108,12 +111,22 @@ export default function Notes() {
               Build Notes
             </span>
           </div>
-          <h1 className="display text-3xl md:text-5xl font-extrabold uppercase tracking-tighter text-m3-on-surface max-w-2xl leading-[0.95]">
+          <motion.h1
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface max-w-2xl leading-[1.05]"
+          >
             The wiring behind the builds
-          </h1>
-          <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
+          </motion.h1>
+          <motion.p
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed"
+          >
             Build notes from shipping solo — the brief, the method, and what broke. Written after each thing goes live, while the decisions are still fresh.
-          </p>
+          </motion.p>
 
           {/* Search & Tag Filter Bar */}
           <div className="mt-8 flex flex-col gap-4">
@@ -198,29 +211,30 @@ export default function Notes() {
                   <h2 className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60">
                     {formatMonth(month)}
                   </h2>
-                  {items.map((n) => (
-                    <Link
-                      key={n.slug}
-                      to={`/notes/${n.slug}`}
-                      className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-3"
-                    >
-                      <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/60">
-                        <span className="text-m3-primary font-extrabold">#{n.tag}</span>
-                        <span>{formatNoteDate(n.date)}</span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" /> {n.readMinutes} min
+                  {items.map((n, i) => (
+                    <Reveal key={n.slug} index={i}>
+                      <Link
+                        to={`/notes/${n.slug}`}
+                        className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-3"
+                      >
+                        <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/60">
+                          <span className="text-m3-primary font-extrabold">#{n.tag}</span>
+                          <span>{formatNoteDate(n.date)}</span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5" /> {n.readMinutes} min
+                          </span>
+                        </div>
+                        <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface group-hover:text-m3-primary transition-colors">
+                          {n.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-2xl">
+                          {n.description}
+                        </p>
+                        <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                          Read <ArrowRight className="w-3.5 h-3.5" />
                         </span>
-                      </div>
-                      <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface group-hover:text-m3-primary transition-colors">
-                        {n.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-2xl">
-                        {n.description}
-                      </p>
-                      <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
-                        Read <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </Link>
+                      </Link>
+                    </Reveal>
                   ))}
                 </div>
               ))}

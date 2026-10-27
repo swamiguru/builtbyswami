@@ -5,13 +5,45 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, ArrowUpRight, Hammer } from "lucide-react";
 import { BUILDS } from "../data/builds";
 import { NOTES_SORTED } from "../data/notes";
 import SiteHeader from "../components/SiteHeader";
 import LongPressDeepDive from "../components/LongPressDeepDive";
 import SiteFooter from "../components/SiteFooter";
+import Reveal from "../components/Reveal";
 import { usePageSeo } from "../hooks/usePageSeo";
+
+/** Screenshots per build, keyed by exact name. The first shot in each list
+ *  is the same asset used on the Home teaser, so a build's primary image
+ *  doesn't change between the two places it's shown — the rest are extra
+ *  screens that only show up here, where there's room for more than one. */
+const BUILD_SHOTS: Record<string, string[]> = {
+  "Long Press": [
+    "/builds/longpress.webp",
+    "/builds/longpress-2.webp",
+    "/builds/longpress-3.webp",
+    "/builds/longpress-4.webp",
+  ],
+  "Free Word Tool": [
+    "/builds/freewordtool.webp",
+    "/builds/freewordtool-2.webp",
+    "/builds/freewordtool-3.webp",
+    "/builds/freewordtool-4.webp",
+  ],
+  "अड्डा — Adda": [
+    "/builds/adda.webp",
+    "/builds/adda-2.webp",
+    "/builds/adda-3.webp",
+    "/builds/adda-4.webp",
+  ],
+  "Task management engine": [
+    "/builds/taskmanager.webp",
+    "/builds/taskmanager-2.webp",
+    "/builds/taskmanager-3.webp",
+  ],
+};
 
 /**
  * Shipped solo.
@@ -24,6 +56,7 @@ import { usePageSeo } from "../hooks/usePageSeo";
  */
 export default function Builds() {
   usePageSeo("builds");
+  const shouldReduceMotion = useReducedMotion();
 
   const noteFor = (slug?: string) =>
     slug ? NOTES_SORTED.find((n) => n.slug === slug) : undefined;
@@ -41,25 +74,54 @@ export default function Builds() {
               Builds
             </span>
           </div>
-          <h1 className="display text-3xl md:text-5xl font-extrabold uppercase tracking-tighter text-m3-on-surface max-w-2xl leading-[0.95]">
+          <motion.h1
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface max-w-2xl leading-[1.05]"
+          >
             Shipped solo
-          </h1>
-          <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
+          </motion.h1>
+          <motion.p
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-xl leading-relaxed"
+          >
             Brief to production, single-handedly. AI tools as build partners
             rather than autocomplete. Each one had a constraint, and the
             constraint is the part worth reading.
-          </p>
+          </motion.p>
         </section>
 
         <section className="px-6 md:px-14 pb-12 flex-1">
           <div className="flex flex-col gap-4 md:gap-5">
-            {BUILDS.map((build) => {
+            {BUILDS.map((build, i) => {
               const note = noteFor(build.noteSlug);
+              const shots = BUILD_SHOTS[build.name];
               return (
+                <Reveal key={build.name} index={i}>
                 <article
-                  key={build.name}
-                  className="bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8"
+                  className="bg-m3-surface rounded-[28px] border border-m3-outline/5 overflow-hidden"
                 >
+                  {shots && (
+                    <div className="flex gap-3 overflow-x-auto px-6 md:px-8 pt-6 md:pt-8 pb-2 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      {shots.map((shot, si) => (
+                        <div
+                          key={shot}
+                          className="shrink-0 w-[150px] md:w-[180px] h-64 md:h-80 overflow-hidden rounded-[18px] bg-m3-surface-variant snap-start"
+                        >
+                          <img
+                            src={shot}
+                            alt=""
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="p-6 md:p-8">
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-4">
                     <h2 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
                       {build.name}
@@ -122,7 +184,9 @@ export default function Builds() {
                       </Link>
                     )}
                   </div>
+                  </div>
                 </article>
+                </Reveal>
               );
             })}
           </div>
@@ -133,7 +197,7 @@ export default function Builds() {
             down the page. */}
         <section className="px-6 md:px-14 py-8 md:py-10 bg-m3-primary text-m3-on-primary">
           <div className="max-w-3xl">
-            <h2 className="display text-xl md:text-[1.75rem] font-bold tracking-tighter leading-[1.05] mb-4">
+            <h2 className="serif text-xl md:text-[2rem] font-medium leading-[1.15] mb-4">
               I build working prototypes for teams who need to see the thing
               before committing engineering to it.
             </h2>
