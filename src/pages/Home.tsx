@@ -213,8 +213,9 @@ export default function Home() {
               >
                 Eleven years leading product at{" "}
                 <strong className="font-bold">Cond&eacute; Nast</strong>
-                {" "}&mdash; Vogue, GQ, Wired. Now I design, build, and ship
-                my own &mdash; in public.
+                {" "}&mdash; Vogue, GQ, Wired, CN Traveller, Architectural
+                Digest &mdash; plus Newsweek and Metro World News. Now I
+                design, build, and ship my own.
               </motion.h1>
               <motion.p
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
