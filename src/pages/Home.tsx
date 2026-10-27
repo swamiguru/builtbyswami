@@ -33,6 +33,7 @@ const BUILD_SHOT: Record<string, string> = {
   "Long Press": "/builds/longpress.webp",
   "Free Word Tool": "/builds/freewordtool.webp",
   "अड्डा — Adda": "/builds/adda.webp",
+  "Task management engine": "/builds/taskmanager.webp",
 };
 
 /** Vignette + grain + cursor-spotlight + sparkles stack shared by the
@@ -432,14 +433,14 @@ export default function Home() {
               const inner = (
                 <>
                   {shot && (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-m3-on-surface shrink-0">
+                    <div className="relative h-56 md:h-64 overflow-hidden bg-m3-on-surface shrink-0 flex items-center justify-center">
                       <img
                         src={shot}
                         alt={`${build.name} screenshot`}
                         loading="lazy"
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-m3-on-surface/50 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-m3-on-surface/50 via-transparent to-transparent pointer-events-none" />
                     </div>
                   )}
                   <div className="p-6 flex flex-col gap-3 flex-1">
