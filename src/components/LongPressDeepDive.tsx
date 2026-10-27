@@ -77,7 +77,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
     <div className="mb-6 rounded-[24px] overflow-hidden border border-m3-outline/10">
       {/* Result band */}
       <div className="bg-m3-on-surface text-m3-surface px-5 md:px-8 py-7 md:py-9">
-        <span className="font-display text-[10px] font-black uppercase tracking-[0.25em] text-m3-primary-container">
+        <span className="font-display text-[10px] font-black uppercase tracking-[0.25em] text-m3-surface">
           Long Press, by the numbers
         </span>
         <h3 className="display mt-2 text-xl md:text-2xl font-extrabold tracking-tight max-w-2xl">
@@ -87,7 +87,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
         <dl className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6">
           {metrics.map((m) => (
             <div key={m.label} className="border-t border-m3-surface/20 pt-3">
-              <dd className="display text-4xl md:text-5xl font-extrabold tracking-tighter text-m3-primary-container tabular-nums leading-none">
+              <dd className="display text-4xl md:text-5xl font-extrabold tracking-tighter text-m3-surface tabular-nums leading-none">
                 {m.value}
               </dd>
               <dt className="mt-2 text-xs md:text-[13px] font-medium text-m3-surface/70 leading-snug">
@@ -103,7 +103,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
         <div className="mt-3 grid md:grid-cols-3 gap-3">
           {value.map(({ icon: Icon, title, body }) => (
             <div key={title} className="rounded-[18px] bg-m3-surface/10 p-4">
-              <Icon className="w-4 h-4 text-m3-primary-container" />
+              <Icon className="w-4 h-4 text-m3-surface" />
               <p className="mt-2 text-sm font-bold">{title}</p>
               <p className="mt-1 text-[13px] leading-snug text-m3-surface/70 font-medium">
                 {body}
@@ -115,7 +115,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
 
       {/* Lens explorer */}
       <div className="bg-m3-surface-variant/60 px-5 md:px-8 py-6 md:py-8">
-        <span className="font-display text-[10px] font-black uppercase tracking-[0.25em] text-m3-primary">
+        <span className="font-display text-[10px] font-black uppercase tracking-[0.25em] text-m3-on-surface">
           Seven ways to look at it
         </span>
         {desktop ? (
@@ -130,10 +130,10 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
                   aria-selected={active === i}
                   aria-controls={`lp-panel-${i}`}
                   onClick={() => setActive(i)}
-                  className={`text-left font-display font-bold text-sm px-4 py-2.5 rounded-[14px] transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-primary ${
+                  className={`text-left font-display font-bold text-sm px-4 py-2.5 rounded-[14px] transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-on-surface ${
                     active === i
-                      ? "bg-m3-primary text-m3-on-primary"
-                      : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-primary"
+                      ? "bg-m3-on-surface text-m3-surface"
+                      : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-on-surface"
                   }`}
                 >
                   <span className="mono text-[10px] opacity-60 mr-2">
@@ -161,7 +161,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
                         key={pt}
                         className="flex items-start gap-3 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
                       >
-                        <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-primary" />
+                        <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-on-surface" />
                         {pt}
                       </li>
                     ))}
@@ -183,7 +183,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
                     aria-expanded={open}
                     aria-controls={`lp-row-${i}`}
                     onClick={() => setOpenRow(open ? null : i)}
-                    className="w-full flex items-center justify-between gap-3 py-4 text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-primary rounded-md"
+                    className="w-full flex items-center justify-between gap-3 py-4 text-left cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-m3-on-surface rounded-md"
                   >
                     <span className="flex items-baseline gap-3">
                       <span className="mono text-[11px] text-m3-on-surface-variant/50">
@@ -194,11 +194,11 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
                       </span>
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 shrink-0 text-m3-primary transition-transform ${open ? "rotate-180" : ""}`}
+                      className={`w-4 h-4 shrink-0 text-m3-on-surface transition-transform ${open ? "rotate-180" : ""}`}
                     />
                   </button>
                   <div id={`lp-row-${i}`} hidden={!open} className="pb-5">
-                    <p className="text-sm font-bold text-m3-primary leading-snug mb-3">
+                    <p className="text-sm font-bold text-m3-on-surface leading-snug mb-3">
                       {l.headline}
                     </p>
                     <ul className="flex flex-col gap-3">
@@ -207,7 +207,7 @@ export default function LongPressDeepDive({ data }: { data: DeepDive }) {
                           key={pt}
                           className="flex items-start gap-3 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
                         >
-                          <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-primary" />
+                          <Check className="w-4 h-4 mt-[3px] shrink-0 text-m3-on-surface" />
                           {pt}
                         </li>
                       ))}

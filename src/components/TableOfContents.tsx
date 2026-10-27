@@ -77,7 +77,7 @@ export function createMarkdownHeadingComponents() {
         <h2 id={id} className="scroll-mt-32 group relative" {...props}>
           <a
             href={`#${id}`}
-            className="inline-flex items-center gap-1.5 text-inherit no-underline hover:text-m3-primary transition-colors"
+            className="inline-flex items-center gap-1.5 text-inherit no-underline hover:text-m3-on-surface transition-colors"
           >
             {children}
           </a>
@@ -91,7 +91,7 @@ export function createMarkdownHeadingComponents() {
         <h3 id={id} className="scroll-mt-32 group relative" {...props}>
           <a
             href={`#${id}`}
-            className="inline-flex items-center gap-1.5 text-inherit no-underline hover:text-m3-primary transition-colors"
+            className="inline-flex items-center gap-1.5 text-inherit no-underline hover:text-m3-on-surface transition-colors"
           >
             {children}
           </a>
@@ -193,7 +193,7 @@ export default function TableOfContents({
       >
         <div className="bg-m3-surface/90 backdrop-blur-md rounded-2xl p-4 border border-m3-outline/15 shadow-sm">
           <div className="flex items-center justify-between gap-2 pb-3 mb-2 border-b border-m3-outline/10">
-            <div className="flex items-center gap-2 text-m3-primary">
+            <div className="flex items-center gap-2 text-m3-on-surface">
               <Compass className="w-4 h-4 shrink-0" />
               <span className="font-display text-[11px] font-black uppercase tracking-[0.2em]">
                 {title}
@@ -217,7 +217,7 @@ export default function TableOfContents({
                         item.level === 3 ? "pl-5 text-[11px]" : "pl-3"
                       } ${
                         isActive
-                          ? "bg-m3-primary/10 text-m3-primary font-bold border-l-2 border-m3-primary rounded-r-lg"
+                          ? "bg-m3-on-surface/10 text-m3-on-surface font-bold border-l-2 border-m3-on-surface rounded-r-lg"
                           : "text-m3-on-surface-variant/80 hover:text-m3-on-surface hover:bg-m3-surface-variant/50 rounded-lg"
                       }`}
                     >
@@ -232,7 +232,7 @@ export default function TableOfContents({
           <div className="mt-4 pt-3 border-t border-m3-outline/10 flex items-center justify-between">
             <button
               onClick={scrollToTop}
-              className="text-[11px] font-bold text-m3-on-surface-variant/70 hover:text-m3-primary flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="text-[11px] font-bold text-m3-on-surface-variant/70 hover:text-m3-on-surface flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <ArrowUp className="w-3.5 h-3.5" />
               Top of page
@@ -245,11 +245,11 @@ export default function TableOfContents({
       <div className="lg:hidden fixed bottom-6 right-6 z-40">
         <button
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="bg-m3-surface text-m3-on-surface border border-m3-outline/25 shadow-lg rounded-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-bold hover:border-m3-primary active:scale-95 transition-all cursor-pointer"
+          className="bg-m3-surface text-m3-on-surface border border-m3-outline/25 shadow-lg rounded-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-bold hover:border-m3-on-surface active:scale-95 transition-all cursor-pointer"
           aria-expanded={mobileOpen}
           aria-label="Toggle table of contents"
         >
-          <ListFilter className="w-4 h-4 text-m3-primary" />
+          <ListFilter className="w-4 h-4 text-m3-on-surface" />
           <span className="max-w-[130px] sm:max-w-[180px] truncate text-m3-on-surface">
             {activeItem ? activeItem.text : title}
           </span>
@@ -279,7 +279,7 @@ export default function TableOfContents({
                 className="fixed bottom-20 right-6 left-6 max-w-sm ml-auto bg-m3-surface rounded-2xl p-4 border border-m3-outline/20 shadow-2xl z-50 max-h-[70vh] flex flex-col overflow-hidden"
               >
                 <div className="flex items-center justify-between pb-3 border-b border-m3-outline/10 mb-2">
-                  <div className="flex items-center gap-2 text-m3-primary">
+                  <div className="flex items-center gap-2 text-m3-on-surface">
                     <Compass className="w-4 h-4 shrink-0" />
                     <span className="font-display text-xs font-black uppercase tracking-wider">
                       {title}
@@ -307,7 +307,7 @@ export default function TableOfContents({
                               item.level === 3 ? "pl-6 text-[11px]" : "pl-3"
                             } ${
                               isActive
-                                ? "bg-m3-primary/10 text-m3-primary font-bold border-l-2 border-m3-primary"
+                                ? "bg-m3-on-surface/10 text-m3-on-surface font-bold border-l-2 border-m3-on-surface"
                                 : "text-m3-on-surface-variant hover:bg-m3-surface-variant/40"
                             }`}
                           >
@@ -322,7 +322,7 @@ export default function TableOfContents({
                 <div className="mt-3 pt-2 border-t border-m3-outline/10 flex justify-between items-center text-xs">
                   <button
                     onClick={scrollToTop}
-                    className="text-m3-on-surface-variant/80 hover:text-m3-primary flex items-center gap-1.5 font-bold"
+                    className="text-m3-on-surface-variant/80 hover:text-m3-on-surface flex items-center gap-1.5 font-bold"
                   >
                     <ArrowUp className="w-3.5 h-3.5" /> Top of page
                   </button>

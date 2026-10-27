@@ -62,15 +62,15 @@ export default function Builds() {
     slug ? NOTES_SORTED.find((n) => n.slug === slug) : undefined;
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
         <SiteHeader />
 
         <section className="px-6 md:px-14 pt-12 md:pt-16 pb-6">
           <div className="flex items-center gap-3 mb-4">
-            <Hammer className="w-5 h-5 text-m3-primary" />
-            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
+            <Hammer className="w-5 h-5 text-m3-on-surface" />
+            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
               Builds
             </span>
           </div>
@@ -126,7 +126,7 @@ export default function Builds() {
                     <h2 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
                       {build.name}
                     </h2>
-                    <span className="text-[10px] font-black uppercase tracking-[0.15em] bg-m3-primary-container text-m3-on-primary-container px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-black uppercase tracking-[0.15em] bg-m3-surface-variant text-m3-on-surface px-3 py-1 rounded-full">
                       {build.status}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function Builds() {
 
                   <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mb-6">
                     <div className="sm:col-span-2">
-                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-primary mb-1.5">
+                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-on-surface mb-1.5">
                         The constraint
                       </dt>
                       <dd className="text-sm leading-relaxed text-m3-on-surface-variant font-medium">
@@ -145,7 +145,7 @@ export default function Builds() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-primary mb-1.5">
+                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-on-surface mb-1.5">
                         Shipped in
                       </dt>
                       <dd className="text-sm text-m3-on-surface-variant font-medium">
@@ -153,7 +153,7 @@ export default function Builds() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-primary mb-1.5">
+                      <dt className="text-[10px] font-bold uppercase tracking-widest text-m3-on-surface mb-1.5">
                         Built with
                       </dt>
                       <dd className="text-sm text-m3-on-surface-variant font-medium">
@@ -170,7 +170,7 @@ export default function Builds() {
                         href={build.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-5 py-2.5 rounded-m3-full text-sm tracking-wide hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs"
+                        className="inline-flex items-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-5 py-2.5 rounded-m3-full text-sm tracking-wide hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs"
                       >
                         Open it <ArrowUpRight className="w-4 h-4" />
                       </a>
@@ -178,7 +178,7 @@ export default function Builds() {
                     {note && (
                       <Link
                         to={`/notes/${note.slug}`}
-                        className="inline-flex items-center gap-2 text-m3-on-surface border border-m3-outline/20 font-display font-bold px-5 py-2.5 rounded-m3-full text-sm tracking-wide hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all"
+                        className="inline-flex items-center gap-2 text-m3-on-surface border border-m3-outline/20 font-display font-bold px-5 py-2.5 rounded-m3-full text-sm tracking-wide hover:border-m3-on-surface/40 hover:text-m3-on-surface active:scale-95 transition-all"
                       >
                         How it was built <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -195,7 +195,7 @@ export default function Builds() {
         {/* The reason this page is worth a nav slot: it's the proof behind an
             offer. Say so once, at the bottom, rather than selling all the way
             down the page. */}
-        <section className="px-6 md:px-14 py-8 md:py-10 bg-m3-primary text-m3-on-primary">
+        <section className="px-6 md:px-14 py-8 md:py-10 bg-m3-on-surface text-m3-surface">
           <div className="max-w-3xl">
             <h2 className="serif text-xl md:text-[2rem] font-medium leading-[1.15] mb-4">
               I build working prototypes for teams who need to see the thing

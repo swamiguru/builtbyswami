@@ -87,7 +87,7 @@ export default function CaseStudy() {
   if (!study) return <Navigate to="/work-with-me" replace />;
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <ScrollProgress />
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
         <SiteHeader />
@@ -96,7 +96,7 @@ export default function CaseStudy() {
         <div className="h-12 md:h-14 border-b border-m3-outline/20 flex items-center justify-between px-6 md:px-10 bg-m3-surface/60">
           <Link
             to="/work-with-me"
-            className="inline-flex items-center h-full pr-3 font-display font-bold text-sm text-m3-on-surface hover:text-m3-primary transition-colors"
+            className="inline-flex items-center h-full pr-3 font-display font-bold text-sm text-m3-on-surface hover:text-m3-on-surface transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-1.5" />
             Work with me
@@ -108,7 +108,7 @@ export default function CaseStudy() {
 
         <div className="max-w-[1020px] mx-auto px-6 md:px-10 py-10 md:py-16 w-full flex flex-col lg:flex-row gap-10 items-start">
           <article className="flex-1 min-w-0 max-w-[720px] w-full">
-            <span className="font-display text-[11px] font-black uppercase tracking-[0.3em] text-m3-primary">
+            <span className="font-display text-[11px] font-black uppercase tracking-[0.3em] text-m3-on-surface">
               Case Study
             </span>
 
@@ -116,7 +116,7 @@ export default function CaseStudy() {
               {study.title}
             </h1>
 
-            <p className="mt-5 text-lg md:text-xl font-bold text-m3-primary leading-snug">
+            <p className="mt-5 text-lg md:text-xl font-bold text-m3-on-surface leading-snug">
               {study.standfirst}
             </p>
 
@@ -160,7 +160,7 @@ export default function CaseStudy() {
             </p>
             <Link
               to="/work-with-me"
-              className="mt-3 inline-flex items-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-7 py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm"
+              className="mt-3 inline-flex items-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-7 py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm"
             >
               See how we could work together <ArrowRight className="w-4 h-4" />
             </Link>

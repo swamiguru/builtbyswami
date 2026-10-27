@@ -19,7 +19,7 @@ function FootLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <Link
       to={to}
-      className="text-xs sm:text-sm font-display font-bold text-m3-on-surface-variant hover:text-m3-primary transition-colors w-fit leading-tight"
+      className="text-xs sm:text-sm font-display font-bold text-m3-on-surface-variant hover:text-m3-on-surface transition-colors w-fit leading-tight"
     >
       {children}
     </Link>
@@ -33,7 +33,7 @@ function FootExternal({ href, children }: { href: string; children: React.ReactN
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xs sm:text-sm font-display font-bold text-m3-on-surface-variant hover:text-m3-primary transition-colors w-fit inline-flex items-center gap-1 leading-tight"
+      className="text-xs sm:text-sm font-display font-bold text-m3-on-surface-variant hover:text-m3-on-surface transition-colors w-fit inline-flex items-center gap-1 leading-tight"
     >
       {children} <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 opacity-60 shrink-0" />
     </a>
@@ -70,7 +70,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
             href="https://longpress.news"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-1.5 bg-m3-primary text-m3-on-primary font-display font-bold px-4 py-2 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer"
+            className="mt-3 inline-flex items-center gap-1.5 bg-m3-on-surface text-m3-surface font-display font-bold px-4 py-2 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer"
           >
             Read Long Press <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
@@ -106,8 +106,8 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
       <div className="px-5 sm:px-8 md:px-12 py-3 md:py-3.5 border-t border-m3-outline/10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-between">
         <div className="flex items-center gap-3 sm:gap-4 text-center sm:text-left">
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-m3-primary animate-pulse" />
-            <span className="font-display text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-m3-primary">
+            <span className="w-2 h-2 rounded-full bg-m3-on-surface animate-pulse" />
+            <span className="font-display text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-m3-on-surface">
               Live — shipping daily
             </span>
           </span>
@@ -125,7 +125,7 @@ export default function SiteFooter({ className = "" }: SiteFooterProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`@builtbyswami on ${s.name}`}
-              className="w-8 h-8 md:w-8.5 md:h-8.5 bg-m3-surface-variant text-m3-on-surface-variant rounded-full flex items-center justify-center hover:bg-m3-primary hover:text-m3-on-primary transition-colors shadow-xs"
+              className="w-8 h-8 md:w-8.5 md:h-8.5 bg-m3-surface-variant text-m3-on-surface-variant rounded-full flex items-center justify-center hover:bg-m3-on-surface hover:text-m3-surface transition-colors shadow-xs"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true">
                 <path d={s.path} />

@@ -56,7 +56,7 @@ export default function NewsletterSignup({
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
         disabled={redirecting}
-        className="flex-1 bg-m3-surface rounded-m3-full py-3.5 px-6 text-sm font-bold focus:outline-none focus:ring-4 focus:ring-m3-primary/15 text-m3-on-surface shadow-inner placeholder:text-m3-on-surface/30 disabled:opacity-60"
+        className="flex-1 bg-m3-surface rounded-m3-full py-3.5 px-6 text-sm font-bold focus:outline-none focus:ring-4 focus:ring-m3-on-surface/15 text-m3-on-surface shadow-inner placeholder:text-m3-on-surface/30 disabled:opacity-60"
       />
       <button
         type="submit"

@@ -318,7 +318,7 @@ function richText(text: string) {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-m3-primary font-semibold underline decoration-m3-primary/30 underline-offset-2 hover:decoration-m3-primary transition-colors"
+          className="text-m3-on-surface font-semibold underline decoration-m3-on-surface/30 underline-offset-2 hover:decoration-m3-on-surface transition-colors"
         >
           {part}
         </a>
@@ -327,7 +327,7 @@ function richText(text: string) {
 
     if (METRIC_ONLY.test(part)) {
       return (
-        <strong key={i} className="text-m3-primary font-extrabold">
+        <strong key={i} className="text-m3-on-surface font-extrabold">
           {part}
         </strong>
       );
@@ -369,8 +369,8 @@ const ACTIONS = [
 ];
 
 const ACTION_VARIANTS = {
-  primary: "bg-m3-primary text-m3-on-primary shadow-sm hover:m3-elevation-1-shadow",
-  tonal: "bg-m3-secondary-container text-m3-on-secondary-container hover:m3-elevation-1",
+  primary: "bg-m3-on-surface text-m3-surface shadow-sm hover:m3-elevation-1-shadow",
+  tonal: "bg-m3-surface-variant text-m3-on-surface hover:m3-elevation-1",
   outlined: "border border-m3-outline/30 text-m3-on-surface hover:bg-m3-surface-variant"
 };
 
@@ -460,10 +460,10 @@ function LocalTime() {
 
   return (
     <span
-      className="mt-1.5 inline-flex items-center gap-1.5 text-[11px] font-medium text-m3-on-secondary-container/60"
+      className="mt-1.5 inline-flex items-center gap-1.5 text-[11px] font-medium text-m3-on-surface/60"
       title={`Swami's local time in Bengaluru — ${label}`}
     >
-      <span className={`w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0 ${dim}`} aria-hidden="true" />
+      <span className={`w-1.5 h-1.5 rounded-full bg-m3-on-surface shrink-0 ${dim}`} aria-hidden="true" />
       <span>
         {time} <span className="opacity-70">· {label}</span>
       </span>
@@ -532,7 +532,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary relative">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface relative">
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
         <SiteHeader />
@@ -558,7 +558,7 @@ export default function About() {
         {/* Top Section: Sidebar + Hero */}
         <div className="flex flex-col md:flex-row border-b border-m3-outline/10">
           {/* Sidebar: Identity */}
-          <aside className="w-full md:w-[360px] border-b md:border-b-0 md:border-r border-m3-outline/10 p-6 md:p-8 flex flex-col justify-center bg-m3-secondary-container shrink-0">
+          <aside className="w-full md:w-[360px] border-b md:border-b-0 md:border-r border-m3-outline/10 p-6 md:p-8 flex flex-col justify-center bg-m3-surface-variant shrink-0">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <img
@@ -567,27 +567,27 @@ export default function About() {
                   width={400}
                   height={400}
                   loading="eager"
-                  className="w-[72px] h-[72px] rounded-full object-cover shadow-sm ring-2 ring-m3-primary/25 shrink-0"
+                  className="w-[72px] h-[72px] rounded-full object-cover grayscale shadow-sm ring-2 ring-m3-on-surface/25 shrink-0"
                 />
                 <div className="min-w-0">
-                  <h1 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-secondary-container leading-none">
+                  <h1 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface leading-none">
                     Swami Guru
                   </h1>
-                  <div className="w-10 h-1.5 bg-m3-primary rounded-full mt-2.5" />
+                  <div className="w-10 h-1.5 bg-m3-on-surface rounded-full mt-2.5" />
                 </div>
               </div>
               <div className="flex flex-col gap-1 relative group/title select-none">
                 <div className="flex items-start gap-4">
-                  <p className="display text-4xl md:text-5xl leading-[0.85] font-bold tracking-tighter uppercase text-m3-on-secondary-container relative">
-                    <span className="block relative group-hover/title:text-m3-primary transition-colors duration-500">
+                  <p className="display text-4xl md:text-5xl leading-[0.85] font-bold tracking-tighter uppercase text-m3-on-surface relative">
+                    <span className="block relative group-hover/title:text-m3-on-surface transition-colors duration-500">
                       PRODUCT
                     </span>
-                    <span className="block text-m3-primary/90">
+                    <span className="block text-m3-on-surface/90">
                       LEADER
                       <motion.span
                         animate={{ opacity: [1, 0] }}
                         transition={{ duration: 0.8, repeat: Infinity }}
-                        className="inline-block w-[12px] h-[36px] bg-m3-primary ml-1 align-middle translate-y-[-2px]"
+                        className="inline-block w-[12px] h-[36px] bg-m3-on-surface ml-1 align-middle translate-y-[-2px]"
                       />
                     </span>
                   </p>
@@ -596,13 +596,13 @@ export default function About() {
                     <motion.div
                       animate={{ y: [0, -10, 0], rotate: [0, 10, -10, 0], scale: [1, 1.15, 1] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-m3-primary relative"
+                      className="text-m3-on-surface relative"
                     >
                       <Layers className="w-6 h-6" />
                       <motion.div
                         animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 border border-m3-primary rounded-full"
+                        className="absolute inset-0 border border-m3-on-surface rounded-full"
                       />
                     </motion.div>
                   </div>
@@ -611,9 +611,9 @@ export default function About() {
 
               <div className="pt-1 space-y-5">
                 <div className="flex flex-col">
-                  <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary/60">Currently · since May 2026</span>
+                  <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-on-surface/60">Currently · since May 2026</span>
                   <span className="text-sm font-bold mb-1">Independent Product Builder</span>
-                  <p className="text-[13px] leading-relaxed text-m3-on-secondary-container/70 font-medium">
+                  <p className="text-[13px] leading-relaxed text-m3-on-surface/70 font-medium">
                     Building and shipping products solo, AI-native, in
                     public &mdash; and open to consulting and contract
                     engagements.
@@ -622,13 +622,13 @@ export default function About() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col">
-                    <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary/60">Previously</span>
+                    <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-on-surface/60">Previously</span>
                     <span className="text-[13px] font-semibold leading-snug">Condé Nast · Newsweek · Metro</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary/60">Location</span>
+                    <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-on-surface/60">Location</span>
                     <span className="text-[13px] font-semibold flex items-center gap-1.5 leading-snug">
-                      <MapPin className="w-3.5 h-3.5 text-m3-primary shrink-0" /> Bengaluru, India
+                      <MapPin className="w-3.5 h-3.5 text-m3-on-surface shrink-0" /> Bengaluru, India
                     </span>
                     <LocalTime />
                   </div>
@@ -641,13 +641,13 @@ export default function About() {
           {/* Right Content: Hero + Stats */}
           <div className="flex-1 flex flex-col shrink-0 bg-m3-surface">
             <section className="flex-1 border-b border-m3-outline/10 p-6 md:p-10 flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-m3-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-80 h-80 bg-m3-on-surface/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
               <div className="max-w-2xl relative z-10">
-                <span className="font-display text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em] md:tracking-[0.3em] text-m3-primary mb-4 md:mb-6 block">
+                <span className="font-display text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em] md:tracking-[0.3em] text-m3-on-surface mb-4 md:mb-6 block">
                   <span className="hidden md:inline">Senior Product Leader · </span>AI-Native Product
                 </span>
                 <span className="serif font-medium text-[1.65rem] md:text-[2.9rem] block mb-6 leading-[1.15] tracking-tight text-m3-on-surface">
-                  I turn complex platforms into <span className="text-m3-primary italic px-1 bg-m3-primary-container/30 rounded-lg">growth engines</span> — lifting engagement, accelerating revenue, and shipping at half the time-to-market.
+                  I turn complex platforms into <span className="text-m3-on-surface italic px-1 bg-m3-surface-variant/30 rounded-lg">growth engines</span> — lifting engagement, accelerating revenue, and shipping at half the time-to-market.
                 </span>
                 <p className="text-sm font-medium text-m3-on-surface-variant max-w-xl leading-relaxed">
                   Across Vogue, GQ, Wired, Condé Nast Traveller, Architectural Digest and Newsweek — including new brand launches in the Middle East and Germany.
@@ -664,7 +664,7 @@ export default function About() {
                     { v: "6", l: "new revenue lines" }
                   ].map((s, i) => (
                     <span key={i} className="inline-flex items-baseline gap-1.5 bg-m3-surface-variant/60 border border-m3-outline/10 rounded-m3-full px-3.5 py-1.5">
-                      <span className="display text-sm font-extrabold text-m3-primary">{s.v}</span>
+                      <span className="display text-sm font-extrabold text-m3-on-surface">{s.v}</span>
                       <span className="text-[12px] font-semibold text-m3-on-surface-variant">{s.l}</span>
                     </span>
                   ))}
@@ -677,10 +677,10 @@ export default function About() {
             {/* Impact Grid */}
             <section className="grid grid-cols-2 lg:grid-cols-4 shrink-0">
               {[
-                { val: "$20M+", label: "NET-NEW REVENUE", container: "bg-m3-primary-container/20", text: "text-m3-on-primary-container" },
-                { val: "30%+", label: "ENGAGEMENT LIFT", container: "bg-m3-secondary-container/20", text: "text-m3-on-secondary-container" },
-                { val: "50%", label: "TIME-TO-MARKET CUT", container: "bg-m3-tertiary-container/20", text: "text-m3-on-tertiary-container" },
-                { val: "100%", label: "SEO RETAINED", container: "bg-m3-primary-container/20", text: "text-m3-on-primary-container" }
+                { val: "$20M+", label: "NET-NEW REVENUE", container: "bg-m3-surface-variant/20", text: "text-m3-on-surface" },
+                { val: "30%+", label: "ENGAGEMENT LIFT", container: "bg-m3-surface-variant/20", text: "text-m3-on-surface" },
+                { val: "50%", label: "TIME-TO-MARKET CUT", container: "bg-m3-surface-variant/20", text: "text-m3-on-surface" },
+                { val: "100%", label: "SEO RETAINED", container: "bg-m3-surface-variant/20", text: "text-m3-on-surface" }
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -705,11 +705,11 @@ export default function About() {
           <div className="sticky top-0 left-0 right-0 h-1 z-40 pointer-events-none">
             <motion.div
               style={{ scaleX: workScrollProgress, transformOrigin: "0%" }}
-              className="h-full bg-m3-secondary"
+              className="h-full bg-m3-on-surface"
             />
           </div>
           <div className="px-6 md:px-10 lg:px-12 pt-10 md:pt-12">
-            <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
+            <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-surface block mb-3">
               Experience
             </span>
             <h2 className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface">
@@ -738,15 +738,15 @@ export default function About() {
                         });
                       }}
                       className={`group relative pl-5 py-2.5 border-l-2 transition-colors ${
-                        isActive ? "border-m3-primary" : "border-m3-outline/15 hover:border-m3-outline/40"
+                        isActive ? "border-m3-on-surface" : "border-m3-outline/15 hover:border-m3-outline/40"
                       }`}
                     >
                       <span
                         className={`absolute left-[-5px] top-3.5 w-2 h-2 rounded-full transition-colors ${
-                          isActive ? "bg-m3-primary" : "bg-m3-outline/30 group-hover:bg-m3-outline/60"
+                          isActive ? "bg-m3-on-surface" : "bg-m3-outline/30 group-hover:bg-m3-outline/60"
                         }`}
                       />
-                      <span className={`block font-mono text-[11px] font-bold tracking-wide ${isActive ? "text-m3-primary" : "text-m3-on-surface-variant/60"}`}>
+                      <span className={`block font-mono text-[11px] font-bold tracking-wide ${isActive ? "text-m3-on-surface" : "text-m3-on-surface-variant/60"}`}>
                         {year}
                       </span>
                       <span className={`block font-display text-[13px] font-bold leading-snug mt-0.5 ${isActive ? "text-m3-on-surface" : "text-m3-on-surface-variant"}`}>
@@ -771,7 +771,7 @@ export default function About() {
                 transition={{ duration: 0.5 }}
                 className={`scroll-mt-28 rounded-[28px] md:rounded-[36px] p-6 md:p-10 border transition-all ${
                   exp.current
-                    ? "bg-m3-primary-container/25 border-m3-primary/25 shadow-md"
+                    ? "bg-m3-surface-variant/25 border-m3-on-surface/25 shadow-md"
                     : "bg-m3-surface-variant/40 border-m3-outline/5 hover:bg-m3-surface hover:shadow-xl"
                 }`}
               >
@@ -781,13 +781,13 @@ export default function About() {
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 pb-5 mb-6 border-b border-m3-outline/10">
                   <div className="space-y-2 min-w-0">
                     {exp.current && (
-                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-m3-primary text-m3-on-primary rounded-m3-full text-[10px] font-bold uppercase tracking-widest mb-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-m3-on-primary animate-pulse" />
+                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-m3-on-surface text-m3-surface rounded-m3-full text-[10px] font-bold uppercase tracking-widest mb-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-m3-surface animate-pulse" />
                         Current
                       </span>
                     )}
                     <div className="flex items-center gap-3 flex-wrap">
-                      <h3 className="display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tighter uppercase leading-none text-m3-primary">
+                      <h3 className="display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tighter uppercase leading-none text-m3-on-surface">
                         {exp.company}
                       </h3>
                       <motion.a
@@ -797,11 +797,11 @@ export default function About() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${exp.company} website`}
-                        className="w-9 h-9 bg-m3-primary-container text-m3-on-primary-container rounded-full flex items-center justify-center transition-all shadow-sm hover:bg-m3-primary hover:text-m3-on-primary shrink-0"
+                        className="w-9 h-9 bg-m3-surface-variant text-m3-on-surface rounded-full flex items-center justify-center transition-all shadow-sm hover:bg-m3-on-surface hover:text-m3-surface shrink-0"
                       >
                         <ArrowUpRight className="w-4 h-4" />
                       </motion.a>
-                      <span className="text-base lg:text-lg font-bold text-m3-secondary">{exp.role}</span>
+                      <span className="text-base lg:text-lg font-bold text-m3-on-surface">{exp.role}</span>
                     </div>
                     {exp.context && (
                       <p className="text-[13px] leading-relaxed text-m3-on-surface-variant font-medium max-w-3xl">
@@ -811,7 +811,7 @@ export default function About() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 lg:justify-end shrink-0">
-                    <span className="px-3.5 py-1.5 bg-m3-secondary-container text-m3-on-secondary-container rounded-m3-full text-[11px] font-bold uppercase tracking-wider">
+                    <span className="px-3.5 py-1.5 bg-m3-surface-variant text-m3-on-surface rounded-m3-full text-[11px] font-bold uppercase tracking-wider">
                       {exp.period}
                     </span>
                     <span className="px-3.5 py-1.5 bg-m3-surface border border-m3-outline/20 text-m3-on-surface rounded-m3-full text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
@@ -824,7 +824,7 @@ export default function About() {
                     should leave with, set apart from the detail cards below
                     in the display serif. */}
                 <p className="mb-6 flex gap-3 items-baseline">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-m3-primary/50 shrink-0">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-m3-on-surface/50 shrink-0">
                     Bottom line&nbsp;→
                   </span>
                   <span className="serif text-lg md:text-xl font-medium leading-snug text-m3-on-surface">
@@ -835,15 +835,15 @@ export default function About() {
                 {/* Impact — 4 across at desktop so it reads as one band */}
                 <div className="bg-m3-surface rounded-[20px] p-5 md:p-6 border border-m3-outline/10 shadow-sm mb-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Sparkles className="w-4 h-4 text-m3-primary shrink-0" />
-                    <h4 className="display font-extrabold text-[10px] uppercase tracking-widest text-m3-primary">
+                    <Sparkles className="w-4 h-4 text-m3-on-surface shrink-0" />
+                    <h4 className="display font-extrabold text-[10px] uppercase tracking-widest text-m3-on-surface">
                       Quantifiable Impact
                     </h4>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-5">
                     {exp.impact.map((ki, kii) => (
                       <div key={kii} className="flex gap-2.5 items-start">
-                        <div className="w-1.5 h-1.5 rounded-full bg-m3-primary mt-1.5 shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-m3-on-surface mt-1.5 shrink-0" />
                         <p className="text-[13px] font-semibold text-m3-on-surface leading-snug">{richText(ki)}</p>
                       </div>
                     ))}
@@ -873,7 +873,7 @@ export default function About() {
                     {exp.highlights.map((h, hi) => (
                       <p key={hi} className="text-[13px] leading-relaxed text-m3-on-surface-variant font-medium">
                         <span className="font-bold text-m3-on-surface">{h.title}</span>
-                        <span className="text-m3-primary"> — </span>
+                        <span className="text-m3-on-surface"> — </span>
                         {richText(h.detail)}
                       </p>
                     ))}
@@ -881,7 +881,7 @@ export default function About() {
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                     {exp.highlights.map((h, hi) => (
-                      <div key={hi} className="bg-m3-surface p-5 rounded-[20px] border border-m3-outline/5 hover:border-m3-primary/20 transition-all shadow-sm">
+                      <div key={hi} className="bg-m3-surface p-5 rounded-[20px] border border-m3-outline/5 hover:border-m3-on-surface/20 transition-all shadow-sm">
                         <h4 className="font-bold text-[14px] mb-1.5 text-m3-on-surface leading-snug">{h.title}</h4>
                         <p className="text-[13px] leading-relaxed text-m3-on-surface-variant font-medium">{richText(h.detail)}</p>
                       </div>
@@ -891,7 +891,7 @@ export default function About() {
 
                 <div className="flex flex-wrap gap-1.5 mt-5 pt-5 border-t border-m3-outline/10">
                   {exp.technologies.map((tech, ti) => (
-                    <span key={ti} className="text-[10px] font-bold uppercase tracking-wider bg-m3-primary/5 text-m3-primary px-2.5 py-1 rounded-m3-md border border-m3-primary/10">
+                    <span key={ti} className="text-[10px] font-bold uppercase tracking-wider bg-m3-on-surface/5 text-m3-on-surface px-2.5 py-1 rounded-m3-md border border-m3-on-surface/10">
                       {tech}
                     </span>
                   ))}
@@ -906,27 +906,27 @@ export default function About() {
         {/* Client work, so it sits after Experience and before the solo builds
             below — the two shouldn't read as the same category. */}
         <section id="case-study" className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-10 lg:px-12 py-10 md:py-12">
-          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
+          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-surface block mb-3">
             Case Studies
           </span>
 
-          <motion.div whileHover={{ y: -4 }} className="bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-primary/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
+          <motion.div whileHover={{ y: -4 }} className="bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-on-surface/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
             <Link to="/case-study/middle-east" className="group block">
               <div className="flex items-start justify-between gap-4 mb-5">
-                <div className="w-12 h-12 bg-m3-primary-container text-m3-on-primary-container rounded-[16px] flex items-center justify-center shrink-0 group-hover:bg-m3-primary group-hover:text-m3-on-primary transition-colors">
+                <div className="w-12 h-12 bg-m3-surface-variant text-m3-on-surface rounded-[16px] flex items-center justify-center shrink-0 group-hover:bg-m3-on-surface group-hover:text-m3-surface transition-colors">
                   <Globe className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary bg-m3-primary/5 border border-m3-primary/15 px-3 py-1 rounded-m3-full shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-m3-on-surface bg-m3-on-surface/5 border border-m3-on-surface/15 px-3 py-1 rounded-m3-full shrink-0">
                   Condé Nast
                 </span>
               </div>
 
               <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface leading-[1.02] flex items-start gap-2">
                 Launching global media brands into the Middle East
-                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 mt-1 shrink-0 text-m3-primary opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 mt-1 shrink-0 text-m3-on-surface opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
               </h2>
 
-              <p className="mt-4 text-base md:text-lg font-bold text-m3-primary leading-snug">
+              <p className="mt-4 text-base md:text-lg font-bold text-m3-on-surface leading-snug">
                 Five titles, three waves — and the last one shipped in half the time.
               </p>
 
@@ -950,29 +950,29 @@ export default function About() {
                 ))}
               </div>
 
-              <span className="mt-7 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+              <span className="mt-7 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface">
                 Read the case study <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
             </Link>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="mt-5 md:mt-6 bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-primary/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
+          <motion.div whileHover={{ y: -4 }} className="mt-5 md:mt-6 bg-m3-surface-variant rounded-[24px] border border-m3-outline/5 hover:border-m3-on-surface/30 shadow-sm hover:shadow-xl transition-all p-6 md:p-9">
             <Link to="/case-study/replatforming" className="group block">
               <div className="flex items-start justify-between gap-4 mb-5">
-                <div className="w-12 h-12 bg-m3-primary-container text-m3-on-primary-container rounded-[16px] flex items-center justify-center shrink-0 group-hover:bg-m3-primary group-hover:text-m3-on-primary transition-colors">
+                <div className="w-12 h-12 bg-m3-surface-variant text-m3-on-surface rounded-[16px] flex items-center justify-center shrink-0 group-hover:bg-m3-on-surface group-hover:text-m3-surface transition-colors">
                   <Layers className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary bg-m3-primary/5 border border-m3-primary/15 px-3 py-1 rounded-m3-full shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-m3-on-surface bg-m3-on-surface/5 border border-m3-on-surface/15 px-3 py-1 rounded-m3-full shrink-0">
                   2017 &ndash; 2025
                 </span>
               </div>
 
               <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface leading-[1.02] flex items-start gap-2">
                 Replatforming without losing traffic or revenue
-                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 mt-1 shrink-0 text-m3-primary opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 mt-1 shrink-0 text-m3-on-surface opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
               </h2>
 
-              <p className="mt-4 text-base md:text-lg font-bold text-m3-primary leading-snug">
+              <p className="mt-4 text-base md:text-lg font-bold text-m3-on-surface leading-snug">
                 Thirteen properties, four brands, eight years. Every one of them dipped, and every one of them came back.
               </p>
 
@@ -996,7 +996,7 @@ export default function About() {
                 ))}
               </div>
 
-              <span className="mt-7 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+              <span className="mt-7 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface">
                 Read the case study <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
             </Link>
@@ -1013,7 +1013,7 @@ export default function About() {
         {/* The grid that used to sit here is now /builds, where it is linkable,
             indexable and doing three jobs instead of decorating a CV. */}
         <section id="builds" className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-10 lg:px-12 py-10 md:py-12">
-          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
+          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-surface block mb-3">
             Selected work
           </span>
           <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface mb-4">
@@ -1026,7 +1026,7 @@ export default function About() {
           </p>
           <Link
             to="/builds"
-            className="inline-flex items-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-6 py-3 rounded-m3-full text-sm tracking-wide hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs"
+            className="inline-flex items-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-6 py-3 rounded-m3-full text-sm tracking-wide hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs"
           >
             See the builds <ArrowRight className="w-4 h-4" />
           </Link>
@@ -1038,7 +1038,7 @@ export default function About() {
             year. What survives is the tools someone might actually filter on
             and the one certification worth listing. */}
         <section id="skills" ref={skillsSectionRef} className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-10 lg:px-12 py-10 md:py-12">
-          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
+          <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-surface block mb-3">
             Capability
           </span>
           <h2 className="display text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-m3-on-surface mb-6">
@@ -1061,13 +1061,13 @@ export default function About() {
             duplicated the BuiltBySwami highlights almost verbatim, and the prose
             beside it was generic. What's left is the one claim that is actually
             mine, in my own words, at a third of the height. */}
-        <section className="bg-m3-primary text-m3-on-primary px-6 md:px-10 lg:px-12 py-10 md:py-12 relative overflow-hidden">
+        <section className="bg-m3-on-surface text-m3-surface px-6 md:px-10 lg:px-12 py-10 md:py-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
             <Cpu className="w-56 h-56 md:w-80 md:h-80 -mr-14 -mt-14 rotate-12" />
           </div>
 
           <div className="max-w-3xl relative z-10">
-            <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-primary/60 block mb-4">
+            <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-surface/60 block mb-4">
               Point of View
             </span>
             <h2 className="serif text-3xl md:text-5xl font-medium leading-[1.05] mb-5">
@@ -1080,7 +1080,7 @@ export default function About() {
             </p>
             <Link
               to="/notes/what-got-faster-and-what-didnt"
-              className="inline-flex items-center gap-2 bg-m3-surface text-m3-primary font-display font-bold px-6 py-3 rounded-m3-full text-sm tracking-wide hover:shadow-xl transition-shadow"
+              className="inline-flex items-center gap-2 bg-m3-surface text-m3-on-surface font-display font-bold px-6 py-3 rounded-m3-full text-sm tracking-wide hover:shadow-xl transition-shadow"
             >
               Read the full argument <ArrowRight className="w-4 h-4" />
             </Link>
@@ -1109,7 +1109,7 @@ export default function About() {
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 to="/work-with-me"
-                className="inline-flex items-center justify-center gap-2 font-display font-bold h-12 rounded-m3-full text-[13px] sm:text-sm tracking-wide transition-all whitespace-nowrap bg-m3-primary text-m3-on-primary shadow-sm hover:m3-elevation-1-shadow active:scale-95 flex-1 sm:flex-none px-4 sm:px-6"
+                className="inline-flex items-center justify-center gap-2 font-display font-bold h-12 rounded-m3-full text-[13px] sm:text-sm tracking-wide transition-all whitespace-nowrap bg-m3-on-surface text-m3-surface shadow-sm hover:m3-elevation-1-shadow active:scale-95 flex-1 sm:flex-none px-4 sm:px-6"
               >
                 Work with me <ArrowUpRight className="w-4 h-4 shrink-0" />
               </MotionLink>

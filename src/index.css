@@ -12,32 +12,46 @@
      sparingly: body copy and UI chrome stay on Outfit/Inter. */
   --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
   
-  /* Material 3 Tonal Palette - Expressive Green/Teal */
-  --color-m3-primary: #006D3B;
-  --color-m3-on-primary: #FFFFFF;
-  --color-m3-primary-container: #95F7B2;
-  --color-m3-on-primary-container: #00210E;
-  
-  --color-m3-secondary: #4F6353;
-  --color-m3-on-secondary: #FFFFFF;
-  --color-m3-secondary-container: #D1E8D4;
-  --color-m3-on-secondary-container: #0C1F13;
-  
-  --color-m3-tertiary: #3B6470;
-  --color-m3-on-tertiary: #FFFFFF;
-  --color-m3-tertiary-container: #BFE9F7;
-  --color-m3-on-tertiary-container: #001F27;
-  
+  /* Full monochrome. The site ran a green/teal/orange M3 tonal palette,
+     then pulled color back to one accent card, then to a handful of small
+     marks (logo, status dots, one card) — and the brand hue kept creeping
+     back in. These tokens now carry no hue at all: primary/secondary/
+     tertiary and their containers all resolve to the same black/white/
+     gray values as the base surface tokens below, so any class built on
+     them (bg-m3-primary, text-m3-secondary, etc.) renders as ink, not
+     color, even if a future edit reaches for one out of habit. Error
+     stays a true red — that's a functional UI convention, not a brand
+     accent, and shouldn't read as "just another gray state". */
+  --color-m3-primary: #19191A;
+  --color-m3-on-primary: #FDFDFC;
+  --color-m3-primary-container: #E7E7E5;
+  --color-m3-on-primary-container: #19191A;
+
+  --color-m3-secondary: #19191A;
+  --color-m3-on-secondary: #FDFDFC;
+  --color-m3-secondary-container: #E7E7E5;
+  --color-m3-on-secondary-container: #19191A;
+
+  --color-m3-tertiary: #19191A;
+  --color-m3-on-tertiary: #FDFDFC;
+  --color-m3-tertiary-container: #E7E7E5;
+  --color-m3-on-tertiary-container: #19191A;
+
   --color-m3-error: #BA1A1A;
   --color-m3-on-error: #FFFFFF;
   --color-m3-error-container: #FFDAD6;
   --color-m3-on-error-container: #410002;
   
-  --color-m3-surface: #FBFDF8;
-  --color-m3-on-surface: #191C19;
-  --color-m3-surface-variant: #DCE5DB;
-  --color-m3-on-surface-variant: #414941;
-  --color-m3-outline: #717971;
+  /* True neutrals — not M3's tonal gray-greens. The surface/surface-variant/
+     outline trio used to be derived from the green primary hue (standard
+     M3 behavior), so even "neutral" section backgrounds carried a visible
+     sage cast. For a genuinely monochrome page these need to be actual
+     grays, with zero hue, not just desaturated green. */
+  --color-m3-surface: #FDFDFC;
+  --color-m3-on-surface: #19191A;
+  --color-m3-surface-variant: #E7E7E5;
+  --color-m3-on-surface-variant: #46464A;
+  --color-m3-outline: #78787C;
   
   --radius-m3-sm: 8px;
   --radius-m3-md: 12px;
@@ -49,11 +63,6 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 109, 59, 0.2)); }
-    50% { filter: drop-shadow(0 0 20px rgba(0, 109, 59, 0.4)); }
   }
 
   @keyframes sparkle-twinkle {
@@ -108,19 +117,20 @@
   }
 }
 
-/* M3 Elevation (Tonal) */
+/* M3 Elevation (Tonal) — neutral black-based wash, not a brand-color tint,
+   so cards and raised surfaces stay inside the monochrome system. */
 @utility m3-elevation-1 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.05), rgba(0, 109, 59, 0.05)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--color-m3-surface);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 @utility m3-elevation-2 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.08), rgba(0, 109, 59, 0.08)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07)), var(--color-m3-surface);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 @utility m3-elevation-3 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.11), rgba(0, 109, 59, 0.11)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), var(--color-m3-surface);
   box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -137,15 +147,15 @@
 }
 
 @utility m3-button-filled {
-  @apply bg-m3-primary text-m3-on-primary font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95;
+  @apply bg-m3-on-surface text-m3-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95;
 }
 
 @utility m3-button-tonal {
-  @apply bg-m3-secondary-container text-m3-on-secondary-container font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1 active:scale-95;
+  @apply bg-m3-surface-variant text-m3-on-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1 active:scale-95;
 }
 
 @utility m3-button-outlined {
-  @apply border border-m3-outline text-m3-primary font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:bg-m3-primary/5 active:scale-95;
+  @apply border border-m3-outline text-m3-on-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:bg-m3-on-surface/5 active:scale-95;
 }
 
 .prose-notes {
@@ -170,10 +180,10 @@
   margin: 2rem 0 0.75rem;
 }
 .prose-notes strong { color: var(--color-m3-on-surface); font-weight: 700; }
-.prose-notes a { color: var(--color-m3-primary); text-decoration: underline; text-underline-offset: 3px; }
+.prose-notes a { color: var(--color-m3-on-surface); text-decoration: underline; text-underline-offset: 3px; }
 .prose-notes ul { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; }
 .prose-notes li { margin: 0 0 0.6rem; font-weight: 450; }
-.prose-notes li::marker { color: var(--color-m3-primary); }
+.prose-notes li::marker { color: var(--color-m3-on-surface); }
 
 /* Markdown tables. ReactMarkdown emits bare <table>, and Tailwind's preflight
    strips all default table styling — without these rules cells render with
@@ -199,12 +209,12 @@
   text-transform: uppercase;
   color: var(--color-m3-on-surface);
   padding: 0 1rem 0.65rem 0;
-  border-bottom: 2px solid var(--color-m3-primary);
+  border-bottom: 2px solid var(--color-m3-on-surface);
   vertical-align: bottom;
 }
 .prose-notes tbody td {
   padding: 0.85rem 1rem 0.85rem 0;
-  border-bottom: 1px solid rgba(113, 121, 113, 0.22);
+  border-bottom: 1px solid rgba(120, 120, 124, 0.22);
   vertical-align: top;
   font-weight: 450;
 }
@@ -216,7 +226,7 @@
   white-space: nowrap;
 }
 .prose-notes tbody tr:last-child td { border-bottom: none; }
-.prose-notes tbody td strong { color: var(--color-m3-primary); }
+.prose-notes tbody td strong { color: var(--color-m3-on-surface); }
 
 @media (max-width: 480px) {
   .prose-notes table { font-size: 0.875rem; }

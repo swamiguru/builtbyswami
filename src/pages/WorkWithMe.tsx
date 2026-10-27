@@ -338,7 +338,7 @@ function BookButton({ className = "" }: { className?: string }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackCta("consulting_book_call", "work_with_me")}
-      className={`inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
     >
       Book a 30-minute call <ArrowRight className="w-4 h-4" />
     </a>
@@ -352,7 +352,7 @@ function AuditButton({ className = "" }: { className?: string }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackCta("consulting_book_audit", "work_with_me_audit")}
-      className={`inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95 shadow-sm text-[13px] sm:text-base whitespace-nowrap ${className}`}
     >
       Book a 30-min call about the audit <ArrowRight className="w-4 h-4" />
     </a>
@@ -364,7 +364,7 @@ function EmailButton({ className = "" }: { className?: string }) {
     <a
       href="mailto:builtbyswami@gmail.com"
       onClick={() => trackCta("consulting_email_me", "work_with_me")}
-      className={`inline-flex items-center justify-center gap-2 bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 text-[13px] sm:text-base whitespace-nowrap ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-7 py-3 sm:py-3.5 rounded-m3-full transition-all hover:border-m3-on-surface/40 hover:text-m3-on-surface active:scale-95 text-[13px] sm:text-base whitespace-nowrap ${className}`}
     >
       Email me <Mail className="w-4 h-4" />
     </a>
@@ -382,9 +382,9 @@ function Eyebrow({
 }) {
   const toneClass =
     tone === "primary"
-      ? "text-m3-primary"
+      ? "text-m3-on-surface"
       : tone === "inverted"
-        ? "text-m3-primary-container"
+        ? "text-m3-surface"
         : "text-m3-on-surface-variant/60";
   return (
     <span
@@ -400,15 +400,15 @@ export default function WorkWithMe() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
         <SiteHeader />
 
         {/* Hero */}
         <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 pt-12 md:pt-16 pb-10 md:pb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Briefcase className="w-5 h-5 text-m3-primary" />
-            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
+            <Briefcase className="w-5 h-5 text-m3-on-surface" />
+            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
               Work With Me
             </span>
           </div>
@@ -481,7 +481,7 @@ export default function WorkWithMe() {
                     <span className="display text-3xl md:text-4xl font-extrabold text-m3-outline/25 tabular-nums leading-none">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-primary-container text-m3-on-primary-container flex items-center justify-center">
+                    <span className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-surface-variant text-m3-on-surface flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </span>
                   </div>
@@ -497,7 +497,7 @@ export default function WorkWithMe() {
                           key={t}
                           className="flex items-start gap-2 text-[13px] leading-snug font-semibold text-m3-on-surface"
                         >
-                          <Check className="w-3.5 h-3.5 mt-[2px] shrink-0 text-m3-primary" />
+                          <Check className="w-3.5 h-3.5 mt-[2px] shrink-0 text-m3-on-surface" />
                           {t}
                         </li>
                       ))}
@@ -509,7 +509,7 @@ export default function WorkWithMe() {
                     <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface">
                       {name}
                     </h3>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-m3-primary whitespace-nowrap">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface whitespace-nowrap">
                       {meta}
                     </span>
                   </div>
@@ -523,7 +523,7 @@ export default function WorkWithMe() {
                     open={i === 0}
                     className="group mt-4 bg-m3-surface-variant/60 rounded-[20px] border border-m3-outline/10"
                   >
-                    <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-m3-primary flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                    <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer select-none rounded-[20px] outline-none focus-visible:ring-2 focus-visible:ring-m3-on-surface flex items-center justify-between gap-3 px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface">
                       <span>Inside this offer</span>
                       <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
                     </summary>
@@ -538,7 +538,7 @@ export default function WorkWithMe() {
                               key={t}
                               className="flex items-start gap-2 text-sm leading-relaxed text-m3-on-surface-variant font-medium"
                             >
-                              <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
+                              <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-on-surface shrink-0" />
                               {t}
                             </li>
                           ))}
@@ -576,7 +576,7 @@ export default function WorkWithMe() {
                               {" "}
                               <Link
                                 to={DETAILS[name].proofLink!.to}
-                                className="font-bold text-m3-primary hover:underline"
+                                className="font-bold text-m3-on-surface hover:underline"
                               >
                                 {DETAILS[name].proofLink!.label}
                               </Link>
@@ -602,7 +602,7 @@ export default function WorkWithMe() {
               Also available
             </span>
             <div className="flex items-start gap-4">
-              <span className="mt-0.5 w-10 h-10 shrink-0 rounded-m3-full bg-m3-secondary-container text-m3-on-secondary-container flex items-center justify-center">
+              <span className="mt-0.5 w-10 h-10 shrink-0 rounded-m3-full bg-m3-surface-variant text-m3-on-surface flex items-center justify-center">
                 <Users className="w-5 h-5" />
               </span>
               <div>
@@ -641,7 +641,7 @@ export default function WorkWithMe() {
                 className="bg-m3-surface rounded-[16px] border border-m3-outline/10 px-4 py-3.5 flex flex-col gap-1"
               >
                 <div className="flex items-start gap-2">
-                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-primary shrink-0" />
+                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-m3-on-surface shrink-0" />
                   <span className="text-sm font-bold text-m3-on-surface leading-snug">
                     {name}
                   </span>
@@ -674,7 +674,7 @@ export default function WorkWithMe() {
             <h3 className="serif mt-3 text-2xl md:text-4xl font-medium tracking-tight leading-[1.1] max-w-3xl">
               Launching global media brands into the Middle East
             </h3>
-            <p className="mt-3 text-base md:text-lg font-bold text-m3-primary-container leading-snug">
+            <p className="mt-3 text-base md:text-lg font-bold text-m3-surface leading-snug">
               Five titles, three waves — and the last one shipped in half the
               time.
             </p>
@@ -685,7 +685,7 @@ export default function WorkWithMe() {
               <Reveal key={label} index={i} className="flex flex-col gap-1 min-w-[110px]">
                 <StatValue
                   value={value}
-                  className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-primary-container leading-none"
+                  className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-surface leading-none"
                 />
                 <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-75 max-w-[140px] leading-snug">
                   {label}
@@ -719,14 +719,14 @@ export default function WorkWithMe() {
               {CASE_STUDY_URL && (
                 <Link
                   to={CASE_STUDY_URL}
-                  className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
+                  className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-surface hover:gap-2 transition-all"
                 >
                   Read the launches case study <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               )}
               <Link
                 to={REPLATFORM_CASE_STUDY_URL}
-                className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary-container hover:gap-2 transition-all"
+                className="inline-flex items-center gap-1 min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-surface hover:gap-2 transition-all"
               >
                 Read the replatforming case study <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -755,9 +755,9 @@ export default function WorkWithMe() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-2 h-full"
+                  className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 hover:border-m3-on-surface/30 hover:shadow-xl transition-all flex flex-col gap-2 h-full"
                 >
-                  <span className="mono text-sm font-bold text-m3-primary group-hover:underline underline-offset-4">
+                  <span className="mono text-sm font-bold text-m3-on-surface group-hover:underline underline-offset-4">
                     {label}
                   </span>
                   <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium">
@@ -774,7 +774,7 @@ export default function WorkWithMe() {
           <Eyebrow>Is this a fit?</Eyebrow>
           <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-5">
             <Reveal index={0} className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
-              <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary mb-6">
+              <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface mb-6">
                 <Check className="w-4 h-4" /> Good fit
               </h2>
               <div className="flex flex-col gap-5">
