@@ -180,80 +180,94 @@ export default function Home() {
             aria-hidden="true"
             className="absolute -top-24 -left-20 w-80 h-80 bg-m3-primary/10 rounded-full blur-3xl pointer-events-none"
           />
-          {/* Single column now. The credential facts (launches, houses,
-              titles) used to live here twice — a desktop sidebar card and a
-              separate mobile strip — just to fill the second grid track.
-              They've moved to their own full-width band below, so the
-              headline gets the whole hero to itself at every width. */}
-          <div className="relative z-10 max-w-3xl">
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/swami-guru.jpg"
-                alt="Swami Guru"
-                className="w-11 h-11 rounded-full object-cover border border-m3-outline/15 shrink-0"
-              />
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
+          {/* Two-column at md+: copy on the left, a large framed portrait on
+              the right — order-first/order-last flips that to photo-above-copy
+              on mobile, so the personal signal lands before any text does.
+              The small circular avatar that used to sit in the badge row is
+              gone; the portrait now carries that trust signal on its own. */}
+          <div className="relative z-10 grid md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_360px] gap-8 md:gap-12 lg:gap-16 md:items-center">
+            <div className="order-2 md:order-1 min-w-0 max-w-3xl">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
                 Taking new engagements
               </span>
-            </div>
-            <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
-              build · ship · repeat
-            </span>
-            <motion.h1
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="serif text-[2rem] md:text-[3.4rem] font-medium tracking-tight text-m3-on-surface leading-[1.08] mb-5"
-            >
-              I spent eleven years leading product for global publishing
-              brands. Now I design, build, and ship my own &mdash; in public.
-            </motion.h1>
-            <motion.p
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl"
-            >
-              Product consulting for publishers and content-driven teams making
-              the hard moves &mdash; site audits, new markets, replatforms, AI in
-              the workflow. Plus build notes from what I ship solo, and the daily tech news
-              over at Long Press.
-            </motion.p>
+              <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
+                build · ship · repeat
+              </span>
+              <motion.h1
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="serif text-[2rem] md:text-[3.4rem] font-medium tracking-tight text-m3-on-surface leading-[1.08] mb-5"
+              >
+                Eleven years leading product at Cond&eacute; Nast &mdash; Vogue,
+                GQ, Wired, Cond&eacute; Nast Traveller. Now I design, build, and
+                ship my own &mdash; in public.
+              </motion.h1>
+              <motion.p
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl"
+              >
+                Product consulting for publishers &mdash; site audits, market
+                launches, CMS migrations, AI workflows. Plus build notes from
+                what I ship solo, and the daily tech news over at Long Press.
+              </motion.p>
 
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
-            <a
-              href="https://longpress.news"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCta("hero_read_daily", "home_hero")}
-              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
-            >
-              Read today&rsquo;s five <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <Link
-              to="/work-with-me"
-              onClick={() => trackCta("hero_work_with_me", "home_hero")}
-              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
-            >
-              Work with me <ArrowUpRight className="w-4 h-4" />
-            </Link>
-            </motion.div>
-            <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
-              Currently building{" "}
+              <motion.div
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
               <a
                 href="https://longpress.news"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-m3-primary font-bold hover:underline underline-offset-4"
+                onClick={() => trackCta("hero_read_daily", "home_hero")}
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
               >
-                longpress.news
+                Read today&rsquo;s five <ArrowUpRight className="w-4 h-4" />
               </a>
-            </p>
+              <Link
+                to="/work-with-me"
+                onClick={() => trackCta("hero_work_with_me", "home_hero")}
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
+              >
+                Work with me <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              </motion.div>
+              <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
+                Currently building{" "}
+                <a
+                  href="https://longpress.news"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-m3-primary font-bold hover:underline underline-offset-4"
+                >
+                  longpress.news
+                </a>
+              </p>
+            </div>
+
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="order-1 md:order-2 w-40 sm:w-52 md:w-full mx-auto md:mx-0"
+            >
+              <TiltCard
+                max={4}
+                className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface"
+              >
+                <img
+                  src="/swami-guru-desk.webp"
+                  alt="Swami Guru at his desk"
+                  loading="eager"
+                  className="w-full h-full object-cover"
+                />
+              </TiltCard>
+            </motion.div>
           </div>
         </section>
 
