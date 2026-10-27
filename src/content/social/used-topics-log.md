@@ -496,3 +496,12 @@
 2026-10-26 | T | India / Cybersecurity | Surat police 338 complaints Rs 410cr network | USDT, Dubai/China (The420)
 2026-10-26 | T | Apps / Social platforms | Instagram Apple TV app | Reels, long videos, live, tvOS 26+ (MacRumors)
 2026-10-26 | T | AI / Legal | Elvis rights holders sue Anthropic | 274 songs (LA Times)
+2026-10-27 | 1 | AI business / IPO | Anthropic public S-1, Nasdaq ANT | filed Oct 26, H1 rev $16.3B +~1,300%, net loss $80.7B incl $72.4B non-cash convertible charge, op loss $693M, op cash flow +$3.9B, top 5 = 25%, ~half via AWS/Google/Microsoft marketplaces, 5-7% rev from policy violators, cofounders 50.1% votes, Thanksgiving week target (Fortune); renting-shop-window-from-rivals take (new hard dev = public S-1 vs 09-29 draft)
+2026-10-27 | 2 | India / Regulation / Streaming | TRAI recommends licence for live TV apps (ALTD) | Oct 26, Samsung TV Plus/YuppTV/Xiaomi TV+, Rs 1 lakh entry 20-yr licence, Indian entities, data in India, internet-only news channels barred, TV makers must pull unlicensed apps, 1-yr transition, MIB to decide (MediaNama); licensing-fine-news-ban-not take
+2026-10-27 | 4 | India / Myth-buster / Cybersecurity (opinion) | Fake mParivahan e-challan APK | Ahmedabad 86-yr-old ~Rs 10.8 lakh via WhatsApp group (The420 Oct 26), Kerala police Sept warning, PIB Fact Check July; if-it-says-mParivahan myth (carousel, opinion quota)
+2026-10-27 | 5 | Hot take / Creator economy (opinion) | Instagram Features 90-minute videos test | Oct 26 Brazil, small US next, Clips as Reels, no ad share, Mosseri "burning capital", YouTube 55% (TechCrunch); keep-long-video-on-YouTube take (IG pick, carousel, opinion quota; new dev vs 10-26 Apple TV app Tap)
+2026-10-27 | T | India / Gov digital policy | MeitY AI consultation paper slips to November | Vaishnaw "coming weeks" (MediaNama Oct 26) (new dev vs 10-13 Tap)
+2026-10-27 | T | India / Cybersecurity | ED seventh arrest Rs 28,000cr digital-arrest probe | Rashesh Upadhyay Mumbai airport, ~400 mule accounts (The420)
+2026-10-27 | T | Tablets / Apple launch | OLED iPad mini $699 OFFICIAL | pre-orders Oct 28, ships Nov 6, A20 Pro, IP67 (MacRumors)
+2026-10-27 | T | OS updates | iOS 27.2 released | Siri AI French/Japanese/Korean/Portuguese/Spanish, no Indian languages, 160+ fixes (Lowyat)
+2026-10-27 | T | Cybersecurity | University of Copenhagen breach 525,000 | test environment, CPR numbers (BleepingComputer)
