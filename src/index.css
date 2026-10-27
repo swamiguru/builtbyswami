@@ -41,11 +41,16 @@
   --color-m3-error-container: #FFDAD6;
   --color-m3-on-error-container: #410002;
   
-  --color-m3-surface: #FBFDF8;
-  --color-m3-on-surface: #191C19;
-  --color-m3-surface-variant: #DCE5DB;
-  --color-m3-on-surface-variant: #414941;
-  --color-m3-outline: #717971;
+  /* True neutrals — not M3's tonal gray-greens. The surface/surface-variant/
+     outline trio used to be derived from the green primary hue (standard
+     M3 behavior), so even "neutral" section backgrounds carried a visible
+     sage cast. For a genuinely monochrome page these need to be actual
+     grays, with zero hue, not just desaturated green. */
+  --color-m3-surface: #FDFDFC;
+  --color-m3-on-surface: #19191A;
+  --color-m3-surface-variant: #E7E7E5;
+  --color-m3-on-surface-variant: #46464A;
+  --color-m3-outline: #78787C;
   
   --radius-m3-sm: 8px;
   --radius-m3-md: 12px;
