@@ -15,6 +15,9 @@ import {
   Globe,
   Server,
   ScanSearch,
+  Code2,
+  Terminal,
+  Cpu,
 } from "lucide-react";
 import { trackCta } from "../lib/analytics";
 import { getLatestNotes, formatNoteDate } from "../data/notes";
@@ -175,85 +178,197 @@ export default function Home() {
             positioning once and then forks: readers go down into the daily,
             everyone else goes sideways into the consulting page. Deliberately
             short — it frames the page, it doesn't compete with it. */}
-        <section className="relative overflow-hidden px-6 md:px-14 pt-10 md:pt-14 pb-10 md:pb-14 bg-m3-surface-variant border-b border-m3-outline/10">
+        <section className="relative overflow-hidden px-6 md:px-14 pt-6 sm:pt-8 md:pt-14 pb-8 md:pb-14 bg-m3-surface-variant border-b border-m3-outline/10">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.35] pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(var(--color-m3-outline) 1px, transparent 1px)",
+              backgroundSize: "22px 22px",
+              maskImage: "radial-gradient(60% 55% at 30% 20%, black, transparent)",
+              WebkitMaskImage: "radial-gradient(60% 55% at 30% 20%, black, transparent)",
+            }}
+          />
           <div
             aria-hidden="true"
             className="absolute -top-24 -left-20 w-80 h-80 bg-m3-primary/10 rounded-full blur-3xl pointer-events-none"
           />
-          {/* Single column now. The credential facts (launches, houses,
-              titles) used to live here twice — a desktop sidebar card and a
-              separate mobile strip — just to fill the second grid track.
-              They've moved to their own full-width band below, so the
-              headline gets the whole hero to itself at every width. */}
-          <div className="relative z-10 max-w-3xl">
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/swami-guru.jpg"
-                alt="Swami Guru"
-                className="w-11 h-11 rounded-full object-cover border border-m3-outline/15 shrink-0"
-              />
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-m3-primary" />
-                Taking new engagements
-              </span>
-            </div>
-            <span className="font-display text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-extrabold text-m3-primary block mb-4">
-              build · ship · repeat
-            </span>
-            <motion.h1
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="serif text-[2rem] md:text-[3.4rem] font-medium tracking-tight text-m3-on-surface leading-[1.08] mb-5"
-            >
-              I spent eleven years leading product for global publishing
-              brands. Now I design, build, and ship my own &mdash; in public.
-            </motion.h1>
-            <motion.p
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-7 max-w-2xl"
-            >
-              Product consulting for publishers and content-driven teams making
-              the hard moves &mdash; site audits, new markets, replatforms, AI in
-              the workflow. Plus build notes from what I ship solo, and the daily tech news
-              over at Long Press.
-            </motion.p>
+          <motion.div
+            aria-hidden="true"
+            className="hidden md:block absolute -bottom-20 -right-10 w-72 h-72 bg-m3-tertiary/10 rounded-full blur-3xl pointer-events-none"
+            animate={shouldReduceMotion ? undefined : { x: [0, -24, 0], y: [0, 18, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          />
+          {/* Two-column at md+: copy on the left, a large framed portrait on
+              the right — order-first/order-last flips that to photo-above-copy
+              on mobile. The portrait is deliberately small on mobile (a
+              thumbnail, not a hero image) so the CTAs still land above the
+              fold; it only grows into the big framed photo at md+, where
+              there's room. Headline is a mixed-weight serif line — bold on
+              every named title, regular on the connective text — which
+              reads clearly even at a small size, so the font can shrink on
+              mobile without the credential list turning to mush. */}
+          <div className="relative z-10 grid md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-4 sm:gap-6 md:gap-12 lg:gap-16 md:items-center">
+            <div className="order-2 md:order-1 min-w-0 max-w-3xl">
+              <div className="flex items-center gap-3 mb-3">
+                <img
+                  src="/swami-guru-desk.webp"
+                  alt="Swami Guru"
+                  className="md:hidden w-11 h-11 rounded-2xl object-cover border border-m3-outline/15 shrink-0 bg-m3-on-surface"
+                />
+                <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-m3-on-surface-variant bg-m3-surface border border-m3-outline/15 rounded-m3-full px-3 py-1.5">
+                  <span className="relative flex w-1.5 h-1.5">
+                    <span className="absolute inset-0 rounded-full bg-m3-primary animate-ping motion-reduce:hidden opacity-75" />
+                    <span className="relative w-1.5 h-1.5 rounded-full bg-m3-primary" />
+                  </span>
+                  Taking new engagements
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-m3-on-surface rounded-lg pl-2.5 pr-3 py-1.5 mb-3 shadow-sm">
+                <span className="flex gap-1" aria-hidden="true">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f57]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#28c840]" />
+                </span>
+                <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-primary-container flex items-center">
+                  build &rarr; ship &rarr; repeat
+                  <span
+                    aria-hidden="true"
+                    className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-primary-container ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
+                  />
+                </span>
+              </div>
+              <motion.h1
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="serif text-xl sm:text-2xl md:text-[2.5rem] lg:text-[2.75rem] font-normal tracking-tight text-m3-on-surface leading-[1.2] md:leading-[1.15] mb-3 md:mb-5"
+              >
+                I help <strong className="font-bold">publishers</strong> grow
+                &mdash; and design, build, and ship my own products{" "}
+                <strong className="font-bold">in public</strong>.
+              </motion.h1>
+              <motion.p
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="text-sm sm:text-base md:text-xl text-m3-on-surface font-medium leading-relaxed mb-4 md:mb-7 max-w-2xl"
+              >
+                Product consulting for publishers &mdash; site audits, unlock
+                revenue opportunities, boost audience engagement, launch
+                brands into new markets, CMS migrations, AI workflows for
+                newsrooms.
+                <br className="hidden sm:block" /> Plus the daily tech news
+                over at{" "}
+                <a
+                  href="https://longpress.news"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-m3-primary font-bold hover:underline underline-offset-4"
+                >
+                  longpress.news
+                </a>
+                .
+              </motion.p>
+              <p className="text-xs text-m3-on-surface-variant/70 italic mb-4 md:mb-6">
+                Also now in early talks with The New Times.
+              </p>
 
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
-            <a
-              href="https://longpress.news"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCta("hero_read_daily", "home_hero")}
-              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
-            >
-              Read today&rsquo;s five <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <Link
-              to="/work-with-me"
-              onClick={() => trackCta("hero_work_with_me", "home_hero")}
-              className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
-            >
-              Work with me <ArrowUpRight className="w-4 h-4" />
-            </Link>
-            </motion.div>
-            <p className="mt-4 text-[13px] md:text-sm text-m3-on-surface-variant font-medium">
-              Currently building{" "}
+              <motion.div
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
               <a
                 href="https://longpress.news"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-m3-primary font-bold hover:underline underline-offset-4"
+                onClick={() => trackCta("hero_read_daily", "home_hero")}
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
               >
-                longpress.news
+                Read today&rsquo;s five <ArrowUpRight className="w-4 h-4" />
               </a>
-            </p>
+              <Link
+                to="/work-with-me"
+                onClick={() => trackCta("hero_work_with_me", "home_hero")}
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
+              >
+                Work with me <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="hidden md:block relative order-2 w-full"
+            >
+              {/* Floating tech-stack chips. Gentle independent float per
+                  chip (different duration/delay) so they don't move in
+                  lockstep — reads as ambient, not a marquee. Purely
+                  decorative, so aria-hidden; disabled under
+                  prefers-reduced-motion like the rest of the hero. */}
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute -top-4 -right-5 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, -7, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Code2 className="w-3.5 h-3.5 text-m3-primary" />
+                TypeScript
+              </motion.div>
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute top-1/3 -left-6 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+              >
+                <Cpu className="w-3.5 h-3.5 text-m3-primary" />
+                AI-native
+              </motion.div>
+              <motion.div
+                aria-hidden="true"
+                className="hidden lg:flex items-center gap-1.5 absolute -bottom-4 right-6 z-10 bg-m3-surface/95 backdrop-blur border border-m3-outline/15 rounded-m3-full px-3 py-1.5 shadow-md font-mono text-[11px] font-medium text-m3-on-surface"
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+              >
+                <Terminal className="w-3.5 h-3.5 text-m3-primary" />
+                Shipped in public
+              </motion.div>
+
+              <TiltCard
+                max={4}
+                className="relative aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden border border-m3-outline/10 shadow-xl bg-m3-on-surface animate-[pulse-glow_4s_ease-in-out_infinite] motion-reduce:animate-none"
+              >
+                <img
+                  src="/swami-guru-desk.webp"
+                  alt="Swami Guru at his desk"
+                  loading="eager"
+                  className="w-full h-full object-cover grayscale contrast-110"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-m3-primary mix-blend-color opacity-25 pointer-events-none"
+                />
+                {/* Editor/terminal window chrome — traffic-light dots +
+                    a mono "file name" label, so the frame itself reads as
+                    a piece of software, not just a photo in a rounded
+                    box. Purely decorative. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute top-0 inset-x-0 flex items-center gap-2 px-4 py-2.5 bg-black/30 backdrop-blur-sm pointer-events-none"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
+                  <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
+                  <span className="w-2 h-2 rounded-full bg-[#28c840]" />
+                  <span className="font-mono text-[10px] text-white/70 ml-1.5 tracking-wide">
+                    swami.webp &mdash; online
+                  </span>
+                </div>
+              </TiltCard>
+            </motion.div>
           </div>
         </section>
 

@@ -33,60 +33,29 @@ const NAV: NavItem[] = [
  * Shared, responsive site header: brand lockup + desktop nav on md+,
  * and a hamburger dropdown on small screens so nav is reachable on mobile.
  *
- * Implements a smart scroll behavior:
- * - Hides smoothly on downward scroll
- * - Elegantly animates back into view on upward scroll
- * - Stays visible when near the top of the page or when menus/modals are active
+ * Always pinned to the top of the viewport via position:sticky on both
+ * desktop and mobile. Previously this hid on downward scroll and
+ * reanimated back in on upward scroll; that read as the header
+ * "disappearing" rather than staying put, so it's now simply always
+ * visible once scrolled, with a shadow/blur pickup for depth.
  */
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
-  const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
-  // Scroll direction detection
   useEffect(() => {
-    let lastScrollY = typeof window !== "undefined" ? (window.pageYOffset || document.documentElement.scrollTop || 0) : 0;
-
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
-
-      // Always reveal when near the top
-      if (currentScrollY <= 80) {
-        setVisible(true);
-        setScrolled(false);
-        lastScrollY = Math.max(0, currentScrollY);
-        return;
-      }
-
-      setScrolled(true);
-
-      // Keep header visible if the mobile menu is open
-      if (open) {
-        setVisible(true);
-        lastScrollY = Math.max(0, currentScrollY);
-        return;
-      }
-
-      const diff = currentScrollY - lastScrollY;
-
-      // Scrolling down past threshold -> hide header
-      if (diff > 8) {
-        setVisible(false);
-        lastScrollY = currentScrollY;
-      }
-      // Scrolling up past threshold -> reveal header smoothly
-      else if (diff < -8) {
-        setVisible(true);
-        lastScrollY = currentScrollY;
-      }
+      setScrolled(currentScrollY > 8);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [open]);
+  }, []);
 
   const renderItem = (item: NavItem, className: string) =>
     item.external ? (
@@ -116,30 +85,12 @@ export default function SiteHeader() {
       <motion.header
         className="sticky top-0 z-30 bg-m3-surface/90 backdrop-blur-md border-b border-m3-outline/20 will-change-transform rounded-t-m3-xl md:rounded-t-[32px]"
         initial={false}
-        animate={visible ? "visible" : "hidden"}
-        variants={{
-          visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-              duration: shouldReduceMotion ? 0.05 : 0.28,
-              ease: [0.16, 1, 0.3, 1], // snappy ease-out
-            },
-          },
-          hidden: {
-            y: "-100%",
-            opacity: 0,
-            transition: {
-              duration: shouldReduceMotion ? 0.05 : 0.22,
-              ease: [0.4, 0, 1, 1], // immediate ease-in
-            },
-          },
-        }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: shouldReduceMotion ? 0.05 : 0.2, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          boxShadow:
-            scrolled && visible
-              ? "0 10px 30px -10px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.04)"
-              : "none",
+          boxShadow: scrolled
+            ? "0 10px 30px -10px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.04)"
+            : "none",
         }}
       >
         <div className="h-[70px] md:h-[88px] flex items-center justify-between px-6 md:px-10">
