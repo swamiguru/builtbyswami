@@ -211,11 +211,9 @@ export default function Home() {
                 transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="serif text-xl sm:text-2xl md:text-[2.5rem] lg:text-[2.75rem] font-normal tracking-tight text-m3-on-surface leading-[1.2] md:leading-[1.15] mb-3 md:mb-5"
               >
-                Eleven years leading product at{" "}
-                <strong className="font-bold">Cond&eacute; Nast</strong>
-                {" "}&mdash; Vogue, GQ, Wired, CN Traveller, Architectural
-                Digest &mdash; plus Newsweek and Metro World News. Now I
-                design, build, and ship my own.
+                I help <strong className="font-bold">publishers</strong> grow
+                &mdash; and design, build, and ship my own products{" "}
+                <strong className="font-bold">in public</strong>.
               </motion.h1>
               <motion.p
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
