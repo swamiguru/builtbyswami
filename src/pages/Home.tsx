@@ -279,7 +279,11 @@ export default function Home() {
                   src="/swami-guru-desk.webp"
                   alt="Swami Guru at his desk"
                   loading="eager"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale contrast-110"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-m3-primary mix-blend-color opacity-25 pointer-events-none"
                 />
               </TiltCard>
             </motion.div>
