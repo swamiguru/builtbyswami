@@ -418,7 +418,7 @@ export default function Home() {
               scales to six with no redesign. Two columns at exactly four, so
               the fourth card isn't stranded alone on its own row. */}
           <div
-            className={`grid sm:grid-cols-2 gap-4 ${
+            className={`grid grid-cols-2 gap-3 md:gap-4 ${
               homeBuilds.length === 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"
             }`}
           >
@@ -433,7 +433,7 @@ export default function Home() {
               const inner = (
                 <>
                   {shot && (
-                    <div className="relative h-56 md:h-64 overflow-hidden bg-m3-on-surface shrink-0 flex items-center justify-center">
+                    <div className="relative h-36 sm:h-44 md:h-64 overflow-hidden bg-m3-on-surface shrink-0 flex items-center justify-center">
                       <img
                         src={shot}
                         alt={`${build.name} screenshot`}
@@ -443,17 +443,17 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-m3-on-surface/50 via-transparent to-transparent pointer-events-none" />
                     </div>
                   )}
-                  <div className="p-6 flex flex-col gap-3 flex-1">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-m3-primary">
+                  <div className="p-3.5 sm:p-5 md:p-6 flex flex-col gap-2 md:gap-3 flex-1">
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-m3-primary">
                       {build.status}
                     </span>
-                    <span className="display text-lg font-extrabold tracking-tight text-m3-on-surface">
+                    <span className="display text-sm md:text-lg font-extrabold tracking-tight text-m3-on-surface">
                       {build.name}
                     </span>
-                    <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium line-clamp-3">
+                    <span className="text-xs md:text-sm leading-relaxed text-m3-on-surface-variant font-medium line-clamp-2 md:line-clamp-3">
                       {build.what}
                     </span>
-                    <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-1.5 transition-all">
+                    <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-1.5 transition-all">
                       {build.url ? (
                         <>
                           Open it <ArrowUpRight className="w-3.5 h-3.5" />
