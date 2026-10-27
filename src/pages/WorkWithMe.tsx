@@ -5,6 +5,7 @@
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   Briefcase,
@@ -24,6 +25,35 @@ import SiteFooter from "../components/SiteFooter";
 import { TestimonialQuotes } from "../components/Testimonials";
 import { trackCta } from "../lib/analytics";
 import { usePageSeo } from "../hooks/usePageSeo";
+import Reveal from "../components/Reveal";
+import CountUp from "../components/CountUp";
+
+/** Parses a clean numeric stat string ("$20M+", "12%", "5") into CountUp's
+ *  prefix/to/suffix shape. Returns null for anything with a space or
+ *  non-numeric tail ("½", "3 waves, 3 years") — those render as static text
+ *  rather than force an animation onto a value that isn't really a count.
+ *  Mirrors the same helper on /about so both pages count up the same way. */
+function parseMetric(raw: string): { prefix: string; to: number; suffix: string } | null {
+  const m = raw.match(/^(\$|~)?(\d+(?:\.\d+)?)([%+]|[A-Z]\+?)?$/);
+  if (!m) return null;
+  const [, prefix = "", num, suffix = ""] = m;
+  const to = parseFloat(num);
+  if (to < 2) return null; // 0→1 reads as a glitch, not a count
+  return { prefix, to, suffix };
+}
+
+function StatValue({ value, className }: { value: string; className?: string }) {
+  const parsed = parseMetric(value);
+  if (!parsed) return <span className={className}>{value}</span>;
+  return (
+    <CountUp
+      to={parsed.to}
+      prefix={parsed.prefix}
+      suffix={parsed.suffix}
+      className={`${className ?? ""} tabular-nums`}
+    />
+  );
+}
 
 /** Booking link — the 30-minute event type, linked directly so there's no
  *  intermediate "pick a duration" step between the CTA and a booked call. */
@@ -367,6 +397,7 @@ function Eyebrow({
 
 export default function WorkWithMe() {
   usePageSeo("workWithMe");
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
@@ -382,19 +413,34 @@ export default function WorkWithMe() {
             </span>
           </div>
 
-          <h1 className="display text-3xl md:text-5xl font-extrabold uppercase tracking-tighter text-m3-on-surface max-w-4xl leading-[0.95]">
+          <motion.h1
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="serif text-3xl md:text-5xl font-medium tracking-tight text-m3-on-surface max-w-4xl leading-[1.05]"
+          >
             I help publishers and content-driven teams make the hard
             product moves — without losing what's already working
-          </h1>
+          </motion.h1>
 
-          <p className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
+          <motion.p
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 text-base md:text-lg font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed"
+          >
             Site audits, new markets, replatforms, AI in the workflow.
-          </p>
+          </motion.p>
 
-          <div className="mt-8 flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8 flex flex-wrap min-[360px]:flex-nowrap items-center gap-2 sm:gap-3"
+          >
             <BookButton className="min-[360px]:flex-1 sm:flex-none" />
             <EmailButton className="min-[360px]:flex-1 sm:flex-none" />
-          </div>
+          </motion.div>
 
           <p className="mt-8 pt-8 border-t border-m3-outline/15 text-sm md:text-[15px] font-medium text-m3-on-surface-variant max-w-3xl leading-relaxed">
             11 years in product. Led product for{" "}
@@ -423,8 +469,9 @@ export default function WorkWithMe() {
 
           <div className="flex flex-col">
             {SERVICES.map(({ icon: Icon, name, meta, body }, i) => (
-              <div
+              <Reveal
                 key={name}
+                index={i}
                 className={`py-7 md:py-9 flex flex-col md:flex-row md:items-start gap-4 md:gap-10 ${
                   i !== 0 ? "border-t border-m3-outline/10" : ""
                 }`}
@@ -546,7 +593,7 @@ export default function WorkWithMe() {
                     </div>
                   </details>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -587,7 +634,7 @@ export default function WorkWithMe() {
             sign-off and the SEO strategy, not just the product decisions.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+          <Reveal className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
             {TEAM_FUNCTIONS.map(({ name, detail }) => (
               <div
                 key={name}
@@ -606,7 +653,7 @@ export default function WorkWithMe() {
                 )}
               </div>
             ))}
-          </div>
+          </Reveal>
 
           <p className="mt-8 pt-8 border-t border-m3-outline/15 text-sm md:text-[15px] leading-relaxed text-m3-on-surface font-bold max-w-3xl">
             I know this because I started on the other side of it. Five
@@ -620,27 +667,30 @@ export default function WorkWithMe() {
         {/* The work — the flagship case study, set apart with an inverted
             band and a stat strip so it reads as proof, not another block of
             text between the offer and the testimonials. */}
-        <section className="bg-m3-on-surface text-m3-surface px-6 md:px-14 py-12 md:py-16">
+        <section className="bg-grain bg-m3-on-surface text-m3-surface px-6 md:px-14 py-12 md:py-16">
           <Eyebrow tone="inverted">The work</Eyebrow>
 
-          <h3 className="display mt-3 text-2xl md:text-4xl font-extrabold tracking-tight leading-[1.05] max-w-3xl">
-            Launching global media brands into the Middle East
-          </h3>
-          <p className="mt-3 text-base md:text-lg font-bold text-m3-primary-container leading-snug">
-            Five titles, three waves — and the last one shipped in half the
-            time.
-          </p>
+          <Reveal>
+            <h3 className="serif mt-3 text-2xl md:text-4xl font-medium tracking-tight leading-[1.1] max-w-3xl">
+              Launching global media brands into the Middle East
+            </h3>
+            <p className="mt-3 text-base md:text-lg font-bold text-m3-primary-container leading-snug">
+              Five titles, three waves — and the last one shipped in half the
+              time.
+            </p>
+          </Reveal>
 
           <div className="mt-8 md:mt-10 flex flex-wrap gap-x-8 gap-y-5 pb-8 md:pb-10 border-b border-m3-surface/15">
-            {CASE_STUDY_STATS.map(([value, label]) => (
-              <div key={label} className="flex flex-col gap-1 min-w-[110px]">
-                <span className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-primary-container leading-none">
-                  {value}
-                </span>
+            {CASE_STUDY_STATS.map(([value, label], i) => (
+              <Reveal key={label} index={i} className="flex flex-col gap-1 min-w-[110px]">
+                <StatValue
+                  value={value}
+                  className="display text-2xl md:text-3xl font-extrabold tracking-tight text-m3-primary-container leading-none"
+                />
                 <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-75 max-w-[140px] leading-snug">
                   {label}
                 </span>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -694,26 +744,27 @@ export default function WorkWithMe() {
         {/* I also ship */}
         <section className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow>I also ship</Eyebrow>
-          <p className="display mt-3 text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-6">
+          <p className="serif mt-3 text-xl md:text-2xl font-medium tracking-tight text-m3-on-surface mb-6">
             Most product people talk about building. I build.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
-            {SHIPPED.map(([label, href, body]) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-2"
-              >
-                <span className="mono text-sm font-bold text-m3-primary group-hover:underline underline-offset-4">
-                  {label}
-                </span>
-                <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium">
-                  {body}
-                </span>
-              </a>
+            {SHIPPED.map(([label, href, body], i) => (
+              <Reveal key={label} index={i}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-2 h-full"
+                >
+                  <span className="mono text-sm font-bold text-m3-primary group-hover:underline underline-offset-4">
+                    {label}
+                  </span>
+                  <span className="text-sm leading-relaxed text-m3-on-surface-variant font-medium">
+                    {body}
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -722,7 +773,7 @@ export default function WorkWithMe() {
         <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
           <Eyebrow>Is this a fit?</Eyebrow>
           <div className="mt-6 grid md:grid-cols-2 gap-4 md:gap-5">
-            <div className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
+            <Reveal index={0} className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
               <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary mb-6">
                 <Check className="w-4 h-4" /> Good fit
               </h2>
@@ -739,9 +790,9 @@ export default function WorkWithMe() {
                   </p>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
-            <div className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
+            <Reveal index={1} className="bg-m3-surface-variant/60 rounded-[24px] border border-m3-outline/5 p-6 md:p-8">
               <h2 className="flex items-center gap-2 font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface-variant/60 mb-6">
                 <X className="w-4 h-4" /> Not a fit
               </h2>
@@ -758,7 +809,7 @@ export default function WorkWithMe() {
                   </p>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
