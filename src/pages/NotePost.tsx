@@ -58,7 +58,7 @@ export default function NotePost() {
   if (!note) return <Navigate to="/notes" replace />;
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <ScrollProgress />
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
@@ -66,7 +66,7 @@ export default function NotePost() {
 
         {/* Contextual sub-nav */}
         <div className="h-12 md:h-14 border-b border-m3-outline/20 flex items-center justify-between px-6 md:px-10 bg-m3-surface/60">
-          <Link to="/notes" className="font-display font-bold text-sm text-m3-on-surface hover:text-m3-primary transition-colors">
+          <Link to="/notes" className="font-display font-bold text-sm text-m3-on-surface hover:text-m3-on-surface transition-colors">
             ← Build Notes
           </Link>
           <div className="flex items-center gap-1">
@@ -75,7 +75,7 @@ export default function NotePost() {
                 to={`/notes/${older.slug}`}
                 aria-label={`Previous note: ${older.title}`}
                 title={`Previous note: ${older.title}`}
-                className="h-9 pl-2 pr-3 rounded-full flex items-center gap-1 text-m3-on-surface-variant hover:text-m3-primary hover:bg-m3-surface-variant/60 transition-colors"
+                className="h-9 pl-2 pr-3 rounded-full flex items-center gap-1 text-m3-on-surface-variant hover:text-m3-on-surface hover:bg-m3-surface-variant/60 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 shrink-0" />
                 <span className="text-xs font-bold whitespace-nowrap hidden sm:inline">
@@ -96,7 +96,7 @@ export default function NotePost() {
                 to={`/notes/${newer.slug}`}
                 aria-label={`Next note: ${newer.title}`}
                 title={`Next note: ${newer.title}`}
-                className="h-9 pr-2 pl-3 rounded-full flex items-center gap-1 text-m3-on-surface-variant hover:text-m3-primary hover:bg-m3-surface-variant/60 transition-colors"
+                className="h-9 pr-2 pl-3 rounded-full flex items-center gap-1 text-m3-on-surface-variant hover:text-m3-on-surface hover:bg-m3-surface-variant/60 transition-colors"
               >
                 <span className="text-xs font-bold whitespace-nowrap hidden sm:inline">
                   Next · {formatShortDate(newer.date)}
@@ -118,7 +118,7 @@ export default function NotePost() {
         <div className="max-w-[1020px] mx-auto px-6 md:px-10 py-10 md:py-16 w-full flex flex-col lg:flex-row gap-10 items-start">
           <article className="flex-1 min-w-0 max-w-[720px] w-full">
             <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/60 mb-5">
-              <span className="text-m3-primary">{note.tag}</span>
+              <span className="text-m3-on-surface">{note.tag}</span>
               <span>{formatNoteDate(note.date)}</span>
               <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {note.readMinutes} min read</span>
             </div>
@@ -177,12 +177,12 @@ export default function NotePost() {
               <Reveal index={0}>
                 <Link
                   to={`/notes/${older.slug}`}
-                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2"
+                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-on-surface/30 hover:shadow-lg transition-all flex flex-col gap-2"
                 >
                   <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5">
                     <ArrowLeft className="w-3.5 h-3.5" /> Previous · {formatNoteDate(older.date)}
                   </span>
-                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
+                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-on-surface transition-colors">
                     {older.title}
                   </span>
                 </Link>
@@ -194,12 +194,12 @@ export default function NotePost() {
               <Reveal index={1}>
                 <Link
                   to={`/notes/${newer.slug}`}
-                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-primary/30 hover:shadow-lg transition-all flex flex-col gap-2 md:items-end md:text-right"
+                  className="group bg-m3-surface rounded-[20px] border border-m3-outline/5 p-5 md:p-6 hover:border-m3-on-surface/30 hover:shadow-lg transition-all flex flex-col gap-2 md:items-end md:text-right"
                 >
                   <span className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant flex items-center gap-1.5 md:flex-row-reverse">
                     Next · {formatNoteDate(newer.date)} <ArrowRight className="w-3.5 h-3.5" />
                   </span>
-                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-primary transition-colors">
+                  <span className="font-display font-bold text-sm md:text-base text-m3-on-surface line-clamp-2 group-hover:text-m3-on-surface transition-colors">
                     {newer.title}
                   </span>
                 </Link>

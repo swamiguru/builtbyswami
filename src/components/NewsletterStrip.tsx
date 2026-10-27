@@ -48,17 +48,17 @@ export default function NewsletterStrip() {
   if (!visible) return null;
 
   return (
-    <div className="relative z-20 bg-m3-primary text-m3-on-primary">
+    <div className="relative z-20 bg-m3-on-surface text-m3-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 py-2.5">
           <div className="flex items-center gap-2 shrink-0 pr-9 sm:pr-0">
             <Sparkles
-              className="w-4 h-4 shrink-0 text-m3-on-primary/80"
+              className="w-4 h-4 shrink-0 text-m3-surface/80"
               aria-hidden="true"
             />
             <p className="text-sm font-bold font-display leading-tight">
               {NEWSLETTER_TAGLINE}
-              <span className="hidden sm:inline text-m3-on-primary/75 font-medium">
+              <span className="hidden sm:inline text-m3-surface/75 font-medium">
                 {NEWSLETTER_TAGLINE_SUFFIX}
               </span>
             </p>
@@ -75,12 +75,12 @@ export default function NewsletterStrip() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               disabled={redirecting}
-              className="flex-1 sm:w-56 bg-m3-on-primary/10 focus:bg-m3-on-primary text-sm font-bold placeholder:text-m3-on-primary/50 placeholder:font-medium text-m3-on-primary focus:text-m3-on-surface rounded-m3-full py-2 px-4 border border-m3-on-primary/25 focus:outline-none focus:ring-2 focus:ring-m3-on-primary/40 transition-colors disabled:opacity-60"
+              className="flex-1 sm:w-56 bg-m3-surface/10 focus:bg-m3-surface text-sm font-bold placeholder:text-m3-surface/50 placeholder:font-medium text-m3-surface focus:text-m3-on-surface rounded-m3-full py-2 px-4 border border-m3-on-primary/25 focus:outline-none focus:ring-2 focus:ring-m3-on-primary/40 transition-colors disabled:opacity-60"
             />
             <button
               type="submit"
               disabled={redirecting}
-              className="shrink-0 inline-flex items-center gap-1.5 bg-m3-on-primary text-m3-primary text-sm font-bold rounded-m3-full py-2 px-4 hover:opacity-90 active:scale-95 transition-all disabled:opacity-60 whitespace-nowrap"
+              className="shrink-0 inline-flex items-center gap-1.5 bg-m3-surface text-m3-on-surface text-sm font-bold rounded-m3-full py-2 px-4 hover:opacity-90 active:scale-95 transition-all disabled:opacity-60 whitespace-nowrap"
             >
               {redirecting ? (
                 "Taking you there…"
@@ -97,7 +97,7 @@ export default function NewsletterStrip() {
             type="button"
             onClick={dismiss}
             aria-label="Dismiss newsletter banner"
-            className="absolute right-1 top-1 sm:static shrink-0 p-2 rounded-full hover:bg-m3-on-primary/10 transition-colors"
+            className="absolute right-1 top-1 sm:static shrink-0 p-2 rounded-full hover:bg-m3-surface/10 transition-colors"
           >
             <X className="w-4 h-4" aria-hidden="true" />
           </button>

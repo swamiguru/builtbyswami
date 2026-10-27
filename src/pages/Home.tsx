@@ -216,7 +216,7 @@ export default function Home() {
           />
           <div
             aria-hidden="true"
-            className="absolute -top-24 -left-20 w-80 h-80 bg-m3-primary/10 rounded-full blur-3xl pointer-events-none"
+            className="absolute -top-24 -left-20 w-80 h-80 bg-m3-on-surface/5 rounded-full blur-3xl pointer-events-none"
           />
           <motion.div
             aria-hidden="true"
@@ -255,11 +255,11 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#febc2e]" />
                   <span className="w-1.5 h-1.5 rounded-full bg-[#28c840]" />
                 </span>
-                <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-primary-container flex items-center">
+                <span className="font-mono text-[10px] sm:text-[11px] md:text-xs tracking-wider font-medium text-m3-surface flex items-center">
                   build &rarr; ship &rarr; repeat
                   <span
                     aria-hidden="true"
-                    className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-primary-container ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
+                    className="inline-block w-[2px] h-[11px] md:h-[13px] bg-m3-surface ml-1 translate-y-px animate-[blink_1.1s_steps(1)_infinite] motion-reduce:hidden"
                   />
                 </span>
               </div>
@@ -289,7 +289,7 @@ export default function Home() {
                   href="https://longpress.news"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-m3-primary font-bold hover:underline underline-offset-4"
+                  className="text-m3-on-surface font-bold hover:underline underline-offset-4"
                 >
                   longpress.news
                 </a>
@@ -309,14 +309,14 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackCta("hero_read_daily", "home_hero")}
-                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-primary text-m3-on-primary font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-on-surface text-m3-surface font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap shadow-xs cursor-pointer"
               >
                 Read today&rsquo;s five <ArrowUpRight className="w-4 h-4" />
               </a>
               <Link
                 to="/work-with-me"
                 onClick={() => trackCta("hero_work_with_me", "home_hero")}
-                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:border-m3-primary/40 hover:text-m3-primary active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 min-[360px]:flex-1 sm:flex-none bg-m3-surface text-m3-on-surface border border-m3-outline/20 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-m3-full hover:border-m3-on-surface/40 active:scale-95 transition-all text-[13px] sm:text-sm tracking-wide whitespace-nowrap"
               >
                 Work with me <ArrowUpRight className="w-4 h-4" />
               </Link>
@@ -340,7 +340,7 @@ export default function Home() {
                 animate={shouldReduceMotion ? undefined : { y: [0, -7, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Code2 className="w-3.5 h-3.5 text-m3-primary" />
+                <Code2 className="w-3.5 h-3.5 text-m3-on-surface" />
                 TypeScript
               </motion.div>
               <motion.div
@@ -349,7 +349,7 @@ export default function Home() {
                 animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
                 transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
               >
-                <Cpu className="w-3.5 h-3.5 text-m3-primary" />
+                <Cpu className="w-3.5 h-3.5 text-m3-on-surface" />
                 AI-native
               </motion.div>
               <motion.div
@@ -358,7 +358,7 @@ export default function Home() {
                 animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
                 transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
               >
-                <Terminal className="w-3.5 h-3.5 text-m3-primary" />
+                <Terminal className="w-3.5 h-3.5 text-m3-on-surface" />
                 Shipped in public
               </motion.div>
 
@@ -411,7 +411,7 @@ export default function Home() {
                     to={m.to}
                     prefix={m.prefix}
                     suffix={m.suffix}
-                    className="display text-2xl md:text-4xl font-black tracking-tighter text-m3-primary-container leading-none tabular-nums"
+                    className="display text-2xl md:text-4xl font-black tracking-tighter text-m3-surface leading-none tabular-nums"
                   />
                   <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-wider opacity-80">
                     {m.label}
@@ -442,10 +442,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
               <div>
                 <div className="flex items-center gap-2.5 mb-3">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-primary text-m3-on-primary font-mono text-[11px] font-bold shrink-0">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-on-surface text-m3-surface font-mono text-[11px] font-bold shrink-0">
                     01
                   </span>
-                  <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-primary">
+                  <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-surface">
                     what I do for clients
                   </span>
                 </div>
@@ -456,7 +456,7 @@ export default function Home() {
               <Link
                 to="/work-with-me"
                 onClick={() => trackCta("home_consulting_see_all", "home_consulting")}
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-m3-primary hover:underline underline-offset-4 shrink-0"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-m3-on-surface hover:underline underline-offset-4 shrink-0"
               >
                 See all engagements <ArrowUpRight className="w-4 h-4" />
               </Link>
@@ -523,7 +523,7 @@ export default function Home() {
               <Link
                 to="/work-with-me"
                 onClick={() => trackCta("home_consulting_work_with_me", "home_consulting")}
-                className="inline-flex items-center justify-center gap-2 bg-m3-primary text-m3-on-primary font-display font-bold px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-sm tracking-wide shadow-xs cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-m3-on-surface text-m3-surface font-display font-bold px-6 py-3 rounded-m3-full hover:m3-elevation-1-shadow active:scale-95 transition-all text-sm tracking-wide shadow-xs cursor-pointer"
               >
                 Work with me <ArrowUpRight className="w-4 h-4" />
               </Link>
@@ -554,7 +554,7 @@ export default function Home() {
             </div>
             <Link
               to="/builds"
-              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-primary transition-colors flex items-center gap-1"
+              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-on-surface transition-colors flex items-center gap-1"
             >
               All builds <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -600,7 +600,7 @@ export default function Home() {
                     <span className="text-xs md:text-sm leading-relaxed text-m3-on-surface-variant font-medium line-clamp-2 md:line-clamp-3">
                       {build.what}
                     </span>
-                    <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-primary group-hover:gap-1.5 transition-all">
+                    <span className="mt-auto pt-2 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-m3-on-surface group-hover:gap-1.5 transition-all">
                       {build.url ? (
                         <>
                           Open it <ArrowUpRight className="w-3.5 h-3.5" />
@@ -658,7 +658,7 @@ export default function Home() {
             </div>
             <Link
               to="/notes"
-              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-primary transition-colors flex items-center gap-1"
+              className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant hover:text-m3-on-surface transition-colors flex items-center gap-1"
             >
               All notes <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -674,10 +674,10 @@ export default function Home() {
                   <Clock className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[11px] font-bold uppercase tracking-widest text-m3-primary mb-2">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface mb-2">
                     {note.tag} · {note.readMinutes} min read · {formatNoteDate(note.date)}
                   </div>
-                  <h3 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-primary transition-colors">
+                  <h3 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:underline underline-offset-4 transition-colors">
                     {note.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-xl line-clamp-2">
@@ -696,13 +696,13 @@ export default function Home() {
             Anyone who scrolled a whole publication homepage is interested in
             who wrote it. This used to offer one vague exit ("The full story");
             it now names both, so the reader picks rather than guessing. */}
-        <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-primary text-m3-on-primary">
+        <section className="px-6 md:px-14 py-7 md:py-9 bg-m3-on-surface text-m3-surface">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2.5 mb-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-on-primary text-m3-primary font-mono text-[11px] font-bold shrink-0">
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-m3-surface text-m3-on-surface font-mono text-[11px] font-bold shrink-0">
                 04
               </span>
-              <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-on-primary/70">
+              <span className="font-display text-xs font-black uppercase tracking-[0.25em] text-m3-surface/70">
                 The operator behind the builds
               </span>
             </div>
@@ -720,7 +720,7 @@ export default function Home() {
               <Link
                 to="/work-with-me"
                 onClick={() => trackCta("fork_work_with_me", "home_fork")}
-                className="inline-flex items-center gap-2 border border-m3-on-primary/40 text-m3-on-primary font-display font-bold px-6 py-2.5 rounded-m3-full hover:bg-m3-on-primary/10 active:scale-95 transition-all text-sm tracking-wide"
+                className="inline-flex items-center gap-2 border border-m3-surface/40 text-m3-surface font-display font-bold px-6 py-2.5 rounded-m3-full hover:bg-m3-surface/10 active:scale-95 transition-all text-sm tracking-wide"
               >
                 Work with me <ArrowUpRight className="w-4 h-4" />
               </Link>

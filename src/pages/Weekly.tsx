@@ -30,15 +30,15 @@ export default function Weekly() {
   usePageSeo("weekly");
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
         <SiteHeader />
 
         <section className="px-6 md:px-14 pt-12 md:pt-16 pb-6">
           <div className="flex items-center gap-3 mb-4">
-            <Clock className="w-5 h-5 text-m3-primary" />
-            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
+            <Clock className="w-5 h-5 text-m3-on-surface" />
+            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
               The Weekly
             </span>
           </div>
@@ -60,7 +60,7 @@ export default function Weekly() {
                   href={issue.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-7 hover:border-m3-primary/30 hover:shadow-xl transition-all"
+                  className="group bg-m3-surface rounded-[28px] border border-m3-outline/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-7 hover:border-m3-on-surface/30 hover:shadow-xl transition-all"
                 >
                   {issue.thumbnail && (
                     <img
@@ -74,11 +74,11 @@ export default function Weekly() {
                     />
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-bold uppercase tracking-widest text-m3-primary mb-2">
+                    <div className="text-[11px] font-bold uppercase tracking-widest text-m3-on-surface mb-2">
                       {issue.issueNumber !== undefined && `Issue #${issue.issueNumber} · `}
                       {formatLongDate(issue.publishedDate)}
                     </div>
-                    <h2 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-primary transition-colors">
+                    <h2 className="display text-lg md:text-xl font-extrabold tracking-tight text-m3-on-surface mb-2 group-hover:text-m3-on-surface transition-colors">
                       {issue.title}
                     </h2>
                     {issue.teaser && (
@@ -114,7 +114,7 @@ export default function Weekly() {
                   href={WEEKLY_PUBLICATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-m3-primary font-bold"
+                  className="text-m3-on-surface font-bold"
                 >
                   Read every issue on beehiiv
                 </a>

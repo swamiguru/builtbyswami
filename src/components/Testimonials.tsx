@@ -18,9 +18,9 @@ const LINKEDIN = "https://www.linkedin.com/in/swaminathanguru/details/recommenda
 /* Monogram tones cycle through the three M3 containers so the grid has
    rhythm without randomness — same person always gets the same tone. */
 const TONES = [
-  "bg-m3-primary-container text-m3-on-primary-container",
-  "bg-m3-secondary-container text-m3-on-secondary-container",
-  "bg-m3-tertiary-container text-m3-on-tertiary-container",
+  "bg-m3-surface-variant text-m3-on-surface",
+  "bg-m3-surface-variant text-m3-on-surface",
+  "bg-m3-surface-variant text-m3-on-surface",
 ];
 
 function Identity({ t, tone }: { t: Testimonial; tone: string }) {
@@ -51,10 +51,10 @@ function Card({ t, index }: { t: Testimonial; index: number }) {
   const hasMore = t.full.length > t.quote.length + 40;
 
   return (
-    <figure className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-7 flex flex-col gap-4 hover:border-m3-primary/30 hover:shadow-xl transition-all">
+    <figure className="bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-7 flex flex-col gap-4 hover:border-m3-on-surface/30 hover:shadow-xl transition-all">
       <div className="flex items-start justify-between gap-3">
         <Identity t={t} tone={tone} />
-        <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest text-m3-primary bg-m3-primary/5 border border-m3-primary/15 px-2.5 py-1 rounded-m3-full whitespace-nowrap">
+        <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest text-m3-on-surface bg-m3-on-surface/5 border border-m3-on-surface/15 px-2.5 py-1 rounded-m3-full whitespace-nowrap">
           {t.relationship}
         </span>
       </div>
@@ -68,7 +68,7 @@ function Card({ t, index }: { t: Testimonial; index: number }) {
           type="button"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
-          className="self-start min-h-[44px] -my-2 inline-flex items-center text-[11px] font-bold uppercase tracking-widest text-m3-primary hover:underline underline-offset-4"
+          className="self-start min-h-[44px] -my-2 inline-flex items-center text-[11px] font-bold uppercase tracking-widest text-m3-on-surface hover:underline underline-offset-4"
         >
           {open ? "Show less" : "Read the full recommendation"}
         </button>
@@ -84,7 +84,7 @@ export function TestimonialsSection() {
       id="testimonials"
       className="bg-m3-surface-variant border-b border-m3-outline/10 px-6 md:px-10 lg:px-12 py-10 md:py-14"
     >
-      <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-primary block mb-3">
+      <span className="font-display text-[10px] font-extrabold uppercase tracking-[0.35em] text-m3-on-surface block mb-3">
         What people say
       </span>
 
@@ -92,7 +92,7 @@ export function TestimonialsSection() {
         <figure className="max-w-4xl mb-12 md:mb-14">
           <Quote
             aria-hidden="true"
-            className="w-7 h-7 md:w-8 md:h-8 text-m3-primary/40 mb-4"
+            className="w-7 h-7 md:w-8 md:h-8 text-m3-on-surface/40 mb-4"
           />
           {/* The hero carries the complete recommendation, so it can't all sit
               at display scale. The opening — a verbatim prefix, never a
@@ -117,7 +117,7 @@ export function TestimonialsSection() {
           <figcaption className="mt-6 flex items-center gap-3">
             <span
               aria-hidden="true"
-              className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-primary text-m3-on-primary flex items-center justify-center font-display font-black text-sm"
+              className="w-11 h-11 shrink-0 rounded-m3-full bg-m3-on-surface text-m3-surface flex items-center justify-center font-display font-black text-sm"
             >
               {initialsFor(HERO_TESTIMONIAL)}
             </span>
@@ -143,7 +143,7 @@ export function TestimonialsSection() {
         href={LINKEDIN}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 inline-flex items-center min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-primary hover:underline underline-offset-4"
+        className="mt-8 inline-flex items-center min-h-[44px] text-[11px] font-bold uppercase tracking-widest text-m3-on-surface hover:underline underline-offset-4"
       >
         All recommendations on LinkedIn →
       </a>
@@ -165,7 +165,7 @@ export function TestimonialQuotes() {
 
       <div className="flex flex-col gap-8 md:gap-9 max-w-3xl">
         {SERVICE_TESTIMONIALS.map((t) => (
-          <figure key={t.id} className="border-l-2 border-m3-primary pl-5 md:pl-6">
+          <figure key={t.id} className="border-l-2 border-m3-on-surface pl-5 md:pl-6">
             <blockquote className="text-sm md:text-base leading-relaxed text-m3-on-surface font-medium">
               {t.lead ? (
                 <>

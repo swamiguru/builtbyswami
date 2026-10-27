@@ -116,19 +116,20 @@
   }
 }
 
-/* M3 Elevation (Tonal) */
+/* M3 Elevation (Tonal) — neutral black-based wash, not a brand-color tint,
+   so cards and raised surfaces stay inside the monochrome system. */
 @utility m3-elevation-1 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.05), rgba(0, 109, 59, 0.05)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--color-m3-surface);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 @utility m3-elevation-2 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.08), rgba(0, 109, 59, 0.08)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07)), var(--color-m3-surface);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 @utility m3-elevation-3 {
-  background: linear-gradient(0deg, rgba(0, 109, 59, 0.11), rgba(0, 109, 59, 0.11)), var(--color-m3-surface);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), var(--color-m3-surface);
   box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -145,15 +146,15 @@
 }
 
 @utility m3-button-filled {
-  @apply bg-m3-primary text-m3-on-primary font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95;
+  @apply bg-m3-on-surface text-m3-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1-shadow active:scale-95;
 }
 
 @utility m3-button-tonal {
-  @apply bg-m3-secondary-container text-m3-on-secondary-container font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1 active:scale-95;
+  @apply bg-m3-surface-variant text-m3-on-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:m3-elevation-1 active:scale-95;
 }
 
 @utility m3-button-outlined {
-  @apply border border-m3-outline text-m3-primary font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:bg-m3-primary/5 active:scale-95;
+  @apply border border-m3-outline text-m3-on-surface font-display font-medium px-6 py-2.5 rounded-m3-full transition-all hover:bg-m3-on-surface/5 active:scale-95;
 }
 
 .prose-notes {
@@ -178,10 +179,10 @@
   margin: 2rem 0 0.75rem;
 }
 .prose-notes strong { color: var(--color-m3-on-surface); font-weight: 700; }
-.prose-notes a { color: var(--color-m3-primary); text-decoration: underline; text-underline-offset: 3px; }
+.prose-notes a { color: var(--color-m3-on-surface); text-decoration: underline; text-underline-offset: 3px; }
 .prose-notes ul { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; }
 .prose-notes li { margin: 0 0 0.6rem; font-weight: 450; }
-.prose-notes li::marker { color: var(--color-m3-primary); }
+.prose-notes li::marker { color: var(--color-m3-on-surface); }
 
 /* Markdown tables. ReactMarkdown emits bare <table>, and Tailwind's preflight
    strips all default table styling — without these rules cells render with
@@ -207,7 +208,7 @@
   text-transform: uppercase;
   color: var(--color-m3-on-surface);
   padding: 0 1rem 0.65rem 0;
-  border-bottom: 2px solid var(--color-m3-primary);
+  border-bottom: 2px solid var(--color-m3-on-surface);
   vertical-align: bottom;
 }
 .prose-notes tbody td {
@@ -224,7 +225,7 @@
   white-space: nowrap;
 }
 .prose-notes tbody tr:last-child td { border-bottom: none; }
-.prose-notes tbody td strong { color: var(--color-m3-primary); }
+.prose-notes tbody td strong { color: var(--color-m3-on-surface); }
 
 @media (max-width: 480px) {
   .prose-notes table { font-size: 0.875rem; }

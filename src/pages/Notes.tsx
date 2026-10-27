@@ -98,7 +98,7 @@ export default function Notes() {
   const isFiltered = Boolean(query.trim() || activeTag);
 
   return (
-    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-primary selection:text-m3-on-primary">
+    <div className="min-h-screen bg-m3-surface md:p-8 selection:bg-m3-on-surface selection:text-m3-surface">
       <ScrollProgress />
       <div className="max-w-[1100px] mx-auto min-h-[90vh] flex flex-col relative bg-m3-surface-variant shadow-xl rounded-m3-xl md:rounded-[32px] border border-m3-outline/10">
 
@@ -106,8 +106,8 @@ export default function Notes() {
 
         <section className="px-6 md:px-14 pt-12 md:pt-16 pb-6">
           <div className="flex items-center gap-3 mb-4">
-            <BookOpen className="w-5 h-5 text-m3-primary" />
-            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-primary">
+            <BookOpen className="w-5 h-5 text-m3-on-surface" />
+            <span className="font-display text-[11px] md:text-sm font-black uppercase tracking-[0.3em] text-m3-on-surface">
               Build Notes
             </span>
           </div>
@@ -137,7 +137,7 @@ export default function Notes() {
                 value={query}
                 onChange={(e) => handleQueryChange(e.target.value)}
                 placeholder="Search notes by keyword, topic, or tech..."
-                className="w-full bg-m3-surface text-m3-on-surface placeholder:text-m3-on-surface-variant/50 text-sm font-medium rounded-full pl-11 pr-10 py-3 border border-m3-outline/20 focus:border-m3-primary focus:outline-hidden transition-all shadow-xs"
+                className="w-full bg-m3-surface text-m3-on-surface placeholder:text-m3-on-surface-variant/50 text-sm font-medium rounded-full pl-11 pr-10 py-3 border border-m3-outline/20 focus:border-m3-on-surface focus:outline-hidden transition-all shadow-xs"
               />
               {query && (
                 <button
@@ -158,7 +158,7 @@ export default function Notes() {
                 onClick={() => handleTagClick("")}
                 className={`text-xs font-bold px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                   !activeTag
-                    ? "bg-m3-primary text-m3-on-primary shadow-xs"
+                    ? "bg-m3-on-surface text-m3-surface shadow-xs"
                     : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-on-surface hover:bg-m3-surface-variant/80 border border-m3-outline/10"
                 }`}
               >
@@ -172,7 +172,7 @@ export default function Notes() {
                   onClick={() => handleTagClick(tag)}
                   className={`text-xs font-bold px-3 py-1.5 rounded-full transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                     activeTag.toLowerCase() === tag.toLowerCase()
-                      ? "bg-m3-primary text-m3-on-primary shadow-xs"
+                      ? "bg-m3-on-surface text-m3-surface shadow-xs"
                       : "bg-m3-surface text-m3-on-surface-variant hover:text-m3-on-surface hover:bg-m3-surface-variant/80 border border-m3-outline/10"
                   }`}
                 >
@@ -185,7 +185,7 @@ export default function Notes() {
                 <button
                   type="button"
                   onClick={resetFilters}
-                  className="text-xs font-bold text-m3-primary hover:underline ml-1 cursor-pointer"
+                  className="text-xs font-bold text-m3-on-surface hover:underline ml-1 cursor-pointer"
                 >
                   Reset filters
                 </button>
@@ -215,22 +215,22 @@ export default function Notes() {
                     <Reveal key={n.slug} index={i}>
                       <Link
                         to={`/notes/${n.slug}`}
-                        className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8 hover:border-m3-primary/30 hover:shadow-xl transition-all flex flex-col gap-3"
+                        className="group bg-m3-surface rounded-[24px] border border-m3-outline/5 p-6 md:p-8 hover:border-m3-on-surface/30 hover:shadow-xl transition-all flex flex-col gap-3"
                       >
                         <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface-variant/60">
-                          <span className="text-m3-primary font-extrabold">#{n.tag}</span>
+                          <span className="text-m3-on-surface font-extrabold">#{n.tag}</span>
                           <span>{formatNoteDate(n.date)}</span>
                           <span className="flex items-center gap-1">
                             <Clock className="w-3.5 h-3.5" /> {n.readMinutes} min
                           </span>
                         </div>
-                        <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface group-hover:text-m3-primary transition-colors">
+                        <h3 className="display text-xl md:text-2xl font-extrabold tracking-tight text-m3-on-surface group-hover:text-m3-on-surface transition-colors">
                           {n.title}
                         </h3>
                         <p className="text-sm leading-relaxed text-m3-on-surface-variant font-medium max-w-2xl">
                           {n.description}
                         </p>
-                        <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-primary">
+                        <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-m3-on-surface">
                           Read <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </Link>
@@ -241,7 +241,7 @@ export default function Notes() {
             </div>
           ) : isFiltered ? (
             <div className="bg-m3-surface rounded-[24px] border border-m3-outline/10 p-8 md:p-12 text-center max-w-lg mx-auto flex flex-col items-center gap-4 my-6">
-              <div className="w-12 h-12 rounded-full bg-m3-surface-variant flex items-center justify-center text-m3-primary">
+              <div className="w-12 h-12 rounded-full bg-m3-surface-variant flex items-center justify-center text-m3-on-surface">
                 <Search className="w-6 h-6" />
               </div>
               <div>
@@ -255,7 +255,7 @@ export default function Notes() {
               <button
                 type="button"
                 onClick={resetFilters}
-                className="mt-2 bg-m3-primary text-m3-on-primary font-display font-bold text-xs px-5 py-2.5 rounded-full hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs cursor-pointer"
+                className="mt-2 bg-m3-on-surface text-m3-surface font-display font-bold text-xs px-5 py-2.5 rounded-full hover:m3-elevation-1-shadow active:scale-95 transition-all shadow-xs cursor-pointer"
               >
                 Clear all filters
               </button>

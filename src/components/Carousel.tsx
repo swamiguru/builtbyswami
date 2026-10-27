@@ -184,7 +184,7 @@ export default function Carousel({ children, ariaLabel, showDots = false }: Caro
         type="button"
         aria-label="Scroll left"
         onClick={() => scrollBy(-1)}
-        className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-m3-surface border border-m3-outline/15 text-m3-on-surface items-center justify-center shadow-md hover:bg-m3-primary hover:text-m3-on-primary hover:border-m3-primary transition-all opacity-0 group-hover/carousel:opacity-100 active:scale-95 z-10"
+        className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-m3-surface border border-m3-outline/15 text-m3-on-surface items-center justify-center shadow-md hover:bg-m3-on-surface hover:text-m3-surface hover:border-m3-on-surface transition-all opacity-0 group-hover/carousel:opacity-100 active:scale-95 z-10"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
@@ -192,7 +192,7 @@ export default function Carousel({ children, ariaLabel, showDots = false }: Caro
         type="button"
         aria-label="Scroll right"
         onClick={() => scrollBy(1)}
-        className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-m3-surface border border-m3-outline/15 text-m3-on-surface items-center justify-center shadow-md hover:bg-m3-primary hover:text-m3-on-primary hover:border-m3-primary transition-all opacity-0 group-hover/carousel:opacity-100 active:scale-95 z-10"
+        className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-m3-surface border border-m3-outline/15 text-m3-on-surface items-center justify-center shadow-md hover:bg-m3-on-surface hover:text-m3-surface hover:border-m3-on-surface transition-all opacity-0 group-hover/carousel:opacity-100 active:scale-95 z-10"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
@@ -212,7 +212,7 @@ export default function Carousel({ children, ariaLabel, showDots = false }: Caro
               aria-label={`Go to item ${i + 1}`}
               onClick={() => goTo(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeIndex ? "w-5 bg-m3-primary" : "w-1.5 bg-m3-outline/30"
+                i === activeIndex ? "w-5 bg-m3-on-surface" : "w-1.5 bg-m3-outline/30"
               }`}
             />
           ))}
