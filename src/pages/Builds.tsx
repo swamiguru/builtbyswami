@@ -30,8 +30,19 @@ const BUILD_SHOTS: Record<string, string[]> = {
     "/builds/freewordtool.webp",
     "/builds/freewordtool-2.webp",
     "/builds/freewordtool-3.webp",
+    "/builds/freewordtool-4.webp",
   ],
-  "अड्डा — Adda": ["/builds/adda.webp", "/builds/adda-2.webp"],
+  "अड्डा — Adda": [
+    "/builds/adda.webp",
+    "/builds/adda-2.webp",
+    "/builds/adda-3.webp",
+    "/builds/adda-4.webp",
+  ],
+  "Task management engine": [
+    "/builds/taskmanager.webp",
+    "/builds/taskmanager-2.webp",
+    "/builds/taskmanager-3.webp",
+  ],
 };
 
 /**
