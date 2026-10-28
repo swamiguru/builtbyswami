@@ -505,3 +505,12 @@
 2026-10-27 | T | Tablets / Apple launch | OLED iPad mini $699 OFFICIAL | pre-orders Oct 28, ships Nov 6, A20 Pro, IP67 (MacRumors)
 2026-10-27 | T | OS updates | iOS 27.2 released | Siri AI French/Japanese/Korean/Portuguese/Spanish, no Indian languages, 160+ fixes (Lowyat)
 2026-10-27 | T | Cybersecurity | University of Copenhagen breach 525,000 | test environment, CPR numbers (BleepingComputer)
+2026-10-28 | 1 | Laptops / Apple launch | Apple M6 14-inch MacBook Pro + 24-inch iMac | Oct 27 OFFICIAL, pre-orders Oct 28, ships Nov 6, $1,999 / $1,499 US, 12-core CPU+GPU, up to 30% GPU vs M5 (Apple), 24h battery, N1 chip iMac, India price not announced (Apple, 9to5Mac, Macworld); M5-owners-skip take (new hard dev vs 10-16/10-20 rumour items)
+2026-10-28 | 2 | India / Telecom / Regulation | Karnataka HC orders telcos to audit SIM distributors | Sept 29 order reported Oct 27, Justice Govindaraj, ex-Jio promoter case 75 SIMs (55 Jio 20 Vodafone), DGP Cyber Command, compliance Nov 27 (MediaNama); review-not-penalty take
+2026-10-28 | 4 | India / Myth-buster / Cybersecurity (opinion) | Lucknow digital arrest Rs 47 lakh | 69-yr-old retired railway officer, Oct 15-23, fake inspector + fake ATS/NIA on video, FDs broken (The420 Oct 27); secrecy-is-the-tell take (IG pick, carousel, opinion quota; new case vs 10-15 digital arrest myth)
+2026-10-28 | 5 | Hot take / Tech jobs (opinion) | Microsoft Voluntary Exit Offer incl India | Oct 26, level 70 and below, India/Canada/UK/US, second programme after VRP earlier 2026, no amounts (Microsoft blog); voluntary-tells-you-who-signs take (opinion quota)
+2026-10-28 | T | India / Privacy / Regulation | SC notice on DNPA challenge to DPDP Act | no stay without hearing Centre, next hearing Nov 17 (Inc42)
+2026-10-28 | T | India / Transport platforms | Bihar Ola/Uber/Rapido Oct 30 deadline | licences at risk (MediaNama)
+2026-10-28 | T | India / Cybersecurity | Class 12 student arrested pension life-certificate APK | Rs 17 lakh Hari Nagar (The420)
+2026-10-28 | T | Big tech / Chips | Nvidia $3B into Meta equity offering | Vera Rubin, Muse (Nvidia Newsroom)
+2026-10-28 | T | Apps / AI | Apple beta AI assistant in iWork + Logic Pro | Apple + OpenAI models, MCP (The Verge)
