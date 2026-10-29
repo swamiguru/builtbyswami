@@ -514,3 +514,13 @@
 2026-10-28 | T | India / Cybersecurity | Class 12 student arrested pension life-certificate APK | Rs 17 lakh Hari Nagar (The420)
 2026-10-28 | T | Big tech / Chips | Nvidia $3B into Meta equity offering | Vera Rubin, Muse (Nvidia Newsroom)
 2026-10-28 | T | Apps / AI | Apple beta AI assistant in iWork + Logic Pro | Apple + OpenAI models, MCP (The Verge)
+
+2026-10-29 | 1 | India / Telecom / Markets | Jio Platforms listing | Oct 28 listed Rs 1,358 vs issue Rs 1,119 (21.4%), close Rs 1,417.35 (+26.7%), mcap Rs 13.05 lakh crore, 2nd most valuable, Reliance -3.19% (Business Standard, Outlook); parent-paid-for-the-party take (new dev vs 10-25 IPO close Tap)
+2026-10-29 | 2 | Big tech business / AI economics | Alphabet + Microsoft Q results | Oct 28, Cloud +103% to $30.7B, FCF -$9.1B, debt $125.1B, capex guide $195-205B, Azure +48%, MSFT FCF -27% (Motley Fool, Business Standard); real-demand-real-invoice take
+2026-10-29 | 4 | Hot take / AI infrastructure (opinion) | OpenAI reportedly buying Google TPUs | Oct 28 The Information via Reuters, unconfirmed, no terms; renting-to-owning take (opinion quota)
+2026-10-29 | 5 | Community / Poll | Which AI assistant do you pay for | poll, no card
+2026-10-29 | T | India / Startups | Meesho Q2 FY27 loss Rs 132.4cr | (Business Standard)
+2026-10-29 | T | India / EV / Startups | Ola Electric Rs 1,000cr rights issue fully subscribed | (Business Standard)
+2026-10-29 | T | Cybersecurity / AI | Cloudflare GLM-5.3 Workers AI cache exposure 155 responses | (Cloudflare)
+2026-10-29 | T | Browsers / AI | Opera WebAI local AI standard | (TechCrunch)
+2026-10-29 | T | AI / Government | Anthropic expanded GSA deal 40% discount | (Anthropic)
