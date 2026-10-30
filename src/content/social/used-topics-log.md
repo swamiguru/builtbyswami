@@ -524,3 +524,13 @@
 2026-10-29 | T | Cybersecurity / AI | Cloudflare GLM-5.3 Workers AI cache exposure 155 responses | (Cloudflare)
 2026-10-29 | T | Browsers / AI | Opera WebAI local AI standard | (TechCrunch)
 2026-10-29 | T | AI / Government | Anthropic expanded GSA deal 40% discount | (Anthropic)
+2026-10-30 | 1 | AI models / Google | Gemini 4 Carbon | Oct 28, #1 Artificial Analysis index 59, access only to subset of cyber defenders via Fairwind, no date, $2/$10 intro pricing (Google blog); ranking-you-cannot-test take
+2026-10-30 | 2 | India / Banking / Cybersecurity | Supreme Court asks RBI on bank liability for digital arrest losses | CJI Surya Kant suo motu, KYC Amendment Directions 2026 by Nov 30, Rs 800cr loss (The420 Oct 29); instruction-points-at-the-bank take (IG pick, carousel)
+2026-10-30 | 3 | India / Consumer rights (tip slot) | National Consumer Helpline | see tips log
+2026-10-30 | 4 | India / Hot take / Payments (opinion) | UPI 0.4% MDR above Rs 2,000 + Paytm Rs 700cr | NPCI notified, start date unclear, Paytm CFO Deora (MediaNama Oct 29); who-pays take (opinion quota; new dev vs 10-25 UPI share post)
+2026-10-30 | 5 | Hot take / China AI policy (opinion) | China draft AI export controls | 23 technologies, 10^26 FLOPs / 2T params, comments Nov 15 (Reuters via WHBL); neutral sell-access-keep-weights take (opinion quota)
+2026-10-30 | T | India / AI / Defence | Sarvam MoU with HQ IDS | (MediaNama)
+2026-10-30 | T | India / Legal / Platforms | Bombay HC Blink Digital v Meta jurisdiction | (MediaNama)
+2026-10-30 | T | India / Cybersecurity | Sonbhadra trust Rs 11cr cyber fraud 8 arrests | (The420)
+2026-10-30 | T | AI models | Mistral Large 4 open weights | (Mistral)
+2026-10-30 | T | Cybersecurity / AI dev tools | EMBRACE browser flaws in 5 AI coding tools | (Help Net Security)
