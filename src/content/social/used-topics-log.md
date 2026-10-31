@@ -534,3 +534,14 @@
 2026-10-30 | T | India / Cybersecurity | Sonbhadra trust Rs 11cr cyber fraud 8 arrests | (The420)
 2026-10-30 | T | AI models | Mistral Large 4 open weights | (Mistral)
 2026-10-30 | T | Cybersecurity / AI dev tools | EMBRACE browser flaws in 5 AI coding tools | (Help Net Security)
+
+2026-10-31 | 1 | Crypto / Cybersecurity | Binance reported $6.3B hack | Oct 29, compromised DevOps laptop initial finding, ~$3B frozen, Chainalysis blames DPRK, no India impact reported (MediaNama, CNBC); one-laptop take
+2026-10-31 | 2 | India / Apps / Payments | PhonePe Appstore rebrand of Indus Appstore | Oct 30, gift cards + top-ups, no rate card, 200M devices = pre-installs (MediaNama); no-published-fee take
+2026-10-31 | 3 | Google Account (tip slot) | Manage all devices | see tips log
+2026-10-31 | 4 | India / Hot take / Cybersecurity (opinion) | NBFC AI cyberattacks Rs 300cr | ET via MediaNama, 150+ FIRs, CERT-In names no victim; disclosure-gap take (opinion quota)
+2026-10-31 | 5 | Hot take / Robotics (opinion) | Tesla Optimus reservations | SF Standard Oct 30, Dec reservations unconfirmed, Musk 'No', ships ~end 2027 (opinion quota)
+2026-10-31 | T | India / Telecom | TRAI Sept broadband 1.108B | Jio+Airtel 83.96% (MediaNama)
+2026-10-31 | T | India / E-commerce / Policy | Nasscom seeks GST delay for e-commerce deliveries | to Jan 1 2027 (MediaNama)
+2026-10-31 | T | India / Publishers / AI | Info Edge Shiksha billings -27% blamed on AI answers | (MediaNama)
+2026-10-31 | T | Space / AI | Google Suncatcher prototype online, Gemma 4 in orbit | (TechCrunch)
+2026-10-31 | T | AI / Publishers | Shared robots.txt AI-training opt-out token | OpenAI Google Microsoft Anthropic (The Verge)
