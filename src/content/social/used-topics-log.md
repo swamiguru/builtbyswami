@@ -545,3 +545,14 @@
 2026-10-31 | T | India / Publishers / AI | Info Edge Shiksha billings -27% blamed on AI answers | (MediaNama)
 2026-10-31 | T | Space / AI | Google Suncatcher prototype online, Gemma 4 in orbit | (TechCrunch)
 2026-10-31 | T | AI / Publishers | Shared robots.txt AI-training opt-out token | OpenAI Google Microsoft Anthropic (The Verge)
+
+2026-11-01 | 1 | Markets / Chips | Apple passes Nvidia ($5.03T vs $4.93T) + chip selloff + OpenAI raise cut | Oct 30 close, chip index -7.2%, Intel -28.6%, OpenAI ~$30B to ~$20B at $1.25T (FourWeekMBA, CoinDesk); fell-less-not-won take
+2026-11-01 | 2 | India / Banking / Cybersecurity | AU Small Finance Bank potential data leak | Oct 31, Salesforce-hosted platform vehicle loans, hackers claim Aadhaar/PAN, unverified (MediaNama); gap-between-two-stories take
+2026-11-01 | 3 | India / Credit (tip slot) | Free credit report | see tips log
+2026-11-01 | 4 | India / Hot take / Telecom policy (opinion) | SIM binding for messaging apps | reported start 1 Jan 2027, deadline slipped to end 2026, Apple/Google asked for time, MediaNama roundtable Nov 13 (MediaNama, The Mainstream); wrong-target take (opinion quota)
+2026-11-01 | 5 | Hot take / Search & Ads (opinion) | Google ads in AI Mode going international | Oct 30 earnings, search ads +12% to $63.3B, no markets named (MediaNama); answer-has-to-pay-for-itself take (opinion quota; new angle vs 10-29 Alphabet capex post)
+2026-11-01 | T | India / Payments | Pine Labs Q2 profit sixfold Rs 39cr | (MediaNama)
+2026-11-01 | T | India / IT jobs | Top five IT firms +16,055 H1 FY27, Wipro -5,828 | (Angel One)
+2026-11-01 | T | India / Logistics | Shadowfax Q2 revenue Rs 1,538cr | (MediaNama)
+2026-11-01 | T | AI models / Biology | OpenAI GPT-Rosalind-6 trusted access | (OpenAI)
+2026-11-01 | T | AI / Security | ChatGPT share-link flaw fixed | (The Hacker News)
