@@ -556,3 +556,12 @@
 2026-11-01 | T | India / Logistics | Shadowfax Q2 revenue Rs 1,538cr | (MediaNama)
 2026-11-01 | T | AI models / Biology | OpenAI GPT-Rosalind-6 trusted access | (OpenAI)
 2026-11-01 | T | AI / Security | ChatGPT share-link flaw fixed | (The Hacker News)
+2026-11-02 | 1 | India / Banking / Cybersecurity | Bank of Baroda breaks 10% tech-spend ceiling after July email breach | CEO Chand "turning point", CERT-In + external consultant, dark-web 1TB claim unverified, cap+opex > 10% operating profit FY26-27+ (The420 Nov 2); gap-is-the-inbox take (new dev vs 11-01 AU SFB leak - different bank, specific spending-ceiling break)
+2026-11-02 | 2 | India / E-commerce / Governance | Walmart probes Flipkart ₹150 cr vendor kickbacks | smartphones + LTA, B2B channel, whistleblower-triggered, 3rd probe in <3 years, no public comment (Free Press Journal, Inc42 via Moneycontrol); recurring-not-solved take
+2026-11-02 | 4 | India / Myth-buster / Cybersecurity (opinion) | Lucknow 192-slot SIM box raid - Indian number ≠ Indian caller | 4 apartments, 6 32-port boxes, 192 slots, VPN gateways, Operation Digital Kavach, Asthana absconding (The420 Nov 2); +91-is-not-proof take (IG pick, carousel, opinion quota; new dev - raid itself - vs 10-28 digital-arrest myth-buster)
+2026-11-02 | 5 | Hot take / Apple / AI (opinion) | Apple CEO Ternus "no AI for AI's sake" to Wired | took over Sept 2026, delayed Siri shipped summer 2026 (TechCrunch Oct 31); defense-of-being-late take (opinion quota)
+2026-11-02 | T | India / Cybersecurity | Jamshedpur SIM supplier arrested, 9 vendors probed | (The420)
+2026-11-02 | T | India / Enforcement | ED arrests Armstrong Exchange founder Sagar Dash in online betting case | ₹9 cr frozen, Edsom Fintech CEO also arrested (Inc42)
+2026-11-02 | T | India / Media / OTT | Netflix India revenue +18% on Lock Upp + Roadies + regional | 57% share of Hindi theatrical catalogues per Ormax (Inc42)
+2026-11-02 | T | AI infrastructure | Nvidia weighs cosigning Nscale WV data-centre loans | $44.6B Anthropic contract on first building (TechCrunch)
+2026-11-02 | T | AI / M&A | Salesforce reportedly buys Rune for ~$375M | defence-tech acquisition (TechCrunch)
