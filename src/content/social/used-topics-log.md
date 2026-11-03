@@ -565,3 +565,14 @@
 2026-11-02 | T | India / Media / OTT | Netflix India revenue +18% on Lock Upp + Roadies + regional | 57% share of Hindi theatrical catalogues per Ormax (Inc42)
 2026-11-02 | T | AI infrastructure | Nvidia weighs cosigning Nscale WV data-centre loans | $44.6B Anthropic contract on first building (TechCrunch)
 2026-11-02 | T | AI / M&A | Salesforce reportedly buys Rune for ~$375M | defence-tech acquisition (TechCrunch)
+
+2026-11-03 | 1 | India / AI infrastructure | Google breaks ground on $15bn Vizag AI hub with Adani + Airtel | 1GW campus, 2026-30 phased, Naidu foundation stone, Vaishnaw attended, Kurian named (Deccan Herald, DataCenterDynamics, ThePrint Oct 2025 origin); landlord-not-sovereignty take
+2026-11-03 | 2 | Phones / Apple | Pegatron confirms only iPhone 18 Pro/Pro Max ship this fall, base + 18e + Air 2 to Q1 2027 | Q2 2026 earnings call, memory chip shortage, India 18e volume play delayed (phonearena, basic-tutorials, Notebookcheck); margin-over-volume take
+2026-11-03 | 3 | India / Payments (tip slot) | UPI Circle | see tips log
+2026-11-03 | 4 | India / Hot Take / IT jobs (opinion) | Indian IT pyramid becoming a diamond - freshers now oversee AI not write code | Q2 FY27 TCS +4,258 Infosys +4,480 Wipro +888 (~14,000 total top 5), fresher pay stuck Rs 3.5-4L since 2015 (Business Today Oct 8, Free Press Journal, India Entrepreneur); pyramid-to-diamond take (opinion quota)
+2026-11-03 | 5 | AI / Comparison / India | Perplexity Pro vs ChatGPT Plus vs Gemini Pro in India | Airtel bundles Perplexity Pro free 12mo (Rs 17k), Jio Unlimited 5G bundles Gemini Pro free 18mo (Rs 35.1k), ChatGPT Plus Rs 1,999/mo direct (TelecomTalk); already-paid-twice take
+2026-11-03 | T | India / Space | ISRO Gaganyaan G1 uncrewed test December with Vyommitra | (News On Air)
+2026-11-03 | T | AI models | OpenAI 'Dreaming' memory architecture for ChatGPT - Free tier upgrade coming | (Neowin)
+2026-11-03 | T | India / AI infrastructure | HCLTech + Sarvam $1.6bn AI data centre Bhubaneswar | (HCLTech PR)
+2026-11-03 | T | AI tools | Perplexity adds Grok 4.1 for Pro and Max | (createwith.com)
+2026-11-03 | T | India / Cybersecurity policy | DoT 90-day window to pre-load Sanchar Saathi on new smartphones | (Angel One)
