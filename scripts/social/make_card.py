@@ -92,14 +92,13 @@ def _illustration_path(out):
 # Rotated per story and picked deterministically from the story text so a
 # retry keeps the same colour.
 _PALETTE = [
-    ("#C2E05F", "#6B42BB"),  # lime + violet
-    ("#9374E4", "#F5DB64"),  # electric violet + yellow
-    ("#52CCDC", "#EE6849"),  # cyan + coral
-    ("#EF694A", "#1B1D37"),  # coral + midnight
-    ("#F0DD67", "#181A28"),  # yellow + midnight
-    ("#DC6F47", "#1B1D37"),  # brand orange + midnight
-    ("#3DA89C", "#F5DB64"),  # brand teal + yellow
-    ("#F28EBB", "#181A28"),  # pink + midnight
+    ("#E3C58A", "#34323F"),  # amber + slate
+    ("#D98E72", "#34323F"),  # terracotta + slate
+    ("#9DBDB6", "#34323F"),  # sage + slate
+    ("#D6B878", "#2F5F5A"),  # mustard + deep teal
+    ("#C9D1D6", "#A65D46"),  # mist + rust
+    ("#C9A99B", "#34323F"),  # clay + slate
+    ("#5B8A84", "#F3EEE1"),  # teal + paper
 ]
 
 def _pick_palette(seed):
@@ -145,7 +144,7 @@ vignette, border, panel or rounded card. Colours rich but not neon.
 Subject: ONE clear, witty visual metaphor for this tech story, drawn as a
 simple flat vector filling about 65 percent of the frame: {story}.
 Build it from 3 to 5 large geometric shapes with dark outlines and flat fills
-in {accent} and warm off-white #F4F1E6. No small detail. Prefer everyday
+in {accent} and warm off-white #F3EEE1. No small detail. Prefer everyday
 objects (a key, lock, scale, plug, clock, box, bridge, ladder, leaf, door)
 over devices.
 
