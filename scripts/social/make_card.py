@@ -272,14 +272,16 @@ def _tighten_illustration(path, margin_frac=0.12, thresh=28):
 # tokens in longpress.news src/styles/global.css. Cards render on the site's
 # MIDNIGHT ground (--ink), not its cream page ground: a cream card disappears
 # in a feed, and the site's own inverted blocks and share card are midnight.
-MIDNIGHT = (23, 24, 46)     # #17182E  --ink        the card ground
-PANEL    = (34, 35, 60)     # #22233C  one step up  panels and icon tiles
-ORANGE   = (224, 85, 43)    # #E0552B  --accent     fills, rules, large type
-ORANGE_LT= (255, 157, 122)  # #FF9D7A  --accent-light  accent text ON midnight
-PAPER    = (244, 241, 232)  # #F4F1E8  --ground     body text on midnight
-MUTED    = (154, 151, 168)  # #9A97A8  --muted-light
-TEAL     = (62, 124, 116)   # #3E7C74  --accent-2   the second voice
-DEEP     = (23, 24, 46)     # text sitting on an orange fill
+MIDNIGHT = (52, 50, 63)     # #34323F  --screen     the card ground
+PANEL    = (66, 63, 79)     # #423F4F  one step up  panels and icon tiles
+ORANGE   = (217, 142, 114)  # #D98E72  terracotta   fills, rules, large type
+ORANGE_LT= (227, 165, 143)  # #E3A58F  --accent-light  accent text on slate
+PAPER    = (243, 238, 225)
+AMBER    = (227, 197, 138)  # #E3C58A  phosphor, the mark's ring and dot
+MUSTARD  = (214, 184, 120)  # #D6B878  # #F3EEE1  --ground     body text on slate
+MUTED    = (172, 167, 184)  # #ACA7B8  muted on slate
+TEAL     = (91, 138, 132)   # #5B8A84  --teal       the second voice
+DEEP     = (52, 50, 63)     # text sitting on a terracotta fill
 
 # Small orange text on midnight is about 3:1 - under the readable line. Use
 # ORANGE_LT wherever the accent carries words; ORANGE only for fills, rules
@@ -363,11 +365,11 @@ def mark(draw, x, y, size):
     Press and hold. Same shape as the favicon and the share card."""
     w = max(3, int(round(size * 0.14)))
     box = (x, y, x + size, y + size)
-    draw.ellipse(box, outline=PAPER, width=w)
+    draw.ellipse(box, outline=AMBER, width=w)
     draw.arc(box, start=-88, end=62, fill=ORANGE, width=w)
     r = size * 0.20
     cx, cy = x + size / 2.0, y + size / 2.0
-    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=PAPER)
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=AMBER)
 
 def wrap(draw, text, fnt, max_w):
     words, lines, cur = text.split(), [], ""
@@ -398,6 +400,8 @@ def wordmark(draw, W, H):
     y = H - 78
     mark(draw, 80, y - 8, 38)
     draw.text((134, y + 11), HANDLE, font=fnt, fill=PAPER, anchor="lm")
+    _cx = 134 + draw.textlength(HANDLE, font=fnt) + 10
+    draw.rectangle((_cx, y - 1, _cx + 14, y + 23), fill=AMBER)
 
 def draw_icon(img, icon, W, H):
     if not (_icons and icon):
@@ -457,7 +461,7 @@ def make(pillar, hook, sub, out, mode, icon=None):
     img = Image.new("RGBA", (W, H), BG + (255,))
     d = ImageDraw.Draw(img)
     # subtle top accent bar
-    d.rectangle((0, 0, W, 10), fill=CYAN)
+    d.rectangle((0, 0, W, 4), fill=CYAN); d.rectangle((0, 4, W, 8), fill=MUSTARD); d.rectangle((0, 8, W, 12), fill=TEAL)
     margin = 80
     # pill tag
     pill_font = font(30, "SemiBold")

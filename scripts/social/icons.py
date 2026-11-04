@@ -9,13 +9,13 @@ Public API:
 import math
 from PIL import Image, ImageDraw, ImageFilter
 
-ORANGE = (224, 85, 43)     # #E0552B  Long Press accent
+ORANGE = (217, 142, 114)  # #D98E72  Long Press terracotta
 CYAN = ORANGE              # name kept; the brand through-line is now orange
-WHITE = (244, 241, 232)    # #F4F1E8  the site's cream, as text on midnight
-BG = (23, 24, 46)          # #17182E  matches the card ground
-DARK = (23, 24, 46)
-PANELC = (34, 35, 60)      # #22233C  icon tile
-RING = (58, 59, 86)
+WHITE = (243, 238, 225)    # #F3EEE1  the site's cream, as text on slate
+BG = (52, 50, 63)          # #34323F  matches the card ground
+DARK = (52, 50, 63)
+PANELC = (66, 63, 79)      # #423F4F  icon tile
+RING = (92, 88, 108)
 
 # per-story accent colours (icon pops; the brand orange stays the through-line)
 ACCENT = {
