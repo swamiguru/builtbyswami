@@ -576,3 +576,14 @@
 2026-11-03 | T | India / AI infrastructure | HCLTech + Sarvam $1.6bn AI data centre Bhubaneswar | (HCLTech PR)
 2026-11-03 | T | AI tools | Perplexity adds Grok 4.1 for Pro and Max | (createwith.com)
 2026-11-03 | T | India / Cybersecurity policy | DoT 90-day window to pre-load Sanchar Saathi on new smartphones | (Angel One)
+
+2026-11-04 | 1 | India / AI | OpenAI gives ChatGPT Go free for a year in India from Nov 4 | tied to first India DevDay Exchange event Bengaluru, higher limits/image-gen/file-upload free, no stated end date (Free Press Journal); race-with-telco-bundles take
+2026-11-04 | 2 | India / Big Tech / Apple | Apple's fiscal Q4 2026 sets all-time India records in iPhone upgraders, Mac revenue, Services simultaneously | global iPhone $57.6B +17%, Mac $10.8B +24%, Services $31.6B ATH; Apple Pay launched India Sept w/ Axis Bank (Business Standard, YourStory)
+2026-11-04 | 3 | Tips & Tricks (tip slot) | Gemini image-authenticity check | see tips log
+2026-11-04 | 4 | AI / Hot Take (opinion) | Anthropic IPO filing: $16.3B H1 2026 revenue vs $80.7B loss, 2 customers = 25% of revenue, up to $2T Nasdaq valuation | mostly non-cash loss tied to convertible financing (Implicator.ai, AI Weekly); growth-real-price-tag-bets-nothing-changes take (opinion quota)
+2026-11-04 | 5 | AI Workflow | Prompt of the day: scan bank/UPI statements for forgotten recurring subscriptions using ChatGPT Go file uploads | tied to today's free-year India offer (Free Press Journal)
+2026-11-04 | T | India / Phones | India smartphone shipments fell 26% Q3, weakest in decade, concentrated under Rs 20,000 | (Omdia via Fonearena)
+2026-11-04 | T | India / Privacy policy | DPDP Consent Manager rule takes effect Nov 13 | registering board not fully formed yet (AmpcusCyber)
+2026-11-04 | T | India / E-commerce | Flipkart widens lead over Amazon, Meesho; Myntra same in fashion per CLSA | (Pulse)
+2026-11-04 | T | AI business | OpenAI skips 2026 IPO, raises $30B privately at $1.4T valuation | vs Anthropic's Nasdaq race (Implicator.ai)
+2026-11-04 | T | AI / China | DeepSeek bets next model training on Huawei chips not Nvidia | Liang Wenfeng calls it a core strategic bet (The Standard)
