@@ -587,3 +587,14 @@
 2026-11-04 | T | India / E-commerce | Flipkart widens lead over Amazon, Meesho; Myntra same in fashion per CLSA | (Pulse)
 2026-11-04 | T | AI business | OpenAI skips 2026 IPO, raises $30B privately at $1.4T valuation | vs Anthropic's Nasdaq race (Implicator.ai)
 2026-11-04 | T | AI / China | DeepSeek bets next model training on Huawei chips not Nvidia | Liang Wenfeng calls it a core strategic bet (The Standard)
+
+2026-11-05 | 1 | India / Cybersecurity / Banking | CERT-In names CRAFTY FALCON, AI-assisted attacks on bank/fintech payment APIs | Nov 4, Re1 test transactions before bigger heists, mule accounts via IMPS/NEFT, CIAD-2026-0046/0049 advisories (The420, IndiaTVNews); fraud-still-ends-in-a-mule-account take (carousel, IG pick)
+2026-11-05 | 2 | India / Big Tech / Child Safety | Apple's 18+ rating for dating/AI companion apps does not verify age in India | Nov 16 developer deadline, self-entered birthdate not checked in India unlike Brazil/Australia/Singapore (MediaNama "Seven problems"); label-is-not-a-lock take (carousel)
+2026-11-05 | 3 | Tips & Tricks (tip slot) | Netflix My Netflix tab | see tips log
+2026-11-05 | 4 | Hot Take / Phones / AI (opinion) | Nothing's first AI-native device, screen-free, not a phone, ships December per Carl Pei | Nov 4 X post, "no new screen", "couldn't have been an app" (TechCrunch); mystery-is-the-marketing take (opinion quota)
+2026-11-05 | 5 | Myth-buster / AI / Education (opinion) | Google lets schools switch off Gemini but AI Overviews/AI Mode in Search cannot be turned off separately | Nov 4, Search has no non-AI version, Common Sense Media rated AI Search "Unacceptable Risk" (MediaNama); off-switch-that-isnt take (opinion quota)
+2026-11-05 | T | India / Telecom / Markets | Jio Platforms posts first results since IPO, Q2 profit Rs 8,387 cr +13.7%, revenue Rs 47,485 cr +11.3% | 300M 5G subscribers (MediaNama)
+2026-11-05 | T | India / Telecom / AI | TRAI lets operators use AI agents for complaints, needs human backup at least 16 hrs/day | Nov 2 amendment, ISPs with 10,000+ subscribers (MediaNama)
+2026-11-05 | T | India / Legal / Platforms | Delhi HC: LinkedIn account restriction cannot be challenged by writ, civil suit is the route | Mayank Jain v Union of India, Nov 2 (MediaNama)
+2026-11-05 | T | AI models | Gemini 4 Carbon ties Claude Opus 5.5 on GDPx benchmark, costs about a third per task | $16 vs $51 per task (9to5Google)
+2026-11-05 | T | Robotaxis / Platforms | Waymo to end Uber exclusivity in Austin and Atlanta, launch own app January 2028 | (TheNextWeb)
