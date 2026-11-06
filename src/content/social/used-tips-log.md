@@ -148,3 +148,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-04 | Gemini | Image authenticity check - attach image in Gemini app, ask "is this real or AI-generated/edited?"; checks lighting/reflections/perspective/physical plausibility, explains reasoning instead of flat yes/no (paired with ChatGPT Go free year + Anthropic IPO AI-news day)
 
 2026-11-05 | Netflix | My Netflix tab consolidates resume, downloads, reminders and trailers in one place (app redesign, no more scrolling Home to find what you were watching)
+2026-11-06 | Instagram | Edits desktop video editor now on Mac - full timeline, keyframes, licensed music, watermark-free 4K export, syncs mobile styles, competes with CapCut
