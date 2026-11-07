@@ -607,3 +607,13 @@
 2026-11-06 | T | India / Banking / Regulation | RBI consolidates cybersecurity Master Directions for payment operators | 12-hour cooling-off period after mobile/email change, audits, incident reporting (The420)
 2026-11-06 | T | Cybersecurity / Android | GhostMap Android flaw crash-loops phones via malformed APK, no permissions needed | Bitdefender disclosed Nov 5, no fix yet, traced to Android 10+ (The420)
 2026-11-06 | T | Apps / Creator economy / Ecommerce | TikTok quietly launches standalone TikTok Shop app in Southeast Asia | Singapore, Malaysia, Thailand, Philippines, live-stream shopping (TechCrunch)
+
+2026-11-07 | 1 | Markets / AI stocks | Global AI/chip selloff vs India Sensex rally | Philly Semi -12.2% worst since 2020, Nikkei bear market, Kospi halted, Democrats-Congress AI-regulation fear (Euronews); Sensex/Nifty +2% best week in 6yrs, India low-AI-exposure take
+2026-11-07 | 2 | India / Big Tech policy | Govt weighs ending Sec 79 safe harbour for algorithmic platforms | MediaNama Nov 5, prelim stage, deepfake takedown mechanism tie-in (Kriti Sanon HC order)
+2026-11-07 | 4 | AI Workflow | Prompt of the day: check mutual fund/stock AI exposure via ChatGPT/Gemini | tied to this week's AI stock crash
+2026-11-07 | 5 | India / Myth-buster / Banking (opinion) | Canara Bank OTP ruling - technical authentication is not consent | Delhi consumer commission, Rs 4.14L refund, Oct 28 order (The420); OTP-is-not-your-fault take (opinion quota)
+2026-11-07 | T | India / Enforcement | ED arrests two in Rs 400cr cyber fraud money laundering case | (The420)
+2026-11-07 | T | India / Legal / Deepfakes | Delhi HC shields Kriti Sanon from AI deepfakes | (MediaNama)
+2026-11-07 | T | India / Digital rights | IFF+SFLC contest Delhi Police takedown notices in HC | (MediaNama)
+2026-11-07 | T | Space | SpaceX eyes mid-Nov window for Starship Flight 15 upper-stage catch | (New Space Economy)
+2026-11-07 | T | AI models | Thinking Machines' Inkling Small tops small open-model leaderboard | (The Decoder)
