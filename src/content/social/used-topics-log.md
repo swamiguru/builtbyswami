@@ -617,3 +617,13 @@
 2026-11-07 | T | India / Digital rights | IFF+SFLC contest Delhi Police takedown notices in HC | (MediaNama)
 2026-11-07 | T | Space | SpaceX eyes mid-Nov window for Starship Flight 15 upper-stage catch | (New Space Economy)
 2026-11-07 | T | AI models | Thinking Machines' Inkling Small tops small open-model leaderboard | (The Decoder)
+2026-11-08 | 1 | India / Payments | UPI MDR Supreme Court case | NPCI tells SC merchants can't pass UPI fee to customers, court won't stay 0.4% charge above ₹2,000 (NPCI-can't-bill-you-but-will-they take)
+2026-11-08 | 2 | Big Tech / Policy | Meta, Google, TikTok sue California over AB 1709 | three separate suits Nov 5 to block personalised-feed/autoplay ban for under-16s from Jan 2027
+2026-11-08 | 3 | Tips & Tricks (tip slot) | Google Messages scam detection | see tips log
+2026-11-08 | 4 | India / Hot Take / AI (opinion) | CERT-In AI Security Auditing Guidelines | 107-page agentic AI audit framework, no deadline or named penalty yet (rulebook-before-the-cop take; opinion quota)
+2026-11-08 | 5 | Community / Poll / India / Payments | Would you go back to cash if a UPI fee hit your receipt | discussion prompt tied to slot 1 UPI MDR story
+2026-11-08 | T | India / Jobs / Visas | US H-1B deference-rule proposal could hit Indian techies hardest | (Telangana Today)
+2026-11-08 | T | India / Govt apps | DigiLocker crosses 72 crore users, UMANG hits 11 crore | (Telangana Today)
+2026-11-08 | T | India / Telecom | TRAI recommends India-based network control for satcom providers, Starlink-relevant | (The Week)
+2026-11-08 | T | Phones | OnePlus 15R officially teased, December India launch window expected | (MySmartPrice)
+2026-11-08 | T | AI infrastructure / China | Nvidia H200 chips pile up unapproved in Hong Kong as China withholds import clearance | (Tribune)

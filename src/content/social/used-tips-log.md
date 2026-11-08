@@ -151,3 +151,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-06 | Instagram | Edits desktop video editor now on Mac - full timeline, keyframes, licensed music, watermark-free 4K export, syncs mobile styles, competes with CapCut
 
 2026-11-07 | Google Maps | Know Before You Go AI review summary - open any place's listing, scroll past reviews; Gemini-powered summary surfaces popular items, typical wait times, parking notes, common complaints from real reviews, no setting to enable, rolled out quietly on Android/iOS incl. India
+2026-11-08 | Google Messages | Spam protection + on-device Scam detection (profile icon > Messages settings > Spam protection) flags live scam patterns like fake OTP/investment pitches in real time, no texts leave the device; paired with Delhi/Hyderabad Police Diwali fake-gift-message warnings, spreading faster via Airtel's RCS AI spam-filter tie-up with Google
