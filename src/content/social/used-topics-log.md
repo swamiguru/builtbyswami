@@ -627,3 +627,13 @@
 2026-11-08 | T | India / Telecom | TRAI recommends India-based network control for satcom providers, Starlink-relevant | (The Week)
 2026-11-08 | T | Phones | OnePlus 15R officially teased, December India launch window expected | (MySmartPrice)
 2026-11-08 | T | AI infrastructure / China | Nvidia H200 chips pile up unapproved in Hong Kong as China withholds import clearance | (Tribune)
+2026-11-09 | 1 | India / Cybersecurity / Scams | Mumbai Rs 1.9cr digital-arrest fraud, Pahalgam terror-financing angle | 26-day WhatsApp video-call "arrest", nephew (US doctor) caught it Nov 1 (The420)
+2026-11-09 | 2 | India / Payments | UPI hits record 25.47 billion transactions, Rs 31.53 lakh crore in October | NPCI data, MDR fee still undated past Diwali, SC won't stay 0.4% charge (Free Press Journal)
+2026-11-09 | 3 | Tips & Tricks (tip slot) | WhatsApp Silence Unknown Callers | see tips log
+2026-11-09 | 4 | AI Workflow | Prompt of the day: turn any photo into a GIF using ChatGPT Images 2.6 | tied to Nov 4 OpenAI release, 50% faster, Flare/Sunburst API models (AI Weekly)
+2026-11-09 | 5 | Hot Take / China / Robotics (opinion) | GGII report: China's 150+ humanoid robot makers face shakeout, 15% to go bankrupt in 3 years | funding deals down 45% in a month, shipments to double (Seoul Economic Daily); hype-vs-reality take (opinion quota)
+2026-11-09 | T | India / Cybersecurity | Pune firm loses Rs 33.71 lakh in SIM-swap fraud via lookalike email | (The420)
+2026-11-09 | T | India / Phones | OnePlus 15R India launch confirmed December 17, Snapdragon 8 Gen 5 | (Free Press Journal)
+2026-11-09 | T | AI models | Meta rolls Muse Wonder AI models out to free users, claims better memory/task completion | (AI Daily Digest)
+2026-11-09 | T | AI business / Policy | OpenAI's "National Community Compact" pledges no-NDA transparency on data centers amid backlash | (The National)
+2026-11-09 | T | Phones | Google's November Pixel Feature Drop adds Nano Banana photo editing in Messages | (GSMArena)
