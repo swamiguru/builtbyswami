@@ -9,7 +9,7 @@ Public API:
 import math
 from PIL import Image, ImageDraw, ImageFilter
 
-ORANGE = (216, 236, 74)   # #D8EC4A  Long Press lime
+ORANGE = (205, 224, 99)   # #CDE063  Long Press lime
 CYAN = ORANGE              # name kept; the brand through-line is now lime
 WHITE = (246, 243, 234)    # #F6F3EA  cream text on ink
 BG = (19, 18, 24)          # #131218  matches the card ground

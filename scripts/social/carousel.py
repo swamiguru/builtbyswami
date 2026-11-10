@@ -16,8 +16,8 @@ except Exception:
 # in a feed, and the site's own inverted blocks and share card are midnight.
 MIDNIGHT = (19, 18, 24)     # #131218  ink         the card ground (D7)
 PANEL    = (37, 36, 45)     # #25242D  one step up  panels and icon tiles
-ORANGE   = (216, 236, 74)   # #D8EC4A  lime         fills, rules, large type (name kept)
-ORANGE_LT= (216, 236, 74)   # #D8EC4A  lime         accent text on ink
+ORANGE   = (205, 224, 99)   # #CDE063  lime         fills, rules, large type (name kept)
+ORANGE_LT= (205, 224, 99)   # #CDE063  lime         accent text on ink
 PAPER    = (246, 243, 234)  # #F6F3EA
 AMBER    = (227, 197, 138)  # #E3C58A  phosphor, the mark's ring and dot
 MUSTARD  = (245, 192, 74)   # #F5C04A  Fine Print yellow
