@@ -637,3 +637,12 @@
 2026-11-09 | T | AI models | Meta rolls Muse Wonder AI models out to free users, claims better memory/task completion | (AI Daily Digest)
 2026-11-09 | T | AI business / Policy | OpenAI's "National Community Compact" pledges no-NDA transparency on data centers amid backlash | (The National)
 2026-11-09 | T | Phones | Google's November Pixel Feature Drop adds Nano Banana photo editing in Messages | (GSMArena)
+2026-11-10 | 1 | AI / Big Tech | Nvidia CEO Jensen Huang affair + alleged Chinese-spy/chip-smuggling scandal, board opens probe | Nov 8 admission, Megaspeed $4.8B Nvidia buyer under investigation since 2024, stock -4%, no charges (Al Jazeera, TechCrunch); governance-not-gossip take (carousel)
+2026-11-10 | 2 | India / Legal / AI | Delhi HC permanent injunction + John Doe order in Amitabh Bachchan v Rajat Nagi, bars persona misuse incl. unidentified infringers | Nov 5 decree, 4 years after 2022 interim order, app/quiz book/posters/domain targeted (Bar and Bench); only-a-celebrity-gets-this-easily take
+2026-11-10 | 4 | Hot Take / Cybersecurity | DOJ indicts Soall/Hazan/Sheetrit for alleged $129M AI voice-clone CEO-impersonation fraud | early Nov 2026 reporting, criminal not civil case (SCMP); crime-not-just-lawsuit take (opinion quota)
+2026-11-10 | 5 | AI Tool Spotlight | OpenAI's GPT-6 Cyber, dedicated cybersecurity/vulnerability-research model, rolled out to Daybreak Red enterprise subscribers only | improved scope adherence vs general ChatGPT access (eSecurity Planet); lock-it-down-is-the-point take
+2026-11-10 | T | India / Payments | RBI September card data: credit cards drive spending, debit cards now mainly cash withdrawal | UPI ate debit's POS role (MediaNama)
+2026-11-10 | T | India / Big Tech / Content moderation | Meta actioned 20.21M India content items in September, Instagram enforcement up, Facebook down | proactive detection rate fell (MediaNama)
+2026-11-10 | T | Cybersecurity / Crypto | Binance CFO Kaiser Ng steps down a week after $6.3B hack blamed on North Korean hackers | funds moved via THORChain (Gizmodo)
+2026-11-10 | T | AI business | Anthropic could start IPO roadshow before Thanksgiving, marketing as early as Nov 9, valuation talk up to $2T | investors reportedly skeptical (Free Press Journal)
+2026-11-10 | T | AI models / China | DeepSeek's Harness agent app reveals DAU for first time: 1.54M daily, 5.5M monthly | (Yicai Global)
