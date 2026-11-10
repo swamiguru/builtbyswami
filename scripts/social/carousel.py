@@ -14,16 +14,16 @@ except Exception:
 # tokens in longpress.news src/styles/global.css. Cards render on the site's
 # MIDNIGHT ground (--ink), not its cream page ground: a cream card disappears
 # in a feed, and the site's own inverted blocks and share card are midnight.
-MIDNIGHT = (52, 50, 63)     # #34323F  --screen     the card ground
-PANEL    = (66, 63, 79)     # #423F4F  one step up  panels and icon tiles
-ORANGE   = (217, 142, 114)  # #D98E72  terracotta   fills, rules, large type
-ORANGE_LT= (227, 165, 143)  # #E3A58F  --accent-light  accent text on slate
-PAPER    = (243, 238, 225)
+MIDNIGHT = (19, 18, 24)     # #131218  ink         the card ground (D7)
+PANEL    = (37, 36, 45)     # #25242D  one step up  panels and icon tiles
+ORANGE   = (216, 236, 74)   # #D8EC4A  lime         fills, rules, large type (name kept)
+ORANGE_LT= (216, 236, 74)   # #D8EC4A  lime         accent text on ink
+PAPER    = (246, 243, 234)  # #F6F3EA
 AMBER    = (227, 197, 138)  # #E3C58A  phosphor, the mark's ring and dot
-MUSTARD  = (214, 184, 120)  # #D6B878  # #F3EEE1  --ground     body text on slate
-MUTED    = (172, 167, 184)  # #ACA7B8  muted on slate
-TEAL     = (91, 138, 132)   # #5B8A84  --teal       the second voice
-DEEP     = (52, 50, 63)     # text sitting on a terracotta fill
+MUSTARD  = (245, 192, 74)   # #F5C04A  Fine Print yellow
+MUTED    = (185, 180, 196)  # #B9B4C4  muted on ink
+TEAL     = (25, 195, 174)   # #19C3AE  Known Issue teal
+DEEP     = (19, 18, 24)     # text sitting on a lime fill
 
 # Small orange text on midnight is about 3:1 - under the readable line. Use
 # ORANGE_LT wherever the accent carries words; ORANGE only for fills, rules
@@ -105,15 +105,19 @@ def font(size, weight="Bold"):
     return ImageFont.load_default()
 
 def mark(draw, x, y, size):
-    """The Long Press mark: a ring with a centred dot, right arc in orange.
-    Press and hold. Same shape as the favicon and the share card."""
-    w = max(3, int(round(size * 0.14)))
-    box = (x, y, x + size, y + size)
-    draw.ellipse(box, outline=AMBER, width=w)
-    draw.arc(box, start=-88, end=62, fill=ORANGE, width=w)
-    r = size * 0.20
+    """The Long Press mark (D7): lime tile, ink ring at 28%, ink right arc, ink dot.
+    Press and hold. Same shape as the site header and favicon."""
+    INK = (19, 18, 24)
+    RING_ON_TILE = (161, 175, 59)   # ink at 28% over lime
+    draw.rounded_rectangle((x, y, x + size, y + size), radius=int(size * 0.26), fill=ORANGE)
     cx, cy = x + size / 2.0, y + size / 2.0
-    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=AMBER)
+    rr = size * 0.27
+    w = max(3, int(round(size * 0.07)))
+    box = (cx - rr, cy - rr, cx + rr, cy + rr)
+    draw.ellipse(box, outline=RING_ON_TILE, width=w)
+    draw.arc(box, start=-90, end=90, fill=INK, width=w)
+    r = size * 0.10
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=INK)
 
 def wrap(draw, text, fnt, max_w):
     words, lines, cur = text.split(), [], ""
@@ -132,7 +136,7 @@ def wrap(draw, text, fnt, max_w):
 def base(tag, idx, total):
     img = Image.new("RGBA", (W, H), BG + (255,))
     d = ImageDraw.Draw(img)
-    d.rectangle((0, 0, W, 4), fill=CYAN); d.rectangle((0, 4, W, 8), fill=MUSTARD); d.rectangle((0, 8, W, 12), fill=TEAL)
+    d.rectangle((0, 0, W, 4), fill=CYAN); d.rectangle((0, 4, W, 8), fill=TEAL); d.rectangle((0, 8, W, 12), fill=MUSTARD)
     m = 80
     pf = font(28, "SemiBold")
     tw = d.textlength(tag.upper(), font=pf)
@@ -149,7 +153,7 @@ def wordmark(d):
     mark(d, 80, y - 7, 34)
     d.text((126, y + 9), HANDLE, font=fnt, fill=PAPER, anchor="lm")
     _cx = 126 + d.textlength(HANDLE, font=fnt) + 10
-    d.rectangle((_cx, y - 2, _cx + 13, y + 20), fill=AMBER)
+    d.rectangle((_cx, y - 2, _cx + 13, y + 20), fill=ORANGE)
 
 def cover(tag, s, idx, total):
     img, d, m = base(tag, idx, total)
