@@ -646,3 +646,13 @@
 2026-11-10 | T | Cybersecurity / Crypto | Binance CFO Kaiser Ng steps down a week after $6.3B hack blamed on North Korean hackers | funds moved via THORChain (Gizmodo)
 2026-11-10 | T | AI business | Anthropic could start IPO roadshow before Thanksgiving, marketing as early as Nov 9, valuation talk up to $2T | investors reportedly skeptical (Free Press Journal)
 2026-11-10 | T | AI models / China | DeepSeek's Harness agent app reveals DAU for first time: 1.54M daily, 5.5M monthly | (Yicai Global)
+2026-11-11 | 1 | AI / Big Tech | Anthropic IPO pricing | $70-78/share range, up to $1.4T valuation, $90.4B raise incl $26B from Google/Nvidia, recursive self-improvement risk disclosed (CNBC, Fortune)
+2026-11-11 | 2 | India / News / Legal / AI | Delhi HC deepfake order re: AAP videos of CM Rekha Gupta | Nov 6 "forthwith" removal order, Nov 10 check found 5/5 flagged X posts still live (512K views), IT Rules 2-3hr takedown window never invoked (Bar and Bench, MediaNama)
+2026-11-11 | 3 | Tips & Tricks (tip slot) | Amazon Price History feature | see tips log
+2026-11-11 | 4 | Apps / Comparison | Spotify Audiobooks+ vs Audible India | Spotify launches Audiobooks+ in India Nov 12, 15hrs/month no price yet vs Audible's flat Rs199/mo (T2 Online, 91mobiles)
+2026-11-11 | 5 | India / Myth-buster / Privacy (opinion) | No law governs phone-cracking tools in India | IFF RTI: Amit Shah approved Make in India exemption for NIA's Rs4.98cr Cellebrite Premium Tool buy (Internet Freedom Foundation); no-rulebook take (opinion quota)
+2026-11-11 | T | India / Travel / Mobility | MakeMyTrip acquires majority stake in Quick Ride | enters ride-pooling via new Co Ride Mobility entity (Inc42)
+2026-11-11 | T | India / Content moderation / Legal | Kerala HC allows NoCap Facebook page to resume | state denied seeking a full-page block, says it only flagged hateful comments (The News Minute)
+2026-11-11 | T | Crypto / Regulatory | Thailand SEC to block Bitget from Dec 5 | unlicensed Thai-language, baht-priced exchange run 2022-2025 (CoinGape)
+2026-11-11 | T | OS / Windows | Windows 11 November update KB5132061 | faster right-click menu, quicker Edge launches, USB-free cloud rebuild, up to 20% faster on 8GB PCs (Windows Latest)
+2026-11-11 | T | Space | NASA unveils X-70 Fractal crewed research jet | first flight targeted 2028, swappable experimental payloads (NASA)
