@@ -656,3 +656,12 @@
 2026-11-11 | T | Crypto / Regulatory | Thailand SEC to block Bitget from Dec 5 | unlicensed Thai-language, baht-priced exchange run 2022-2025 (CoinGape)
 2026-11-11 | T | OS / Windows | Windows 11 November update KB5132061 | faster right-click menu, quicker Edge launches, USB-free cloud rebuild, up to 20% faster on 8GB PCs (Windows Latest)
 2026-11-11 | T | Space | NASA unveils X-70 Fractal crewed research jet | first flight targeted 2028, swappable experimental payloads (NASA)
+2026-11-12 | 1 | AI / Big Tech | Nvidia board reportedly preparing to oust CEO Jensen Huang after second affair allegation | NYT reports affair with VP who reports to him, stock -11% in 5 days, no succession plan (TechCrunch, Fortune); one-guy-no-bench take (new hard dev vs Nov 10 coverage)
+2026-11-12 | 2 | India / Legal / Payments | Supreme Court orders strict bank liability + WhatsApp fraud-prevention plan on digital arrest scams | Oct 29 order uploaded Nov 7, Justice Bagchi, next hearing Nov 23 (MediaNama, LiveLaw); banks-finally-on-the-hook take
+2026-11-12 | 4 | India / Myth-Buster / Legal AI (opinion) | Bombay HC quashed customs order citing non-existent AI-generated SC judgments | Quanta Logistics vs Commissioner of Customs (Bar and Bench, MediaNama); AI-didn't-sign-the-order take (opinion quota)
+2026-11-12 | 5 | India / Security & Privacy Quick-Win | Lower your UPI daily transaction limit below the 1-2 lakh default | ties to digital arrest scam theme (Google Pay Help)
+2026-11-12 | T | India / Cybercrime | Five arrested in Rs 8.84cr fraud involving Puducherry govt dental college account | (The420)
+2026-11-12 | T | India / Legal / Platforms | Fake High Court orders used to block 129 websites in India, forgery probe | (The420)
+2026-11-12 | T | India / Legal / AI | Madras HC orders FIR after fake AI-generated books found in public libraries | Periyar library Coimbatore (MediaNama)
+2026-11-12 | T | AI policy / Global | Australia weighs criminal offence for AI companies whose models cause harm | 18-recommendation package (MediaNama)
+2026-11-12 | T | Cybersecurity / Global | Apple warned Thai officials and politicians about mercenary spyware targeting their phones | (The420)
