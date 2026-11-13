@@ -240,12 +240,12 @@
       }
     },
     {
-      "region": "india",
-      "headline": "US child safety body asks India not to require platforms to report abuse cases twice",
-      "line": "The group argues duplicate reporting requirements would slow down child-safety response without added benefit, per [MediaNama](https://www.medianama.com/2026/11/223-us-child-safety-body-india-duplicate-abuse-reports/).",
+      "region": "global",
+      "headline": "SpaceX targets today for its first full Starship booster-and-ship catch attempt",
+      "line": "Flight 15 tries to catch both the Super Heavy booster and the Starship upper stage with the tower's arms at Starbase, a step toward full reusability, per [Broadband Breakfast](https://broadbandbreakfast.com/spacex-targets-nov-13-for-historic-starship-launch/).",
       "source": {
-        "label": "MediaNama",
-        "url": "https://www.medianama.com/2026/11/223-us-child-safety-body-india-duplicate-abuse-reports/"
+        "label": "Broadband Breakfast",
+        "url": "https://broadbandbreakfast.com/spacex-targets-nov-13-for-historic-starship-launch/"
       }
     }
   ]

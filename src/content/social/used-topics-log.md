@@ -675,4 +675,4 @@
 2026-11-13 | T | India / Platforms / Consumer | CCPA fines Justdial Rs 10 lakh over ammonium nitrate listings, rejects intermediary defence | (MediaNama)
 2026-11-13 | T | India / Child safety / Policy | NCPCR plans draft social media guidelines for children, targeting 2027 | (MediaNama)
 2026-11-13 | T | Phones / Global | Apple ships HomeView smart display + new Apple TV 4K today | (MacRumors)
-2026-11-13 | T | India / Child safety / Policy | US child safety body asks India not to require duplicate child-abuse reporting | (MediaNama)
+2026-11-13 | T | Space | SpaceX targets first full Starship booster-and-ship catch attempt | (Broadband Breakfast) [swapped in for taps global-quota fix, replacing India/Child-safety dupe-of-tap-3 item]
