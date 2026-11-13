@@ -665,3 +665,14 @@
 2026-11-12 | T | India / Legal / AI | Madras HC orders FIR after fake AI-generated books found in public libraries | Periyar library Coimbatore (MediaNama)
 2026-11-12 | T | AI policy / Global | Australia weighs criminal offence for AI companies whose models cause harm | 18-recommendation package (MediaNama)
 2026-11-12 | T | Cybersecurity / Global | Apple warned Thai officials and politicians about mercenary spyware targeting their phones | (The420)
+
+2026-11-13 | 1 | AI / Big Tech | Jensen Huang resigns as Nvidia CEO, CFO Colette Kress named interim CEO | Nov 12 resignation, Trump reportedly called him to stay (NYT), Bloomberg "final hours" piece (Nvidia Newsroom, Reuters, TechCrunch); new hard dev vs Nov 10/12 coverage, exception to 5-day same-subject rule given scale
+2026-11-13 | 2 | Phones / Comparison | Google November Pixel/Android Feature Drop vs iOS 27.3 beta | combines both user-requested topics; Pixel Drop live now vs iOS 27.3 still developer beta (Google blog, MacRumors, 9to5Mac)
+2026-11-13 | 3 | Tips & Tricks (tip slot) | DigiLocker Passport Verification Record | see tips log
+2026-11-13 | 4 | India / Hot Take / Cybersecurity (opinion) | Kerala woman loses Rs 49.2 lakh to fake-Sitharaman-deepfake trading scam | deepfake investment fraud accountability gap (The420); opinion quota
+2026-11-13 | 5 | India / Myth-Buster / AI | Myth: India has no AI models of its own, vs IndiaAI Mission's 20 approved models + funding shortfall | (MediaNama via Business Standard)
+2026-11-13 | T | India / Cybercrime | Chennai Police bust illegal SIM box network linked to 301 cybercrime complaints | (The420)
+2026-11-13 | T | India / Platforms / Consumer | CCPA fines Justdial Rs 10 lakh over ammonium nitrate listings, rejects intermediary defence | (MediaNama)
+2026-11-13 | T | India / Child safety / Policy | NCPCR plans draft social media guidelines for children, targeting 2027 | (MediaNama)
+2026-11-13 | T | Phones / Global | Apple ships HomeView smart display + new Apple TV 4K today | (MacRumors)
+2026-11-13 | T | India / Child safety / Policy | US child safety body asks India not to require duplicate child-abuse reporting | (MediaNama)
