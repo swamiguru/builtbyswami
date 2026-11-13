@@ -27,6 +27,8 @@ export interface Build {
   url?: string;
   /** Matching build note on this site. */
   noteSlug?: string;
+  /** Deep links to the work itself, shown under the buttons. */
+  related?: { label: string; url: string }[];
   /** Optional deeper read: the same build seen through several disciplines. */
   deepDive?: DeepDive;
 }
@@ -55,6 +57,14 @@ export const BUILDS: Build[] = [
     shipped: `${__LP_ISSUES__} issues, daily since 12 July 2026`,
     stack: "Astro, Vercel. Own domain, own GA4 property.",
     url: "https://longpress.news",
+    related: [
+      { label: "Known Issue: The iPhone Duo's India price gap isn't about GST", url: "https://longpress.news/iphone-duo-india-price-gap" },
+      { label: "Known Issue: Zomato and Swiggy's platform fee has grown 800%", url: "https://longpress.news/swiggy-zomato-platform-fee-creep" },
+      { label: "Known Issue: Pixel's battery drain bug and the update roulette", url: "https://longpress.news/pixel-update-roulette" },
+      { label: "Fine Print: UPI's new merchant fee", url: "https://longpress.news/fine-print/upi-merchant-fee" },
+      { label: "Fine Print: Money lost to online fraud, who pays it back", url: "https://longpress.news/fine-print/bank-fraud-refunds" },
+      { label: "Fine Print: The digital arrest scam", url: "https://longpress.news/fine-print/digital-arrest-scam" },
+    ],
     deepDive: {
       reach: [],
       lenses: [

@@ -185,6 +185,23 @@ export default function Builds() {
                     )}
                   </div>
                   </div>
+
+                  {build.related && build.related.length > 0 && (
+                    <ul className="mt-5 space-y-2 text-sm">
+                      {build.related.map((r) => (
+                        <li key={r.url}>
+                          <a
+                            href={r.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-m3-primary underline underline-offset-4 hover:no-underline"
+                          >
+                            {r.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
                 </Reveal>
               );
