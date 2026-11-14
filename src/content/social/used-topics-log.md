@@ -676,3 +676,13 @@
 2026-11-13 | T | India / Child safety / Policy | NCPCR plans draft social media guidelines for children, targeting 2027 | (MediaNama)
 2026-11-13 | T | Phones / Global | Apple ships HomeView smart display + new Apple TV 4K today | (MacRumors)
 2026-11-13 | T | Space | SpaceX targets first full Starship booster-and-ship catch attempt | (Broadband Breakfast) [swapped in for taps global-quota fix, replacing India/Child-safety dupe-of-tap-3 item]
+2026-11-14 | 1 | India / Cybersecurity | CERT-In flags actively-exploited Chrome zero-day CVE-2026-125350 | critical advisory CIVN-2026-0544, patched in Chrome 157.0.8103.50 (Malwarebytes, News24)
+2026-11-14 | 2 | India / Phones | Oppo Find X9 series tipped for India launch Nov 18 | insider Yogesh Brar, Pro under Rs 1 lakh, X9 ~Rs 65K, Dimensity 9500 (Smartprix); RUMOR
+2026-11-14 | 3 | Tips & Tricks (tip slot) | Google Meet Take notes for me | see tips log
+2026-11-14 | 4 | AI Workflow | Prompt of the day: screenshot bank/UPI statement into Gemini/ChatGPT to catch forgotten autopays | original workflow prompt, no single news hook
+2026-11-14 | 5 | India / Hot Take / Jobs (opinion) | DHS proposal to end H-1B 60-day grace period after job loss | Indian techies hit hardest, no effective date yet (Outlook Business); opinion quota
+2026-11-14 | T | AI / Big Tech | Lawmakers demand further Nvidia probes after Huang's resignation | (PBS)
+2026-11-14 | T | AI business | Anthropic targets Nasdaq debut week of Nov 16, ticker ANT | (Renaissance Capital)
+2026-11-14 | T | China / Robotics | BYD unveils design for its first self-developed humanoid robot | (CarNewsChina)
+2026-11-14 | T | India / Phones | Vivo X500 series tipped for India launch by month-end | (Smartprix)
+2026-11-14 | T | India / Payments / Cybersecurity | RBI's new rule freezes payments 12 hours after number/email change | (ecorpit)
