@@ -687,3 +687,14 @@
 2026-11-14 | T | India / Phones | Vivo X500 series tipped for India launch by month-end | (Smartprix)
 2026-11-14 | T | India / Phones | Oppo Find X9 series tipped for India launch Nov 18 | insider Yogesh Brar (Smartprix); RUMOR; moved from slot 2 to Taps
 2026-11-14 | T | India / Payments / Cybersecurity | RBI's new rule freezes payments 12 hours after number/email change | (ecorpit)
+
+2026-11-15 | 1 | India / Cybersecurity | CERT-In names AI attacker Crafty Falcon targeting BFSI payment APIs | Moneylife/Infosecurity Mag, Re1 test-transfer tactic, weekends/holidays
+2026-11-15 | 2 | AI / Browsers | Perplexity makes Comet browser free worldwide, pushes to mobile | (eMarketer), ends gated rollout, direct Chrome challenge
+2026-11-15 | 3 | Tips & Tricks (tip slot) | IRCTC VIKALP scheme | see tips log
+2026-11-15 | 4 | Community / Poll / AI | Would you switch from Chrome to Comet now that it's free | tied to slot 2
+2026-11-15 | 5 | India / Hot Take / Consumer (opinion) | CCPA fines Ola Rs 10 lakh over advance-tip dark pattern | (Bar and Bench); opinion quota
+2026-11-15 | T | India / Telecom | Jio's 3-year unlimited prepaid plan at Rs 10,000 flat | (The Tech Outlook)
+2026-11-15 | T | India / Privacy / AI | MeitY questions Pronto, Urban Company, Snabbit on home footage training AI robots abroad | (MediaNama)
+2026-11-15 | T | Global / Telecom | Starlink direct-to-phone still trails terrestrial networks, new Ookla/RootMetrics data | (Broadband Breakfast)
+2026-11-15 | T | Global / AI Business | Nvidia investors quietly lobby to keep Jensen Huang despite board probe | (Axios)
+2026-11-15 | T | Global / Privacy | Google smart glasses bystander-face-blur test across 5 situations, inconsistent | (MediaNama)
