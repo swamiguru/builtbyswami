@@ -698,3 +698,14 @@
 2026-11-15 | T | Global / Telecom | Starlink direct-to-phone still trails terrestrial networks, new Ookla/RootMetrics data | (Broadband Breakfast)
 2026-11-15 | T | Global / AI Business | Nvidia investors quietly lobby to keep Jensen Huang despite board probe | (Axios)
 2026-11-15 | T | Global / Privacy | Google smart glasses bystander-face-blur test across 5 situations, inconsistent | (MediaNama)
+
+2026-11-16 | 1 | India / Cybersecurity | Delhi Cyber Police bust mule-account pipeline feeding Cambodia/Dubai scam compounds behind Rs 15.5L digital arrest of retired colonel's family | 4 arrests Punjab/Rajasthan, one account linked to 17 complaints (Telangana Today); carousel
+2026-11-16 | 2 | India / Phones | Oppo Find X9 + Find X9 Pro India launch officially confirmed Nov 18 | Dimensity 9500, 7000mAh+, 200MP Hasselblad telephoto on Pro, ~Rs70-80k est. (91mobiles, Smartprix); carousel
+2026-11-16 | 3 | Tips & Tricks (tip slot) | FASTag auto top-up via Google Pay/Paytm/Park+ UPI autopay | ties to Nov 15 new toll rules (non-FASTag = 2x cash, 1.25x UPI) (Inc42, Autocar India)
+2026-11-16 | 4 | AI Workflow | Prompt of the day: paste suspicious police/tax/bank message into Gemini/ChatGPT/Claude as first filter vs scam scripts | original workflow prompt, ties to digital-arrest surge
+2026-11-16 | 5 | Hot Take / AI Business (opinion) | Anthropic lists on Nasdaq Thursday Nov 19 as ANT at trillion-dollar+ valuation after warning in S-1 that AI may pose existential risk to humanity | risk-label-and-trillion-dollar-pitch-on-same-page take (Nasdaq Trader notice DTN2026-28, Reuters); opinion quota
+2026-11-16 | T | India / Policy | New FASTag rule from Nov 15: non-FASTag users pay 2x toll in cash, 1.25x via UPI | MoRTH amended National Highways Fee Rules 2008 (Autocar Pro, DDNews)
+2026-11-16 | T | India / Jobs | TCS cut nearly 20,000 jobs in Q2 FY26 vs stated 12,000 plan; union NITES alleges 2,500 forced resignations in Pune | 3.2% headcount decline (Outlook Business, The Wire)
+2026-11-16 | T | Global / AI Business | Anthropic Nasdaq listing confirmed for Thursday Nov 19 under ticker ANT | Nasdaq Trader notice DTN2026-28 (Nasdaq)
+2026-11-16 | T | India / Govt apps | New Aadhaar app crosses 5 crore downloads, 60 lakh users updated mobile number, 15 lakh addresses, 23 lakh emails via app | biometric lock used 1.91 crore times (Swarajya)
+2026-11-16 | T | India / Payments | UPI November provisional data: 20.47 bn transactions (+32% YoY) at Rs 26.32 lakh crore (+22%), avg daily value Rs 87,721 crore | NPCI (Free Press Journal)
