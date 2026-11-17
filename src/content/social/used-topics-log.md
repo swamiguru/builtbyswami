@@ -709,3 +709,13 @@
 2026-11-16 | T | Global / AI Business | Anthropic Nasdaq listing confirmed for Thursday Nov 19 under ticker ANT | Nasdaq Trader notice DTN2026-28 (Nasdaq)
 2026-11-16 | T | India / Govt apps | New Aadhaar app crosses 5 crore downloads, 60 lakh users updated mobile number, 15 lakh addresses, 23 lakh emails via app | biometric lock used 1.91 crore times (Swarajya)
 2026-11-16 | T | India / Payments | UPI November provisional data: 20.47 bn transactions (+32% YoY) at Rs 26.32 lakh crore (+22%), avg daily value Rs 87,721 crore | NPCI (Free Press Journal)
+2026-11-17 | 1 | Global / AI Business | Nvidia board rules out Jensen Huang's return as CEO despite Trump/Musk pressure, 180K-signature petition; hiring search firm, reportedly approached Arm CEO Rene Haas | Nvidia's Board Says No To Huang; carousel
+2026-11-17 | 2 | India / Cybersecurity | Delhi woman loses Rs 71 lakh to fake Mumbai IPS officer digital-arrest video call scam; 3 arrested in Bhopal running mule-account network | Delhi Woman Loses Rs 71 Lakh; carousel
+2026-11-17 | 3 | India / Tips & Tricks (tip slot) | Check AIS (Annual Information Statement) on income tax e-filing portal before filing ITR | Check Your AIS Before You File
+2026-11-17 | 4 | AI Tool Spotlight | Google retires Gems in Gemini app, replaces with Skills, slash-command activated, rolling out today | Gemini Replaces Gems With Skills
+2026-11-17 | 5 | Hot Take / AI Business (opinion) | Anthropic prices IPO at up to $78/share, $1.4T valuation, 6x oversubscribed, Nvidia+Google each investing $10B, same week Nvidia has no CEO and down ~30% since October | Two Prices For The Same AI Trade; opinion quota
+2026-11-17 | T | India / AI | Gemini Live adds 66 regional voices incl. Hindi and Indian English | (Business Upturn)
+2026-11-17 | T | Global / AI Business | Nvidia reports Q3 earnings today, first since Huang's exit, Wall St expects ~91% YoY revenue jump | (MarketPulse)
+2026-11-17 | T | Global / Creator Economy | Instagram testing long-form video platform ("Features") to rival YouTube, single video as long upload + Reels series | (NewsBytes)
+2026-11-17 | T | Global / Creator Economy | YouTube now counts TV co-viewers in public view totals, Partner Program pay still counts engaged views only | (PPC Land)
+2026-11-17 | T | India / Cybersecurity | Goa Police "Cyber Vigil 2.0" crackdown: 24 arrested across 16 states, 37 cases, Rs 8.21 crore losses, 1,717 SIM cards blocked | (Northeast News)
