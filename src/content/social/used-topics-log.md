@@ -719,3 +719,13 @@
 2026-11-17 | T | Global / Creator Economy | Instagram testing long-form video platform ("Features") to rival YouTube, single video as long upload + Reels series | (NewsBytes)
 2026-11-17 | T | Global / Creator Economy | YouTube now counts TV co-viewers in public view totals, Partner Program pay still counts engaged views only | (PPC Land)
 2026-11-17 | T | India / Cybersecurity | Goa Police "Cyber Vigil 2.0" crackdown: 24 arrested across 16 states, 37 cases, Rs 8.21 crore losses, 1,717 SIM cards blocked | (Northeast News)
+2026-11-18 | 1 | AI / Big Tech | Nvidia Q3 FY27 earnings | $115.8B revenue up 103% YoY, first report since Huang exit, stock up only 1.3% after hours (Nvidia Newsroom, The Motley Fool); carousel; new hard development vs Nov17 governance angle, exception to 5-day rule
+2026-11-18 | 2 | India / Policy & Telecom | DoT SIM-binding rules, what stops working from Jan 2027 | 24-hour SIM verification breaks WiFi-only WhatsApp, travel, shared business numbers; Dec 31 compliance deadline (MediaNama); carousel
+2026-11-18 | 3 | Tips & Tricks (tip slot) | Spotify Listening Activity + Request to Jam | see tips log
+2026-11-18 | 4 | India / Hot Take / AI (opinion) | Tamil Nadu libraries pull 70,000+ AI-generated fake books, Madras HC orders FIR | Periyar Arivulagam Coimbatore, fake authors incl. Jean Dreze, hijacked ISBNs (The News Minute); opinion quota; carousel
+2026-11-18 | 5 | India / Comparison | Paytm vs PhonePe vs Google Pay after RBI's in-principle wallet nod | PPSL approval Nov 13, no live wallet yet, PhonePe ~46% UPI share (Free Press Journal, Outlook Business); carousel
+2026-11-18 | T | India / Cybercrime | Delhi NBFC loses Rs 41.27 crore cyberattack, Hong Kong links traced | (The420)
+2026-11-18 | T | India / Payments | NPCI launches Vyapaar Saksham MDR-funded scheme for small UPI merchants | (MediaNama)
+2026-11-18 | T | India / Cybersecurity | CERT-In flags new eMudhra emBridge software flaw | (MediaNama)
+2026-11-18 | T | Global / China / Robotics | DeepSeek invests $20.8M in Unitree's humanoid-robot Shanghai IPO | (StreetInsider/Reuters)
+2026-11-18 | T | Global / Privacy / Regulatory | Italy fines Meta euro805 million over accessing users' photos without consent | (MediaNama)
