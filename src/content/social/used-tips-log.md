@@ -163,3 +163,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-16 | FASTag/Google Pay/Paytm/Park+ | Auto top-up - set balance threshold-triggered auto-recharge via UPI autopay in Google Pay/Paytm/Park+ so FASTag refills itself (never runs dry); matters more from Nov 15 since non-FASTag lanes now charge 2x cash / 1.25x UPI
 2026-11-17 | Income Tax e-Filing Portal | Check your AIS (Annual Information Statement) under the e-File menu before filing ITR - department's own record of every transaction reported against your PAN, Feedback button next to each entry corrects a wrong one before it becomes a scrutiny notice
 2026-11-18 | Spotify | Listening Activity + Request to Jam inside Messages (profile > Privacy and social settings)
+2026-11-19 | Claude | Memory settings - view/edit/delete saved facts by topic, Generate memory from chats toggle to stop new saves

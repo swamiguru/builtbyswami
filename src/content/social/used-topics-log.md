@@ -729,3 +729,12 @@
 2026-11-18 | T | India / Cybersecurity | CERT-In flags new eMudhra emBridge software flaw | (MediaNama)
 2026-11-18 | T | Global / China / Robotics | DeepSeek invests $20.8M in Unitree's humanoid-robot Shanghai IPO | (StreetInsider/Reuters)
 2026-11-18 | T | Global / Privacy / Regulatory | Italy fines Meta euro805 million over accessing users' photos without consent | (MediaNama)
+2026-11-19 | 1 | AI / Big Tech | Anthropic Nasdaq IPO debut (ANT) | second-biggest listing ever after SpaceX, India locked out of retail access
+2026-11-19 | 2 | India / Phones | Oppo Find X9 + Find X9 Pro India launch, real prices | Pro Rs 1,09,999, X9 from Rs 74,999, sales open Nov 21 (new hard dev vs Nov16 pre-launch confirmation)
+2026-11-19 | 4 | AI Workflow | Prompt of the day: audit AI subscriptions, which to cancel | tied to Anthropic IPO day theme
+2026-11-19 | 5 | India / Myth-Buster / IT Jobs (opinion) | Myth: AI killing Indian IT jobs vs net 7,389 FY26 cut but ~45k freshers still hired | TCS/Infosys fresher hiring continues (opinion quota)
+2026-11-19 | T | Global / Space | SpaceX first-ever Starship ship catch at Starbase, booster lost over Gulf | (Al Jazeera, Nov 14 event)
+2026-11-19 | T | India / Cybersecurity | Kanpur Rs 5,600 crore cyber fraud ring, third arrest | (The420)
+2026-11-19 | T | India / Phones | Vivo X500 series India launch date confirmed Nov 26 | (Smartprix) OFFICIAL
+2026-11-19 | T | Global / China / Robotics | China's EV makers building humanoid robots to rival Tesla | (SCMP)
+2026-11-19 | T | India / Payments | NPCI MyUPI adds AI-powered support inside UPI apps | (Outlook Money)
