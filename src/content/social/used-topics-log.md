@@ -738,3 +738,12 @@
 2026-11-19 | T | India / Phones | Vivo X500 series India launch date confirmed Nov 26 | (Smartprix) OFFICIAL
 2026-11-19 | T | Global / China / Robotics | China's EV makers building humanoid robots to rival Tesla | (SCMP)
 2026-11-19 | T | India / Payments | NPCI MyUPI adds AI-powered support inside UPI apps | (Outlook Money)
+2026-11-20 | 1 | Global / China / Robotics | BYD and XPeng pivot to mass-producing humanoid robots | EV price war cooling, BYD EVP Stella Li says China wants to be first to fully commercialise humanoid robots (SCMP)
+2026-11-20 | 2 | India / Phones | Oppo Find X9 sale (Rs 74,999/1,09,999) vs Vivo X500 India launch Nov 26, leaked prices to Rs 2,29,999 | Oppo official and live; Vivo leak unofficial, new hard dev (real prices vs leak) vs Nov16/19 Oppo-only coverage
+2026-11-20 | 4 | India / Myth-Buster / Payments (opinion) | Myth: RBI zero-liability covers UPI digital-arrest scams | reality: only covers unauthorised transactions, not self-authorised transfers under duress; tied to SC's Nov 23 hearing (opinion quota)
+2026-11-20 | 5 | Hot Take / AI Business (opinion) | Anthropic ANT closed first trading day at $97.17, below its $111.50ish open, $1.77T valuation, Dow -1,100pts same session | new hard dev vs Nov19 "debut happening" coverage, debut-day trading RESULTS; exception to 5-day rule given story scale, per established precedent (opinion quota)
+2026-11-20 | T | Global / AI Business | Nvidia board creates National Security and Export-Control Oversight Committee, Suzanne Nora Johnson chairs | (Nvidia Newsroom)
+2026-11-20 | T | India / Space | ISRO's NVS-03 satellite restores full NavIC navigation coverage | (News On Air)
+2026-11-20 | T | India / Jobs | TCS, Infosys, Cognizant plan 80,000 hires even as Indian IT cuts jobs this year | (Zee Business)
+2026-11-20 | T | Global / AI | OpenAI reportedly folding Sora's video-editing tools directly into ChatGPT | (Deccan Herald)
+2026-11-20 | T | India / Phones | India's BIS clears Samsung's next flagship Galaxy S27 for import, no launch date yet | (SammyFans)
