@@ -747,3 +747,13 @@
 2026-11-20 | T | India / Jobs | TCS, Infosys, Cognizant plan 80,000 hires even as Indian IT cuts jobs this year | (Zee Business)
 2026-11-20 | T | Global / AI | OpenAI reportedly folding Sora's video-editing tools directly into ChatGPT | (Deccan Herald)
 2026-11-20 | T | India / Phones | India's BIS clears Samsung's next flagship Galaxy S27 for import, no launch date yet | (SammyFans)
+2026-11-21 | 1 | India / Big Tech / Platforms | Meta seeks new India policy chief amid WhatsApp usernames standoff | Meta's India Policy Seat Is Empty (Business Today/Bloomberg)
+2026-11-21 | 2 | Apps & Platforms | Instagram spins off standalone "Direct" DM app, no account needed | Instagram DMs Get Their Own App (Business Today)
+2026-11-21 | 3 | Tips & Tricks (tip slot) | Chrome built-in price tracking | see tips log
+2026-11-21 | 4 | Community / Poll / Apps | Would you use a separate DM-only app from Meta | tied to slot 2
+2026-11-21 | 5 | India / Myth-Buster / Consumer (opinion) | Myth: festive sale price is always the year's lowest | inflated reference pricing, CCPA dark-patterns guidelines (opinion quota)
+2026-11-21 | T | India / Jobs | TCS, Infosys, Cognizant plan 80,000 hires even as sector logs 1.34 lakh layoffs | (Zee Business)
+2026-11-21 | T | India / Startups | Indian startups raised $255 million this week, led by GIVA and EloElo Group | (Inc42)
+2026-11-21 | T | India / Big Tech | Apple ships $2 billion of iPhones from India in November, FY26 exports hit $14 billion | (Free Press Journal)
+2026-11-21 | T | Global / AI Business | Nvidia board works with search firm; CFO and chief engineer emerge as internal CEO favorites | (GV Wire)
+2026-11-21 | T | Global / China / Robotics | XPeng to hold 2026 AI Day Nov 25, expected to show humanoid robot IRON progress | (CnEVPost)

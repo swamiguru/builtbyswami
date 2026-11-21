@@ -165,3 +165,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-18 | Spotify | Listening Activity + Request to Jam inside Messages (profile > Privacy and social settings)
 2026-11-19 | Claude | Memory settings - view/edit/delete saved facts by topic, Generate memory from chats toggle to stop new saves
 2026-11-20 | Perplexity | Comet browser now free worldwide (India included), sidebar Assistant reads and compares prices/specs across multiple open tabs, no Pro subscription needed
+2026-11-21 | Google Chrome | Built-in Track price on bookmarked product pages, notifies via Reading List, no extension needed
