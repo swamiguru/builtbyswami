@@ -757,3 +757,13 @@
 2026-11-21 | T | India / Big Tech | Apple ships $2 billion of iPhones from India in November, FY26 exports hit $14 billion | (Free Press Journal)
 2026-11-21 | T | Global / AI Business | Nvidia board works with search firm; CFO and chief engineer emerge as internal CEO favorites | (GV Wire)
 2026-11-21 | T | Global / China / Robotics | XPeng to hold 2026 AI Day Nov 25, expected to show humanoid robot IRON progress | (CnEVPost)
+2026-11-22 | 1 | India / Cybersecurity | CERT-In warns banks/NBFCs/fintechs of AI-driven "Crafty Falcon" attacks draining payment APIs at machine speed | (Inc42); carousel
+2026-11-22 | 2 | India / Policy & Payments | RBI's new Domestic Money Transfer Directions 2026 set cash pay-out caps and mandatory safeguards for migrant workers, effective Nov 11 | (Business Today); carousel
+2026-11-22 | 3 | Tips & Tricks (tip slot) | WhatsApp missed-call voice/video message | see tips log
+2026-11-22 | 4 | AI Workflow | Prompt of the day: paste a suspicious bank/UPI message into Claude/Gemini/ChatGPT as a first scam-filter | ties to CERT-In Crafty Falcon story
+2026-11-22 | 5 | India / Hot Take / Big Tech (opinion) | Flipkart's Shopsy relaunches as a gamified "AI-native" app chasing Gen Z and Bharat's next 100M shoppers | SuperCoins, quizzes, zero-commission claim questioned (Flipkart Stories, Angel One); opinion quota; carousel
+2026-11-22 | T | India / Cybersecurity | CERT-In flags hardcoded credentials in Tata Motors' iRA 2.0/iRA.ev connected-car apps | (Inc42)
+2026-11-22 | T | India / Phones | Vivo X500 series India launch confirmed Nov 26, new red colourway + Watch GT2 bundle + 400mm extender | (Beebom) OFFICIAL
+2026-11-22 | T | Global / Robotics | Huawei Cloud plans to open-source its Ascend-based world model for robots | (TechNode)
+2026-11-22 | T | Global / Chips | Samsung, Apple reportedly nearing a long-term DRAM supply deal | (Newsquawk/Maeil)
+2026-11-22 | T | India / Big Tech | Flipkart installs "AI Transformation Charter" under Hemant Badri ahead of possible IPO | (Angel One)
