@@ -167,3 +167,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-20 | Perplexity | Comet browser now free worldwide (India included), sidebar Assistant reads and compares prices/specs across multiple open tabs, no Pro subscription needed
 2026-11-21 | Google Chrome | Built-in Track price on bookmarked product pages, notifies via Reading List, no extension needed
 2026-11-22 | WhatsApp | Missed-call voice/video message - record a voice note or short video note right from the missed-call screen in one tap instead of just a notification, effectively built-in voicemail
+2026-11-23 | Google Photos | Locked Folder - Library > Utilities > Locked Folder, gated by phone's own screen lock, moves photos/videos out of main grid, search, memories and shared albums; app-level, not OS-level

@@ -767,3 +767,13 @@
 2026-11-22 | T | Global / Robotics | Huawei Cloud plans to open-source its Ascend-based world model for robots | (TechNode)
 2026-11-22 | T | Global / Chips | Samsung, Apple reportedly nearing a long-term DRAM supply deal | (Newsquawk/Maeil)
 2026-11-22 | T | India / Big Tech | Flipkart installs "AI Transformation Charter" under Hemant Badri ahead of possible IPO | (Angel One)
+2026-11-23 | 1 | India / News & Commentary / Cybersecurity | Centre drops WhatsApp call kill-switch demand for digital arrest scams, warnings-first plan wins; SC case back in court | (ThePrint); carousel
+2026-11-23 | 2 | Global / Big Tech / Chips | Apple reportedly nearing 4-5 year DRAM supply deal with Samsung after ~100% memory price hike this year | (MacRumors); follows up 2026-11-22 Tap with full consumer-impact angle
+2026-11-23 | 3 | Tips & Tricks (tip slot) | Google Photos Locked Folder | see tips log
+2026-11-23 | 4 | India / Security & Privacy Quick-Win | Lower your own UPI daily transaction limit below the ~1 lakh default to cap digital-arrest scam damage | (Paytm); ties to slot 1
+2026-11-23 | 5 | India / Myth-Buster / AI (opinion) | Myth: Claude's rupee India pricing is a discount; GST-inclusive Rs 2,000/month converts to roughly US list price | (Business Today); opinion quota; carousel
+2026-11-23 | T | India / Gadgets | Meta Ray-Ban Gen 1 smart glasses go on wide sale across India via Amazon, Flipkart, Reliance Digital | (91mobiles)
+2026-11-23 | T | India / Phones | OnePlus confirms 15R India launch Dec 17 with Pad Go 2, official date | (Digit) OFFICIAL
+2026-11-23 | T | India / Connectivity | Starlink India launch now points to early 2027, still awaiting spectrum/security clearances | (Deccan Chronicle)
+2026-11-23 | T | Global / Big Tech / Jobs | Amazon's internal "Project Dawn" layoff email leaked early, 16,000 jobs worldwide, AWS hit hardest | (Gulf News)
+2026-11-23 | T | Global / Big Tech / Jobs | Verizon, HP and Apple all cut more jobs this November, broader cost-cutting push | (Storyboard18)
