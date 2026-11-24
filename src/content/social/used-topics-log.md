@@ -777,3 +777,13 @@
 2026-11-23 | T | India / Connectivity | Starlink India launch now points to early 2027, still awaiting spectrum/security clearances | (Deccan Chronicle)
 2026-11-23 | T | Global / Big Tech / Jobs | Amazon's internal "Project Dawn" layoff email leaked early, 16,000 jobs worldwide, AWS hit hardest | (Gulf News)
 2026-11-23 | T | Global / Big Tech / Jobs | Verizon, HP and Apple all cut more jobs this November, broader cost-cutting push | (Storyboard18)
+2026-11-24 | 1 | India / Telecom | Jio Rs 50 unlimited night data plan, starts Nov 26 | Jio's Rs 50 plan only starts working at midnight (TelecomTalk)
+2026-11-24 | 2 | Global / Chips / Business | Nvidia reinstates Jensen Huang as CEO Nov 23, new hard dev vs Nov 20 committee Tap | Nvidia's CEO quit on 12 Nov, back on 23 Nov (SEC 8-K, 9to5Mac)
+2026-11-24 | 3 | Tips & Tricks (tip slot) | Google Maps Share trip progress | see tips log
+2026-11-24 | 4 | India / Myth-Buster / Cybersecurity (opinion) | Myth: DoT SIM binding (deadline Dec 31) will stop messaging-app scams, est. 2-3% cut | (MediaNama); carousel; opinion quota
+2026-11-24 | 5 | India / Hot Take / Devices (opinion) | Xiaomi raises Pad 8 / Redmi Pad 2 Pro / Redmi Pad 2 prices in India from Nov 19 | (TelecomTalk); opinion quota
+2026-11-24 | T | India / Cybersecurity | MHA I4C advisory on WhatsApp Web sessions on shared computers | (MediaNama)
+2026-11-24 | T | India / Cybersecurity | MoEngage breach reaches ZebPay customers via vendor credentials | (MediaNama)
+2026-11-24 | T | Global / Platforms | Threads for iPad coming very soon | (9to5Mac)
+2026-11-24 | T | Global / Gadgets | Nothing Ear (note) with AI recorder launches Dec 8 OFFICIAL | (9to5Google)
+2026-11-24 | T | Global / AI / Banking | JPMorgan and Wells Fargo restrict AI agents using bank logins | (9to5Mac)
