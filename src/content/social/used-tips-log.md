@@ -169,3 +169,4 @@ seed | iOS | Back Tap (double/triple tap back of iPhone)
 2026-11-22 | WhatsApp | Missed-call voice/video message - record a voice note or short video note right from the missed-call screen in one tap instead of just a notification, effectively built-in voicemail
 2026-11-23 | Google Photos | Locked Folder - Library > Utilities > Locked Folder, gated by phone's own screen lock, moves photos/videos out of main grid, search, memories and shared albums; app-level, not OS-level
 2026-11-24 | Google Maps | Share trip progress - start navigation, tap Share trip progress on the nav screen, pick a contact or WhatsApp; shows live location, route and ETA, stops automatically on arrival (Google 2018 announcement; menu label has shifted over time)
+2026-11-25 | WhatsApp | Linked devices check - Android three dots > Linked devices, iPhone Settings > Linked devices, log out unknown/shared PCs; paired with MHA WhatsApp Web advisory

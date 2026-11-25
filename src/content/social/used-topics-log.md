@@ -787,3 +787,13 @@
 2026-11-24 | T | Global / Platforms | Threads for iPad coming very soon | (9to5Mac)
 2026-11-24 | T | Global / Gadgets | Nothing Ear (note) with AI recorder launches Dec 8 OFFICIAL | (9to5Google)
 2026-11-24 | T | Global / AI / Banking | JPMorgan and Wells Fargo restrict AI agents using bank logins | (9to5Mac)
+2026-11-25 | 1 | India / Payments / Cybersecurity | RBI draft Stop Switch freezes outgoing debits/UPI registrations, applies 1 Jul 2027 | (Inc42); carousel
+2026-11-25 | 2 | Global / AI / Search | Google AI Mode Personal Intelligence adds Drive and Wallet, India availability unconfirmed | (TechCrunch)
+2026-11-25 | 3 | Tips & Tricks (tip slot) | WhatsApp Linked devices check | see tips log
+2026-11-25 | 4 | India / Hot Take / AI (opinion) | Sarvam Token Factory runs on private GPUs, not IndiaAI H100s; sovereign label argument | (Inc42); opinion quota
+2026-11-25 | 5 | India / Hot Take / Creator economy (opinion) | Maharashtra FDA fines up to Rs 10 lakh for influencer supplement claims | (MediaNama); opinion quota
+2026-11-25 | T | India / Phones | Motorola Edge 70 Neo India launch Rs 40,999 | (TelecomTalk)
+2026-11-25 | T | India / Phones | Motorola Signature 27 India launch Dec 9 OFFICIAL | (TelecomTalk)
+2026-11-25 | T | India / Startups | Steadview Capital sells Lenskart shares worth Rs 921 crore | (Inc42)
+2026-11-25 | T | Global / Big Tech / AI Business | Amazon buys Decart AI optimisation tech reportedly for $7.5B | (TechCrunch)
+2026-11-25 | T | Global / China / AI | Zhipu GLM-5.4 in Coding Plan, vision and 1M context | (TechNode)
