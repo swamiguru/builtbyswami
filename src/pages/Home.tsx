@@ -272,7 +272,7 @@ export default function Home() {
                 .
               </motion.p>
               <p className="text-xs text-m3-on-surface-variant/70 italic mb-4 md:mb-6">
-                Also now in early talks with The New Times.
+                Currently advising The New Times (Rwanda) on search, audience, analytics and editorial strategy.
               </p>
 
               <motion.div

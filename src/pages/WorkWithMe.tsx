@@ -67,6 +67,32 @@ const CAL_LINK = "https://cal.com/swami-guru/30min";
 const CASE_STUDY_URL = "/case-study/middle-east";
 const REPLATFORM_CASE_STUDY_URL = "/case-study/replatforming";
 
+/** Scope of the current advisory. Scope only: no figures, findings or results. */
+const CURRENT_SCOPE: [string, string[]][] = [
+  ["Content and editorial strategy", [
+    "Headline, standfirst and image standards, including captions and alt text",
+    "Update-time display standards for developing stories",
+    "Navigation, related-story and topic hub specifications",
+    "Guidance on stories that compete with each other in search",
+  ]],
+  ["Audience and distribution", [
+    "Newsletter sign-up prompt design, copy and placement",
+    "Social content audit and campaign tagging convention",
+    "Video-to-article integration specification",
+    "Article structure for citation by AI assistants",
+  ]],
+  ["Analytics and measurement", [
+    "GA4 and Google Tag Manager configuration, including conversion events",
+    "Channel attribution and campaign tagging",
+    "Looker Studio editorial dashboard",
+    "Search Console monitoring and monthly performance reviews",
+  ]],
+  ["Training and knowledge transfer", [
+    "Platform performance audits and Search Console monitoring for the IT office",
+    "GA4, data-informed journalism and content performance reporting",
+  ]],
+];
+
 interface Service {
   icon: typeof Globe;
   name: string;
@@ -662,6 +688,35 @@ export default function WorkWithMe() {
             company. Eleven years in product since — but the first five are
             why none of this is theoretical.
           </p>
+        </section>
+
+        <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow tone="primary">Current engagement</Eyebrow>
+          <h3 className="serif mt-3 text-2xl md:text-4xl font-medium tracking-tight leading-[1.1] max-w-3xl">
+            Advising The New Times, Rwanda
+          </h3>
+          <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
+            A digital performance advisory covering search, audience,
+            analytics and editorial strategy. I provide direction,
+            specifications and training; implementation stays with their
+            development team.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {CURRENT_SCOPE.map(([title, items], i) => (
+              <Reveal
+                key={title}
+                index={i}
+                className="rounded-[24px] border border-m3-outline/10 p-6"
+              >
+                <h4 className="font-display text-base font-bold text-m3-on-surface">{title}</h4>
+                <ul className="mt-3 list-disc pl-5 space-y-2 text-sm font-medium text-m3-on-surface-variant leading-relaxed">
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* The work — the flagship case study, set apart with an inverted

@@ -100,6 +100,7 @@ const EXPERIENCE: ExperienceItem[] = [
     current: true,
     bottomLine: "Three products shipped solo, a daily publication running on its own domain, and the discipline to cut scope mid-build.",
     impact: [
+      "Advising The New Times (Rwanda) on search, audience growth, analytics and editorial strategy, with training for their team.",
       "Shipped three live products solo — BuiltBySwami.com, Free Word Tool and Adda.",
       "Took a full task-management engine from empty repo to working app in 24 hours.",
       "Built and instrumented a daily-publishing content platform end to end — now running as its own title, Long Press, at longpress.news.",
@@ -614,9 +615,9 @@ export default function About() {
                   <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary/60">Currently · since May 2026</span>
                   <span className="text-sm font-bold mb-1">Independent Product Builder</span>
                   <p className="text-[13px] leading-relaxed text-m3-on-secondary-container/70 font-medium">
-                    Building and shipping products solo, AI-native, in
-                    public &mdash; and open to consulting and contract
-                    engagements.
+                    Advising The New Times (Rwanda) on search, audience and
+                    analytics, and building products in public. Open to
+                    consulting and contract engagements.
                   </p>
                 </div>
 
