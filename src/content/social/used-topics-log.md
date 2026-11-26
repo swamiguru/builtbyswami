@@ -797,3 +797,12 @@
 2026-11-25 | T | India / Startups | Steadview Capital sells Lenskart shares worth Rs 921 crore | (Inc42)
 2026-11-25 | T | Global / Big Tech / AI Business | Amazon buys Decart AI optimisation tech reportedly for $7.5B | (TechCrunch)
 2026-11-25 | T | Global / China / AI | Zhipu GLM-5.4 in Coding Plan, vision and 1M context | (TechNode)
+2026-11-26 | 1 | India / Big Tech / E-commerce | Flipkart group CEO Kalyan Krishnamurthy steps down, last day Dec 4, IPO still pending | (Business Standard, Inc42)
+2026-11-26 | 2 | Apps & Platforms | WhatsApp scheduled messages, 10 min to 14 days, global rollout over coming weeks | (WhatsApp Blog)
+2026-11-26 | 4 | India / Myth-Buster / AI (opinion) | Myth: JioAstro is accurate because it uses real astronomy (Swiss Ephemeris) | (Inc42, TelecomTalk); opinion quota; carousel
+2026-11-26 | 5 | Comparison / AI Music | Tidal bans fully AI tracks from Dec 9 vs Spotify AI Persona labels | (Hypebot, Spotify Newsroom); carousel
+2026-11-26 | T | India / Fintech | PhonePe revives IPO, eyes March 2027 listing at $12-15bn (reported) | (Inc42)
+2026-11-26 | T | India / Creator Economy | YouTube removed 3.44M India-uploaded videos Apr-Jun, 30.8% of global | (MediaNama)
+2026-11-26 | T | India / Fintech | Vegapay raises $10M Series A for Credit Line on UPI | (Inc42)
+2026-11-26 | T | Global / China / Robotics | XPeng AI Day: IRON store training Q1 2027, public release Q2 2027 (new hard dev vs Nov21 preview) | (XPENG release (GlobeNewswire))
+2026-11-26 | T | Global / AI / Privacy | States try to block Dec 1 auction of Character.AI user chat data | (News 12 Westchester)
