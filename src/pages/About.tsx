@@ -195,9 +195,9 @@ const EXPERIENCE: ExperienceItem[] = [
           "Designed and shipped interactive sponsor modules and new editorial storytelling formats to elevate the reading experience — driving an 8% lift in sponsorship revenue and a 12% increase in time spent on site."
       },
       {
-        title: "Platform Migration & Technical SEO",
+        title: "Replatform & Technical SEO",
         detail:
-          "Executed large-scale migrations for Vogue, GQ, Wired and Architectural Digest with 100% SEO integrity and zero revenue loss, and consolidated Condé Nast Traveller Spain and LATAM onto one Spanish-language platform reaching 56.6M unique users — leading cross-functional Agile squads across Engineering and Design throughout."
+          "Consolidated Condé Nast Traveller Spain and LATAM onto one Spanish-language property with a new front end, leading cross-functional Agile squads across Engineering and Design. Organic traffic dipped slightly at cutover and recovered within about a week."
       }
     ],
     technologies: ["Team Leadership", "Hiring", "Exec Stakeholders", "Enterprise CMS", "Generative AI", "P&L Ownership"]
@@ -681,7 +681,7 @@ export default function About() {
                 { val: "$20M+", label: "NET-NEW REVENUE", container: "bg-m3-primary-container/20", text: "text-m3-on-primary-container" },
                 { val: "30%+", label: "ENGAGEMENT LIFT", container: "bg-m3-secondary-container/20", text: "text-m3-on-secondary-container" },
                 { val: "50%", label: "TIME-TO-MARKET CUT", container: "bg-m3-tertiary-container/20", text: "text-m3-on-tertiary-container" },
-                { val: "100%", label: "SEO RETAINED", container: "bg-m3-primary-container/20", text: "text-m3-on-primary-container" }
+                { val: "13", label: "PROPERTIES REPLATFORMED", container: "bg-m3-primary-container/20", text: "text-m3-on-primary-container" }
               ].map((stat, i) => (
                 <div
                   key={i}
