@@ -29,7 +29,8 @@ export type TrackedCta =
   | "consulting_book_audit"
   | "consulting_email_me"
   | "home_consulting_see_all"
-  | "home_consulting_work_with_me";
+  | "home_consulting_work_with_me"
+  | "current_engagement";
 
 /**
  * Push a CTA click into the dataLayer. Safe before GTM loads — the snippet

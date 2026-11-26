@@ -439,6 +439,18 @@ export default function WorkWithMe() {
             </span>
           </div>
 
+          <a
+            href="#current-engagement"
+            onClick={() => trackCta("current_engagement", "work_with_me_hero")}
+            className="mb-5 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-[16px] border border-m3-primary/25 bg-m3-surface px-4 py-2.5 text-sm font-medium text-m3-on-surface hover:border-m3-primary transition-colors"
+          >
+            <span className="font-display text-[11px] font-bold uppercase tracking-wider text-m3-primary">
+              Current engagement
+            </span>
+            <span className="font-bold">Advising The New Times, Rwanda</span>
+            <span aria-hidden="true" className="text-m3-primary">&darr;</span>
+          </a>
+
           <motion.h1
             initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -477,6 +489,38 @@ export default function WorkWithMe() {
             exceeded the $20M+ Year 1 revenue target and beat audience
             benchmarks by 12%. Before that, Newsweek and Metro World News.
           </p>
+        </section>
+
+        {/* Live client work sits directly under the hero. Scope only. */}
+        <section
+          id="current-engagement"
+          className="scroll-mt-20 bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
+          <Eyebrow tone="primary">Current engagement</Eyebrow>
+          <h3 className="serif mt-3 text-2xl md:text-4xl font-medium tracking-tight leading-[1.1] max-w-3xl">
+            Advising The New Times, Rwanda
+          </h3>
+          <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
+            A digital performance advisory covering search, audience,
+            analytics and editorial strategy. I provide direction,
+            specifications and training; implementation stays with their
+            development team.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {CURRENT_SCOPE.map(([title, items], i) => (
+              <Reveal
+                key={title}
+                index={i}
+                className="rounded-[24px] border border-m3-outline/10 p-6"
+              >
+                <h4 className="font-display text-base font-bold text-m3-on-surface">{title}</h4>
+                <ul className="mt-3 list-disc pl-5 space-y-2 text-sm font-medium text-m3-on-surface-variant leading-relaxed">
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* What I do — a numbered list rather than a stack of cards, so the
@@ -688,35 +732,6 @@ export default function WorkWithMe() {
             company. Eleven years in product since — but the first five are
             why none of this is theoretical.
           </p>
-        </section>
-
-        <section className="bg-m3-surface border-b border-m3-outline/10 px-6 md:px-14 py-12 md:py-16">
-          <Eyebrow tone="primary">Current engagement</Eyebrow>
-          <h3 className="serif mt-3 text-2xl md:text-4xl font-medium tracking-tight leading-[1.1] max-w-3xl">
-            Advising The New Times, Rwanda
-          </h3>
-          <p className="mt-3 text-sm md:text-base font-medium text-m3-on-surface-variant max-w-2xl leading-relaxed">
-            A digital performance advisory covering search, audience,
-            analytics and editorial strategy. I provide direction,
-            specifications and training; implementation stays with their
-            development team.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {CURRENT_SCOPE.map(([title, items], i) => (
-              <Reveal
-                key={title}
-                index={i}
-                className="rounded-[24px] border border-m3-outline/10 p-6"
-              >
-                <h4 className="font-display text-base font-bold text-m3-on-surface">{title}</h4>
-                <ul className="mt-3 list-disc pl-5 space-y-2 text-sm font-medium text-m3-on-surface-variant leading-relaxed">
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
-          </div>
         </section>
 
         {/* The work — the flagship case study, set apart with an inverted
