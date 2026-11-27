@@ -806,3 +806,13 @@
 2026-11-26 | T | India / Fintech | Vegapay raises $10M Series A for Credit Line on UPI | (Inc42)
 2026-11-26 | T | Global / China / Robotics | XPeng AI Day: IRON store training Q1 2027, public release Q2 2027 (new hard dev vs Nov21 preview) | (XPENG release (GlobeNewswire))
 2026-11-26 | T | Global / AI / Privacy | States try to block Dec 1 auction of Character.AI user chat data | (News 12 Westchester)
+2026-11-27 | 1 | India / Big Tech / Apps | WhatsApp in-app travel eSIM data plans, Jio named partner, no price or India date | (WhatsApp Blog, Inc42); carousel; new hard dev vs Nov26 scheduled messages
+2026-11-27 | 2 | Global / Space / AI | FCC authorises SpaceX Starmind up to 1M orbital data centre satellites | (Al Jazeera, Washington Post via Spokesman-Review)
+2026-11-27 | 3 | India / Tips & Tricks (tip slot) | cybercrime.gov.in Report & Check Suspect | see tips log
+2026-11-27 | 4 | India / Hot Take / Telecom AI (opinion) | TRAI draft telecom AI guidelines, comments close Nov 27, IFF says no user right to contest | (MediaNama, Elets); opinion quota
+2026-11-27 | 5 | India / Comparison / Phones | Vivo X500 vs X500 Pro vs X500 Pro Max India prices Rs 1,19,999 / 1,49,999 / 1,64,999 | (Business Today, Beebom); carousel; launched Nov 26
+2026-11-27 | T | India / AI | Jio takes JioAstro offline, calls it a demo survey (Inc42 update); follows up Nov26 slot 4 | (Inc42)
+2026-11-27 | T | India / Big Tech | Apple Kukatpally Hyderabad store opens Dec 10, seventh in India | (MacRumors)
+2026-11-27 | T | India / Payments | Navi crosses 5% UPI volume share in October NPCI data | (Inc42)
+2026-11-27 | T | Global / Chips | Nvidia reportedly pauses server shipments to Malaysia, Singapore, Thailand, Indonesia | (TechCrunch/WSJ)
+2026-11-27 | T | Global / AI / E-commerce | Amazon and Meta reportedly in talks to lift Muse checkout block | (TechCrunch/Fortune)
